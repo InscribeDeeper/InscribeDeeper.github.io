@@ -125,7 +125,7 @@ content:
           Short institution or course description (optional)
         description: | # this will include new lines to allow paragraphs
           Related coursework: Social Network Analysis, Web Mining, Data Management & Exploration on the Web, Natural Language Processing, Statistical Inference, Applications of Deep Learning, Applied Machine Learning, Database Management System I&II                                                                                                    
-    content:
+          
       - layout: top-right
         title: Stevens Institute of Technology
         sub_title: MSc in Data Science (GPA 3.8/4.0) # (eg. BA Performing Arts)
