@@ -34,10 +34,11 @@ linkedin_username: weiyangds
 # orcid_username: 0000-0000-0000-0000
 
 # Additional icon links
-additional_links:
-- title: Link name
-  icon: Font Awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
-  url: Link url (eg. https://google.com)
+# additional_links:
+# - title: Link name
+#   icon: Font Awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
+#   url: Link url (eg. https://google.com)
+
 # - title: another link
 #   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
 #   url: Link url (eg. https://google.com)
@@ -50,15 +51,35 @@ additional_links:
 
 # About Section
 # about_title: About Me (Use this to override about section title)
-about_profile_image: Directory of profile image (eg. images/profile.jpg)
+about_profile_image: images/wyang_img.jpg # Directory of profile image (eg. images/profile.jpg)
 about_content: | # this will include new lines to allow paragraphs
-  Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
+  Data science candidate with a solid mathematical background and application experience in Natural Language Processing and Machine Learning. Enthusiastic with exploring innovative ways to deal with big data problems. With a never stop attitude, I am still striving forward on the way to becoming an expert in the data science field.
+  - Programming: Python (Pandas, Numpy, Matplotlib)
 
-  You can even add paragraphs by using empty lines like this and add anything else [markdown](https://www.markdownguide.org/getting-started#what-is-markdown) supports such as
-    - Lists
-    - Tables
-    - <a href="google.com">Links</a>
-    - Images ![alt text](/images/landscape-trees.jpg "Trees")
+  - Skills and Knowledge:
+      - Programming: Python (Pandas, Numpy, Matplotlib)
+      - Textual Data Processing: Python (NLTK, Regular Expression, Gensim)
+      - Machine Learning: Python (Scikit-Learn, Keras)
+      - Database: PostgreSQL, MySQL
+      - Tools: Jupyter Notebook, PyCharm, Git, Tableau, MS Excel
+      - Data Domain: Textual data, Web data, Time series, Sequential data
+      - Data Visualization: Python (Matplotlib, Seaborn), Tableau, MS Excel
+      - Business Analytics: Web Analytics, Social Network Analytics
+
+  - Algorithms/Models:
+      - Regression: Linear Regression, Logistic Regression, Time series regression (ARIMA)
+      - Classification: Support Vector Machine, Decision Tree, K-nearest neighbors (KNN)
+      - Dimension Reduction: Principal Component Analysis (PCA), Singular Value Decomposition (SVD)
+      - Clustering: K-means
+      - Natural Language Processing: Latent Dirichlet Allocation, N-gram, Skip-gram, Recurrent Neural Network, Autoencoder, Convolutional Neural Networks (Feature extraction)
+
+# Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
+
+# You can even add paragraphs by using empty lines like this and add anything else [markdown](https://www.markdownguide.org/getting-started#what-is-markdown) supports such as
+#   - Lists
+#   - Tables
+#   - <a href="google.com">Links</a>
+#   - Images ![alt text](/images/landscape-trees.jpg "Trees")
 
 content:
   - title: Projects # Title for the section
@@ -79,6 +100,7 @@ content:
           Short overview of the project (optional)
         description: | # this will include new lines to allow paragraphs
           Description about the work on/with the project
+
   - title: Experience
     layout: list
     content:
@@ -91,17 +113,29 @@ content:
           Short description of the company (optional)
         description: | # this will include new lines to allow paragraphs
           Description of role
+
   - title: Education
     layout: list
     content:
       - layout: top-right
         title: Stevens Institute of Technology
-        sub_title: Qualifications (eg. BA Performing Arts)
+        sub_title: MSc in Data Science (GPA 3.8/4.0) # (eg. BA Performing Arts)
         caption: 2019-2021
         quote: >
           Short institution or course description (optional)
         description: | # this will include new lines to allow paragraphs
-          Description of qualification
+          Related coursework: Social Network Analysis, Web Mining, Data Management & Exploration on the Web, Natural Language Processing, Statistical Inference, Applications of Deep Learning, Applied Machine Learning, Database Management System I&II                                                                                                    
+    content:
+      - layout: top-right
+        title: Stevens Institute of Technology
+        sub_title: MSc in Data Science (GPA 3.8/4.0) # (eg. BA Performing Arts)
+        caption: 2019-2021
+        quote: >
+          Short institution or course description (optional)
+        description: | # this will include new lines to allow paragraphs
+          Related coursework: Social Network Analysis, Web Mining, Data Management & Exploration on the Web, Natural Language Processing, Statistical Inference, Applications of Deep Learning, Applied Machine Learning, Database Management System I&II                                                                                                    
+
+
   - title: A Little More About Me
     layout: text
     content: | # this will include new lines to allow paragraphs
