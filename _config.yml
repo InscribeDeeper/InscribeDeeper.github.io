@@ -88,7 +88,7 @@ content:
           - layout: left
             title: Information Extraction from Conference Call
             link: https://github.com/InscribeDeeper/Conf_Call
-            link_text: Link Text
+            link_text: InscribeDeeper/Conf_Call
             quote: >
                 Short overview of the project (optional)
             description: | # this will include new lines to allow paragraphs
@@ -99,7 +99,7 @@ content:
           - layout: left
             title: Quantify the AI impacts on Jobs skills
             link: https://github.com/InscribeDeeper/Job-Descrpition-Feature-extraction
-            link_text: Link Text
+            link_text: InscribeDeeper/Job-Descrpition-Feature-extraction
             additional_links:
                 - title: InscribeDeeper/Job-Descrpition-Feature-extraction
                   icon: fab fa-github
@@ -114,7 +114,7 @@ content:
           - layout: left
             title: Analysis on Factors Influencing Bitcoin
             link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-            link_text: Link Text
+            link_text: InscribeDeeper/Tweets_sentiment_extraction
             additional_links:
                 - title: InscribeDeeper/Tweets_sentiment_extraction
                   icon: fab fa-github
