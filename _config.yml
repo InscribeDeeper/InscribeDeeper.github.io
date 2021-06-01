@@ -20,7 +20,7 @@ darkmode: false
 
 # Social links
 # twitter_username: jekyllrb
-github_username:  inscribedeeper
+github_username: inscribedeeper
 # stackoverflow_username: "00000001"
 # dribbble_username: jekyll
 # facebook_username: jekyll
@@ -53,25 +53,25 @@ linkedin_username: weiyangds
 # about_title: About Me (Use this to override about section title)
 about_profile_image: images/wyang_img.jpg # Directory of profile image (eg. images/profile.jpg)
 about_content: | # this will include new lines to allow paragraphs
-  Data science candidate with a solid mathematical background and application experience in Natural Language Processing and Machine Learning. Enthusiastic with exploring innovative ways to deal with big data problems. With a never stop attitude, I am still striving forward on the way to becoming an expert in the data science field.
-  - Programming: Python (Pandas, Numpy, Matplotlib)
+    Data science candidate with a solid mathematical background and application experience in Natural Language Processing and Machine Learning. Enthusiastic with exploring innovative ways to deal with big data problems. With a never stop attitude, I am still striving forward on the way to becoming an expert in the data science field.
+    - Programming: Python (Pandas, Numpy, Matplotlib)
 
-  - Skills and Knowledge:
-      - Programming: Python (Pandas, Numpy, Matplotlib)
-      - Textual Data Processing: Python (NLTK, Regular Expression, Gensim)
-      - Machine Learning: Python (Scikit-Learn, Keras)
-      - Database: PostgreSQL, MySQL
-      - Tools: Jupyter Notebook, PyCharm, Git, Tableau, MS Excel
-      - Data Domain: Textual data, Web data, Time series, Sequential data
-      - Data Visualization: Python (Matplotlib, Seaborn), Tableau, MS Excel
-      - Business Analytics: Web Analytics, Social Network Analytics
+    - Skills and Knowledge:
+        - Programming: Python (Pandas, Numpy, Matplotlib)
+        - Textual Data Processing: Python (NLTK, Regular Expression, Gensim)
+        - Machine Learning: Python (Scikit-Learn, Keras)
+        - Database: PostgreSQL, MySQL
+        - Tools: Jupyter Notebook, PyCharm, Git, Tableau, MS Excel
+        - Data Domain: Textual data, Web data, Time series, Sequential data
+        - Data Visualization: Python (Matplotlib, Seaborn), Tableau, MS Excel
+        - Business Analytics: Web Analytics, Social Network Analytics
 
-  - Algorithms/Models:
-      - Regression: Linear Regression, Logistic Regression, Time series regression (ARIMA)
-      - Classification: Support Vector Machine, Decision Tree, K-nearest neighbors (KNN)
-      - Dimension Reduction: Principal Component Analysis (PCA), Singular Value Decomposition (SVD)
-      - Clustering: K-means
-      - Natural Language Processing: Latent Dirichlet Allocation, N-gram, Skip-gram, Recurrent Neural Network, Autoencoder, Convolutional Neural Networks (Feature extraction)
+    - Algorithms/Models:
+        - Regression: Linear Regression, Logistic Regression, Time series regression (ARIMA)
+        - Classification: Support Vector Machine, Decision Tree, K-nearest neighbors (KNN)
+        - Dimension Reduction: Principal Component Analysis (PCA), Singular Value Decomposition (SVD)
+        - Clustering: K-means
+        - Natural Language Processing: Latent Dirichlet Allocation, N-gram, Skip-gram, Recurrent Neural Network, Autoencoder, Convolutional Neural Networks (Feature extraction)
 
 # Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
 
@@ -82,66 +82,107 @@ about_content: | # this will include new lines to allow paragraphs
 #   - Images ![alt text](/images/landscape-trees.jpg "Trees")
 
 content:
-  - title: Projects # Title for the section
-    layout: list # Type of content section (list/text)
-    content:
-      - layout: left
-        title: Project name
-        link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-        link_text: Link Text
-        additional_links:
-          - title:  Github page for project (eg. sproogen/modern-resume-theme)
-            icon: fab fa-github
-            url: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-          - title:  Github page for project (eg. sproogen/modern-resume-theme)
-            icon: fab fa-github
-            url: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-        quote: >
-          Short overview of the project (optional)
-        description: | # this will include new lines to allow paragraphs
-          Description about the work on/with the project
+    - title: Projects # Title for the section
+      layout: list # Type of content section (list/text)
+      content:
+          - layout: left
+            title: Information Extraction from Conference Call
+            link: https://github.com/InscribeDeeper/Conf_Call
+            link_text: Link Text
+            quote: >
+                Short overview of the project (optional)
+            description: | # this will include new lines to allow paragraphs
+                - Performed data cleaning and validation procedures, implemented text analysis with SpaCy 
+                - Implemented workflow automation solutions to extract natural language features from conference transcripts
+                - Evaluated features effectiveness with manual labels, implemented regression with Cumulative Abnormal Return for reporting day of the conference call
 
-  - title: Experience
-    layout: list
-    content:
-      - layout: right
-        title: Company name
-        sub_title: Job title
-        caption: Date Range (eg. November 2016 - present)
-        link: Link to company (optional)
-        quote: >
-          Short description of the company (optional)
-        description: | # this will include new lines to allow paragraphs
-          Description of role
+          - layout: left
+            title: Quantify the AI impacts on Jobs skills
+            link: https://github.com/InscribeDeeper/Job-Descrpition-Feature-extraction
+            link_text: Link Text
+            additional_links:
+                - title: InscribeDeeper/Job-Descrpition-Feature-extraction
+                  icon: fab fa-github
+                  url: https://github.com/InscribeDeeper/Job-Descrpition-Feature-extraction
+            quote: >
+                Short overview of the project (optional)
+            description: | # this will include new lines to allow paragraphs
+                - Scraped, cleaned and structured Job Descriptions textual data from INDEED.com
+                - Filtered noisy data by selecting clusters from K-means algorithm and visualized skillsets distribution
+                - Categorized, analyzed skillsets trend after Topic Modeling and Aspect Extraction Deep Neural Network
 
-  - title: Education
-    layout: list
-    content:
-      - layout: top-right
-        title: Stevens Institute of Technology
-        sub_title: MSc in Data Science (GPA 3.8/4.0) # (eg. BA Performing Arts)
-        caption: 2019-2021
-        quote: >
-          Short institution or course description (optional)
-        description: | # this will include new lines to allow paragraphs
-          Related coursework: Social Network Analysis, Web Mining, Data Management & Exploration on the Web, Natural Language Processing, Statistical Inference, Applications of Deep Learning, Applied Machine Learning, Database Management System I&II                                                                                                    
-          
-      - layout: top-right
-        title: Stevens Institute of Technology
-        sub_title: MSc in Data Science (GPA 3.8/4.0) # (eg. BA Performing Arts)
-        caption: 2019-2021
-        quote: >
-          Short institution or course description (optional)
-        description: | # this will include new lines to allow paragraphs
-          Related coursework: Social Network Analysis, Web Mining, Data Management & Exploration on the Web, Natural Language Processing, Statistical Inference, Applications of Deep Learning, Applied Machine Learning, Database Management System I&II                                                                                                    
+          - layout: left
+            title: Analysis on Factors Influencing Bitcoin
+            link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
+            link_text: Link Text
+            additional_links:
+                - title: InscribeDeeper/Tweets_sentiment_extraction
+                  icon: fab fa-github
+                  url: https://github.com/InscribeDeeper/Tweets_sentiment_extraction
+                - title: InscribeDeeper/Time-Series-BTC
+                  icon: fab fa-github
+                  url: https://github.com/InscribeDeeper/Time-Series-BTC
+            quote: >
+                Short overview of the project (optional)
+            description: | # this will include new lines to allow paragraphs
+                - Performed data cleaning and sentiment analysis for over 20 million related Tweets in second granularity
+                - Delivered feature engineering for financial indicators like MACD and RSI etc
+                - Analyzed, finetuned, and back-tested for over five types of deep learning model to increase the portfolio return
+
+    - title: Experience
+      layout: list
+      content:
+          - layout: right
+            title: Stevens Institute of Technology
+            sub_title: Research Assistant
+            caption: June 2020 - Present
+            link: https://www.stevens.edu/
+            quote: >
+                Short description of the company (optional)
+            description: | # this will include new lines to allow paragraphs
+                - Delivered research and development work under the guidance of two professors
+                - Delievered research on <a href="https://github.com/InscribeDeeper/Conf_Call">Information Extraction from Conference Call</a>
+
+          - layout: right
+            title: 1lift Co
+            sub_title: Data Analyst Intern
+            caption: April 2019 - July 2019
+            link: https://www.1lift.cn/
+            quote: >
+                Short description of the company (optional)
+            description: | # this will include new lines to allow paragraphs
+                - Explored and cleaned unstructured textual data, improved data quality in database
+                - Manipulated structured data, visualized and presented statistical reports on Tableau Dashboard
+                - Developed cost analysis modules with Excel advanced functionalities for sales department
 
 
-  - title: A Little More About Me
-    layout: text
-    content: | # this will include new lines to allow paragraphs
-      This is where you can write a little more about yourself. You could title this section **Interests** and include some of your other interests.
+    - title: Education
+      layout: list
+      content:
+          - layout: top-right
+            title: Stevens Institute of Technology
+            sub_title: MSc in Data Science (GPA 3.8/4.0) # (eg. BA Performing Arts)
+            caption: Expected Dec 2021
+            quote: >
+                Short institution or course description (optional)
+            description: | # this will include new lines to allow paragraphs
+                Related coursework: Social Network Analysis, Web Mining, Data Management & Exploration on the Web, Natural Language Processing, Statistical Inference, Applications of Deep Learning, Applied Machine Learning, Database Management System I&II
 
-      Or you could title it **Skills** and write a bit more about things that make you more desirable, like *leadership* or *teamwork*
+          - layout: top-right
+            title: Guangzhou University
+            sub_title: BSc in Applied Mathematics # (eg. BA Performing Arts)
+            caption: 2014-2018
+            quote: >
+                Short institution or course description (optional)
+            description: | # this will include new lines to allow paragraphs
+                Related coursework: Social Network Analysis, Web Mining, Data Management & Exploration on the Web, Natural Language Processing, Statistical Inference, Applications of Deep Learning, Applied Machine Learning, Database Management System I&II
+
+    - title: A Little More About Me
+      layout: text
+      content: | # this will include new lines to allow paragraphs
+          This is where you can write a little more about yourself. You could title this section **Interests** and include some of your other interests.
+
+          Or you could title it **Skills** and write a bit more about things that make you more desirable, like *leadership* or *teamwork*
 
 # Footer
 footer_show_references: true
@@ -152,21 +193,11 @@ footer_show_references: true
 # remote_theme: sproogen/modern-resume-theme (Use this if you are hosting your resume on GitHub)
 
 sass:
-  sass_dir: _sass
-  style: compressed
+    sass_dir: _sass
+    style: compressed
 
 plugins:
- - jekyll-seo-tag
+    - jekyll-seo-tag
 
-exclude : [
-  "Gemfile",
-  "Gemfile.lock",
-  "node_modules",
-  "vendor/bundle/",
-  "vendor/cache/",
-  "vendor/gems/",
-  "vendor/ruby/",
-  "lib/",
-  "scripts/",
-  "docker-compose.yml",
-  ]
+exclude:
+    ["Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", "vendor/cache/", "vendor/gems/", "vendor/ruby/", "lib/", "scripts/", "docker-compose.yml"]
