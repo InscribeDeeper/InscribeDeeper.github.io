@@ -1,3 +1,5 @@
+# 这是配置文件, 类似于xml, 规定了输入的格式, 以保证网页按特定规范展示
+
 - name: Institution 1
   dates: 2016 - 2019
   qualification: Degree
@@ -12,3 +14,4 @@
   qualification: A levels
   description: >
     Description of qualification
+
