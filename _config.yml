@@ -79,8 +79,8 @@ content:
             title: Stevens Institute of Technology
             sub_title: Research Assistant/Teaching Assistant, Deep Learning and Web Analytics
             caption: June 2020 - December 2021
-            link: https://github.com/InscribeDeeper/Conf_Call
-            link_text: InscribeDeeper/Conf_Call
+            # link: https://github.com/InscribeDeeper/Conf_Call
+            # link_text: InscribeDeeper/Conf_Call
             quote: >
                 Language features pattern detection with Deep Learning models, data parsing and statistics modeling
             description: | # this will include new lines to allow paragraphs
@@ -119,8 +119,8 @@ content:
       content:
           - layout: right
             title: MyPlace Web Development
-            link: https://github.com/InscribeDeeper/MyPlace
-            link_text: InscribeDeeper/MyPlace
+            # link: https://github.com/InscribeDeeper/MyPlace
+            # link_text: InscribeDeeper/MyPlace
             additional_links:
                 - title: InscribeDeeper/MyPlace
                   icon: fab fa-github
@@ -135,8 +135,8 @@ content:
 
           - layout: right
             title: E-commerce Recommender System
-            link: https://github.com/InscribeDeeper/Recommender_Sys
-            link_text: InscribeDeeper/Recommender_Sys
+            # link: https://github.com/InscribeDeeper/Recommender_Sys
+            # link_text: InscribeDeeper/Recommender_Sys
             additional_links:
                 - title: InscribeDeeper/Recommender_Sys
                   icon: fab fa-github
@@ -150,8 +150,8 @@ content:
 
           - layout: right
             title: Fintech Pitch Competition - 6th Position
-            link: https://www.ubs.com/microsites/the-university-innovation-challenge/en/home.html
-            link_text: Competition Description
+            # link: https://www.ubs.com/microsites/the-university-innovation-challenge/en/home.html
+            # link_text: Competition Description
             quote: >
                 Develop a mathematical model based on public data and metrics to measure and predict the vibrancy of the city in the U.S.
             description: | # this will include new lines to allow paragraphs
@@ -161,8 +161,8 @@ content:
 
           - layout: right
             title: Quantify the AI impacts on Jobs skills
-            link: https://github.com/InscribeDeeper/Job-Descrpition-Feature-extraction
-            link_text: InscribeDeeper/Job-Descrpition-Feature-extraction
+            # link: https://github.com/InscribeDeeper/Job-Descrpition-Feature-extraction
+            # link_text: InscribeDeeper/Job-Descrpition-Feature-extraction
             additional_links:
                 - title: InscribeDeeper/Job-Descrpition-Feature-extraction
                   icon: fab fa-github
@@ -176,8 +176,8 @@ content:
 
           - layout: right
             title: Analysis on Factors Influencing Bitcoin
-            link: https://github.com/InscribeDeeper/Tweets_sentiment_extraction
-            link_text: InscribeDeeper/Tweets_sentiment_extraction
+            # link: https://github.com/InscribeDeeper/Tweets_sentiment_extraction
+            # link_text: InscribeDeeper/Tweets_sentiment_extraction
             additional_links:
                 - title: InscribeDeeper/Tweets_sentiment_extraction
                   icon: fab fa-github
