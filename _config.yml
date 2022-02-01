@@ -57,11 +57,11 @@ about_content: | # this will include new lines to allow paragraphs
 
     I already got my EAD card and my OPT will start on Feb 14, 2022. I will be really glad to show my passion if there is a possible conversation with you.
 
-    - Stacks:
-        - Programming Language: Python, SQL, R, JavaScript, Shell Script
-        - Database: MongoDB, PostgreSQL, MySQL, SQL Server
-        - Tools: Git, AWS, Jupyter Notebook, Google Colab
-        - Operating Systems: Windows, UNIX/Linux, Mac OS X
+    Stacks:
+    - Programming Language: Python, SQL, R, JavaScript, Shell Script
+    - Database: MongoDB, PostgreSQL, MySQL, SQL Server
+    - Tools: Git, AWS, Jupyter Notebook, Google Colab
+    - Operating Systems: Windows, UNIX/Linux, Mac OS X
 
 # Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
 
