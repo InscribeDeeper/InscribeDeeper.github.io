@@ -209,7 +209,7 @@ content:
                 Awards: Second prize (out of 25,558 teams) in National Mathematical Modeling Contest, 2015
 
     - title: A Little More About Me
-      layout: list
+      layout: text
       content:
           - layout: mid
             description: | # this will include new lines to allow paragraphs
