@@ -197,7 +197,8 @@ content:
             sub_title: MSc in Data Science (GPA 3.8/4.0) # (eg. BA Performing Arts)
             caption: September 2019 - December 2021
             description: | # this will include new lines to allow paragraphs
-                Relevant Coursework: Statistical Methods, Statistical Inference, Advanced Data Analytics & Machine Learning, Deep Learning, Natural Language Processing, Database Management Systems, Web Programming, Data Structures & Algorithms /
+                Relevant Coursework: Statistical Methods, Statistical Inference, Advanced Data Analytics & Machine Learning, Deep Learning, Natural Language Processing, Database Management Systems, Web Programming, Data Structures & Algorithms
+                
                 Scholarship: Provost's Scholarship, 2019
 
           - layout: top-right
@@ -205,7 +206,8 @@ content:
             sub_title: BSc in Applied Mathematics # (eg. BA Performing Arts)
             caption: September 2014 - December 2018
             description: | # this will include new lines to allow paragraphs
-                Relevant Coursework: Probability and Mathematical Statistics, Operational Research, Numerical Analysis, Advanced Algebra, Mathematical Analysis, Real Function Theory, Functional analysis, Ordinary Differential Equations, Partial Differential Equations/
+                Relevant Coursework: Probability and Mathematical Statistics, Operational Research, Numerical Analysis, Advanced Algebra, Mathematical Analysis, Real Function Theory, Functional analysis, Ordinary Differential Equations, Partial Differential Equations
+                
                 Awards: Second prize (out of 25,558 teams) in National Mathematical Modeling Contest, 2015
 
     - title: A Little More About Me
