@@ -64,9 +64,9 @@ about_content: | # this will include new lines to allow paragraphs
         - Operating Systems: Windows, UNIX/Linux, Mac OS X
 
     - Python related packages:
-        - Data Manupulation: Pandas, Numpy, Regular Expression
-        - Textual Data Processing: SpaCy, NLTK, Gensim
-        - Machine Learning and Deep Learning: Pytorch, HuggingFace Transformers, Scikit-Learn, Keras
+        - Data Manupulation: | Pandas, Numpy, Regular Expression
+        - Textual Data Processing: | SpaCy, NLTK, Gensim
+        - Machine Learning and Deep Learning: | Pytorch, HuggingFace Transformers, Scikit-Learn, Keras
         - Data Visualization: Matplotlib, Seaborn, Tableau
 
     - Algorithms/Models:
