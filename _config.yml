@@ -58,25 +58,10 @@ about_content: | # this will include new lines to allow paragraphs
     I already got my EAD card and my OPT will start on Feb 14, 2022. I will be really glad to show my passion if there is a possible conversation with you.
 
     - Stacks:
-        - Programming Language: | Python, SQL, R, JavaScript, Shell Script
-        - Database: | MongoDB, PostgreSQL, MySQL, SQL Server
-        - Tools: | Git, AWS, Jupyter Notebook, Google Colab
-        - Operating Systems: | Windows, UNIX/Linux, Mac OS X
-
-    - Python related packages:
-        - Data Manupulation: | Pandas, Numpy, Regular Expression
-        - Textual Data Processing: | SpaCy, NLTK, Gensim
-        - Machine Learning and Deep Learning: | Pytorch, HuggingFace Transformers, Scikit-Learn, Keras
-        - Data Visualization: | Matplotlib, Seaborn, Tableau
-
-    - Algorithms/Models:
-        - Regression: | Linear Regression, Hinge/Lasso Regression, Time series regression (ARIMA)
-        - Classification: | Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-nearest Neighbors (KNN)
-        - Dimension Reduction: | Principal Component Analysis (PCA), Singular Value Decomposition (SVD)
-        - Clustering: | K-means, Hierarchical Clustering, DBSCAN
-        - Emsembling techniques: | Bagging, Boosting, Stacking
-        - Neural Networks: | Recurrent Neural Networks (LSTM), Convolutional Neural Networks, Variational Autoencoder
-        - NLP: | Word2Vector, BERT, Transformer, Latent Dirichlet Allocation
+        - Programming Language: Python, SQL, R, JavaScript, Shell Script
+        - Database: MongoDB, PostgreSQL, MySQL, SQL Server
+        - Tools: Git, AWS, Jupyter Notebook, Google Colab
+        - Operating Systems: Windows, UNIX/Linux, Mac OS X
 
 # Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
 
@@ -183,7 +168,7 @@ content:
                   icon: fab fa-github
                   url: https://github.com/InscribeDeeper/Job-Descrpition-Feature-extraction
             quote: >
-                Short overview of the project (optional)
+                Data scraping, Parsing and information extraction, topic modeling with Clustering algorithms and Neural Networks
             description: | # this will include new lines to allow paragraphs
                 - Scraped, cleaned and structured Job Descriptions textual data from INDEED.com
                 - Filtered noisy data by selecting clusters from K-means algorithm and visualized skillsets distribution
@@ -191,17 +176,14 @@ content:
 
           - layout: right
             title: Analysis on Factors Influencing Bitcoin
-            link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
+            link: https://github.com/InscribeDeeper/Tweets_sentiment_extraction
             link_text: InscribeDeeper/Tweets_sentiment_extraction
             additional_links:
                 - title: InscribeDeeper/Tweets_sentiment_extraction
                   icon: fab fa-github
                   url: https://github.com/InscribeDeeper/Tweets_sentiment_extraction
-                - title: InscribeDeeper/Time-Series-BTC
-                  icon: fab fa-github
-                  url: https://github.com/InscribeDeeper/Time-Series-BTC
             quote: >
-                Short overview of the project (optional)
+                Feature engineering, Data analysis and modeling
             description: | # this will include new lines to allow paragraphs
                 - Performed data cleaning and sentiment analysis for over 20 million related Tweets in second granularity
                 - Delivered feature engineering for financial indicators like MACD and RSI etc
@@ -225,9 +207,29 @@ content:
                 Relevant Coursework: Probability and Mathematical Statistics, Operational Research, Numerical Analysis, Advanced Algebra, Mathematical Analysis, Real Function Theory, Functional analysis, Ordinary Differential Equations, Partial Differential Equations
 
     - title: A Little More About Me
-      layout: text
+      layout: list
       content:
-          Interests: Playing Guitar, feeding Cat
+          - layout: mid
+            description: | # this will include new lines to allow paragraphs
+                - Python related packages: 
+                    - Data Manupulation: | Pandas, Numpy, Regular Expression
+                    - Textual Data Processing: | SpaCy, NLTK, Gensim
+                    - Machine Learning and Deep Learning: | Pytorch, HuggingFace Transformers, Scikit-Learn, Keras
+                    - Data Visualization: | Matplotlib, Seaborn, Tableau
+
+                - Algorithms and Models:
+                    - Neural Networks: | Recurrent Neural Networks (LSTM), Convolutional Neural Networks, Variational Autoencoder
+                    - NLP: | Word2Vector, BERT, Transformer, Latent Dirichlet Allocation
+                    - Regression: | Linear Regression, Hinge/Lasso Regression, Time series regression (ARIMA)
+                    - Classification: | Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-nearest Neighbors (KNN)
+                    - Dimension Reduction: | Principal Component Analysis (PCA), Singular Value Decomposition (SVD)
+                    - Clustering: | K-means, Hierarchical Clustering, DBSCAN
+                    - Emsembling techniques: | Bagging, Boosting, Stacking
+
+    - title: A Little More About Me
+      layout: text # Type of content section (list/text)
+      content:
+          - Interests: Playing Guitar, feeding Cat
 
 # Footer
 footer_show_references: true
