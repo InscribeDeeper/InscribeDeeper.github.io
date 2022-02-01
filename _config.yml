@@ -212,6 +212,14 @@ content:
 
     - title: A Little More About Me
       layout: text
+      content: /
+            | Data Manupulation | Textual Data Processing | Machine Learning and Deep Learning | Data Visualization | Neural Networks | NLP | Regression | Classification | Dimension Reduction | Clustering | Emsembling techniques|
+            ------------------------------------------------------------------
+            | Pandas, Numpy, Regular Expression | SpaCy, NLTK, Gensim | Pytorch, HuggingFace Transformers, Scikit-Learn, Keras | Matplotlib, Seaborn, Tableau | Recurrent Neural Networks (LSTM), Convolutional Neural Networks, Variational Autoencoder | Word2Vector, BERT, Transformer, Latent Dirichlet Allocation | Linear Regression, Hinge/Lasso Regression, Time series regression (ARIMA) | Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-nearest Neighbors (KNN) | Principal Component Analysis (PCA), Singular Value Decomposition (SVD) | K-means, Hierarchical Clustering, DBSCAN | Bagging, Boosting, Stacking|
+    
+    
+    - title: A Little More About Me
+      layout: text
       content:
           - layout: mid
             description: | # this will include new lines to allow paragraphs
@@ -236,14 +244,6 @@ content:
           Interests: Playing Guitar, feeding Cat
 
 
-    - title: A Little More About Me
-      layout: text
-      content: /
-            | Data Manupulation | Textual Data Processing | Machine Learning and Deep Learning | Data Visualization | Neural Networks | NLP | Regression | Classification | Dimension Reduction | Clustering | Emsembling techniques|
-            ------------------------------------------------------------------
-            | Pandas, Numpy, Regular Expression | SpaCy, NLTK, Gensim | Pytorch, HuggingFace Transformers, Scikit-Learn, Keras | Matplotlib, Seaborn, Tableau | Recurrent Neural Networks (LSTM), Convolutional Neural Networks, Variational Autoencoder | Word2Vector, BERT, Transformer, Latent Dirichlet Allocation | Linear Regression, Hinge/Lasso Regression, Time series regression (ARIMA) | Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-nearest Neighbors (KNN) | Principal Component Analysis (PCA), Singular Value Decomposition (SVD) | K-means, Hierarchical Clustering, DBSCAN | Bagging, Boosting, Stacking|
-    
-    
 # Footer
 footer_show_references: true
 # references_title: References on request (Override references text)
