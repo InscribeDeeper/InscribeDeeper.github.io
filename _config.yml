@@ -214,24 +214,24 @@ content:
           - layout: mid
             description: | # this will include new lines to allow paragraphs
                 - Python related packages: 
-                    - Data Manupulation: | Pandas, Numpy, Regular Expression
-                    - Textual Data Processing: | SpaCy, NLTK, Gensim
+                    - | Data Manupulation: | Pandas, Numpy, Regular Expression |
+                    - | Textual Data Processing: | SpaCy, NLTK, Gensim| 
                     - Machine Learning and Deep Learning: | Pytorch, HuggingFace Transformers, Scikit-Learn, Keras
                     - Data Visualization: | Matplotlib, Seaborn, Tableau
 
-                - Algorithms and Models:
-                    - Neural Networks: | Recurrent Neural Networks (LSTM), Convolutional Neural Networks, Variational Autoencoder
-                    - NLP: | Word2Vector, BERT, Transformer, Latent Dirichlet Allocation
-                    - Regression: | Linear Regression, Hinge/Lasso Regression, Time series regression (ARIMA)
-                    - Classification: | Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-nearest Neighbors (KNN)
-                    - Dimension Reduction: | Principal Component Analysis (PCA), Singular Value Decomposition (SVD)
-                    - Clustering: | K-means, Hierarchical Clustering, DBSCAN
-                    - Emsembling techniques: | Bagging, Boosting, Stacking
+        - Algorithms and Models:
+            - Neural Networks: | Recurrent Neural Networks (LSTM), Convolutional Neural Networks, Variational Autoencoder
+            - NLP: | Word2Vector, BERT, Transformer, Latent Dirichlet Allocation
+            - Regression: | Linear Regression, Hinge/Lasso Regression, Time series regression (ARIMA)
+            - Classification: | Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-nearest Neighbors (KNN)
+            - Dimension Reduction: | Principal Component Analysis (PCA), Singular Value Decomposition (SVD)
+            - Clustering: | K-means, Hierarchical Clustering, DBSCAN
+            - Emsembling techniques: | Bagging, Boosting, Stacking
 
     - title: A Little More About Me
       layout: text # Type of content section (list/text)
-      content:
-          - Interests: Playing Guitar, feeding Cat
+      content:/ 
+          Interests: Playing Guitar, feeding Cat
 
 # Footer
 footer_show_references: true
