@@ -53,25 +53,30 @@ linkedin_username: weiyangds
 # about_title: About Me (Use this to override about section title)
 about_profile_image: images/wyang_img.jpg # Directory of profile image (eg. images/profile.jpg)
 about_content: | # this will include new lines to allow paragraphs
-    Data science candidate with a solid mathematical background and application experience in Natural Language Processing and Machine Learning. Enthusiastic with exploring innovative ways to deal with big data problems. With a never stop attitude, I am still striving forward on the way to becoming an expert in the data science field.
-    - Programming: Python (Pandas, Numpy, Matplotlib)
+    I am a recent graduate in the data science program who is equipped with a solid understanding of machine learning algorithms and python programming experience. I also am a person really enjoys solving technically challenging problems. Eagerness to solve and passion to summarize the understanding from this process enables me to have an in-depth understanding of whatever I touch. 
 
-    - Skills and Knowledge:
-        - Programming: Python (Pandas, Numpy, Matplotlib)
-        - Textual Data Processing: Python (NLTK, Regular Expression, Gensim)
-        - Machine Learning: Python (Scikit-Learn, Keras)
-        - Database: PostgreSQL, MySQL
-        - Tools: Jupyter Notebook, PyCharm, Git, Tableau, MS Excel
-        - Data Domain: Textual data, Web data, Time series, Sequential data
-        - Data Visualization: Python (Matplotlib, Seaborn), Tableau, MS Excel
-        - Business Analytics: Web Analytics, Social Network Analytics
+    I already got my EAD card and my OPT will start on Feb 14, 2022. I will be really glad to show my passion if there is a possible conversation with you.
+
+    - Stacks:
+        - Programming Language: Python, SQL, R, JavaScript, Shell Script
+        - Database: MongoDB, PostgreSQL, MySQL, SQL Server
+        - Tools: Git, AWS, Jupyter Notebook, Google Colab
+        - Operating Systems: Windows, UNIX/Linux, Mac OS X
+
+    - Python related packages:
+        - Data Manupulation: Pandas, Numpy, Regular Expression
+        - Textual Data Processing: SpaCy, NLTK, Gensim
+        - Machine Learning and Deep Learning: Pytorch, HuggingFace Transformers, Scikit-Learn, Keras
+        - Data Visualization: Matplotlib, Seaborn, Tableau
 
     - Algorithms/Models:
-        - Regression: Linear Regression, Logistic Regression, Time series regression (ARIMA)
-        - Classification: Support Vector Machine, Decision Tree, K-nearest neighbors (KNN)
+        - Regression: Linear Regression, Hinge/Lasso Regression, Time series regression (ARIMA)
+        - Classification: Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-nearest Neighbors (KNN)
         - Dimension Reduction: Principal Component Analysis (PCA), Singular Value Decomposition (SVD)
-        - Clustering: K-means
-        - Natural Language Processing: Latent Dirichlet Allocation, N-gram, Skip-gram, Recurrent Neural Network, Autoencoder, Convolutional Neural Networks (Feature extraction)
+        - Clustering: K-means, Hierarchical Clustering, DBSCAN
+        - Emsembling techniques: Bagging, Boosting, Stacking
+        - Neural Networks: Recurrent Neural Networks (LSTM), Convolutional Neural Networks, Variational Autoencoder, 
+        - NLP: Word2Vector, BERT, Transformer, Latent Dirichlet Allocation
 
 # Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
 
@@ -82,21 +87,68 @@ about_content: | # this will include new lines to allow paragraphs
 #   - Images ![alt text](/images/landscape-trees.jpg "Trees")
 
 content:
-    - title: Projects # Title for the section
-      layout: list # Type of content section (list/text)
+    - title: Experience
+      layout: list
       content:
           - layout: left
-            title: Information Extraction from Conference Call
+            title: Stevens Institute of Technology
+            sub_title: Research Assistant/Teaching Assistant, Deep Learning and Web Analytics
+            caption: June 2020 - December 2021
             link: https://github.com/InscribeDeeper/Conf_Call
             link_text: InscribeDeeper/Conf_Call
             quote: >
-                Short overview of the project (optional)
+                Focusing on language features pattern detection, data parsing and modeling.
             description: | # this will include new lines to allow paragraphs
-                - Performed data cleaning and validation procedures, implemented text analysis with SpaCy 
-                - Implemented workflow automation solutions to extract natural language features from conference transcripts
-                - Evaluated features effectiveness with manual labels, implemented regression with Cumulative Abnormal Return for reporting day of the conference call
+                - Parsed and structured 94,581 earnings call transcripts to explore factors influencing stock return 
+                - Measured sentence coherence based on POS-tagging, NER, and coreference resolution with SpaCy 
+                - Achieved 72% accuracy with Fine-tuned domain adapted BERT language model for text classification 
+                - Performed univariate features selection and panel regression on 96 extracted language features
+                - Offered after-school academic support to 3 students; partnered with a PhD student to guild 40 students on python related OS environment and packages setup; delivered tutorials of Pandas, NumPy, and related packages to implement deep learning models
 
           - layout: left
+            title: Stevens Institute of Technology
+            sub_title: Data Scientist Intern on Condo Book Data Collection
+            caption: June 2020 - December 2021
+            quote: >
+                Focusing on data scraping, parsing and modeling.
+            description: | # this will include new lines to allow paragraphs
+                - Scraped public real estate and taxation data from NYC.gov with Selenium and BeautifulSoup 
+                - Proposed OCR, NLP, and machine learning solutions to automate manual data collection processes 
+                - Achieved 90% straight-through processing by designed pipeline to tabulate data from scanned PDFs 
+                - Standardized 3,023 table headers for data integration with clustering algorithms and rule-based methods
+
+          - layout: left
+            title: 1lift
+            sub_title: Data Analyst Intern
+            caption: April 2019 - July 2019
+            quote: >
+                Gained hands-on experience on necessary tools
+            description: | # this will include new lines to allow paragraphs
+                - Built a cost analysis module for the application with Excel advanced functionalities
+                - Extracted structured data with MySQL, cleaned the unstructured textual data with Python
+                - Manipulated, visualized and presented the statistical results with Tableau Dashboard
+                - Explored regression models to provide a baseline of elevators' failure rate for the Operations Department
+
+    - title: Projects # Title for the section
+      layout: list # Type of content section (list/text)
+      content:
+          - layout: right
+            title: Quantify the AI impacts on Jobs skills
+            link: https://github.com/InscribeDeeper/Job-Descrpition-Feature-extraction
+            link_text: InscribeDeeper/Job-Descrpition-Feature-extraction
+            additional_links:
+                - title: InscribeDeeper/Job-Descrpition-Feature-extraction
+                  icon: fab fa-github
+                  url: https://github.com/InscribeDeeper/Job-Descrpition-Feature-extraction
+            quote: >
+                Develop a web application for furniture and rental information exchange
+            description: | # this will include new lines to allow paragraphs
+                - Led team of four students to design and develop a web application with Node.js and Express 
+                - Designed document schema on MongoDB and wrapped CRUD operations as RESTful APIs 
+                - Implemented Login and user-specific functions such as account signup and authentication system 
+                - Developed features for rental and furniture information exchange such as comments, search, dashboard
+
+          - layout: right
             title: Quantify the AI impacts on Jobs skills
             link: https://github.com/InscribeDeeper/Job-Descrpition-Feature-extraction
             link_text: InscribeDeeper/Job-Descrpition-Feature-extraction
@@ -111,7 +163,7 @@ content:
                 - Filtered noisy data by selecting clusters from K-means algorithm and visualized skillsets distribution
                 - Categorized, analyzed skillsets trend after Topic Modeling and Aspect Extraction Deep Neural Network
 
-          - layout: left
+          - layout: right
             title: Analysis on Factors Influencing Bitcoin
             link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
             link_text: InscribeDeeper/Tweets_sentiment_extraction
@@ -129,53 +181,22 @@ content:
                 - Delivered feature engineering for financial indicators like MACD and RSI etc
                 - Analyzed, finetuned, and back-tested for over five types of deep learning model to increase the portfolio return
 
-    - title: Experience
-      layout: list
-      content:
-          - layout: right
-            title: Stevens Institute of Technology
-            sub_title: Research Assistant
-            caption: June 2020 - Present
-            link: https://www.stevens.edu/
-            quote: >
-                Short description of the company (optional)
-            description: | # this will include new lines to allow paragraphs
-                - Delivered research and development work under the guidance of two professors
-                - Delievered research on <a href="https://github.com/InscribeDeeper/Conf_Call">Information Extraction from Conference Call</a>
-
-          - layout: right
-            title: 1lift Co
-            sub_title: Data Analyst Intern
-            caption: April 2019 - July 2019
-            link: https://www.1lift.cn/
-            quote: >
-                Short description of the company (optional)
-            description: | # this will include new lines to allow paragraphs
-                - Explored and cleaned unstructured textual data, improved data quality in database
-                - Manipulated structured data, visualized and presented statistical reports on Tableau Dashboard
-                - Developed cost analysis modules with Excel advanced functionalities for sales department
-
-
     - title: Education
       layout: list
       content:
           - layout: top-right
             title: Stevens Institute of Technology
             sub_title: MSc in Data Science (GPA 3.8/4.0) # (eg. BA Performing Arts)
-            caption: Expected Dec 2021
-            quote: >
-                Short institution or course description (optional)
+            caption: September 2019 - December 2021
             description: | # this will include new lines to allow paragraphs
-                Related coursework: Social Network Analysis, Web Mining, Data Management & Exploration on the Web, Natural Language Processing, Statistical Inference, Applications of Deep Learning, Applied Machine Learning, Database Management System I&II
+                Relevant Coursework: Statistical Methods, Statistical Inference, Advanced Data Analytics & Machine Learning, Deep Learning, Natural Language Processing, Database Management Systems, Web Programming, Data Structures & Algorithms
 
           - layout: top-right
             title: Guangzhou University
             sub_title: BSc in Applied Mathematics # (eg. BA Performing Arts)
-            caption: 2014-2018
-            quote: >
-                Short institution or course description (optional)
+            caption: September 2014 - December 2018
             description: | # this will include new lines to allow paragraphs
-                Related coursework: Social Network Analysis, Web Mining, Data Management & Exploration on the Web, Natural Language Processing, Statistical Inference, Applications of Deep Learning, Applied Machine Learning, Database Management System I&II
+                Relevant Coursework: Probability and Mathematical Statistics, Operational Research, Numerical Analysis, Advanced Algebra, Mathematical Analysis, Real Function Theory, Functional analysis, Ordinary Differential Equations, Partial Differential Equations
 
     - title: A Little More About Me
       layout: text
