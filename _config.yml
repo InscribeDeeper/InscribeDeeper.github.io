@@ -60,8 +60,8 @@ about_content: | # this will include new lines to allow paragraphs
     - Stacks:
         - Programming Language: | Python, SQL, R, JavaScript, Shell Script
         - Database: | MongoDB, PostgreSQL, MySQL, SQL Server
-        - Tools: | Git, AWS, Jupyter Notebook, Google Colab||
-        - Operating Systems: | Windows, UNIX/Linux, Mac OS X||
+        - Tools: | Git, AWS, Jupyter Notebook, Google Colab
+        - Operating Systems: | Windows, UNIX/Linux, Mac OS X
 
     - Python related packages:
         - Data Manupulation: | Pandas, Numpy, Regular Expression
@@ -70,13 +70,13 @@ about_content: | # this will include new lines to allow paragraphs
         - Data Visualization: | Matplotlib, Seaborn, Tableau
 
     - Algorithms/Models:
-        - Regression: [Linear Regression, Hinge/Lasso Regression, Time series regression (ARIMA)]
-        - Classification: [Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-nearest Neighbors (KNN)]
-        - Dimension Reduction: Principal Component Analysis (PCA), Singular Value Decomposition (SVD)
-        - Clustering: K-means, Hierarchical Clustering, DBSCAN
-        - Emsembling techniques: Bagging, Boosting, Stacking
-        - Neural Networks: Recurrent Neural Networks (LSTM), Convolutional Neural Networks, Variational Autoencoder, 
-        - NLP: Word2Vector, BERT, Transformer, Latent Dirichlet Allocation
+        - Regression: | Linear Regression, Hinge/Lasso Regression, Time series regression (ARIMA)
+        - Classification: | Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-nearest Neighbors (KNN)
+        - Dimension Reduction: | Principal Component Analysis (PCA), Singular Value Decomposition (SVD)
+        - Clustering: | K-means, Hierarchical Clustering, DBSCAN
+        - Emsembling techniques: | Bagging, Boosting, Stacking
+        - Neural Networks: | Recurrent Neural Networks (LSTM), Convolutional Neural Networks, Variational Autoencoder
+        - NLP: | Word2Vector, BERT, Transformer, Latent Dirichlet Allocation
 
 # Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
 
@@ -97,7 +97,7 @@ content:
             link: https://github.com/InscribeDeeper/Conf_Call
             link_text: InscribeDeeper/Conf_Call
             quote: >
-                Focusing on language features pattern detection, data parsing and modeling.
+                Language features pattern detection with Deep Learning models, data parsing and statistics modeling
             description: | # this will include new lines to allow paragraphs
                 - Parsed and structured 94,581 earnings call transcripts to explore factors influencing stock return 
                 - Measured sentence coherence based on POS-tagging, NER, and coreference resolution with SpaCy 
@@ -110,7 +110,7 @@ content:
             sub_title: Data Scientist Intern on Condo Book Data Collection
             caption: June 2020 - December 2021
             quote: >
-                Focusing on data scraping, parsing and modeling.
+                Data scraping, Parsing and information extraction, Clustering modeling
             description: | # this will include new lines to allow paragraphs
                 - Scraped public real estate and taxation data from NYC.gov with Selenium and BeautifulSoup 
                 - Proposed OCR, NLP, and machine learning solutions to automate manual data collection processes 
@@ -122,7 +122,7 @@ content:
             sub_title: Data Analyst Intern
             caption: April 2019 - July 2019
             quote: >
-                Gained hands-on experience on necessary tools
+                Gain hands-on experience on necessary tools and understanding of develop environment
             description: | # this will include new lines to allow paragraphs
                 - Built a cost analysis module for the application with Excel advanced functionalities
                 - Extracted structured data with MySQL, cleaned the unstructured textual data with Python
