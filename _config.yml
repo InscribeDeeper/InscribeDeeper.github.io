@@ -133,13 +133,13 @@ content:
       layout: list # Type of content section (list/text)
       content:
           - layout: right
-            title: Quantify the AI impacts on Jobs skills
-            link: https://github.com/InscribeDeeper/Job-Descrpition-Feature-extraction
-            link_text: InscribeDeeper/Job-Descrpition-Feature-extraction
+            title: MyPlace Web Development
+            link: https://github.com/InscribeDeeper/MyPlace
+            link_text: InscribeDeeper/MyPlace
             additional_links:
-                - title: InscribeDeeper/Job-Descrpition-Feature-extraction
+                - title: InscribeDeeper/MyPlace
                   icon: fab fa-github
-                  url: https://github.com/InscribeDeeper/Job-Descrpition-Feature-extraction
+                  url: https://github.com/InscribeDeeper/MyPlace
             quote: >
                 Develop a web application for furniture and rental information exchange
             description: | # this will include new lines to allow paragraphs
@@ -147,6 +147,32 @@ content:
                 - Designed document schema on MongoDB and wrapped CRUD operations as RESTful APIs 
                 - Implemented Login and user-specific functions such as account signup and authentication system 
                 - Developed features for rental and furniture information exchange such as comments, search, dashboard
+
+          - layout: right
+            title: E-commerce Recommender System
+            link: https://github.com/InscribeDeeper/Recommender_Sys
+            link_text: InscribeDeeper/Recommender_Sys
+            additional_links:
+                - title: InscribeDeeper/Recommender_Sys
+                  icon: fab fa-github
+                  url: https://github.com/InscribeDeeper/Recommender_Sys
+            quote: >
+                Develop a web application for furniture and rental information exchange
+            description: | # this will include new lines to allow paragraphs
+                - Created and implemented recommender engine with users, items, and interaction records from JD.com 
+                - Integrated multiple memory-based and model-based collaborative filtering to make recommendations 
+                - Simulated on 7,000 pre-defined user-item interaction samples and attained 77% Top-10 Accuracy
+
+          - layout: right
+            title: Fintech Pitch Competition - 6th Position
+            link: https://www.ubs.com/microsites/the-university-innovation-challenge/en/home.html
+            link_text: Competition Description
+            quote: >
+                Develop a mathematical model based on public data and metrics to measure and predict the vibrancy of the city in the U.S.
+            description: | # this will include new lines to allow paragraphs
+                - Constructed a vibrancy index to interpret and predict the prosperity trend of cities in the U.S. 
+                - Explored and collected data from Google POIs, Instagram, Zillow, Bureau of Labor Statistics with APIs 
+                - Performed data imputing and feature engineering on time series, and trained multi-layer LSTM networks
 
           - layout: right
             title: Quantify the AI impacts on Jobs skills
@@ -200,10 +226,8 @@ content:
 
     - title: A Little More About Me
       layout: text
-      content: | # this will include new lines to allow paragraphs
-          This is where you can write a little more about yourself. You could title this section **Interests** and include some of your other interests.
-
-          Or you could title it **Skills** and write a bit more about things that make you more desirable, like *leadership* or *teamwork*
+      content:
+          Interests: Playing Guitar, feeding Cat
 
 # Footer
 footer_show_references: true
