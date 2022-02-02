@@ -84,12 +84,11 @@ content:
             quote: >
                 Language features pattern detection with Deep Learning models, data parsing and statistics modeling
             description: | # this will include new lines to allow paragraphs
-                - Parsed and structured 94,581 earnings call transcripts to explore factors influencing stock return 
-                - Measured sentence coherence based on POS-tagging, NER, and coreference resolution with SpaCy 
-                - Achieved 72% accuracy with Fine-tuned domain adapted BERT language model for text classification 
-                - Performed univariate features selection and panel regression on 96 extracted language features
-                - Offered after-school academic support to 3 students; partnered with a PhD student to guild 40 students on python related OS environment and packages setup; delivered tutorials of Pandas, NumPy, and related packages to implement deep learning models
-
+                - Parsed and structured 94,581 earnings call transcripts to explore 96 language factors influencing stock return
+                - Achieved 72% accuracy on text classification with Fine-tuned domain adapted BERT language model using Pytorch
+                - Delivered text analysis, sentiment analysis, and text mining with NLP techniques using SpaCy and NLTK
+                - Setupped and maintained remote GPU server for Machine Learning and Deep Learning on Ubuntu
+                - Partnered with a Ph.D. student to guild 40 students on Python-related OS environment and packages setup; delivered tutorials of Pandas, NumPy, and related packages to implement deep learning models
           - layout: left
             title: GardenStar Group
             sub_title: Data Scientist Intern on Condo Book Data Collection
@@ -203,7 +202,7 @@ content:
 
           - layout: top-right
             title: Guangzhou University
-            sub_title: BSc in Applied Mathematics # (eg. BA Performing Arts)
+            sub_title: BSc in Mathematics and Applied Mathematics # (eg. BA Performing Arts)
             caption: September 2014 - December 2018
             description: | # this will include new lines to allow paragraphs
                 Relevant Coursework: Probability and Mathematical Statistics, Operational Research, Numerical Analysis, Advanced Algebra, Mathematical Analysis, Real Function Theory, Functional analysis, Ordinary Differential Equations, Partial Differential Equations
