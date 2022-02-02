@@ -113,10 +113,31 @@ content:
                 - Manipulated, visualized and presented the statistical results with Tableau Dashboard
                 - Explored regression models to provide a baseline of elevators' failure rate for the Operations Department
 
+    - title: Education
+      layout: list
+      content:
+          - layout: right
+            title: Stevens Institute of Technology
+            sub_title: MSc in Data Science (GPA 3.8/4.0) # (eg. BA Performing Arts)
+            caption: September 2019 - December 2021
+            description: | # this will include new lines to allow paragraphs
+                **Relevant Coursework**: Statistical Methods, Statistical Inference, Advanced Data Analytics & Machine Learning, Deep Learning, Natural Language Processing, Database Management Systems, Web Programming, Data Structures & Algorithms
+
+                **Scholarship**: Provost's Scholarship, 2019
+
+          - layout: right
+            title: Guangzhou University
+            sub_title: BSc in Mathematics and Applied Mathematics # (eg. BA Performing Arts)
+            caption: September 2014 - May 2018
+            description: | # this will include new lines to allow paragraphs
+                **Relevant Coursework**: Probability and Mathematical Statistics, Operational Research, Numerical Analysis, Advanced Algebra, Mathematical Analysis, Real Function Theory, Functional analysis, Ordinary Differential Equations, Partial Differential Equations
+
+                **Awards**: Second prize (out of 25,558 teams) in National Mathematical Modeling Contest, 2015
+
     - title: Projects # Title for the section
       layout: list # Type of content section (list/text)
       content:
-          - layout: right
+          - layout: left
             title: MyPlace Web Development
             # link: https://github.com/InscribeDeeper/MyPlace
             # link_text: InscribeDeeper/MyPlace
@@ -132,7 +153,7 @@ content:
                 - Implemented Login and user-specific functions such as account signup and authentication system 
                 - Developed features for rental and furniture information exchange such as comments, search, dashboard
 
-          - layout: right
+          - layout: left
             title: E-commerce Recommender System
             # link: https://github.com/InscribeDeeper/Recommender_Sys
             # link_text: InscribeDeeper/Recommender_Sys
@@ -147,7 +168,7 @@ content:
                 - Integrated multiple memory-based and model-based collaborative filtering to make recommendations 
                 - Simulated on 7,000 pre-defined user-item interaction samples and attained 77% Top-10 Accuracy
 
-          - layout: right
+          - layout: left
             title: Fintech Pitch Competition - 6th Position
             # link: https://www.ubs.com/microsites/the-university-innovation-challenge/en/home.html
             # link_text: Competition Description
@@ -158,7 +179,7 @@ content:
                 - Explored and collected data from Google POIs, Instagram, Zillow, Bureau of Labor Statistics with APIs 
                 - Performed data imputing and feature engineering on time series, and trained multi-layer LSTM networks
 
-          - layout: right
+          - layout: left
             title: Quantify the AI impacts on Jobs skills
             # link: https://github.com/InscribeDeeper/Job-Descrpition-Feature-extraction
             # link_text: InscribeDeeper/Job-Descrpition-Feature-extraction
@@ -173,7 +194,7 @@ content:
                 - Filtered noisy data by selecting clusters from K-means algorithm and visualized skillsets distribution
                 - Categorized, analyzed skillsets trend after Topic Modeling and Aspect Extraction Deep Neural Network
 
-          - layout: right
+          - layout: left
             title: Analysis on Factors Influencing Bitcoin
             # link: https://github.com/InscribeDeeper/Tweets_sentiment_extraction
             # link_text: InscribeDeeper/Tweets_sentiment_extraction
@@ -188,27 +209,6 @@ content:
                 - Delivered feature engineering for financial indicators like MACD and RSI etc
                 - Analyzed, finetuned, and back-tested for over five types of deep learning model to increase the portfolio return
 
-    - title: Education
-      layout: list
-      content:
-          - layout: top-right
-            title: Stevens Institute of Technology
-            sub_title: MSc in Data Science (GPA 3.8/4.0) # (eg. BA Performing Arts)
-            caption: September 2019 - December 2021
-            description: | # this will include new lines to allow paragraphs
-                **Relevant Coursework**: Statistical Methods, Statistical Inference, Advanced Data Analytics & Machine Learning, Deep Learning, Natural Language Processing, Database Management Systems, Web Programming, Data Structures & Algorithms
-
-                **Scholarship**: Provost's Scholarship, 2019
-
-          - layout: top-right
-            title: Guangzhou University
-            sub_title: BSc in Mathematics and Applied Mathematics # (eg. BA Performing Arts)
-            caption: September 2014 - December 2018
-            description: | # this will include new lines to allow paragraphs
-                **Relevant Coursework**: Probability and Mathematical Statistics, Operational Research, Numerical Analysis, Advanced Algebra, Mathematical Analysis, Real Function Theory, Functional analysis, Ordinary Differential Equations, Partial Differential Equations
-
-                **Awards**: Second prize (out of 25,558 teams) in National Mathematical Modeling Contest, 2015
-
     - title: Familiar Python Packages
       layout: text
       content: |
@@ -216,7 +216,7 @@ content:
           | ---- | ---- | ---- | ---- | ---- | ---- |
           | Selenium, BeautifulSoup | Pandas, Numpy, Regular Expression | SpaCy, NLTK, Gensim | Pytorch, HuggingFace Transformers, Scikit-Learn, Keras | Matplotlib, Seaborn |
 
-    - title: AI knowledge base
+    - title: Modeling Knowledge Base
       layout: text
       content: |
           | Neural Networks | NLP | Regression | Classification | Dimension Reduction | Clustering | Emsembling techniques|
