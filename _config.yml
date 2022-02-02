@@ -85,7 +85,7 @@ content:
                 Language features pattern detection with Deep Learning models, data parsing and statistics modeling
             description: | # this will include new lines to allow paragraphs
                 - Parsed and structured 94,581 earnings call transcripts to explore 96 language factors influencing stock return
-                - Achieved 72% accuracy on text classification with Fine-tuned domain adapted BERT language model using Pytorch
+                - Achieved 72% accuracy on text classification with domain adapted BERT language model using Pytorch
                 - Delivered text analysis, sentiment analysis, and text mining with NLP techniques using SpaCy and NLTK
                 - Setupped and maintained remote GPU server for Machine Learning and Deep Learning on Ubuntu
                 - Partnered with a Ph.D. student to guild 40 students on Python-related OS environment and packages setup; delivered tutorials of Pandas, NumPy, and related packages to implement deep learning models
@@ -196,52 +196,56 @@ content:
             sub_title: MSc in Data Science (GPA 3.8/4.0) # (eg. BA Performing Arts)
             caption: September 2019 - December 2021
             description: | # this will include new lines to allow paragraphs
-                Relevant Coursework: Statistical Methods, Statistical Inference, Advanced Data Analytics & Machine Learning, Deep Learning, Natural Language Processing, Database Management Systems, Web Programming, Data Structures & Algorithms
-                
-                Scholarship: Provost's Scholarship, 2019
+                **Relevant Coursework**: Statistical Methods, Statistical Inference, Advanced Data Analytics & Machine Learning, Deep Learning, Natural Language Processing, Database Management Systems, Web Programming, Data Structures & Algorithms
+
+                **Scholarship**: Provost's Scholarship, 2019
 
           - layout: top-right
             title: Guangzhou University
             sub_title: BSc in Mathematics and Applied Mathematics # (eg. BA Performing Arts)
             caption: September 2014 - December 2018
             description: | # this will include new lines to allow paragraphs
-                Relevant Coursework: Probability and Mathematical Statistics, Operational Research, Numerical Analysis, Advanced Algebra, Mathematical Analysis, Real Function Theory, Functional analysis, Ordinary Differential Equations, Partial Differential Equations
+                **Relevant Coursework**: Probability and Mathematical Statistics, Operational Research, Numerical Analysis, Advanced Algebra, Mathematical Analysis, Real Function Theory, Functional analysis, Ordinary Differential Equations, Partial Differential Equations
 
-                Awards: Second prize (out of 25,558 teams) in National Mathematical Modeling Contest, 2015
+                **Awards**: Second prize (out of 25,558 teams) in National Mathematical Modeling Contest, 2015
 
-    - title: A Little More About Me
+    - title: Familiar Python Packages
       layout: text
-      content: /
-            | Data Manupulation | Textual Data Processing | Machine Learning and Deep Learning | Data Visualization | Neural Networks | NLP | Regression | Classification | Dimension Reduction | Clustering | Emsembling techniques|
-            ------------------------------------------------------------------
-            | Pandas, Numpy, Regular Expression | SpaCy, NLTK, Gensim | Pytorch, HuggingFace Transformers, Scikit-Learn, Keras | Matplotlib, Seaborn, Tableau | Recurrent Neural Networks (LSTM), Convolutional Neural Networks, Variational Autoencoder | Word2Vector, BERT, Transformer, Latent Dirichlet Allocation | Linear Regression, Hinge/Lasso Regression, Time series regression (ARIMA) | Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-nearest Neighbors (KNN) | Principal Component Analysis (PCA), Singular Value Decomposition (SVD) | K-means, Hierarchical Clustering, DBSCAN | Bagging, Boosting, Stacking|
-    
-    
-    - title: A Little More About Me
-      layout: text
-      content:
-          - layout: mid
-            description: | # this will include new lines to allow paragraphs
-                - Python related packages: 
-                    - | Data Manupulation: | Pandas, Numpy, Regular Expression |
-                    - | Textual Data Processing: | SpaCy, NLTK, Gensim| 
-                    - Machine Learning and Deep Learning: | Pytorch, HuggingFace Transformers, Scikit-Learn, Keras
-                    - Data Visualization: | Matplotlib, Seaborn, Tableau
+      content: |
+                | Data Manupulation | Textual Data Processing | Machine Learning and Deep Learning | Data Visualization | 
+                | ---- | ---- | ---- | ---- | ---- |
+                | Pandas, Numpy, Regular Expression | SpaCy, NLTK, Gensim | Pytorch, HuggingFace Transformers, Scikit-Learn, Keras | Matplotlib, Seaborn, Tableau |
 
-        - Algorithms and Models:
-            - Neural Networks: | Recurrent Neural Networks (LSTM), Convolutional Neural Networks, Variational Autoencoder
-            - NLP: | Word2Vector, BERT, Transformer, Latent Dirichlet Allocation
-            - Regression: | Linear Regression, Hinge/Lasso Regression, Time series regression (ARIMA)
-            - Classification: | Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-nearest Neighbors (KNN)
-            - Dimension Reduction: | Principal Component Analysis (PCA), Singular Value Decomposition (SVD)
-            - Clustering: | K-means, Hierarchical Clustering, DBSCAN
-            - Emsembling techniques: | Bagging, Boosting, Stacking
+    - title: Familiar Python Packages
+      layout: text
+      content: |
+                | Neural Networks | NLP | Regression | Classification | Dimension Reduction | Clustering | Emsembling techniques|
+                | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+                | Recurrent Neural Networks(LSTM), Convolutional Neural Networks, Variational Autoencoder | Word2Vector, BERT, Transformer, Latent Dirichlet Allocation | Linear Regression, Hinge/Lasso Regression, Time series regression(ARIMA) | Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-nearest Neighbors(KNN) | Principal Component Analysis(PCA), Singular Value Decomposition(SVD) | K-means, Hierarchical Clustering, DBSCAN | Bagging, Boosting, Stacking|
+
+    # - title: A Little More About Me
+    #   layout: text
+    #   content:
+    #       - layout: mid
+    #         description: | # this will include new lines to allow paragraphs
+    #             - Python related packages:
+    #                 - | Data Manupulation: | Pandas, Numpy, Regular Expression |
+    #                 - | Textual Data Processing: | SpaCy, NLTK, Gensim|
+    #                 - Machine Learning and Deep Learning: | Pytorch, HuggingFace Transformers, Scikit-Learn, Keras
+    #                 - Data Visualization: | Matplotlib, Seaborn, Tableau
+
+    #             - Algorithms and Models:
+    #                 - Neural Networks: | Recurrent Neural Networks (LSTM), Convolutional Neural Networks, Variational Autoencoder
+    #                 - NLP: | Word2Vector, BERT, Transformer, Latent Dirichlet Allocation
+    #                 - Regression: | Linear Regression, Hinge/Lasso Regression, Time series regression (ARIMA)
+    #                 - Classification: | Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-nearest Neighbors (KNN)
+    #                 - Dimension Reduction: | Principal Component Analysis (PCA), Singular Value Decomposition (SVD)
+    #                 - Clustering: | K-means, Hierarchical Clustering, DBSCAN
+    #                 - Emsembling techniques: | Bagging, Boosting, Stacking
 
     - title: A Little More About Me
       layout: text # Type of content section (list/text)
-      content:/ 
-          Interests: Playing Guitar, feeding Cat
-
+      content: Interests: Playing Guitar, feeding Cat
 
 # Footer
 footer_show_references: true
