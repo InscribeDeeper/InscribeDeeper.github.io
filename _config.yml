@@ -53,10 +53,7 @@ linkedin_username: weiyangds
 # about_title: About Me (Use this to override about section title)
 about_profile_image: images/wyang_img.jpg # Directory of profile image (eg. images/profile.jpg)
 about_content: | # this will include new lines to allow paragraphs
-    My experience has instilled in me a strong desire to solve difficult challenges with innovative data-driven solutions. I'm 
-    enthusiastic about projects that benefit the community, and I'm eager to assist businesses in developing better products by 
-    using data to derive insights. Currently, I have graduated with my Masters's in Data Science and have gained project and 
-    research experience. My first year OPT starts on Feb 14, 2022.
+    My experience has instilled in me a strong desire to solve difficult challenges with innovative data-driven solutions. I'm enthusiastic about projects that benefit the community, and I'm eager to assist businesses in developing better products by using data to derive insights. Currently, I have graduated with my Masters's in Data Science and have gained project and research experience. My first year OPT starts on Feb 14, 2022.
 
     Stacks:
     - Programming Language: Python, SQL, R, JavaScript, Shell Script
@@ -91,7 +88,7 @@ content:
                 - Setupped and maintained remote GPU server for Machine Learning and Deep Learning on Ubuntu 
                 - Delivered tutorials of Pandas, NumPy, and related Python packages to implement deep learning models
 
-        - layout: left
+          - layout: left
             title: GardenStar Group
             sub_title: Data Scientist Intern on Condo Book Data Collection
             caption: June 2020 - December 2021
@@ -102,7 +99,7 @@ content:
                 - Achieved 90% straight-through processing by designed pipeline to tabulate data from 200GB scanned PDFs 
                 - Improved data quality by standardizing 3,023 table headers with clustering algorithms and rule-based methods 
                 - Scraped public real estate and taxation data from NYC.gov with Selenium and BeautifulSoup
-                
+
           - layout: left
             title: 1lift
             sub_title: Data Analyst Intern
@@ -180,7 +177,7 @@ content:
                 - Constructed a vibrancy index to interpret and predict the prosperity trend of cities in the U.S. 
                 - Explored, collected, and blended data from Google POIs, Instagram, Zillow, Bureau of Labor Statistics with Pandas 
                 - Performed feature engineering on panel data, and fine-tuned models for prediction with XGBoost and Keras
-                
+
           - layout: left
             title: Quantify the AI impacts on Jobs skills
             # link: https://github.com/InscribeDeeper/Job-Descrpition-Feature-extraction
