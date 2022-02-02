@@ -60,7 +60,7 @@ about_content: | # this will include new lines to allow paragraphs
     Stacks:
     - Programming Language: Python, SQL, R, JavaScript, Shell Script
     - Database: MongoDB, PostgreSQL, MySQL, SQL Server
-    - Tools: Git, AWS, Jupyter Notebook, Google Colab
+    - Tools: Git, AWS, Jupyter Notebook, Google Colab, Tableau
     - Operating Systems: Windows, UNIX/Linux, Mac OS X
 
 # Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
@@ -87,7 +87,7 @@ content:
                 - Parsed and structured 94,581 earnings call transcripts to explore 96 language factors influencing stock return
                 - Achieved 72% accuracy on text classification with domain adapted BERT language model using Pytorch
                 - Delivered text analysis, sentiment analysis, and text mining with NLP techniques using SpaCy and NLTK
-                - Setupped and maintained remote GPU server for Machine Learning and Deep Learning on Ubuntu
+                - Setupped and maintained remote GPU server for Machine Learning and Deep Learning on linux system
                 - Partnered with a Ph.D. student to guild 40 students on Python-related OS environment and packages setup; delivered tutorials of Pandas, NumPy, and related packages to implement deep learning models
           - layout: left
             title: GardenStar Group
@@ -212,9 +212,9 @@ content:
     - title: Familiar Python Packages
       layout: text
       content: |
-          | Data Manupulation | Textual Data Processing | Machine Learning and Deep Learning | Data Visualization | Data Scraping |
+          |  Data Scraping | Data Manupulation | Textual Data Processing | Machine Learning and Deep Learning | Data Visualization |
           | ---- | ---- | ---- | ---- | ---- | ---- |
-          | Pandas, Numpy, Regular Expression | SpaCy, NLTK, Gensim | Pytorch, HuggingFace Transformers, Scikit-Learn, Keras | Matplotlib, Seaborn, Tableau | Selenium, BeautifulSoup |
+          | Selenium, BeautifulSoup | Pandas, Numpy, Regular Expression | SpaCy, NLTK, Gensim | Pytorch, HuggingFace Transformers, Scikit-Learn, Keras | Matplotlib, Seaborn |
 
     - title: AI knowledge base
       layout: text
@@ -249,7 +249,7 @@ content:
 
 # Footer
 footer_show_references: true
-# references_title: References on request (Override references text)
+references_title: 551 260 0541
 
 # Build settings
 # theme: modern-resume-theme (Use this is you are hosting your resume yourself)
