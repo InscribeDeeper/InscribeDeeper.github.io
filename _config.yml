@@ -212,16 +212,16 @@ content:
     - title: Familiar Python Packages
       layout: text
       content: |
-                | Data Manupulation | Textual Data Processing | Machine Learning and Deep Learning | Data Visualization | 
-                | ---- | ---- | ---- | ---- | ---- |
-                | Pandas, Numpy, Regular Expression | SpaCy, NLTK, Gensim | Pytorch, HuggingFace Transformers, Scikit-Learn, Keras | Matplotlib, Seaborn, Tableau |
+          | Data Manupulation | Textual Data Processing | Machine Learning and Deep Learning | Data Visualization | Data Scraping |
+          | ---- | ---- | ---- | ---- | ---- | ---- |
+          | Pandas, Numpy, Regular Expression | SpaCy, NLTK, Gensim | Pytorch, HuggingFace Transformers, Scikit-Learn, Keras | Matplotlib, Seaborn, Tableau | Selenium, BeautifulSoup |
 
-    - title: Familiar Python Packages
+    - title: AI knowledge base
       layout: text
       content: |
-                | Neural Networks | NLP | Regression | Classification | Dimension Reduction | Clustering | Emsembling techniques|
-                | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-                | Recurrent Neural Networks(LSTM), Convolutional Neural Networks, Variational Autoencoder | Word2Vector, BERT, Transformer, Latent Dirichlet Allocation | Linear Regression, Hinge/Lasso Regression, Time series regression(ARIMA) | Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-nearest Neighbors(KNN) | Principal Component Analysis(PCA), Singular Value Decomposition(SVD) | K-means, Hierarchical Clustering, DBSCAN | Bagging, Boosting, Stacking|
+          | Neural Networks | NLP | Regression | Classification | Dimension Reduction | Clustering | Emsembling techniques|
+          | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+          | Recurrent Neural Networks(LSTM), Convolutional Neural Networks, Variational Autoencoder | Word2Vector, BERT, Transformer, Latent Dirichlet Allocation | Linear Regression, Hinge/Lasso Regression, Time series regression(ARIMA) | Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-nearest Neighbors(KNN) | Principal Component Analysis(PCA), Singular Value Decomposition(SVD) | K-means, Hierarchical Clustering, DBSCAN | Bagging, Boosting, Stacking|
 
     # - title: A Little More About Me
     #   layout: text
@@ -245,7 +245,7 @@ content:
 
     - title: A Little More About Me
       layout: text # Type of content section (list/text)
-      content: Interests: Playing Guitar, feeding Cat
+      content: I love playing Guitar, feeding my Cat
 
 # Footer
 footer_show_references: true
