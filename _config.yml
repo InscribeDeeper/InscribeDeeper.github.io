@@ -120,7 +120,7 @@ content:
             sub_title: MSc in Data Science (GPA 3.8/4.0) # (eg. BA Performing Arts)
             caption: September 2019 - December 2021
             description: | # this will include new lines to allow paragraphs
-                **Relevant Coursework**: Statistical Methods, Statistical Inference, Advanced Data Analytics & Machine Learning, Deep Learning, Natural Language Processing, Database Management Systems, Web Programming, Data Structures & Algorithms
+                **Relevant Coursework**: Statistical Methods, Statistical Inference, Advanced Optimization Methods, Advanced Data Analytics & Machine Learning, Deep Learning, Natural Language Processing, Web Analytics, Database Management Systems, Web Programming, Data Structures & Algorithms
 
                 **Scholarship**: Provost's Scholarship, 2019
 
