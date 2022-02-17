@@ -95,7 +95,7 @@ content:
             quote: >
                 Data scraping, Parsing and information extraction, Clustering modeling
             description: | # this will include new lines to allow paragraphs
-                - Proposed OCR, NLP, and machine learning solutions to automate manual data collection processes with Python 
+                - Proposed OCR, NLP, and machine learning solutions to automate manual data collection processes with Python and ABBYY
                 - Achieved 90% straight-through processing by designed pipeline to tabulate data from 200GB scanned PDFs 
                 - Improved data quality by standardizing 3,023 table headers with clustering algorithms and rule-based methods 
                 - Scraped public real estate and taxation data from NYC.gov with Selenium and BeautifulSoup
