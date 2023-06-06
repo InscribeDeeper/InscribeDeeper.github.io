@@ -74,6 +74,18 @@ content:
       layout: list
       content:
           - layout: left
+            title: PiSrc
+            sub_title: Full Stack Software Engineer
+            caption: February 2022 - Present
+            quote: >
+                Gain hands-on experience on software development and data pipeline implementation 
+            description: | # this will include new lines to allow paragraphs
+                - Optimizing and evaluating elastic and semantic search with vector databases
+                - Tailored AEM components for questionnaire, including category support and comprehensive reporting
+                - Integrated 7 MuleSoft APIs to facilitate seamless delta update ingestion into Lucidworks Fusion
+                - Developed data pipelines for batch processing and modeling of user web interactions, driving user classification and personalized experiences
+                
+          - layout: left
             title: Stevens Institute of Technology
             sub_title: Research Assistant/Teaching Assistant, Deep Learning and Web Analytics
             caption: June 2020 - December 2021
@@ -89,18 +101,6 @@ content:
                 - Delivered tutorials of Pandas, NumPy, and related Python packages to implement deep learning models
 
           - layout: left
-            title: GardenStar Group
-            sub_title: Data Scientist Intern on Condo Book Data Collection
-            caption: June 2020 - December 2021
-            quote: >
-                Data scraping, Parsing and information extraction, Clustering modeling
-            description: | # this will include new lines to allow paragraphs
-                - Proposed OCR, NLP, and machine learning solutions to automate manual data collection processes with Python and ABBYY
-                - Achieved 90% straight-through processing by designed pipeline to tabulate data from 200GB scanned PDFs 
-                - Improved data quality by standardizing 3,023 table headers with clustering algorithms and rule-based methods 
-                - Scraped public real estate and taxation data from NYC.gov with Selenium and BeautifulSoup
-
-          - layout: left
             title: 1lift
             sub_title: Data Analyst Intern
             caption: April 2019 - July 2019
@@ -111,7 +111,6 @@ content:
                 - Extracted structured data with MySQL, cleaned the unstructured textual data with Python
                 - Manipulated, visualized and presented the statistical results with Tableau Dashboard
                 - Explored regression models to provide a baseline of elevators' failure rate for the Operations Department
-
     - title: Education
       layout: list
       content:
