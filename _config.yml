@@ -56,10 +56,10 @@ about_content: | # this will include new lines to allow paragraphs
     My experience has instilled in me a strong desire to solve difficult challenges with innovative data-driven solutions. I'm enthusiastic about projects that benefit the community, and I'm eager to assist businesses in developing better products by using data to derive insights. 
 
     Stacks:
-    - Programming Language: Python, SQL, R, JavaScript, Shell Script
-    - Database: MongoDB, PostgreSQL, MySQL, SQL Server
-    - Tools: Git, AWS, Jupyter Notebook, Google Colab, Tableau
-    - Operating Systems: Windows, UNIX/Linux, Mac OS X
+    - Programming Languages: Python, Java, JavaScript, Shell Script, SQL 
+    - Database Management Tools: PostgreSQL, MySQL, Microsoft SQL Server, MongoDB, Weaviate 
+    - Technology: Adobe Experience Manager (AEM), Git, MuleSoft, Docker, AWS, Jupyter Notebook, Tableau  
+    - Python Packages: Pandas, NumPy, Re, Scikit-learn, Pytorch, Transformers, SpaCy, Gensim, NLTK, Selenium
 
 # Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
 
@@ -97,11 +97,11 @@ content:
                 Language features pattern detection with Deep Learning models, data parsing and statistics modeling
             description: | # this will include new lines to allow paragraphs
                 - Cleaned and structured 94,581 earnings call transcripts to explore 96 language factors influencing stock return 
-                - Achieved 72% accuracy on text classification with domain adapted BERT language model using Pytorch 
-                - Delivered text analysis, sentiment analysis, and text mining with NLP techniques using SpaCy and NLTK 
-                - Setupped and maintained remote GPU server for Machine Learning and Deep Learning on Ubuntu 
-                - Delivered tutorials of Pandas, NumPy, and related Python packages to implement deep learning models
-
+                - Achieved 72% accuracy on text classification with domain-adapted BERT language model using Pytorch 
+                - Conducted text analysis, sentiment analysis, and text mining utilizing NLP techniques with SpaCy and NLTK 
+                - Set up and maintained remote GPU on Ubuntu for Machine Learning and Deep Learning tasks 
+                - Developed tutorials on implementing deep learning models using related Python packages
+                
           - layout: left
             title: 1lift
             sub_title: Data Analyst Intern
