@@ -53,7 +53,7 @@ linkedin_username: weiyangds
 # about_title: About Me (Use this to override about section title)
 about_profile_image: images/wyang_img.jpg # Directory of profile image (eg. images/profile.jpg)
 about_content: | # this will include new lines to allow paragraphs
-    My experience has instilled in me a strong desire to solve difficult challenges with innovative data-driven solutions. I'm enthusiastic about projects that benefit the community, and I'm eager to assist businesses in developing better products by using data to derive insights. Currently, I have graduated with my Masters's in Data Science and have gained project and research experience. My first year OPT starts on Feb 14, 2022.
+    My experience has instilled in me a strong desire to solve difficult challenges with innovative data-driven solutions. I'm enthusiastic about projects that benefit the community, and I'm eager to assist businesses in developing better products by using data to derive insights. 
 
     Stacks:
     - Programming Language: Python, SQL, R, JavaScript, Shell Script
@@ -80,11 +80,13 @@ content:
             quote: >
                 Gain hands-on experience on software development and data pipeline implementation 
             description: | # this will include new lines to allow paragraphs
-                - Optimizing and evaluating elastic and semantic search with vector databases
-                - Tailored AEM components for questionnaire, including category support and comprehensive reporting
-                - Integrated 7 MuleSoft APIs to facilitate seamless delta update ingestion into Lucidworks Fusion
-                - Developed data pipelines for batch processing and modeling of user web interactions, driving user classification and personalized experiences
-                
+                - Optimizing and evaluating elastic and semantic search with vector databases 
+                - Integrated 7 MuleSoft APIs to facilitate seamless delta update ingestion into Lucidworks Fusion 
+                - Developed data pipelines for batch processing and modeling of user web interactions, driving personalized experiences and user classification 
+                - Customized replication agent on AEM to integrate with Cloudinary for media management 
+                - Tailored AEM components for questionnaire, including category support and comprehensive reporting 
+                - Optimized Akamai caching update logic to enhance the efficiency and accuracy of content delivery on AEM
+
           - layout: left
             title: Stevens Institute of Technology
             sub_title: Research Assistant/Teaching Assistant, Deep Learning and Web Analytics
