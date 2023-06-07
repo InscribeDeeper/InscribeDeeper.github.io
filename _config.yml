@@ -241,9 +241,10 @@ content:
     #                 - Clustering: | K-means, Hierarchical Clustering, DBSCAN
     #                 - Emsembling techniques: | Bagging, Boosting, Stacking
 
-    - title: A Little More About Me
+    - title: The sentences I love
       layout: text # Type of content section (list/text)
-      content: I love playing Guitar, feeding my Cat
+      content: 
+        - What I cannot create, I do not understand
 
 # Footer
 footer_show_references: true
