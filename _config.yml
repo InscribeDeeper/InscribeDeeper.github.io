@@ -58,8 +58,8 @@ about_content: | # this will include new lines to allow paragraphs
     Stacks:
     - Programming Languages: Python, Java, JavaScript, Shell Script, SQL 
     - Database Management Tools: PostgreSQL, MySQL, Microsoft SQL Server, MongoDB, Weaviate 
-    - Technology: Adobe Experience Manager (AEM), Git, MuleSoft, Docker, AWS, Jupyter Notebook, Tableau  
-    - Python Packages: Pandas, NumPy, Re, Scikit-learn, Pytorch, Transformers, SpaCy, Gensim, NLTK, Selenium
+    - Technology: Adobe Experience Manager(AEM), MuleSoft, Docker, AWS, Jupyter Notebook, Git, Tableau
+    - Python Packages: Pandas, NumPy, Scikit-learn, Pytorch, Transformers, SpaCy, Gensim, NLTK, Selenium, Re
 
 # Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
 
@@ -81,12 +81,14 @@ content:
                 Gain hands-on experience on software development and data pipeline implementation 
             description: | # this will include new lines to allow paragraphs
                 - Optimizing and evaluating elastic and semantic search with vector databases 
-                - Integrated 7 MuleSoft APIs to facilitate seamless delta update ingestion into Lucidworks Fusion 
+                - Integrated 7 MuleSoft APIs to facilitate seamless delta update ingestion into Lucidworks Fusion for [Partner Locator](https://www.rockwellautomation.com/en-us/sales/partner-locator.html)
                 - Developed data pipelines for batch processing and modeling of user web interactions, driving personalized experiences and user classification 
-                - Customized replication agent on AEM to integrate with Cloudinary for media management 
-                - Tailored AEM components for questionnaire, including category support and comprehensive reporting 
+                - Tailored AEM components for customized questionnaires, including category support and comprehensive reporting 
                 - Optimized Akamai caching update logic to enhance the efficiency and accuracy of content delivery on AEM
-
+                - Customized replication agent on AEM to integrate with Cloudinary for media management 
+            
+            # 这几类AEM的工作, 应该更加抽象一点
+            
           - layout: left
             title: Stevens Institute of Technology
             sub_title: Research Assistant/Teaching Assistant, Deep Learning and Web Analytics
