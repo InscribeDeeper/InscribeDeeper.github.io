@@ -81,7 +81,7 @@ content:
                 Gain hands-on experience on software development and data pipeline implementation 
             description: | # this will include new lines to allow paragraphs
                 - Integrated Weaviate Vector Database with LLMs to empower company-specific content-driven recommendations and elevate chatbot conversations
-                - Orchestrated the integration of 7 MuleSoft APIs, streamlining delta updates ingestion into Lucidworks Fusion for the [Partner Locator](https://www.rockwellautomation.com/en-us/sales/partner-locator.html), ensuring a seamless user experience.
+                - Orchestrated 7 MuleSoft APIs, streamlining delta updates ingestion into Lucidworks Fusion for the [Partner Locator](https://www.rockwellautomation.com/en-us/sales/partner-locator.html), ensuring a seamless user experience.
                 - Engineered data pipelines infused with Machine Learning algorithms, driving personalized user experiences and optimizing marketing conversion rates
                 - Tailored AEM components to deliver customized questionnaires, complete with category support and robust reporting functionalities
 
