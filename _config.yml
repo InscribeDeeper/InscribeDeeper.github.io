@@ -80,15 +80,18 @@ content:
             quote: >
                 Gain hands-on experience on software development and data pipeline implementation 
             description: | # this will include new lines to allow paragraphs
-                - Optimizing and evaluating elastic and semantic search with vector databases 
-                - Integrated 7 MuleSoft APIs to facilitate seamless delta update ingestion into Lucidworks Fusion for [Partner Locator](https://www.rockwellautomation.com/en-us/sales/partner-locator.html)
-                - Developed data pipelines for batch processing and modeling of user web interactions, driving personalized experiences and user classification 
-                - Tailored AEM components for customized questionnaires, including category support and comprehensive reporting 
-                - Optimized Akamai caching update logic to enhance the efficiency and accuracy of content delivery on AEM
-                - Customized replication agent on AEM to integrate with Cloudinary for media management 
-            
-            # 这几类AEM的工作, 应该更加抽象一点
-            
+                - Integrated Weaviate Vector Database with LLMs to empower company-specific content-driven recommendations and elevate chatbot conversations
+                - Orchestrated the integration of 7 MuleSoft APIs, streamlining delta updates ingestion into Lucidworks Fusion for the [Partner Locator](https://www.rockwellautomation.com/en-us/sales/partner-locator.html), ensuring a seamless user experience.
+                - Engineered data pipelines infused with Machine Learning algorithms, driving personalized user experiences and optimizing marketing conversion rates
+                - Tailored AEM components to deliver customized questionnaires, complete with category support and robust reporting functionalities
+
+            # 这几类AEM的工作, 应该更加抽象一点, 同时应该有更高level的概括, 目前AEM这些点 太细了, 不像一个project
+                # - Revamped Akamai caching update logic, bolstering the efficiency and precision of content delivery on AEM.
+                # - Engineered a bespoke replication agent on AEM, seamlessly integrating with Cloudinary for comprehensive media management
+            # questionnaire
+            # Partner-locator
+            # AI-conversation
+
           - layout: left
             title: Stevens Institute of Technology
             sub_title: Research Assistant/Teaching Assistant, Deep Learning and Web Analytics
