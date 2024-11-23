@@ -80,10 +80,10 @@ content:
             quote: >
                 Gain hands-on experience on software development and data pipeline implementation 
             description: | # this will include new lines to allow paragraphs
-                - Integrated Weaviate Vector Database with Azure OpenAI to empower Retriever-Augmented Generation AI chatbot [Chat with AI Navigator](https://www.rockwellautomation.com/en-us.html)
+                - Integrated Weaviate Vector Database with Azure OpenAI to empower Retriever-Augmented Generation [AI chatbot] (https://www.rockwellautomation.com/en-us.html)
                 - Orchestrated 7 MuleSoft APIs, streamlining delta updates ingestion into Lucidworks Fusion for the [Partner Locator](https://www.rockwellautomation.com/en-us/sales/partner-locator.html), ensuring a seamless user experience.
                 - Engineered data pipelines infused with Machine Learning algorithms, driving personalized user experiences and optimizing marketing conversion rates
-                - Built a recommendation system delivering customized products and website experiences [Sample Product](https://www.rockwellautomation.com/en-us/products/details.595-AB.html)
+                - Built a recommendation system delivering [customized products and website experiences](https://www.rockwellautomation.com/en-us/products/details.595-AB.html)
                 - Tailored AEM components to deliver customized questionnaires, complete with category support and robust reporting functionalities
 
             # 这几类AEM的工作, 应该更加抽象一点, 同时应该有更高level的概括, 目前AEM这些点 太细了, 不像一个project
