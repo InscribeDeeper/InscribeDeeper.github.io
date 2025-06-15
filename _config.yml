@@ -87,6 +87,7 @@ content:
                 - Infrastructure & Platform Engineering:
                   - Architected scalable full-stack infra: VM provisioning, runtime orchestration, offline pipelines for knowledge sync and cache optimization
                   - Maintained high reliability and low-latency performance through proactive monitoring and tuning strategies
+                  - Applied data-driven insights to inform software design, support CMS architecture, and scale web platforms
                 - Data Integration & Search Optimization:
                   - Designed 7+ MuleSoft API workflows to handle delta updates for [partner accounts/locations](https://www.rockwellautomation.com/en-us/sales/partner-locator.html)
                   - Integrated data into a Lucidworks Fusion–based cache-optimized search layer; ensured consistency and responsiveness
@@ -94,7 +95,7 @@ content:
                   - Developed ML-driven data pipelines for [U2I/I2I recommendations](https://www.rockwellautomation.com/en-us/products/details.595-AB.html) with rolling cache and Akamai CDN integration
                   - Built offline ML pipelines to enhance sales funnel success rate and optimize marketing campaigns
                 - Content Platform (AEM):
-                  - Developed and maintained modular AEM components using Sling models and OSGi; improved scalability and maintainability for content delivery
+                  - Developed software to be licensed to use on CMS to facilitate content authoring and publishing
 
             # 这几类AEM的工作, 应该更加抽象一点, 同时应该有更高level的概括, 目前AEM这些点 太细了, 不像一个project
                 # - Revamped Akamai caching update logic, bolstering the efficiency and precision of content delivery on AEM.
