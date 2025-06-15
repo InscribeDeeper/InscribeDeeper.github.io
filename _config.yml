@@ -57,9 +57,9 @@ about_content: | # this will include new lines to allow paragraphs
 
     Stacks:
     - Programming Languages: Python, Java, JavaScript, Shell Script, SQL 
-    - Database Management Tools: PostgreSQL, MySQL, Microsoft SQL Server, MongoDB, Weaviate 
-    - Technology: Adobe Experience Manager(AEM), MuleSoft, Docker, AWS, Jupyter Notebook, Git, Tableau
-    - Python Packages: Pandas, NumPy, Scikit-learn, Pytorch, Transformers, SpaCy, Gensim, NLTK, Selenium, Re
+    - Database Management Tools: ElasticSearch, Weaviate MySQL, Microsoft SQL Server, MongoDB
+    - Technology: RAG, Microsoft Azure, Nginx, Adobe Experience Manager, MuleSoft, Docker, AWS, Git, Tableau
+    - Python Packages: Pandas, NumPy, Re, Pytorch, Transformers, Scikit-learn
 
 # Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
 
@@ -80,11 +80,21 @@ content:
             quote: >
                 Gain hands-on experience on software development and data pipeline implementation 
             description: | # this will include new lines to allow paragraphs
-                - Integrated Weaviate Vector Database with Azure OpenAI to empower Retriever-Augmented Generation [AI chatbot] (https://www.rockwellautomation.com/en-us.html)
-                - Orchestrated 7 MuleSoft APIs, streamlining delta updates ingestion into Lucidworks Fusion for the [Partner Locator](https://www.rockwellautomation.com/en-us/sales/partner-locator.html), ensuring a seamless user experience.
-                - Engineered data pipelines infused with Machine Learning algorithms, driving personalized user experiences and optimizing marketing conversion rates
-                - Built a recommendation system delivering [customized products and website experiences](https://www.rockwellautomation.com/en-us/products/details.595-AB.html)
-                - Tailored AEM components to deliver customized questionnaires, complete with category support and robust reporting functionalities
+                - AI Chatbot & RAG:
+                  - Leading full-cycle development of a production-grade RAG conversational [AI chatbot](https://www.rockwellautomation.com/en-us.html) using Azure OpenAI, Redis, and Weaviate; supports 1K+ DAUs
+                  - Designed robust retrieval algorithms, multi-turn memory with Redis persistence, and real-time summarization & autosuggest based on live user queries
+                  - Built preprocessing & indexing pipelines across 10+ heterogeneous data sources, enabling hybrid search and semantic reranking
+                - Infrastructure & Platform Engineering:
+                  - Architected scalable full-stack infra: VM provisioning, runtime orchestration, offline pipelines for knowledge sync and cache optimization
+                  - Maintained high reliability and low-latency performance through proactive monitoring and tuning strategies
+                - Data Integration & Search Optimization:
+                  - Designed 7+ MuleSoft API workflows to handle delta updates for [partner accounts/locations](https://www.rockwellautomation.com/en-us/sales/partner-locator.html)
+                  - Integrated data into a Lucidworks Fusion–based cache-optimized search layer; ensured consistency and responsiveness
+                - Personalization & ML Pipelines:
+                  - Developed ML-driven data pipelines for [U2I/I2I recommendations](https://www.rockwellautomation.com/en-us/products/details.595-AB.html) with rolling cache and Akamai CDN integration
+                  - Built offline ML pipelines to enhance sales funnel success rate and optimize marketing campaigns
+                - Content Platform (AEM):
+                  - Developed and maintained modular AEM components using Sling models and OSGi; improved scalability and maintainability for content delivery
 
             # 这几类AEM的工作, 应该更加抽象一点, 同时应该有更高level的概括, 目前AEM这些点 太细了, 不像一个project
                 # - Revamped Akamai caching update logic, bolstering the efficiency and precision of content delivery on AEM.
