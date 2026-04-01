@@ -81,7 +81,7 @@ content:
                 Gain hands-on experience on software development and data pipeline implementation 
             description: | # this will include new lines to allow paragraphs
                 - AI Chatbot & RAG Systems:
-                  - Led full-cycle development of a production-grade RAG conversational [AI chatbot](https://www.rockwellautomation.com/en-us.html) using Azure OpenAI, Redis, and Weaviate vector database; architected sticky session routing and load balancing to support 1K+ DAUs
+                  - Led full-cycle development of a production-grade RAG conversational [AI chatbot](https://www.rockwellautomation.com/en-us/search.html?keyword=what+is+rockwell+doing%3F&tab=all) using Azure OpenAI, Redis, and Weaviate vector database; architected sticky session routing and load balancing to support 1K+ DAUs
                   - Designed multi-turn conversational memory with Redis persistence and context window management; built agentic workflows with function calling to orchestrate custom tools and external APIs
                   - Implemented security guardrails including input sanitization, content filtering, and PII masking to ensure safe and compliant AI interactions
                   - Delivered real-time AI Overview and autosuggest powered by live user queries with caching layer for low-latency responses; built scheduled report pipelines and user feedback loops to continuously improve relevance and quality
@@ -151,7 +151,7 @@ content:
             description: | # this will include new lines to allow paragraphs
                 **Relevant Coursework**: Probability and Mathematical Statistics, Operational Research, Numerical Analysis, Advanced Algebra, Mathematical Analysis, Real Function Theory, Functional analysis, Ordinary Differential Equations, Partial Differential Equations
 
-                **Awards**: Second prize (out of 25,558 teams) in National Mathematical Modeling Contest, 2015
+                **Awards**: Second prize (top 6.3% out of 25,558 teams) in National Mathematical Modeling Contest, 2015
 
     - title: Projects # Title for the section
       layout: list # Type of content section (list/text)
