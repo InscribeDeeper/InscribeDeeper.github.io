@@ -80,22 +80,24 @@ content:
             quote: >
                 Gain hands-on experience on software development and data pipeline implementation 
             description: | # this will include new lines to allow paragraphs
-                - AI Chatbot & RAG:
-                  - Leading full-cycle development of a production-grade RAG conversational [AI chatbot](https://www.rockwellautomation.com/en-us.html) using Azure OpenAI, Redis, and Weaviate; supports 1K+ DAUs
-                  - Designed robust retrieval algorithms, multi-turn memory with Redis persistence, and real-time summarization & autosuggest based on live user queries
-                  - Built preprocessing & indexing pipelines across 10+ heterogeneous data sources, enabling hybrid search and semantic reranking
+                - AI Chatbot & RAG Systems:
+                  - Led full-cycle development of a production-grade RAG conversational [AI chatbot](https://www.rockwellautomation.com/en-us.html) using Azure OpenAI, Redis, and Weaviate vector database; architected sticky session routing and load balancing to support 1K+ DAUs
+                  - Designed multi-turn conversational memory with Redis persistence and context window management; built agentic workflows with function calling to orchestrate custom tools and external APIs
+                  - Implemented security guardrails including input sanitization, content filtering, and PII masking to ensure safe and compliant AI interactions
+                  - Delivered real-time AI Overview summarization and autosuggest powered by live user queries; built scheduled report pipelines and user feedback loops to continuously improve relevance and quality
+                  - Engineered scheduled multilingual (I18N) indexing pipelines across 10+ heterogeneous data sources, combining keyword-based and semantic hybrid search with semantic reranking, multi-channel query routing, query expansion, and iterative retrieval
                 - Infrastructure & Platform Engineering:
-                  - Architected scalable full-stack infra: VM provisioning, runtime orchestration, offline pipelines for knowledge sync and cache optimization
-                  - Maintained high reliability and low-latency performance through proactive monitoring and tuning strategies
-                  - Applied data-driven insights to inform software design, support CMS architecture, and scale web platforms
+                  - Architected scalable full-stack infrastructure: VM provisioning, runtime orchestration, and offline pipelines for knowledge base synchronization and cache optimization
+                  - Maintained high reliability and low-latency performance through proactive monitoring and tuning
+                  - Applied data-driven insights to evolve CMS architecture and scale web platforms
                 - Data Integration & Search Optimization:
-                  - Designed 7+ MuleSoft API workflows to handle delta updates for [partner accounts/locations](https://www.rockwellautomation.com/en-us/sales/partner-locator.html)
-                  - Integrated data into a Lucidworks Fusion–based cache-optimized search layer; ensured consistency and responsiveness
-                - Personalization & ML Pipelines:
-                  - Developed ML-driven data pipelines for [U2I/I2I recommendations](https://www.rockwellautomation.com/en-us/products/details.595-AB.html) with rolling cache and Akamai CDN integration
-                  - Built offline ML pipelines to enhance sales funnel success rate and optimize marketing campaigns
+                  - Designed 7+ MuleSoft API integration workflows for incremental delta updates of [partner accounts and locations](https://www.rockwellautomation.com/en-us/sales/partner-locator.html)
+                  - Integrated multi-source data into a Solr and Elasticsearch–based search layer with cache optimization
+                - Personalization & Machine Learning Pipelines:
+                  - Developed [User-to-Item and Item-to-Item recommendation](https://www.rockwellautomation.com/en-us/products/details.595-AB.html) pipelines with rolling cache and Akamai CDN integration
+                  - Built offline ML pipelines to optimize sales funnel conversion and marketing campaign targeting
                 - Content Platform (AEM):
-                  - Developed software to be licensed to use on CMS to facilitate content authoring and publishing
+                  - Developed licensable software modules on Adobe Experience Manager to streamline content authoring and multi-channel publishing
 
             # 这几类AEM的工作, 应该更加抽象一点, 同时应该有更高level的概括, 目前AEM这些点 太细了, 不像一个project
                 # - Revamped Akamai caching update logic, bolstering the efficiency and precision of content delivery on AEM.
@@ -119,17 +121,17 @@ content:
                 - Set up and managed a remote GPU environment on Ubuntu for Machine Learning and Deep Learning tasks 
                 - Developed tutorials on implementing deep learning models using related Python packages
                 
-          - layout: left
-            title: 1lift
-            sub_title: Data Analyst Intern
-            caption: April 2019 - July 2019
-            quote: >
-                Gain hands-on experience on necessary tools and understanding of develop environment
-            description: | # this will include new lines to allow paragraphs
-                - Built a cost analysis module for the application with Excel advanced functionalities
-                - Extracted structured data with MySQL, cleaned the unstructured textual data with Python
-                - Manipulated, visualized and presented the statistical results with Tableau Dashboard
-                - Explored regression models to provide a baseline of elevators' failure rate for the Operations Department
+          # - layout: left
+          #   title: 1lift
+          #   sub_title: Data Analyst Intern
+          #   caption: April 2019 - July 2019
+          #   quote: >
+          #       Gain hands-on experience on necessary tools and understanding of develop environment
+          #   description: | # this will include new lines to allow paragraphs
+          #       - Built a cost analysis module for the application with Excel advanced functionalities
+          #       - Extracted structured data with MySQL, cleaned the unstructured textual data with Python
+          #       - Manipulated, visualized and presented the statistical results with Tableau Dashboard
+          #       - Explored regression models to provide a baseline of elevators' failure rate for the Operations Department
     - title: Education
       layout: list
       content:
