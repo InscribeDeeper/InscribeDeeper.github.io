@@ -5,61 +5,112 @@
 
 <body class="landing-page{% if site.darkmode == true %} dark{% elsif site.darkmode == 'never' %} theme-light{% endif %}">
   {%- include theme-boot.html -%}
-  {% assign person = site.data.profile.person %}
   {%- if site.darkmode == false -%}
     {%- include theme-toggle.html -%}
   {%- endif -%}
-  <main class="landing-shell" aria-label="Profile hub">
-    <header class="landing-brand">
-      <p class="landing-eyebrow">PERSONAL PROFILE HUB</p>
-      <h1>{{ person.name | escape }}</h1>
-      <p class="landing-tagline">{{ person.title | escape }}</p>
-    </header>
 
-    <section class="landing-welcome">
-      <p class="landing-label">WELCOME</p>
-      <p>Choose a profile to continue.</p>
-    </section>
+  {%- include header.html -%}
 
-    <div class="landing-section-head">
-      <p class="landing-label">AVAILABLE PROFILES</p>
+  <main class="page-content landing-content" aria-label="Profile hub">
+    <div class="container">
+      <section class="landing-welcome">
+        <p class="landing-label">Welcome</p>
+        <p>Choose a profile to continue.</p>
+      </section>
+
+      <div class="landing-layout">
+        <section class="landing-directory">
+          <div class="landing-section-head">
+            <p class="landing-label">Available profiles</p>
+          </div>
+
+          <nav class="profile-grid" aria-label="Profile versions">
+            <a
+              class="profile-card profile-card--featured"
+              href="{{ '/niw/' | relative_url }}"
+              data-profile-card
+              data-title="EB-2 NIW Profile"
+              data-summary="Evidence-centered profile built around AI systems, search infrastructure, and measurable technical impact."
+              data-scope="Work history · Education · Awards"
+              data-facts="1K+ DAUs supported|10+ heterogeneous data sources|7+ MuleSoft workflows"
+              aria-current="true"
+            >
+              <span class="profile-card-body">
+                <span class="profile-name">EB-2 NIW Profile</span>
+              </span>
+            </a>
+
+            <a
+              class="profile-card"
+              href="{{ '/resume/' | relative_url }}"
+              data-profile-card
+              data-title="Resume"
+              data-summary="A concise view of production software engineering experience and technical strengths."
+              data-scope="Work history · Education · Awards"
+              data-facts="Full-stack engineering|RAG and search systems|Azure · Redis · Weaviate"
+            >
+              <span class="profile-card-body">
+                <span class="profile-name">Resume</span>
+              </span>
+            </a>
+
+            <a
+              class="profile-card"
+              href="{{ '/cv/' | relative_url }}"
+              data-profile-card
+              data-title="Curriculum Vitae"
+              data-summary="A detailed record of academic training, research, competitions, and technical projects."
+              data-scope="Research · Education · Projects"
+              data-facts="MSc Data Science · GPA 3.8/4.0|94,581 transcripts analyzed|72% BERT classification accuracy"
+            >
+              <span class="profile-card-body">
+                <span class="profile-name">Curriculum Vitae</span>
+              </span>
+            </a>
+
+            <a
+              class="profile-card"
+              href="{{ '/all/' | relative_url }}"
+              data-profile-card
+              data-title="All Content"
+              data-summary="The complete public profile with detailed skills, projects, interests, and education."
+              data-scope="Everything available"
+              data-facts="MBA in progress|5 academic projects|Skills, interests, and modeling knowledge"
+            >
+              <span class="profile-card-body">
+                <span class="profile-name">All Content</span>
+              </span>
+            </a>
+          </nav>
+        </section>
+
+        <aside class="profile-preview" aria-live="polite">
+          <p class="preview-label">PROFILE PREVIEW</p>
+          <h2 id="profile-preview-title">EB-2 NIW Profile</h2>
+          <p class="preview-summary" id="profile-preview-summary">
+            A focused profile for national-interest waiver materials.
+          </p>
+          <div class="preview-divider"></div>
+          <p class="preview-scope-label">INCLUDES</p>
+          <p class="preview-scope" id="profile-preview-scope">Work history · Education · Awards</p>
+          <ul class="preview-facts" id="profile-preview-facts" aria-label="Profile highlights">
+            <li>1K+ DAUs supported</li>
+            <li>10+ heterogeneous data sources</li>
+            <li>7+ MuleSoft workflows</li>
+          </ul>
+          <a class="preview-link" id="profile-preview-link" href="{{ '/niw/' | relative_url }}">
+            Open profile <span aria-hidden="true">↗</span>
+          </a>
+        </aside>
+      </div>
     </div>
-
-    <nav class="profile-grid" aria-label="Profile versions">
-      <a class="profile-card profile-card--featured" href="{{ '/niw/' | relative_url }}">
-        <span class="profile-card-body">
-          <span class="profile-name">EB-2 NIW Profile</span>
-        </span>
-        <span class="profile-arrow" aria-hidden="true">↗</span>
-      </a>
-
-      <a class="profile-card" href="{{ '/resume/' | relative_url }}">
-        <span class="profile-card-body">
-          <span class="profile-name">Resume</span>
-        </span>
-        <span class="profile-arrow" aria-hidden="true">↗</span>
-      </a>
-
-      <a class="profile-card" href="{{ '/cv/' | relative_url }}">
-        <span class="profile-card-body">
-          <span class="profile-name">Curriculum Vitae</span>
-        </span>
-        <span class="profile-arrow" aria-hidden="true">↗</span>
-      </a>
-
-      <a class="profile-card" href="{{ '/all/' | relative_url }}">
-        <span class="profile-card-body">
-          <span class="profile-name">All Content</span>
-        </span>
-        <span class="profile-arrow" aria-hidden="true">↗</span>
-      </a>
-    </nav>
   </main>
 
   {%- include footer.html -%}
   {%- if site.darkmode == false -%}
     <script src="{{ '/assets/js/index.js' | relative_url }}"></script>
   {%- endif -%}
+  <script src="{{ '/assets/js/landing.js' | relative_url }}"></script>
 </body>
 
 </html>

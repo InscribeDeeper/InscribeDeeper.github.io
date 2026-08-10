@@ -17,6 +17,9 @@ body {
   --theme-toggle-hover: rgba(15, 23, 42, 0.08);
   --theme-toggle-color: #333333;
 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: var(--page-bg);
   color: var(--page-text);
   transition: background-color 0.25s ease, color 0.25s ease;

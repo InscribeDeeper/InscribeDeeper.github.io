@@ -1,8 +1,16 @@
 {% assign view = include.view %}
+{% assign about = site.data.profile.about %}
 
 {% if view.show_about %}
   {%- include about.html -%}
 {% endif %}
+
+{% assign pending_profile_image = false %}
+{% unless view.show_about %}
+  {% if about.profile_image %}
+    {% assign pending_profile_image = true %}
+  {% endif %}
+{% endunless %}
 
 {% assign selected_groups = "|" %}
 {% for section_id in view.sections %}
@@ -14,7 +22,12 @@
     {% if section %}
     <div class="container {{ section.layout }}-container">
       <h3>{{ section.title }}</h3>
-      {% include {{ section.layout | prepend: "section-" | append: ".html" }} content=section.content %}
+      {% if pending_profile_image and section.layout == "text" %}
+        {% include section-text.html content=section.content profile_image=about.profile_image %}
+        {% assign pending_profile_image = false %}
+      {% else %}
+        {% include {{ section.layout | prepend: "section-" | append: ".html" }} content=section.content %}
+      {% endif %}
     </div>
     {% endif %}
   {% endunless %}
