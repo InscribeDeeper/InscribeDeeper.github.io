@@ -29,10 +29,11 @@
               class="profile-card profile-card--featured"
               href="{{ '/niw/' | relative_url }}"
               data-profile-card
-              data-title="EB-2 NIW Profile"
-              data-summary="Evidence-centered profile built around AI systems, search infrastructure, and measurable technical impact."
-              data-scope="Work history · Education · Awards"
-              data-facts="1K+ DAUs supported|10+ heterogeneous data sources|7+ MuleSoft workflows"
+              data-panel-label="CAREER + EDUCATION"
+              data-panel-title="Career &amp; Education"
+              data-track="undergrad,msc,research,pisrc,mba"
+              data-timeline="career"
+              data-context="Education, research, engineering, and ongoing professional development"
               aria-current="true"
             >
               <span class="profile-card-body">
@@ -44,10 +45,11 @@
               class="profile-card"
               href="{{ '/resume/' | relative_url }}"
               data-profile-card
-              data-title="Resume"
-              data-summary="A concise view of production software engineering experience and technical strengths."
-              data-scope="Work history · Education · Awards"
-              data-facts="Full-stack engineering|RAG and search systems|Azure · Redis · Weaviate"
+              data-panel-label="PROJECTS"
+              data-panel-title="Selected Projects"
+              data-track="projects"
+              data-timeline="projects"
+              data-context="Academic and competition projects across web, machine learning, and modeling"
             >
               <span class="profile-card-body">
                 <span class="profile-name">Resume</span>
@@ -58,35 +60,120 @@
               class="profile-card"
               href="{{ '/cv/' | relative_url }}"
               data-profile-card
-              data-title="Curriculum Vitae"
-              data-summary="A detailed record of academic training, research, competitions, and technical projects."
-              data-scope="Research · Education · Projects"
-              data-facts="MSc Data Science · GPA 3.8/4.0|94,581 transcripts analyzed|72% BERT classification accuracy"
+              data-panel-label="CAREER + EDUCATION"
+              data-panel-title="Career &amp; Education"
+              data-track="undergrad,msc,research,pisrc,mba"
+              data-timeline="career"
+              data-context="Education, research, engineering, and ongoing professional development"
             >
               <span class="profile-card-body">
                 <span class="profile-name">Curriculum Vitae</span>
+              </span>
+            </a>
+
+            <a
+              class="profile-card"
+              href="{{ '/all/' | relative_url }}"
+              data-profile-card
+              data-panel-label="CAREER + EDUCATION"
+              data-panel-title="Career &amp; Education"
+              data-track="undergrad,msc,research,pisrc,mba"
+              data-timeline="career"
+              data-context="Education, research, engineering, and ongoing professional development"
+            >
+              <span class="profile-card-body">
+                <span class="profile-name">All Content</span>
               </span>
             </a>
           </nav>
         </section>
 
         <aside class="profile-preview" aria-live="polite">
-          <p class="preview-label">PROFILE PREVIEW</p>
-          <h2 id="profile-preview-title">EB-2 NIW Profile</h2>
-          <p class="preview-summary" id="profile-preview-summary">
-            A focused profile for national-interest waiver materials.
+          <p class="preview-label" id="profile-preview-label">CAREER + EDUCATION</p>
+          <h2 id="profile-preview-title">Career &amp; Education</h2>
+          <p class="preview-context" id="profile-preview-context">
+            Technical impact, research foundation, and advanced degree
           </p>
-          <div class="preview-divider"></div>
-          <p class="preview-scope-label">INCLUDES</p>
-          <p class="preview-scope" id="profile-preview-scope">Work history · Education · Awards</p>
-          <ul class="preview-facts" id="profile-preview-facts" aria-label="Profile highlights">
-            <li>1K+ DAUs supported</li>
-            <li>10+ heterogeneous data sources</li>
-            <li>7+ MuleSoft workflows</li>
-          </ul>
-          <a class="preview-link" id="profile-preview-link" href="{{ '/niw/' | relative_url }}">
-            Open profile <span aria-hidden="true">↗</span>
-          </a>
+          <div class="timeline-panel" data-timeline-panel="career">
+            <div class="career-timeline" aria-label="Career and education timeline">
+              <div class="timeline-item" data-timeline-id="undergrad">
+                <span class="timeline-marker" aria-hidden="true"></span>
+                <div class="timeline-content">
+                  <span class="timeline-period">2014 — 2018</span>
+                  <strong>BSc in Mathematics and Applied Mathematics</strong>
+                  <span>Guangzhou University</span>
+                </div>
+              </div>
+              <div class="timeline-item" data-timeline-id="msc">
+                <span class="timeline-marker" aria-hidden="true"></span>
+                <div class="timeline-content">
+                  <span class="timeline-period">2019 — 2021</span>
+                  <strong>MSc in Data Science</strong>
+                  <span>Stevens Institute of Technology</span>
+                </div>
+              </div>
+              <div class="timeline-item" data-timeline-id="research">
+                <span class="timeline-marker" aria-hidden="true"></span>
+                <div class="timeline-content">
+                  <span class="timeline-period">2020 — 2021</span>
+                  <strong>Research &amp; Teaching Assistant</strong>
+                  <span>Deep Learning and Web Analytics</span>
+                </div>
+              </div>
+              <div class="timeline-item" data-timeline-id="pisrc">
+                <span class="timeline-marker" aria-hidden="true"></span>
+                <div class="timeline-content">
+                  <span class="timeline-period">2022 — Present</span>
+                  <strong>Full Stack Software Engineer</strong>
+                  <span>PiSrc · AI, search, and data platforms</span>
+                </div>
+              </div>
+              <div class="timeline-item" data-timeline-id="mba">
+                <span class="timeline-marker" aria-hidden="true"></span>
+                <div class="timeline-content">
+                  <span class="timeline-period">2025 — Present</span>
+                  <strong>MBA Candidate</strong>
+                  <span>Monroe University</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-panel" data-timeline-panel="projects" hidden>
+            <div class="career-timeline project-timeline" aria-label="Project timeline">
+              <div class="timeline-item timeline-item--active" data-timeline-id="cumcm">
+                <span class="timeline-marker" aria-hidden="true"></span>
+                <div class="timeline-content">
+                  <span class="timeline-period">September 2015</span>
+                  <strong>CUMCM · National Second Prize</strong>
+                  <span>Geolocation model, image processing, and Genetic Algorithm</span>
+                </div>
+              </div>
+              <div class="timeline-item timeline-item--active" data-timeline-id="myplace">
+                <span class="timeline-marker" aria-hidden="true"></span>
+                <div class="timeline-content">
+                  <span class="timeline-period">Academic project</span>
+                  <strong>MyPlace Web Development</strong>
+                  <span>Node.js, Express, MongoDB, and REST APIs</span>
+                </div>
+              </div>
+              <div class="timeline-item timeline-item--active" data-timeline-id="recommender">
+                <span class="timeline-marker" aria-hidden="true"></span>
+                <div class="timeline-content">
+                  <span class="timeline-period">Academic project</span>
+                  <strong>E-commerce Recommender System</strong>
+                  <span>Collaborative filtering and 77% Top-10 accuracy</span>
+                </div>
+              </div>
+              <div class="timeline-item timeline-item--active" data-timeline-id="fintech">
+                <span class="timeline-marker" aria-hidden="true"></span>
+                <div class="timeline-content">
+                  <span class="timeline-period">Competition project</span>
+                  <strong>Fintech Pitch Competition · 6th Position</strong>
+                  <span>City vibrancy index and predictive modeling</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </aside>
       </div>
     </div>
