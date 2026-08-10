@@ -1,49 +1,100 @@
 (function () {
-  const cards = Array.from(document.querySelectorAll("[data-profile-card]"));
-  const panelLabel = document.getElementById("profile-preview-label");
-  const title = document.getElementById("profile-preview-title");
-  const context = document.getElementById("profile-preview-context");
-  const panels = Array.from(document.querySelectorAll("[data-timeline-panel]"));
-  const timeline = Array.from(document.querySelectorAll("[data-timeline-id]"));
+  const root = document.querySelector("[data-preview-glide]");
+  const track = document.querySelector("[data-preview-track]");
+  const slides = Array.from(document.querySelectorAll("[data-preview-slide]"));
+  const dots = Array.from(document.querySelectorAll("[data-preview-dot]"));
+  const prev = document.querySelector("[data-preview-prev]");
+  const next = document.querySelector("[data-preview-next]");
+  const preview = document.querySelector(".profile-preview");
 
-  if (!cards.length || !panelLabel || !title || !context || !panels.length || !timeline.length) {
+  if (!root || !track || !slides.length || !preview) {
     return;
   }
 
-  function selectProfile(card) {
-    cards.forEach((item) => {
-      const selected = item === card;
-      item.classList.toggle("profile-card--active", selected);
-      if (selected) {
-        item.setAttribute("aria-current", "true");
-      } else {
-        item.removeAttribute("aria-current");
-      }
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const intervalMs = 10000;
+  let index = 0;
+  let timer = null;
+
+  function setSlide(nextIndex) {
+    index = (nextIndex + slides.length) % slides.length;
+    track.style.transform = "translateX(-" + index * 100 + "%)";
+
+    slides.forEach(function (slide, i) {
+      const active = i === index;
+      slide.classList.toggle("is-active", active);
+      slide.setAttribute("aria-hidden", active ? "false" : "true");
     });
 
-    panelLabel.textContent = card.dataset.panelLabel;
-    title.textContent = card.dataset.panelTitle;
-    context.textContent = card.dataset.context;
-    const selectedPanel = card.dataset.timeline || "career";
-    const activeTimeline = card.dataset.track.split(",");
-    panels.forEach((panel) => {
-      panel.hidden = panel.dataset.timelinePanel !== selectedPanel;
-    });
-    timeline.forEach((item) => {
-      const panel = item.closest("[data-timeline-panel]");
-      const inSelectedPanel = panel && panel.dataset.timelinePanel === selectedPanel;
-      item.classList.toggle(
-        "timeline-item--active",
-        inSelectedPanel &&
-          (selectedPanel === "projects" || activeTimeline.includes(item.dataset.timelineId))
-      );
+    dots.forEach(function (dot, i) {
+      const active = i === index;
+      dot.classList.toggle("is-active", active);
+      dot.setAttribute("aria-selected", active ? "true" : "false");
     });
   }
 
-  cards.forEach((card) => {
-    card.addEventListener("pointerenter", () => selectProfile(card));
-    card.addEventListener("focus", () => selectProfile(card));
+  function stop() {
+    if (timer) {
+      window.clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  function start() {
+    if (reduceMotion || slides.length < 2) {
+      return;
+    }
+    stop();
+    timer = window.setInterval(function () {
+      setSlide(index + 1);
+    }, intervalMs);
+  }
+
+  function go(delta) {
+    setSlide(index + delta);
+    start();
+  }
+
+  dots.forEach(function (dot) {
+    dot.addEventListener("click", function () {
+      const nextIndex = Number(dot.getAttribute("data-preview-dot"));
+      if (Number.isNaN(nextIndex)) {
+        return;
+      }
+      setSlide(nextIndex);
+      start();
+    });
   });
 
-  selectProfile(cards.find((card) => card.getAttribute("aria-current") === "true") || cards[0]);
+  if (prev) {
+    prev.addEventListener("click", function () {
+      go(-1);
+    });
+  }
+
+  if (next) {
+    next.addEventListener("click", function () {
+      go(1);
+    });
+  }
+
+  preview.addEventListener("pointerenter", stop);
+  preview.addEventListener("pointerleave", start);
+  preview.addEventListener("focusin", stop);
+  preview.addEventListener("focusout", function (event) {
+    if (!preview.contains(event.relatedTarget)) {
+      start();
+    }
+  });
+
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+      stop();
+    } else {
+      start();
+    }
+  });
+
+  setSlide(0);
+  start();
 })();

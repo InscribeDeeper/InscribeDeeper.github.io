@@ -18,161 +18,144 @@
         <p>Choose a profile to continue.</p>
       </section>
 
+      <div class="landing-section-head">
+        <p class="landing-label">Available profiles</p>
+      </div>
+
       <div class="landing-layout">
         <section class="landing-directory">
-          <div class="landing-section-head">
-            <p class="landing-label">Available profiles</p>
-          </div>
-
           <nav class="profile-grid" aria-label="Profile versions">
-            <a
-              class="profile-card profile-card--featured"
-              href="{{ '/niw/' | relative_url }}"
-              data-profile-card
-              data-panel-label="CAREER + EDUCATION"
-              data-panel-title="Career &amp; Education"
-              data-track="undergrad,msc,research,pisrc,mba"
-              data-timeline="career"
-              data-context="Education, research, engineering, and ongoing professional development"
-              aria-current="true"
-            >
+            <a class="profile-card profile-card--featured" href="{{ '/niw/' | relative_url }}">
               <span class="profile-card-body">
                 <span class="profile-name">EB-2 NIW Profile</span>
               </span>
             </a>
 
-            <a
-              class="profile-card"
-              href="{{ '/resume/' | relative_url }}"
-              data-profile-card
-              data-panel-label="PROJECTS"
-              data-panel-title="Selected Projects"
-              data-track="projects"
-              data-timeline="projects"
-              data-context="Academic and competition projects across web, machine learning, and modeling"
-            >
+            <a class="profile-card" href="{{ '/resume/' | relative_url }}">
               <span class="profile-card-body">
                 <span class="profile-name">Resume</span>
               </span>
             </a>
 
-            <a
-              class="profile-card"
-              href="{{ '/cv/' | relative_url }}"
-              data-profile-card
-              data-panel-label="CAREER + EDUCATION"
-              data-panel-title="Career &amp; Education"
-              data-track="undergrad,msc,research,pisrc,mba"
-              data-timeline="career"
-              data-context="Education, research, engineering, and ongoing professional development"
-            >
+            <a class="profile-card" href="{{ '/cv/' | relative_url }}">
               <span class="profile-card-body">
                 <span class="profile-name">Curriculum Vitae</span>
-              </span>
-            </a>
-
-            <a
-              class="profile-card"
-              href="{{ '/all/' | relative_url }}"
-              data-profile-card
-              data-panel-label="CAREER + EDUCATION"
-              data-panel-title="Career &amp; Education"
-              data-track="undergrad,msc,research,pisrc,mba"
-              data-timeline="career"
-              data-context="Education, research, engineering, and ongoing professional development"
-            >
-              <span class="profile-card-body">
-                <span class="profile-name">All Content</span>
               </span>
             </a>
           </nav>
         </section>
 
-        <aside class="profile-preview" aria-live="polite">
-          <p class="preview-label" id="profile-preview-label">CAREER + EDUCATION</p>
-          <h2 id="profile-preview-title">Career &amp; Education</h2>
-          <p class="preview-context" id="profile-preview-context">
-            Technical impact, research foundation, and advanced degree
-          </p>
-          <div class="timeline-panel" data-timeline-panel="career">
-            <div class="career-timeline" aria-label="Career and education timeline">
-              <div class="timeline-item" data-timeline-id="undergrad">
-                <span class="timeline-marker" aria-hidden="true"></span>
-                <div class="timeline-content">
-                  <span class="timeline-period">2014 — 2018</span>
-                  <strong>BSc in Mathematics and Applied Mathematics</strong>
-                  <span>Guangzhou University</span>
+        <aside class="profile-preview" aria-roledescription="carousel" aria-label="Career and project timelines">
+          <button type="button" class="preview-arrow preview-arrow--prev" data-preview-prev aria-label="Previous slide">
+            <svg class="preview-arrow-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M15 5 L8 12 L15 19" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <button type="button" class="preview-arrow preview-arrow--next" data-preview-next aria-label="Next slide">
+            <svg class="preview-arrow-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M9 5 L16 12 L9 19" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <div class="preview-glide" data-preview-glide>
+            <div class="preview-glide-track" data-preview-track>
+              <article class="preview-slide" data-preview-slide aria-label="Career and education">
+                <p class="preview-label">CAREER + EDUCATION</p>
+                <h2>Career &amp; Education</h2>
+                <p class="preview-context">
+                  Education, research, engineering, and ongoing professional development
+                </p>
+                <div class="career-timeline" aria-label="Career and education timeline">
+                  <div class="timeline-item timeline-item--active">
+                    <span class="timeline-marker" aria-hidden="true"></span>
+                    <div class="timeline-content">
+                      <span class="timeline-period">2014 — 2018</span>
+                      <strong>BSc in Mathematics and Applied Mathematics</strong>
+                      <span>Guangzhou University</span>
+                    </div>
+                  </div>
+                  <div class="timeline-item timeline-item--active">
+                    <span class="timeline-marker" aria-hidden="true"></span>
+                    <div class="timeline-content">
+                      <span class="timeline-period">2019 — 2021</span>
+                      <strong>MSc in Data Science</strong>
+                      <span>Stevens Institute of Technology</span>
+                    </div>
+                  </div>
+                  <div class="timeline-item timeline-item--active">
+                    <span class="timeline-marker" aria-hidden="true"></span>
+                    <div class="timeline-content">
+                      <span class="timeline-period">2020 — 2021</span>
+                      <strong>Research &amp; Teaching Assistant</strong>
+                      <span>Deep Learning and Web Analytics</span>
+                    </div>
+                  </div>
+                  <div class="timeline-item timeline-item--active">
+                    <span class="timeline-marker" aria-hidden="true"></span>
+                    <div class="timeline-content">
+                      <span class="timeline-period">2022 — Present</span>
+                      <strong>Full Stack Software Engineer</strong>
+                      <span>PiSrc · AI, search, and data platforms</span>
+                    </div>
+                  </div>
+                  <div class="timeline-item timeline-item--active">
+                    <span class="timeline-marker" aria-hidden="true"></span>
+                    <div class="timeline-content">
+                      <span class="timeline-period">2025 — Present</span>
+                      <strong>MBA Candidate</strong>
+                      <span>Monroe University</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="timeline-item" data-timeline-id="msc">
-                <span class="timeline-marker" aria-hidden="true"></span>
-                <div class="timeline-content">
-                  <span class="timeline-period">2019 — 2021</span>
-                  <strong>MSc in Data Science</strong>
-                  <span>Stevens Institute of Technology</span>
+              </article>
+
+              <article class="preview-slide" data-preview-slide aria-label="Selected projects" aria-hidden="true">
+                <p class="preview-label">PROJECTS</p>
+                <h2>Selected Projects</h2>
+                <p class="preview-context">
+                  Academic and competition projects across web, machine learning, and modeling
+                </p>
+                <div class="career-timeline project-timeline" aria-label="Project timeline">
+                  <div class="timeline-item timeline-item--active">
+                    <span class="timeline-marker" aria-hidden="true"></span>
+                    <div class="timeline-content">
+                      <span class="timeline-period">September 2015</span>
+                      <strong>CUMCM · National Second Prize</strong>
+                      <span>Geolocation model, image processing, and Genetic Algorithm</span>
+                    </div>
+                  </div>
+                  <div class="timeline-item timeline-item--active">
+                    <span class="timeline-marker" aria-hidden="true"></span>
+                    <div class="timeline-content">
+                      <span class="timeline-period">Academic project</span>
+                      <strong>MyPlace Web Development</strong>
+                      <span>Node.js, Express, MongoDB, and REST APIs</span>
+                    </div>
+                  </div>
+                  <div class="timeline-item timeline-item--active">
+                    <span class="timeline-marker" aria-hidden="true"></span>
+                    <div class="timeline-content">
+                      <span class="timeline-period">Academic project</span>
+                      <strong>E-commerce Recommender System</strong>
+                      <span>Collaborative filtering and 77% Top-10 accuracy</span>
+                    </div>
+                  </div>
+                  <div class="timeline-item timeline-item--active">
+                    <span class="timeline-marker" aria-hidden="true"></span>
+                    <div class="timeline-content">
+                      <span class="timeline-period">Competition project</span>
+                      <strong>Fintech Pitch Competition · 6th Position</strong>
+                      <span>City vibrancy index and predictive modeling</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="timeline-item" data-timeline-id="research">
-                <span class="timeline-marker" aria-hidden="true"></span>
-                <div class="timeline-content">
-                  <span class="timeline-period">2020 — 2021</span>
-                  <strong>Research &amp; Teaching Assistant</strong>
-                  <span>Deep Learning and Web Analytics</span>
-                </div>
-              </div>
-              <div class="timeline-item" data-timeline-id="pisrc">
-                <span class="timeline-marker" aria-hidden="true"></span>
-                <div class="timeline-content">
-                  <span class="timeline-period">2022 — Present</span>
-                  <strong>Full Stack Software Engineer</strong>
-                  <span>PiSrc · AI, search, and data platforms</span>
-                </div>
-              </div>
-              <div class="timeline-item" data-timeline-id="mba">
-                <span class="timeline-marker" aria-hidden="true"></span>
-                <div class="timeline-content">
-                  <span class="timeline-period">2025 — Present</span>
-                  <strong>MBA Candidate</strong>
-                  <span>Monroe University</span>
-                </div>
-              </div>
+              </article>
             </div>
           </div>
-          <div class="timeline-panel" data-timeline-panel="projects" hidden>
-            <div class="career-timeline project-timeline" aria-label="Project timeline">
-              <div class="timeline-item timeline-item--active" data-timeline-id="cumcm">
-                <span class="timeline-marker" aria-hidden="true"></span>
-                <div class="timeline-content">
-                  <span class="timeline-period">September 2015</span>
-                  <strong>CUMCM · National Second Prize</strong>
-                  <span>Geolocation model, image processing, and Genetic Algorithm</span>
-                </div>
-              </div>
-              <div class="timeline-item timeline-item--active" data-timeline-id="myplace">
-                <span class="timeline-marker" aria-hidden="true"></span>
-                <div class="timeline-content">
-                  <span class="timeline-period">Academic project</span>
-                  <strong>MyPlace Web Development</strong>
-                  <span>Node.js, Express, MongoDB, and REST APIs</span>
-                </div>
-              </div>
-              <div class="timeline-item timeline-item--active" data-timeline-id="recommender">
-                <span class="timeline-marker" aria-hidden="true"></span>
-                <div class="timeline-content">
-                  <span class="timeline-period">Academic project</span>
-                  <strong>E-commerce Recommender System</strong>
-                  <span>Collaborative filtering and 77% Top-10 accuracy</span>
-                </div>
-              </div>
-              <div class="timeline-item timeline-item--active" data-timeline-id="fintech">
-                <span class="timeline-marker" aria-hidden="true"></span>
-                <div class="timeline-content">
-                  <span class="timeline-period">Competition project</span>
-                  <strong>Fintech Pitch Competition · 6th Position</strong>
-                  <span>City vibrancy index and predictive modeling</span>
-                </div>
-              </div>
-            </div>
+
+          <div class="preview-glide-dots" role="tablist" aria-label="Timeline slides">
+            <button type="button" class="preview-dot is-active" data-preview-dot="0" aria-label="Show career and education" aria-selected="true"></button>
+            <button type="button" class="preview-dot" data-preview-dot="1" aria-label="Show selected projects" aria-selected="false"></button>
           </div>
         </aside>
       </div>

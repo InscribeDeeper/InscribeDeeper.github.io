@@ -36,6 +36,7 @@ views:
       - core_expertise_niw
       - selected_contributions_niw
       - work_history
+      - industry_projects
       - education
       - awards
   resume:
@@ -57,6 +58,7 @@ views:
       - core_expertise_cv
       - selected_contributions_cv
       - work_history
+      - industry_projects
       - education
       - awards
       - extracurricular
@@ -71,6 +73,7 @@ views:
       - core_expertise_cv
       - selected_contributions_cv
       - work_history
+      - industry_projects
       - education
       - awards
       - extracurricular
@@ -288,6 +291,53 @@ sections:
         #       - Manipulated, visualized and presented the statistical results with Tableau Dashboard
         #       - Explored regression models to provide a baseline of elevators' failure rate for the Operations Department
 
+  industry_projects:
+    group: industry_projects
+    tags: [niw, cv, all]
+    title: Industry Projects
+    layout: list
+    content:
+      - layout: left
+        title: AI Conversations
+        sub_title: Enterprise Conversational AI & RAG
+        link: https://www.rockwellautomation.com/en-us/search.html?keyword=what+is+rockwell+doing%3F&tab=all
+        link_text: View production experience
+        description: |
+          - Led development of a production RAG experience using Azure OpenAI, Redis, and Weaviate, supporting 1K+ daily active users
+          - Delivered conversational memory, tool orchestration, safety guardrails, AI-generated overviews, autosuggest, reporting, and feedback workflows
+
+      - layout: left
+        title: Partner Locator
+        sub_title: Enterprise Data Integration & Search
+        link: https://www.rockwellautomation.com/en-us/sales/partner-locator.html
+        link_text: View project
+        description: |
+          - Designed 7+ MuleSoft API workflows for incremental synchronization of partner account and location data
+          - Integrated heterogeneous records into Solr- and Elasticsearch-based search with cache optimization
+
+      - layout: left
+        title: Content Score
+        sub_title: Content Intelligence & Optimization
+        description: |
+          - Developed data-driven scoring capabilities to evaluate enterprise content and support systematic content-quality improvements
+          - Connected scoring results with content workflows to help teams identify and prioritize optimization opportunities
+
+      - layout: left
+        title: Personalization
+        sub_title: Recommendation Systems
+        link: https://www.rockwellautomation.com/en-us/products/details.595-AB.html
+        link_text: View production experience
+        description: |
+          - Developed user-to-item and item-to-item recommendation pipelines with rolling-cache and Akamai CDN integration
+          - Built offline machine learning workflows supporting sales-funnel optimization and marketing targeting
+
+      - layout: left
+        title: AEM Platform Extensions
+        sub_title: Enterprise Content Management
+        description: |
+          - Developed reusable and licensable Adobe Experience Manager modules for content authoring and multi-channel publishing
+          - Improved media and content-delivery workflows through cache automation and platform integrations
+
   education:
     group: education
     tags: [niw, resume, cv, all]
@@ -343,19 +393,11 @@ sections:
     group: extracurricular
     tags: [cv, all]
     title: Extracurricular Activities
-    layout: list
-    content:
-      - layout: left
-        title: UBS Quant Hackathon
-        caption: 2020
-
-      - layout: left
-        title: UBS Pitch Competition
-        caption: 2020
-
-      - layout: left
-        title: Stevens HealthTech Hackathon
-        caption: 2019
+    layout: text
+    content: |
+      - **UBS Quant Hackathon** — 2020
+      - **UBS Pitch Competition** — 2020
+      - **Stevens HealthTech Hackathon** — 2019
 
   academic_projects:
     group: academic_projects
@@ -391,7 +433,7 @@ sections:
           - Simulated on 7,000 pre-defined user-item interaction samples and attained 77% Top-10 Accuracy
 
       - layout: left
-        title: Fintech Pitch Competition - 6th Position
+        title: Fintech Pitch Competition
         quote: >
           Develop a mathematical model based on public data and metrics to measure and predict the vibrancy of the city in the U.S.
         description: |

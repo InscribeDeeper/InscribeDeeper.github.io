@@ -70,6 +70,8 @@
     if (toggle) {
       toggle.addEventListener("click", function () {
         setTheme(isDarkTheme() ? LIGHT : DARK);
+        // Prevent sticky focus styles after a mouse click.
+        toggle.blur();
       });
     }
   }
