@@ -1,0 +1,201 @@
+body.landing-page {
+  --landing-bg: #0b0f14;
+  --landing-glow: #0d3d38;
+  --landing-surface: #141b24;
+  --landing-surface-hover: #1a2430;
+  --landing-text: #eef2f7;
+  --landing-muted: #8b98a8;
+  --landing-accent: #2dd4bf;
+  --landing-accent-dim: rgba(45, 212, 191, 0.12);
+  --landing-border: rgba(255, 255, 255, 0.08);
+
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, var(--landing-glow) 0%, transparent 60%),
+    var(--landing-bg);
+  color: var(--landing-text);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+
+  .landing-shell {
+    width: calc(100% - 3rem);
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3.5rem 0 1rem;
+  }
+
+  .landing-brand {
+    margin-bottom: 2rem;
+  }
+
+  .landing-eyebrow,
+  .landing-label {
+    margin: 0;
+    color: var(--landing-muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .landing-eyebrow {
+    margin-bottom: 0.7rem;
+    color: var(--landing-accent);
+  }
+
+  .landing-brand h1 {
+    margin: 0 0 0.35rem;
+    color: var(--landing-text);
+    font-size: 2.35rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  .landing-tagline {
+    margin: 0;
+    color: var(--landing-muted);
+    font-size: 0.98rem;
+  }
+
+  .landing-welcome {
+    margin-bottom: 2rem;
+    padding: 1.15rem 1.25rem;
+    background: var(--landing-accent-dim);
+    border: 1px solid rgba(45, 212, 191, 0.22);
+    border-radius: 14px;
+    color: #c8d4de;
+    font-size: 0.92rem;
+
+    p:last-child {
+      margin: 0.4rem 0 0;
+    }
+  }
+
+  .landing-section-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .landing-status {
+    color: var(--landing-muted);
+    font-size: 0.75rem;
+  }
+
+  .profile-grid {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .profile-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: var(--landing-surface);
+    border: 1px solid var(--landing-border);
+    border-radius: 14px;
+    color: var(--landing-text);
+    text-decoration: none;
+    transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--landing-surface-hover);
+      border-color: rgba(45, 212, 191, 0.35);
+      color: var(--landing-text);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+  }
+
+  .profile-card--featured {
+    border-color: rgba(45, 212, 191, 0.3);
+  }
+
+  .profile-icon {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    background: var(--landing-accent-dim);
+    border-radius: 10px;
+    color: var(--landing-accent);
+    font-size: 1.25rem;
+  }
+
+  .profile-card-body {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .profile-name {
+    display: block;
+    color: var(--landing-accent);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .profile-description {
+    display: block;
+    margin-top: 0.15rem;
+    color: var(--landing-muted);
+    font-size: 0.85rem;
+  }
+
+  .profile-arrow {
+    flex-shrink: 0;
+    color: var(--landing-muted);
+    font-size: 1.1rem;
+    transition: color 0.18s ease, transform 0.18s ease;
+  }
+
+  .profile-card:hover .profile-arrow,
+  .profile-card:focus-visible .profile-arrow {
+    color: var(--landing-accent);
+    transform: translateX(3px);
+  }
+
+  .landing-note {
+    margin: 1.5rem 0 0;
+    color: var(--landing-muted);
+    font-size: 0.78rem;
+    text-align: center;
+  }
+
+  .footer-container {
+    width: calc(100% - 3rem);
+    max-width: 640px;
+    margin: 2rem auto 0;
+    border-top: 1px solid var(--landing-border);
+  }
+
+  .footer-container p,
+  .footer-container a {
+    color: var(--landing-muted);
+  }
+
+  @media screen and (max-width: 520px) {
+    .landing-shell {
+      width: calc(100% - 2rem);
+      padding-top: 2.5rem;
+    }
+
+    .landing-brand h1 {
+      font-size: 2rem;
+    }
+
+    .landing-section-head {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .footer-container {
+      width: calc(100% - 2rem);
+    }
+  }
+}

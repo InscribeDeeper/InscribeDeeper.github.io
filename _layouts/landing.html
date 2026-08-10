@@ -3,22 +3,64 @@
 
 {%- include head.html -%}
 
-<body class="{% if site.darkmode == true and site.darkmode != 'never' %}dark{% endif %}">
-  <main class="page-content" aria-label="Content">
-    <div class="wrapper">
-      {% assign person = site.data.profile.person %}
-      <div class="container intro-container">
-        <h1>{{ person.name | escape }}</h1>
-        <h2>{{ person.title | escape }}</h2>
-        <p>Welcome. Choose a profile to view:</p>
-        <p>
-          <a class="button" href="{{ '/niw/' | relative_url }}">EB-2 NIW Profile</a>
-          <a class="button" href="{{ '/resume/' | relative_url }}">Resume</a>
-          <a class="button" href="{{ '/cv/' | relative_url }}">CV</a>
-          <a class="button" href="{{ '/all/' | relative_url }}">All Content</a>
-        </p>
-      </div>
+<body class="landing-page">
+  {% assign person = site.data.profile.person %}
+  <main class="landing-shell" aria-label="Profile hub">
+    <header class="landing-brand">
+      <p class="landing-eyebrow">PERSONAL PROFILE HUB</p>
+      <h1>{{ person.name | escape }}</h1>
+      <p class="landing-tagline">{{ person.title | escape }}</p>
+    </header>
+
+    <section class="landing-welcome">
+      <p class="landing-label">WELCOME</p>
+      <p>Choose a profile to view a focused version of my professional and academic background.</p>
+    </section>
+
+    <div class="landing-section-head">
+      <p class="landing-label">AVAILABLE PROFILES</p>
+      <span class="landing-status">Updated continuously</span>
     </div>
+
+    <nav class="profile-grid" aria-label="Profile versions">
+      <a class="profile-card profile-card--featured" href="{{ '/niw/' | relative_url }}">
+        <span class="profile-icon" aria-hidden="true">◎</span>
+        <span class="profile-card-body">
+          <span class="profile-name">EB-2 NIW Profile</span>
+          <span class="profile-description">National-interest waiver focused profile</span>
+        </span>
+        <span class="profile-arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="profile-card" href="{{ '/resume/' | relative_url }}">
+        <span class="profile-icon" aria-hidden="true">▤</span>
+        <span class="profile-card-body">
+          <span class="profile-name">Resume</span>
+          <span class="profile-description">Concise professional experience and education</span>
+        </span>
+        <span class="profile-arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="profile-card" href="{{ '/cv/' | relative_url }}">
+        <span class="profile-icon" aria-hidden="true">⌘</span>
+        <span class="profile-card-body">
+          <span class="profile-name">Curriculum Vitae</span>
+          <span class="profile-description">Academic, research, and professional background</span>
+        </span>
+        <span class="profile-arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="profile-card" href="{{ '/all/' | relative_url }}">
+        <span class="profile-icon" aria-hidden="true">▦</span>
+        <span class="profile-card-body">
+          <span class="profile-name">All Content</span>
+          <span class="profile-description">Complete profile, skills, interests, and projects</span>
+        </span>
+        <span class="profile-arrow" aria-hidden="true">↗</span>
+      </a>
+    </nav>
+
+    <p class="landing-note">Each version is generated from one shared profile data source.</p>
   </main>
 
   {%- include footer.html -%}

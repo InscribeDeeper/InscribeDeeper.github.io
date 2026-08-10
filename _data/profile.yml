@@ -52,6 +52,11 @@ views:
       - awards
       - extracurricular
       - academic_projects
+      - familiar_python_packages
+      - modeling_knowledge_base
+      - more_about_me
+      - sentences_i_love
+      - interests_hobbies
 
 sections:
   work_history:
@@ -248,6 +253,53 @@ sections:
           - Constructed a geolocation model based on shadow changes by modeling the solar altitude angle; solved the optimization problem with a Genetic Algorithm
           - Won the national second prize in the 2015 CUMCM in China
 
-  # Familiar Python Packages retained as a reference and intentionally hidden.
-  # Modeling Knowledge Base retained as a reference and intentionally hidden.
-  # The sentences I love retained as a reference and intentionally hidden.
+  familiar_python_packages:
+    title: Familiar Python Packages
+    layout: text
+    content: |
+      | Data Scraping | Data Manipulation | Textual Data Processing | Machine Learning and Deep Learning | Data Visualization |
+      | ---- | ---- | ---- | ---- | ---- |
+      | Selenium, BeautifulSoup | Pandas, NumPy, Regular Expression | SpaCy, NLTK, Gensim | PyTorch, HuggingFace Transformers, Scikit-Learn, Keras | Matplotlib, Seaborn |
+
+  modeling_knowledge_base:
+    title: Modeling Knowledge Base
+    layout: text
+    content: |
+      | Neural Networks | NLP | Regression | Classification | Dimension Reduction | Clustering | Ensembling Techniques |
+      | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+      | Transformer, Convolutional Neural Networks, Variational Autoencoder | Word2Vec, BERT, Transformer, Latent Dirichlet Allocation | Linear Regression, Hinge/Lasso Regression, Time Series Regression (ARIMA) | Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-Nearest Neighbors (KNN) | Principal Component Analysis (PCA), Singular Value Decomposition (SVD) | K-means, Hierarchical Clustering, DBSCAN | Bagging, Boosting, Stacking |
+
+  more_about_me:
+    title: A Little More About Me
+    layout: text
+    content: |
+      **Python-related packages**
+
+      - Data Manipulation: Pandas, NumPy, Regular Expression
+      - Textual Data Processing: SpaCy, NLTK, Gensim
+      - Machine Learning and Deep Learning: PyTorch, HuggingFace Transformers, Scikit-Learn, Keras
+      - Data Visualization: Matplotlib, Seaborn, Tableau
+
+      **Algorithms and Models**
+
+      - Neural Networks: Recurrent Neural Networks (LSTM), Convolutional Neural Networks, Variational Autoencoder
+      - NLP: Word2Vec, BERT, Transformer, Latent Dirichlet Allocation
+      - Regression: Linear Regression, Hinge/Lasso Regression, Time Series Regression (ARIMA)
+      - Classification: Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-Nearest Neighbors (KNN)
+      - Dimension Reduction: Principal Component Analysis (PCA), Singular Value Decomposition (SVD)
+      - Clustering: K-means, Hierarchical Clustering, DBSCAN
+      - Ensembling Techniques: Bagging, Boosting, Stacking
+
+  sentences_i_love:
+    title: The Sentences I Love
+    layout: text
+    content: |
+      > What I cannot create, I do not understand
+
+  interests_hobbies:
+    title: Interests & Hobbies
+    layout: text
+    content: |
+      - League of Legends
+      - DIY computer hardware and PC building
+      - Stock market research and analysis
