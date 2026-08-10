@@ -6,11 +6,11 @@
 {% endif %}
 
 {% assign pending_profile_image = false %}
-{% unless view.show_about %}
-  {% if about.profile_image %}
+{% if view.show_profile_image and about.profile_image %}
+  {% unless view.show_about %}
     {% assign pending_profile_image = true %}
-  {% endif %}
-{% endunless %}
+  {% endunless %}
+{% endif %}
 
 {% assign selected_groups = "|" %}
 {% for section_id in view.sections %}

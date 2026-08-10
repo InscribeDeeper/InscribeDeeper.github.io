@@ -148,6 +148,7 @@
 .footer-container {
   flex-shrink: 0;
   margin-top: auto;
+  border-top: 1px solid var(--page-border, #dddddd);
   padding-top: 1.25rem;
 }
 

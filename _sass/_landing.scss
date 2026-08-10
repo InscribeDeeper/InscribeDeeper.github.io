@@ -9,9 +9,7 @@ body.landing-page {
   --landing-accent-border: rgba(154, 217, 204, 0.35);
   --landing-accent-border-strong: rgba(154, 217, 204, 0.55);
   --landing-border: rgba(226, 238, 242, 0.12);
-  --theme-toggle-bg: rgba(255, 255, 255, 0.06);
-  --theme-toggle-border: rgba(255, 255, 255, 0.12);
-  --theme-toggle-hover: rgba(255, 255, 255, 0.12);
+  --theme-toggle-color: #e6e6e6;
 
   /* Light theme (contrast) */
   &.theme-light {
@@ -24,9 +22,7 @@ body.landing-page {
     --landing-accent-border: rgba(71, 125, 202, 0.3);
     --landing-accent-border-strong: rgba(71, 125, 202, 0.5);
     --landing-border: rgba(0, 0, 0, 0.1);
-    --theme-toggle-bg: rgba(15, 23, 42, 0.04);
-    --theme-toggle-border: rgba(15, 23, 42, 0.12);
-    --theme-toggle-hover: rgba(15, 23, 42, 0.08);
+    --theme-toggle-color: #333333;
   }
 
   min-height: 100vh;
@@ -36,14 +32,33 @@ body.landing-page {
   color: var(--landing-text);
   transition: background-color 0.25s ease, color 0.25s ease;
 
-  a,
-  .header-right a {
+  /* Links use accent, but keep social icon buttons matching children pages */
+  a:not(.button),
+  .header-right a:not(.button) {
     color: var(--landing-accent);
   }
 
-  a:hover,
-  .header-right a:hover {
+  a:hover:not(.button),
+  .header-right a:hover:not(.button) {
     color: var(--landing-text);
+  }
+
+  .button.button--sacnite {
+    color: #fff;
+  }
+
+  .button--sacnite:hover {
+    color: #333;
+  }
+
+  &.dark {
+    .button.button--sacnite {
+      color: #222;
+    }
+
+    .button--sacnite:hover {
+      color: #e6e6e6;
+    }
   }
 
   /* Shared header markup/styles come from header.html + theme defaults */
@@ -258,6 +273,7 @@ body.landing-page {
     margin-top: auto;
     border-top: 1px solid var(--landing-border);
     padding-top: 1.25rem;
+    margin-bottom: 0;
   }
 
   .footer-container p,

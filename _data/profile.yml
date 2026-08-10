@@ -29,6 +29,7 @@ views:
   niw:
     title: EB-2 NIW Profile
     show_about: false
+    show_profile_image: false
     sections:
       - professional_summary_niw
       - proposed_endeavor
@@ -40,6 +41,7 @@ views:
   resume:
     title: Resume
     show_about: false
+    show_profile_image: false
     sections:
       - professional_summary_resume
       - core_expertise_resume
@@ -49,6 +51,7 @@ views:
   cv:
     title: Curriculum Vitae
     show_about: false
+    show_profile_image: false
     sections:
       - professional_summary_cv
       - core_expertise_cv
@@ -61,6 +64,7 @@ views:
   all:
     title: Complete Profile
     show_about: false
+    show_profile_image: true
     sections:
       - professional_summary_cv
       - proposed_endeavor

@@ -119,7 +119,13 @@
       {%- endif -%}
       {%- if person.website -%}
         <p>
-          Web: {% include a.html href=person.website %}{{ person.website | escape }}</a>
+          {%- assign website_label = person.website -%}
+          {%- assign website_last = website_label | slice: -1, 1 -%}
+          {%- if website_last == "/" -%}
+            {%- assign website_len = website_label | size | minus: 1 -%}
+            {%- assign website_label = website_label | slice: 0, website_len -%}
+          {%- endif -%}
+          Web: {% include a.html href=person.website %}{{ website_label | escape }}</a>
         </p>
       {%- endif -%}
     </div>
