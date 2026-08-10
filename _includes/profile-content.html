@@ -4,12 +4,18 @@
   {%- include about.html -%}
 {% endif %}
 
+{% assign selected_groups = "|" %}
 {% for section_id in view.sections %}
   {% assign section = site.data.profile.sections[section_id] %}
-  {% if section %}
+  {% assign section_group = section.group | default: section_id %}
+  {% assign group_marker = "|" | append: section_group | append: "|" %}
+  {% unless selected_groups contains group_marker %}
+    {% assign selected_groups = selected_groups | append: section_group | append: "|" %}
+    {% if section %}
     <div class="container {{ section.layout }}-container">
       <h3>{{ section.title }}</h3>
       {% include {{ section.layout | prepend: "section-" | append: ".html" }} content=section.content %}
     </div>
-  {% endif %}
+    {% endif %}
+  {% endunless %}
 {% endfor %}

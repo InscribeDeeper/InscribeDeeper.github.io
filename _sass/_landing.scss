@@ -1,4 +1,5 @@
 body.landing-page {
+  /* Dark theme (default) */
   --landing-bg: #0b0f14;
   --landing-glow: #0d3d38;
   --landing-surface: #141b24;
@@ -7,7 +8,32 @@ body.landing-page {
   --landing-muted: #8b98a8;
   --landing-accent: #2dd4bf;
   --landing-accent-dim: rgba(45, 212, 191, 0.12);
+  --landing-accent-border: rgba(45, 212, 191, 0.22);
+  --landing-accent-border-strong: rgba(45, 212, 191, 0.35);
+  --landing-welcome-text: #c8d4de;
   --landing-border: rgba(255, 255, 255, 0.08);
+  --theme-toggle-bg: rgba(255, 255, 255, 0.06);
+  --theme-toggle-border: rgba(255, 255, 255, 0.12);
+  --theme-toggle-hover: rgba(255, 255, 255, 0.12);
+
+  /* Light theme (contrast) */
+  &.theme-light {
+    --landing-bg: #f5f7fa;
+    --landing-glow: #b8e8e0;
+    --landing-surface: #ffffff;
+    --landing-surface-hover: #eef2f6;
+    --landing-text: #15202b;
+    --landing-muted: #5a6a7a;
+    --landing-accent: #0f766e;
+    --landing-accent-dim: rgba(15, 118, 110, 0.1);
+    --landing-accent-border: rgba(15, 118, 110, 0.22);
+    --landing-accent-border-strong: rgba(15, 118, 110, 0.4);
+    --landing-welcome-text: #3d4f5f;
+    --landing-border: rgba(15, 23, 42, 0.1);
+    --theme-toggle-bg: rgba(15, 23, 42, 0.04);
+    --theme-toggle-border: rgba(15, 23, 42, 0.12);
+    --theme-toggle-hover: rgba(15, 23, 42, 0.08);
+  }
 
   min-height: 100vh;
   background:
@@ -16,10 +42,11 @@ body.landing-page {
   color: var(--landing-text);
   font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
   line-height: 1.6;
+  transition: background 0.25s ease, color 0.25s ease;
 
   .landing-shell {
     width: calc(100% - 3rem);
-    max-width: 640px;
+    max-width: 680px;
     margin: 0 auto;
     padding: 3.5rem 0 1rem;
   }
@@ -46,7 +73,7 @@ body.landing-page {
   .landing-brand h1 {
     margin: 0 0 0.35rem;
     color: var(--landing-text);
-    font-size: 2.35rem;
+    font-size: 2.6rem;
     font-weight: 700;
     letter-spacing: -0.03em;
   }
@@ -61,9 +88,9 @@ body.landing-page {
     margin-bottom: 2rem;
     padding: 1.15rem 1.25rem;
     background: var(--landing-accent-dim);
-    border: 1px solid rgba(45, 212, 191, 0.22);
+    border: 1px solid var(--landing-accent-border);
     border-radius: 14px;
-    color: #c8d4de;
+    color: var(--landing-welcome-text);
     font-size: 0.92rem;
 
     p:last-child {
@@ -79,32 +106,27 @@ body.landing-page {
     margin-bottom: 0.75rem;
   }
 
-  .landing-status {
-    color: var(--landing-muted);
-    font-size: 0.75rem;
-  }
-
   .profile-grid {
     display: grid;
-    gap: 0.65rem;
+    gap: 0.8rem;
   }
 
   .profile-card {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem 1.25rem;
+    min-height: 88px;
+    padding: 1.35rem 1.5rem;
     background: var(--landing-surface);
     border: 1px solid var(--landing-border);
     border-radius: 14px;
     color: var(--landing-text);
     text-decoration: none;
-    transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+    transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease, color 0.18s ease;
 
     &:hover,
     &:focus-visible {
       background: var(--landing-surface-hover);
-      border-color: rgba(45, 212, 191, 0.35);
+      border-color: var(--landing-accent-border-strong);
       color: var(--landing-text);
       text-decoration: none;
       transform: translateY(-1px);
@@ -112,19 +134,7 @@ body.landing-page {
   }
 
   .profile-card--featured {
-    border-color: rgba(45, 212, 191, 0.3);
-  }
-
-  .profile-icon {
-    flex-shrink: 0;
-    width: 2.5rem;
-    height: 2.5rem;
-    display: grid;
-    place-items: center;
-    background: var(--landing-accent-dim);
-    border-radius: 10px;
-    color: var(--landing-accent);
-    font-size: 1.25rem;
+    border-color: var(--landing-accent-border);
   }
 
   .profile-card-body {
@@ -135,15 +145,9 @@ body.landing-page {
   .profile-name {
     display: block;
     color: var(--landing-accent);
-    font-size: 1rem;
+    font-size: 1.15rem;
     font-weight: 600;
-  }
-
-  .profile-description {
-    display: block;
-    margin-top: 0.15rem;
-    color: var(--landing-muted);
-    font-size: 0.85rem;
+    letter-spacing: -0.01em;
   }
 
   .profile-arrow {
@@ -159,16 +163,9 @@ body.landing-page {
     transform: translateX(3px);
   }
 
-  .landing-note {
-    margin: 1.5rem 0 0;
-    color: var(--landing-muted);
-    font-size: 0.78rem;
-    text-align: center;
-  }
-
   .footer-container {
     width: calc(100% - 3rem);
-    max-width: 640px;
+    max-width: 680px;
     margin: 2rem auto 0;
     border-top: 1px solid var(--landing-border);
   }

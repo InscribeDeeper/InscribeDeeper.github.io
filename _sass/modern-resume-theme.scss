@@ -168,14 +168,14 @@
 .contact a {
   line-height: 50px;
   margin-left: 30px;
-  color: #BBBBBB;
+  color: var(--page-contact, #BBBBBB);
   -webkit-transition: color 0.4s ease;
   -moz-transition: color 0.4s ease;
   transition: color 0.4s ease;
 }
 
 .contact a:hover {
-  color: #4C4C4C;
+  color: var(--page-contact-hover, #4C4C4C);
 }
 
 p.quote {

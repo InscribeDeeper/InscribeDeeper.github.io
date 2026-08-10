@@ -17,6 +17,9 @@ legacy_website: inscribedeeper.github.io/
 # website_title: Web (Website title override)
 
 # Dark Mode (true/false/never)
+# true  = always dark
+# false = user can toggle; default is dark (black)
+# never = always light (white), no toggle
 darkmode: false
 
 # Social links

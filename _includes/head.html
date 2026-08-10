@@ -10,6 +10,18 @@
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | default: '/assets/favicon.ico' | relative_url }}">
 
+  {%- if site.darkmode == false -%}
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem("site-theme") || "dark";
+        document.documentElement.setAttribute("data-theme", theme);
+        document.documentElement.classList.add("theme-boot-" + theme);
+      } catch (e) {}
+    })();
+  </script>
+  {%- endif -%}
+
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}

@@ -3,8 +3,12 @@
 
 {%- include head.html -%}
 
-<body class="landing-page">
+<body class="landing-page{% if site.darkmode == true %} dark{% elsif site.darkmode == 'never' %} theme-light{% endif %}">
+  {%- include theme-boot.html -%}
   {% assign person = site.data.profile.person %}
+  {%- if site.darkmode == false -%}
+    {%- include theme-toggle.html -%}
+  {%- endif -%}
   <main class="landing-shell" aria-label="Profile hub">
     <header class="landing-brand">
       <p class="landing-eyebrow">PERSONAL PROFILE HUB</p>
@@ -14,59 +18,48 @@
 
     <section class="landing-welcome">
       <p class="landing-label">WELCOME</p>
-      <p>Choose a profile to view a focused version of my professional and academic background.</p>
+      <p>Choose a profile to continue.</p>
     </section>
 
     <div class="landing-section-head">
       <p class="landing-label">AVAILABLE PROFILES</p>
-      <span class="landing-status">Updated continuously</span>
     </div>
 
     <nav class="profile-grid" aria-label="Profile versions">
       <a class="profile-card profile-card--featured" href="{{ '/niw/' | relative_url }}">
-        <span class="profile-icon" aria-hidden="true">◎</span>
         <span class="profile-card-body">
           <span class="profile-name">EB-2 NIW Profile</span>
-          <span class="profile-description">National-interest waiver focused profile</span>
         </span>
         <span class="profile-arrow" aria-hidden="true">↗</span>
       </a>
 
       <a class="profile-card" href="{{ '/resume/' | relative_url }}">
-        <span class="profile-icon" aria-hidden="true">▤</span>
         <span class="profile-card-body">
           <span class="profile-name">Resume</span>
-          <span class="profile-description">Concise professional experience and education</span>
         </span>
         <span class="profile-arrow" aria-hidden="true">↗</span>
       </a>
 
       <a class="profile-card" href="{{ '/cv/' | relative_url }}">
-        <span class="profile-icon" aria-hidden="true">⌘</span>
         <span class="profile-card-body">
           <span class="profile-name">Curriculum Vitae</span>
-          <span class="profile-description">Academic, research, and professional background</span>
         </span>
         <span class="profile-arrow" aria-hidden="true">↗</span>
       </a>
 
       <a class="profile-card" href="{{ '/all/' | relative_url }}">
-        <span class="profile-icon" aria-hidden="true">▦</span>
         <span class="profile-card-body">
           <span class="profile-name">All Content</span>
-          <span class="profile-description">Complete profile, skills, interests, and projects</span>
         </span>
         <span class="profile-arrow" aria-hidden="true">↗</span>
       </a>
     </nav>
-
-    <p class="landing-note">Each version is generated from one shared profile data source.</p>
   </main>
 
   {%- include footer.html -%}
-  {% if site.darkmode == false %}
+  {%- if site.darkmode == false -%}
     <script src="{{ '/assets/js/index.js' | relative_url }}"></script>
-  {% endif %}
+  {%- endif -%}
 </body>
 
 </html>
