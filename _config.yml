@@ -70,7 +70,7 @@ about_content: | # this will include new lines to allow paragraphs
 #   - Images ![alt text](/images/landscape-trees.jpg "Trees")
 
 content:
-    - title: Experience
+    - title: Work History
       layout: list
       content:
           - layout: left
@@ -142,7 +142,7 @@ content:
             description: | # this will include new lines to allow paragraphs
                 **Relevant Coursework**: Statistical Methods, Statistical Inference, Advanced Optimization Methods, Advanced Data Analytics & Machine Learning, Deep Learning, Natural Language Processing, Web Analytics, Database Management Systems, Web Programming, Data Structures & Algorithms
 
-                **Scholarship**: Provost's Scholarship, 2019
+                # **Scholarship**: Provost's Scholarship, 2019
 
           - layout: right
             title: Guangzhou University
@@ -151,9 +151,42 @@ content:
             description: | # this will include new lines to allow paragraphs
                 **Relevant Coursework**: Probability and Mathematical Statistics, Operational Research, Numerical Analysis, Advanced Algebra, Mathematical Analysis, Real Function Theory, Functional analysis, Ordinary Differential Equations, Partial Differential Equations
 
-                **Awards**: Second prize (top 6.3% out of 25,558 teams) in National Mathematical Modeling Contest, 2015
+                # **Awards**: Second prize (top 6.3% out of 25,558 teams) in National Mathematical Modeling Contest, 2015
 
-    - title: Projects # Title for the section
+    - title: Awards & Honors
+      layout: list
+      content:
+          - layout: left
+            title: Provost's Scholarship
+            sub_title: Stevens Institute of Technology
+            caption: 2019
+            description: |
+                Awarded the Provost's Scholarship during the MSc in Data Science program.
+
+          - layout: left
+            title: National Mathematical Modeling Contest
+            sub_title: Second Prize
+            caption: 2015
+            description: |
+                Ranked in the top 6.3% out of 25,558 teams.
+
+    - title: Extracurricular Activities
+      layout: list
+      content:
+          - layout: left
+            title: UBS Quant Hackathon
+            caption: 2020
+
+          - layout: left
+            title: UBS Pitch Competition
+            caption: 2020
+
+          - layout: left
+            title: Stevens HealthTech Hackathon
+            caption: 2019
+
+    # Lower-priority academic/course projects retained for reference.
+    - title: Academic Projects # Title for the section
       layout: list # Type of content section (list/text)
       content:
           - layout: left
@@ -228,19 +261,28 @@ content:
                 - Delivered feature engineering for financial indicators like MACD and RSI etc
                 - Analyzed, finetuned, and back-tested for over five types of deep learning model to increase the portfolio return
 
-    - title: Familiar Python Packages
-      layout: text
-      content: |
-          |  Data Scraping | Data Manupulation | Textual Data Processing | Machine Learning and Deep Learning | Data Visualization |
-          | ---- | ---- | ---- | ---- | ---- | ---- |
-          | Selenium, BeautifulSoup | Pandas, Numpy, Regular Expression | SpaCy, NLTK, Gensim | Pytorch, HuggingFace Transformers, Scikit-Learn, Keras | Matplotlib, Seaborn |
+          - layout: left
+            title: China Undergraduate Mathematical Contest in Modeling (CUMCM)
+            sub_title: Guangzhou, China
+            caption: September 2015
+            description: | # this will include new lines to allow paragraphs
+                - Implemented dilation and erosion algorithms and the Moving Average Method to extract information from images
+                - Constructed a geolocation model based on shadow changes by modeling the solar altitude angle; solved the optimization problem with a Genetic Algorithm
+                - Won the national second prize in the 2015 CUMCM in China
 
-    - title: Modeling Knowledge Base
-      layout: text
-      content: |
-          | Neural Networks | NLP | Regression | Classification | Dimension Reduction | Clustering | Emsembling techniques|
-          | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-          | Transformer, Convolutional Neural Networks, Variational Autoencoder | Word2Vector, BERT, Transformer, Latent Dirichlet Allocation | Linear Regression, Hinge/Lasso Regression, Time series regression(ARIMA) | Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-nearest Neighbors(KNN) | Principal Component Analysis(PCA), Singular Value Decomposition(SVD) | K-means, Hierarchical Clustering, DBSCAN | Bagging, Boosting, Stacking|
+    #    - title: Familiar Python Packages
+    #      layout: text
+    #      content: |
+    #          |  Data Scraping | Data Manupulation | Textual Data Processing | Machine Learning and Deep Learning | Data Visualization |
+    #          | ---- | ---- | ---- | ---- | ---- | ---- |
+    #          | Selenium, BeautifulSoup | Pandas, Numpy, Regular Expression | SpaCy, NLTK, Gensim | Pytorch, HuggingFace Transformers, Scikit-Learn, Keras | Matplotlib, Seaborn |
+
+    #    - title: Modeling Knowledge Base
+    #      layout: text
+    #      content: |
+    #          | Neural Networks | NLP | Regression | Classification | Dimension Reduction | Clustering | Emsembling techniques|
+    #          | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+    #          | Transformer, Convolutional Neural Networks, Variational Autoencoder | Word2Vector, BERT, Transformer, Latent Dirichlet Allocation | Linear Regression, Hinge/Lasso Regression, Time series regression(ARIMA) | Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-nearest Neighbors(KNN) | Principal Component Analysis(PCA), Singular Value Decomposition(SVD) | K-means, Hierarchical Clustering, DBSCAN | Bagging, Boosting, Stacking|
 
     # - title: A Little More About Me
     #   layout: text
@@ -262,10 +304,10 @@ content:
     #                 - Clustering: | K-means, Hierarchical Clustering, DBSCAN
     #                 - Emsembling techniques: | Bagging, Boosting, Stacking
 
-    - title: The sentences I love
-      layout: text # Type of content section (list/text)
-      content: 
-        - What I cannot create, I do not understand
+    #    - title: The sentences I love
+    #      layout: text # Type of content section (list/text)
+    #      content:
+    #        - What I cannot create, I do not understand
 
 # Footer
 footer_show_references: true
