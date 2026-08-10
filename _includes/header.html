@@ -1,9 +1,52 @@
 {% assign person = site.data.profile.person %}
+{% if page.profile %}
+  {% assign profile_view = site.data.profile.views[page.profile] %}
+{% endif %}
 <div class="container header-contianer">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 header-left">
       <h1>{{ person.name | escape }}</h1>
-      <h2>{{ person.title | escape }}</h2>
+      {% if person.company and person.company_url and person.title contains person.company %}
+        {% assign title_prefix = person.title | split: person.company | first %}
+        <h2>{{ title_prefix | escape }}{% include a.html href=person.company_url class="header-company-link" %}{{ person.company | escape }}</a></h2>
+      {% else %}
+        <h2>{{ person.title | escape }}</h2>
+      {% endif %}
+
+      {% if page.profile %}
+        <div class="doc-actions no-print">
+          <button
+            type="button"
+            class="doc-action"
+            aria-label="Print"
+            title="Print"
+            onclick="window.print(); this.blur();"
+          >
+            <svg class="doc-action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M7 8V3h10v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M7 17H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          {% if profile_view.downloads and profile_view.downloads.size > 0 %}
+            {% assign download_item = profile_view.downloads | first %}
+            <a
+              class="doc-action"
+              href="{{ download_item.path | relative_url }}"
+              download
+              aria-label="{{ download_item.label | default: 'Download' | escape }}"
+              title="{{ download_item.label | default: 'Download' | escape }}"
+            >
+              <svg class="doc-action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 3v12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M5 19h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
     </div>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 header-right">
       <ul class="icons no-print">

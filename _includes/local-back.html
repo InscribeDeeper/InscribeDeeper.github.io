@@ -1,0 +1,41 @@
+<button
+  type="button"
+  class="local-back no-print"
+  id="local-back"
+  hidden
+  aria-label="Go back"
+  title="Go back (localhost only)"
+>
+  <svg class="local-back-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M15 5 L8 12 L15 19" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+  <span class="local-back-label">Back</span>
+</button>
+<script>
+  (function () {
+    var host = window.location.hostname;
+    var isLocal =
+      host === "localhost" ||
+      host === "127.0.0.1" ||
+      host === "0.0.0.0" ||
+      host === "[::1]" ||
+      host === "::1";
+    if (!isLocal) {
+      return;
+    }
+
+    var button = document.getElementById("local-back");
+    if (!button) {
+      return;
+    }
+
+    button.hidden = false;
+    button.addEventListener("click", function () {
+      if (window.history.length > 1) {
+        window.history.back();
+        return;
+      }
+      window.location.href = {{ '/' | relative_url | jsonify }};
+    });
+  })();
+</script>

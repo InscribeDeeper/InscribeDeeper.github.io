@@ -1,14 +1,27 @@
 {% for item in include.content %}
   <div class="row clearfix layout layout-{{item.layout | default: 'left'}}">
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+    <div class="col-xs-12 col-sm-4 col-md-3 details">
       <h4>{{ item.title }}</h4>
+      {%- if item.role -%}<p class="item-role">{{ item.role }}</p>{%- endif -%}
       {%- if item.sub_title -%}<p><b>{{ item.sub_title }}</b></p>{%- endif -%}
       {%- if item.caption -%}<p>{{ item.caption }}</p>{%- endif -%}
 
-      {%- if item.link -%}
-        {% include a.html href=item.link class="link" %}
-          {%- if item.link_text -%}{{ item.link_text }}{%- else -%}{{ item.link }}{%- endif -%}
-        </a>
+      {%- assign ref_count = item.references | size -%}
+      {%- if item.link and ref_count > 0 -%}
+        <p class="item-references no-print">Live demo: {% include a.html href=item.link class="link" %}1</a>{%- for ref in item.references -%}{%- assign protocol = ref.url | strip | slice: 0, 4 -%}, <a href="{% if protocol != 'http' %}//{% endif %}{{ ref.url }}" target="_blank" class="link" title="{{ ref.title | default: ref.url | escape }}">{{ forloop.index | plus: 1 }}</a>{%- endfor %}</p>
+      {%- elsif ref_count == 1 -%}
+        {%- assign only_ref = item.references | first -%}
+        <p class="no-print item-link">
+          {% include a.html href=only_ref.url class="link" %}Live demo</a>
+        </p>
+      {%- elsif ref_count > 1 -%}
+        <p class="item-references no-print">Live demo: {% for ref in item.references -%}{%- assign protocol = ref.url | strip | slice: 0, 4 -%}<a href="{% if protocol != 'http' %}//{% endif %}{{ ref.url }}" target="_blank" class="link" title="{{ ref.title | default: ref.url | escape }}">{{ forloop.index }}</a>{%- unless forloop.last -%}, {% endunless -%}{%- endfor %}</p>
+      {%- elsif item.link -%}
+        <p class="no-print item-link">
+          {% include a.html href=item.link class="link" %}
+            {%- if item.link_text -%}{{ item.link_text }}{%- else -%}{{ item.link }}{%- endif -%}
+          </a>
+        </p>
       {%- endif -%}
 
       <p class="no-print aditional-links">
@@ -19,7 +32,7 @@
         {% endfor %}
       </p>
     </div>
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
+    <div class="col-xs-12 col-sm-8 col-md-9 content">
       {%- if item.quote -%}
         <p class="quote">{{ item.quote }}</p>
       {%- endif -%}

@@ -1,6 +1,8 @@
 person:
   name: Wei Yang
   title: Full-Stack Software Engineer at PiSrc
+  company: PiSrc
+  company_url: https://www.pisrc.com/
   email: hey.weiyang@gmail.com
   phone: +1 551 260 0541
   website: inscribedeeper.github.io/
@@ -35,7 +37,7 @@ views:
       - proposed_endeavor
       - core_expertise_niw
       - selected_contributions_niw
-      - work_history
+      - work_history_overview
       - industry_projects
       - education
       - awards
@@ -43,10 +45,13 @@ views:
     title: Resume
     show_about: false
     show_profile_image: false
+    downloads:
+      - label: Download Resume (V7.3 Overview)
+        path: assets/resume/Wei-Yang-Resume-V7.3-Overview.pdf
     sections:
       - professional_summary_resume
       - core_expertise_resume
-      - work_history
+      - work_history_resume
       - education
       - awards
   cv:
@@ -57,7 +62,7 @@ views:
       - professional_summary_cv
       - core_expertise_cv
       - selected_contributions_cv
-      - work_history
+      - work_history_overview
       - industry_projects
       - education
       - awards
@@ -72,7 +77,7 @@ views:
       - proposed_endeavor
       - core_expertise_cv
       - selected_contributions_cv
-      - work_history
+      - work_history_overview
       - industry_projects
       - education
       - awards
@@ -164,40 +169,44 @@ sections:
     layout: list
     content:
       - layout: left
-        title: Secure Enterprise RAG
+        title: AI Navigator
         sub_title: Production Conversational AI
+        caption: Started February 2023 · Active
         quote: >
-          Built reliable knowledge-retrieval capabilities for an enterprise digital platform.
+          Built reliable conversational knowledge-retrieval for enterprise website support.
         description: |
-          - Led end-to-end development of a production RAG conversational application using Azure OpenAI, Redis, and Weaviate, with sticky-session routing and load balancing supporting 1K+ daily active users
-          - Implemented multi-turn memory, function-calling workflows, input sanitization, content filtering, and PII masking to improve the usefulness, safety, and reliability of AI interactions
+          - Primary implementer of the production AI Navigator chat experience using Azure OpenAI, Redis, and Weaviate, with sticky-session routing and load balancing supporting 1K+ daily active users
+          - Implemented multi-turn memory, function-calling workflows, input sanitization, content filtering, and PII masking to improve usefulness, safety, and reliability of AI interactions
 
       - layout: left
-        title: Multilingual Knowledge Retrieval
-        sub_title: Search and Indexing Infrastructure
+        title: AI Overview
+        sub_title: Search Overview & Retrieval
+        caption: Started February 2023 · Active
         quote: >
           Improved access to distributed enterprise knowledge across heterogeneous sources.
         description: |
-          - Engineered scheduled multilingual indexing pipelines across 10+ data sources
-          - Combined keyword and semantic retrieval with reranking, query routing, query expansion, iterative retrieval, caching, and feedback loops to improve relevance and responsiveness
-
-      - layout: left
-        title: Enterprise Data Interoperability
-        sub_title: API Integration and Search
-        quote: >
-          Connected fragmented partner and location data to searchable enterprise applications.
-        description: |
-          - Designed 7+ MuleSoft integration workflows for incremental data synchronization
-          - Integrated multi-source records into Solr- and Elasticsearch-based retrieval systems with cache optimization
+          - Primary implementer of real-time AI Overview and autosuggest for enterprise search, with caching, reporting, and feedback loops
+          - Engineered scheduled multilingual indexing pipelines across 10+ data sources with hybrid retrieval, reranking, query routing, expansion, and iterative retrieval
 
       - layout: left
         title: Intelligent Personalization
         sub_title: Recommendation and ML Pipelines
+        caption: Started February 2023 · Maintenance
         quote: >
           Applied recommendation methods and behavioral data to improve digital experiences.
         description: |
-          - Developed user-to-item and item-to-item recommendation pipelines with rolling caches and CDN integration
-          - Built offline machine learning pipelines supporting sales-funnel optimization and marketing targeting
+          - Primary implementer of user-to-item and item-to-item recommendation pipelines with rolling caches and Akamai CDN integration
+          - Built offline machine learning pipelines that analyze user web interactions to support sales-funnel optimization, marketing targeting, and personalized website experiences
+
+      - layout: left
+        title: Enterprise Data Interoperability
+        sub_title: API Integration and Search
+        caption: Started February 2022 · Maintenance
+        quote: >
+          Connected fragmented partner and location data to searchable enterprise applications.
+        description: |
+          - Designed 7+ MuleSoft integration workflows for incremental CRM delta updates of partner accounts and locations
+          - Integrated multi-source records into a Lucidworks Solr / Elasticsearch search layer with cache optimization for faster retrieval
 
   selected_contributions_cv:
     group: featured_technical_work
@@ -206,37 +215,41 @@ sections:
     layout: list
     content:
       - layout: left
-        title: Enterprise RAG Platform
+        title: AI Navigator
         sub_title: Azure OpenAI, Redis, Weaviate
+        caption: Started February 2023 · Active
         description: |
-          - Led full-cycle development of a production conversational AI application supporting 1K+ daily active users
+          - Primary implementer of a production conversational AI chat experience supporting 1K+ daily active users
           - Designed multi-turn memory, context management, function-calling tools, sticky-session routing, load balancing, content filtering, and PII masking
 
       - layout: left
-        title: Multilingual Hybrid Search
-        sub_title: Enterprise Knowledge Retrieval
+        title: AI Overview
+        sub_title: Search Overview & Hybrid Retrieval
+        caption: Started February 2023 · Active
         description: |
-          - Built scheduled indexing pipelines spanning 10+ heterogeneous data sources
-          - Implemented keyword and semantic retrieval, reranking, query expansion, multi-channel routing, iterative retrieval, caching, reporting, and user-feedback workflows
-
-      - layout: left
-        title: Enterprise Data Integration
-        sub_title: MuleSoft, Solr, Elasticsearch
-        description: |
-          - Designed 7+ API workflows for incremental synchronization of partner account and location data
-          - Integrated multi-source records into search layers and optimized cache behavior for responsive retrieval
+          - Primary implementer of real-time AI Overview and autosuggest for enterprise search
+          - Built scheduled indexing pipelines spanning 10+ heterogeneous data sources with hybrid retrieval, reranking, query expansion, caching, reporting, and feedback workflows
 
       - layout: left
         title: Recommendation Systems
         sub_title: Personalization and Offline ML
+        caption: Started February 2023 · Maintenance
         description: |
-          - Developed user-to-item and item-to-item recommendation pipelines with rolling-cache and CDN integration
-          - Built offline machine learning workflows for sales-funnel and marketing-campaign optimization
+          - Primary implementer of user-to-item and item-to-item recommendation pipelines with rolling-cache and CDN integration
+          - Built offline machine learning workflows for sales-funnel optimization, marketing targeting, and personalized product experiences
 
-  work_history:
+      - layout: left
+        title: Enterprise Data Integration
+        sub_title: MuleSoft, Lucidworks Solr, Elasticsearch
+        caption: Started February 2022 · Maintenance
+        description: |
+          - Designed 7+ API workflows for incremental synchronization of partner account and location data from CRM systems
+          - Integrated multi-source records into Lucidworks Solr– and Elasticsearch-based search layers with cache optimization
+
+  work_history_resume:
     group: professional_experience
-    tags: [niw, resume, cv, all]
-    title: Professional Experience
+    tags: [resume]
+    title: Experience
     layout: list
     content:
       - layout: left
@@ -244,52 +257,91 @@ sections:
         sub_title: Full-Stack Software Engineer
         caption: February 2022 - Present
         quote: >
-          Lead the development of production AI, enterprise search, data integration, and personalization capabilities for industrial digital platforms.
+          Delivered AI and enterprise search solutions for a global industrial automation company.
         description: |
-          - AI Chatbot & RAG Systems:
-            - Led full-cycle development of a production-grade RAG conversational [AI chatbot](https://www.rockwellautomation.com/en-us/search.html?keyword=what+is+rockwell+doing%3F&tab=all) using Azure OpenAI, Redis, and Weaviate vector database; architected sticky session routing and load balancing to support 1K+ DAUs
-            - Designed multi-turn conversational memory with Redis persistence and context window management; built agentic workflows with function calling to orchestrate custom tools and external APIs
-            - Implemented security guardrails including input sanitization, content filtering, and PII masking to ensure safe and compliant AI interactions
-            - Delivered real-time AI Overview and autosuggest powered by live user queries with caching layer for low-latency responses; built scheduled report pipelines and user feedback loops to continuously improve relevance and quality
-            - Engineered scheduled multilingual (I18N) indexing pipelines across 10+ heterogeneous data sources, combining keyword-based and semantic hybrid search with semantic reranking, multi-channel query routing, query expansion, and iterative retrieval
-          - Infrastructure & Platform Engineering:
-            - Architected scalable full-stack infrastructure: VM provisioning, runtime orchestration, and offline pipelines for knowledge base synchronization and cache optimization
-            - Maintained high reliability and low-latency performance through proactive monitoring and tuning
-            - Applied data-driven insights to evolve CMS architecture and scale web platforms
-          - Data Integration & Search Optimization:
-            - Designed 7+ MuleSoft API integration workflows for incremental delta updates of [partner accounts and locations](https://www.rockwellautomation.com/en-us/sales/partner-locator.html)
-            - Integrated multi-source data into a Solr and Elasticsearch–based search layer with cache optimization
-          - Personalization & Machine Learning Pipelines:
-            - Developed [User-to-Item and Item-to-Item recommendation](https://www.rockwellautomation.com/en-us/products/details.595-AB.html) pipelines with rolling cache and Akamai CDN integration
-            - Built offline ML pipelines to optimize sales funnel conversion and marketing campaign targeting
-          - Content Platform (AEM):
-            - Developed licensable software modules on Adobe Experience Manager to streamline content authoring and multi-channel publishing
+          - Led development of an enterprise RAG AI chatbot with Azure OpenAI, Redis, and Weaviate
+          - Designed machine learning pipelines for batch processing of user interactions, personalization, and user classification
+          - Built recommendation systems delivering customized product and website experiences
+          - Integrated MuleSoft APIs for CRM delta-update ingestion into Lucidworks Solr
+          - Tailored AEM [Futprint](https://www.pisrc.com/products/futprint) questionnaire components with category support, reporting, and dashboard views; optimized Akamai caching for AEM content delivery
 
       - layout: left
         title: Stevens Institute of Technology
-        sub_title: Research Assistant/Teaching Assistant, Deep Learning and Web Analytics
+        sub_title: Research Assistant, Deep Learning and Web Analytics
         caption: June 2020 - December 2021
         quote: >
-          Language features pattern detection with Deep Learning models, data parsing and statistics modeling
+          Language-feature pattern detection with deep learning models, data parsing, and statistical modeling
+        description: |
+          - Cleaned and structured 94,581 earnings call transcripts to analyze 96 linguistic factors influencing stock returns
+          - Achieved 72% accuracy on text classification with a domain-adapted BERT language model using PyTorch
+          - Conducted text analysis, sentiment analysis, and text mining with SpaCy and NLTK
+          - Set up and managed a remote GPU environment on Ubuntu for machine learning and deep learning tasks
+
+  work_history_overview:
+    group: professional_experience
+    tags: [niw, cv, all]
+    title: Experience
+    layout: list
+    content:
+      - layout: left
+        title: PiSrc
+        sub_title: Full-Stack Software Engineer
+        caption: Feb 2022 – Present · New York, NY
+        link: https://www.pisrc.com/
+        link_text: PiSrc
+        quote: >
+          Delivered AI and enterprise search solutions for a global industrial automation company.
+        description: |
+          - Lead production delivery across AI, search, data integration, personalization, and content-platform systems at [PiSrc](https://www.pisrc.com/)
+          - Primary scope includes Metaphora, AI Navigator, AI Overview, Fault Code Navigator, Personalization, Content Score, Partner Locator, Futprint, and related AEM platform work
+          - Focus on reliable production systems, secure AI workflows, multilingual retrieval, and enterprise data interoperability
+          - Project-level contributions are detailed in **Industry Projects**
+
+      - layout: left
+        title: Stevens Institute of Technology
+        sub_title: Research Assistant
+        caption: Jun 2020 – Dec 2021 · Hoboken, NJ
+        quote: >
+          Deep learning, NLP, and statistical modeling for financial text analysis
+        description: |
+          - Cleaned and structured 94,581 earnings call transcripts to analyze 96 linguistic factors influencing stock returns
+          - Achieved 72% accuracy on text classification with a domain-adapted BERT model using PyTorch
+          - Supported deep learning instruction and managed remote GPU environments for ML workflows
+
+  # Retained detailed phase narrative for reference; overview is used when Industry Projects is shown.
+  work_history_detailed:
+    group: professional_experience
+    tags: [reference]
+    title: Experience (Detailed)
+    layout: list
+    content:
+      - layout: left
+        title: PiSrc
+        sub_title: Full-Stack Software Engineer
+        caption: February 2022 - Present · New York, NY
+        link: https://www.pisrc.com/
+        link_text: PiSrc
+        quote: >
+          Delivered AI and enterprise search solutions for a global industrial automation company.
+        description: |
+          - **Role overview:** Lead the design and delivery of production AI, enterprise search, data integration, personalization, and content-platform systems used on industrial digital platforms at [PiSrc](https://www.pisrc.com/)
+          - **February 2022 – February 2023:** Built enterprise data-integration and search foundations, including 7+ MuleSoft API workflows for partner account/location delta updates, Lucidworks Solr–based search integration, and licensable Adobe Experience Manager modules for content authoring and publishing
+          - **February 2023 – January 2025:** Led full-cycle development of a production RAG conversational AI system (Azure OpenAI, Redis, Weaviate) supporting 1K+ daily active users; delivered multilingual hybrid-search pipelines across 10+ sources, recommendation systems, and offline ML workflows for personalization and sales-funnel optimization
+          - **January 2025 – Present:** Apply data-driven insights to CMS architecture and platform scaling; collaborate across engineering, product, and business stakeholders; translate requirements into maintainable software; evaluate system performance, availability, and integration quality
+          - **Cross-cutting responsibilities:** Design secure AI interactions with content filtering and PII masking; maintain high reliability and low latency through monitoring, caching, and infrastructure orchestration; document systems and support quality assurance for production services
+
+      - layout: left
+        title: Stevens Institute of Technology
+        sub_title: Research Assistant, Deep Learning and Web Analytics
+        caption: June 2020 - December 2021 · Hoboken, NJ
+        quote: >
+          Language-feature pattern detection with deep learning models, data parsing, and statistical modeling
         description: |
           - Cleaned and structured 94,581 earnings call transcripts to explore 96 language factors influencing stock return
           - Achieved 72% accuracy on text classification with a domain-adapted BERT language model using PyTorch
           - Conducted text analysis, sentiment analysis, and text mining utilizing NLP techniques with SpaCy and NLTK
           - Set up and managed a remote GPU environment on Ubuntu for Machine Learning and Deep Learning tasks
           - Developed tutorials on implementing deep learning models using related Python packages
-
-        # Historical experience retained for reference:
-        # - layout: left
-        #   title: 1lift
-        #   sub_title: Data Analyst Intern
-        #   caption: April 2019 - July 2019
-        #   quote: >
-        #       Gain hands-on experience on necessary tools and understanding of develop environment
-        #   description: |
-        #       - Built a cost analysis module for the application with Excel advanced functionalities
-        #       - Extracted structured data with MySQL, cleaned the unstructured textual data with Python
-        #       - Manipulated, visualized and presented the statistical results with Tableau Dashboard
-        #       - Explored regression models to provide a baseline of elevators' failure rate for the Operations Department
 
   industry_projects:
     group: industry_projects
@@ -298,45 +350,129 @@ sections:
     layout: list
     content:
       - layout: left
-        title: AI Conversations
-        sub_title: Enterprise Conversational AI & RAG
+        title: Metaphora
+        role: Primary implementer
+        sub_title: Content transformation
+        caption: 2024
+        references:
+          - title: Tech Met
+            url: https://plex.rockwellautomation.com/en-us/case-studies/tech-met-inc-c-s-v3.html
+          - title: ASK Power
+            url: https://plex.rockwellautomation.com/en-us/case-studies/a-s-k-power-c-s.html
+        description: |
+          - Built Metaphora, an AI-powered suite that converts content for enterprise content management
+          - Delivered end-to-end workflows that transform PDFs into HTML and authored Adobe Experience Manager components for structured editing
+          - Implemented an agentic framework with LLM vision to interpret layout, extract structure, and generate reusable AEM components
+          - Added I18N translation support governed by brand voice and editorial guidelines
+          - Designed the tools to run on existing customer infrastructure without external processing servers
+
+      - layout: left
+        title: ABM Personalization
+        sub_title: Account-based marketing
+        caption: 2024 · Maintenance
+        description: |
+          - Built account-based marketing personalization that tailors website experiences to target accounts and buying contexts
+          - Extended recommendation and content-targeting workflows beyond product-level personalization to account-aware journeys
+          - Aligned page content and offers with account segments and prior interaction signals
+
+      - layout: left
+        title: Fault Code Navigator
+        role: Primary implementer
+        sub_title: Technical support lookup
+        caption: 2023 · Maintenance
+        link: https://www.rockwellautomation.com/en-us/support/documentation.html#button-6cfc1d95e7
+        link_text: Live demo
+        description: |
+          - Built an AI-assisted Fault Code Navigator for industrial product families to look up condition, event, and fault codes
+          - Connected product-family selection and fault-code queries with documentation retrieval on the Technical Documentation Center
+          - Delivered production access to trusted troubleshooting information for drives, controllers, and motion systems
+
+      - layout: left
+        title: AI Navigator
+        role: Primary implementer
+        sub_title: Conversational AI chat
+        caption: Feb 2023 · Active
+        link: https://www.rockwellautomation.com/en-us.html#rafb-chat-choice
+        link_text: Live demo
+        description: |
+          - Built the production [AI Navigator](https://www.rockwellautomation.com/en-us.html#rafb-chat-choice) chat experience with Azure OpenAI, Redis, and Weaviate, supporting 1K+ daily active users via sticky-session routing and load balancing
+          - Designed multi-turn conversational memory with Redis persistence; built agentic workflows with function calling for custom tools and APIs
+          - Implemented security guardrails including input sanitization, content filtering, and PII masking
+          - Delivered the website chat entry point that lets visitors choose AI-powered support for quick access to trusted information
+
+      - layout: left
+        title: AI Overview
+        role: Primary implementer
+        sub_title: Search AI overview & autosuggest
+        caption: Feb 2023 · Active
         link: https://www.rockwellautomation.com/en-us/search.html?keyword=what+is+rockwell+doing%3F&tab=all
-        link_text: View production experience
+        link_text: Live demo
         description: |
-          - Led development of a production RAG experience using Azure OpenAI, Redis, and Weaviate, supporting 1K+ daily active users
-          - Delivered conversational memory, tool orchestration, safety guardrails, AI-generated overviews, autosuggest, reporting, and feedback workflows
-
-      - layout: left
-        title: Partner Locator
-        sub_title: Enterprise Data Integration & Search
-        link: https://www.rockwellautomation.com/en-us/sales/partner-locator.html
-        link_text: View project
-        description: |
-          - Designed 7+ MuleSoft API workflows for incremental synchronization of partner account and location data
-          - Integrated heterogeneous records into Solr- and Elasticsearch-based search with cache optimization
-
-      - layout: left
-        title: Content Score
-        sub_title: Content Intelligence & Optimization
-        description: |
-          - Developed data-driven scoring capabilities to evaluate enterprise content and support systematic content-quality improvements
-          - Connected scoring results with content workflows to help teams identify and prioritize optimization opportunities
+          - Built real-time [AI Overview](https://www.rockwellautomation.com/en-us/search.html?keyword=what+is+rockwell+doing%3F&tab=all) and autosuggest for enterprise search, powered by live user queries with a caching layer for low-latency responses
+          - Engineered multilingual indexing across 10+ heterogeneous data sources with hybrid search, semantic reranking, query routing, expansion, and iterative retrieval
+          - Added scheduled reporting pipelines and user-feedback loops to continuously improve overview relevance and quality
+          - Separated search-overview generation from conversational chat so each experience could optimize for its own latency, ranking, and UX requirements
 
       - layout: left
         title: Personalization
-        sub_title: Recommendation Systems
+        role: Primary implementer
+        sub_title: Recommendations & ML
+        caption: 2023 · Maintenance
         link: https://www.rockwellautomation.com/en-us/products/details.595-AB.html
-        link_text: View production experience
+        link_text: Live demo
+        references:
+          - title: Hardware views
+            url: https://www.rockwellautomation.com/en-us/products/hardware.html#:~:text=Based%20on%20your%20views
+          - title: Related content
+            url: https://www.rockwellautomation.com/en-us/company/news/case-studies/ot-asset-visibility.html#:~:text=You%20may%20also%20be%20interested%20in
         description: |
-          - Developed user-to-item and item-to-item recommendation pipelines with rolling-cache and Akamai CDN integration
-          - Built offline machine learning workflows supporting sales-funnel optimization and marketing targeting
+          - Built user-to-item and item-to-item recommendation pipelines with rolling-cache and Akamai CDN integration
+          - Designed machine learning pipelines for batch processing of user web interactions, supporting personalization and user classification
+          - Developed offline ML workflows for sales-funnel conversion, marketing targeting, and customized product experiences
+          - Delivered personalized discovery surfaces such as “Based on your views,” preferred products, and related-content recommendations
 
       - layout: left
-        title: AEM Platform Extensions
-        sub_title: Enterprise Content Management
+        title: Content Score
+        role: Primary implementer
+        sub_title: Funnel analytics & ML
+        caption: 2023 · Maintenance
         description: |
-          - Developed reusable and licensable Adobe Experience Manager modules for content authoring and multi-channel publishing
-          - Improved media and content-delivery workflows through cache automation and platform integrations
+          - Built a backend analytics platform that accelerates the marketing funnel with content-quality scoring and performance signals
+          - Developed machine learning workflows to evaluate content effectiveness and prioritize conversion-focused optimizations
+          - Connected scoring outputs with marketing and content workflows for faster, data-driven funnel decisions
+
+      - layout: left
+        title: Partner Locator
+        sub_title: Data integration & search
+        caption: Feb 2022 · Active
+        link: https://www.rockwellautomation.com/en-us/sales/partner-locator.html
+        link_text: Live demo
+        description: |
+          - Designed 7+ MuleSoft API workflows for incremental CRM delta updates of partner accounts and locations
+          - Integrated heterogeneous records into a Lucidworks Solr– and Elasticsearch-based search layer with cache optimization
+          - Improved reliability of partner and location data availability for searchable enterprise applications
+          - Continues in active maintenance and enhancement for production partner-locator experiences
+
+      - layout: left
+        title: Futprint
+        sub_title: Questionnaire & dashboard
+        caption: 2022 · Maintenance
+        references:
+          - title: Assessment
+            url: https://www.rockwellautomation.com/en-us/capabilities/industrial-cybersecurity/services/cybersecurity-preparedness-assessment.html#!0:0
+        description: |
+          - Tailored Adobe Experience Manager components for the Futprint questionnaire, including category support, reporting, and dashboard presentation
+          - Supported an interactive Cybersecurity Preparedness Assessment that produces a NIST-based preparedness score and customized report
+          - Improved structured authoring and multi-channel publishing for assessment-driven enterprise content workflows
+
+      - layout: left
+        title: Hotjar + AEM Feedback
+        sub_title: Site feedback integration
+        caption: Feb 2022 · Maintenance
+        description: |
+          - Integrated Hotjar with Adobe Experience Manager to capture on-site user feedback and behavioral signals
+          - Connected feedback collection with AEM-managed pages to help teams identify UX friction and prioritize improvements
+          - Established an early feedback loop that informed later personalization, content scoring, and conversion-focused work
 
   education:
     group: education
@@ -346,14 +482,14 @@ sections:
     content:
       - layout: right
         title: Monroe University
-        sub_title: Master of Business Administration (MBA), In Progress
+        sub_title: Master of Business Administration (MBA), Part-time · In Progress
         caption: 2025 - Present
         description: |
           **Selected Coursework**: Strategic Marketing & Data Mining, Software System Design, Computer Networks, Research & Statistics for Managerial Decision-Making, Organizational Behavior & Leadership in the 21st Century, Managing in the Global Environment
 
       - layout: right
         title: Stevens Institute of Technology
-        sub_title: MSc in Data Science (GPA 3.8/4.0)
+        sub_title: MSc in Data Science
         caption: September 2019 - December 2021
         description: |
           **Relevant Coursework**: Statistical Methods, Statistical Inference, Advanced Optimization Methods, Advanced Data Analytics & Machine Learning, Deep Learning, Natural Language Processing, Web Analytics, Database Management Systems, Web Programming, Data Structures & Algorithms
@@ -384,10 +520,12 @@ sections:
 
       - layout: left
         title: National Mathematical Modeling Contest
-        sub_title: Second Prize
+        sub_title: Second Prize · CUMCM
         caption: 2015
+        link: https://en.mcm.edu.cn/
+        link_text: CUMCM
         description: |
-          Ranked in the top 6.3% out of 25,558 teams.
+          Ranked in the top 6.3% out of 25,558 teams in the [CUMCM](https://en.mcm.edu.cn/).
 
   extracurricular:
     group: extracurricular
@@ -471,10 +609,12 @@ sections:
         title: China Undergraduate Mathematical Contest in Modeling (CUMCM)
         sub_title: Guangzhou, China
         caption: September 2015
+        link: https://en.mcm.edu.cn/
+        link_text: CUMCM
         description: |
           - Implemented dilation and erosion algorithms and the Moving Average Method to extract information from images
           - Constructed a geolocation model based on shadow changes by modeling the solar altitude angle; solved the optimization problem with a Genetic Algorithm
-          - Won the national second prize in the 2015 CUMCM in China
+          - Won the national second prize in the 2015 [CUMCM](https://en.mcm.edu.cn/) in China
 
   familiar_python_packages:
     group: technical_reference

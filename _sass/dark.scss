@@ -55,12 +55,12 @@ body.dark {
     color: var(--page-link-hover);
   }
 
-  h3 {
-    border-bottom-color: var(--page-border);
-  }
-
   th {
     border-bottom-color: var(--page-table-header);
+  }
+
+  h3 {
+    border-top-color: var(--page-border);
   }
 
   td {
@@ -79,9 +79,103 @@ body.dark {
     color: var(--page-contact-hover);
   }
 
+  a.doc-action,
+  .doc-action {
+    color: var(--page-contact);
+  }
+
+  a.doc-action:hover,
+  a.doc-action:focus,
+  a.doc-action:focus-visible,
+  .doc-action:hover,
+  .doc-action:focus,
+  .doc-action:focus-visible {
+    color: var(--page-contact-hover);
+  }
+
   .footer-container p,
   .footer-container a {
     color: var(--page-muted);
+  }
+}
+
+/* Localhost-only back button */
+.local-back {
+  position: fixed;
+  top: 1.25rem;
+  left: 1.25rem;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0.35rem 0.45rem;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  background-color: transparent;
+  color: var(--page-contact, #bbbbbb);
+  box-shadow: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.18s ease, color 0.18s ease;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    opacity: 1;
+    background: transparent;
+    background-color: transparent;
+    color: var(--page-contact-hover, #4C4C4C);
+    outline: none;
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+.local-back[hidden] {
+  display: none !important;
+}
+
+.local-back-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  display: block;
+}
+
+body.dark .local-back,
+body.landing-page:not(.theme-light) .local-back {
+  color: #c8d0d6;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    color: #ffffff;
+    background: transparent;
+    background-color: transparent;
+  }
+}
+
+body.theme-light .local-back {
+  color: #777777;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    color: #222222;
+    background: transparent;
+    background-color: transparent;
+  }
+}
+
+@media print {
+  .local-back {
+    display: none !important;
   }
 }
 

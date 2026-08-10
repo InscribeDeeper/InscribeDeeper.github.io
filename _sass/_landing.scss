@@ -169,6 +169,7 @@ body.landing-page {
     position: relative;
     display: flex;
     min-height: 560px;
+    height: min(72vh, 640px);
     flex-direction: column;
     overflow: hidden;
     padding: 2.5rem 3.5rem 1.5rem;
@@ -262,6 +263,9 @@ body.landing-page {
     width: 100%;
     min-width: 100%;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
     padding: 0 1.5rem;
   }
 
@@ -322,6 +326,27 @@ body.landing-page {
     padding-left: 0.2rem;
   }
 
+  .project-timeline {
+    flex: 1 1 auto;
+    align-content: start;
+    gap: 1rem;
+    min-height: 0;
+    height: 100%;
+    margin-top: 1.6rem;
+    margin-bottom: 0.25rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: 0.2rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .project-timeline::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
   .career-timeline::before {
     position: absolute;
     top: 0.65rem;
@@ -371,6 +396,20 @@ body.landing-page {
     color: var(--landing-text);
     font-size: 1.4rem;
     font-weight: 500;
+  }
+
+  .timeline-content a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  .timeline-content a:hover {
+    color: var(--landing-text);
+  }
+
+  .timeline-content strong a {
+    font-weight: inherit;
   }
 
   @keyframes timeline-pulse {

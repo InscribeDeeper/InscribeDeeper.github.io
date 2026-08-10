@@ -5,6 +5,7 @@
 
 <body class="{% if site.darkmode == true and site.darkmode != 'never' %}dark{% elsif site.darkmode == 'never' %}theme-light{% endif %}">
   {%- include theme-boot.html -%}
+  {%- include local-back.html -%}
   {%- if site.darkmode == false -%}
     {%- include theme-toggle.html -%}
   {%- endif -%}
