@@ -5,14 +5,15 @@ repository: Git repository where your resume will be hosted, only required if yo
 # Content configuration version
 version: 2
 
-# Personal info
-name: Wei Yang
-title: Full-Stack Software Engineer at PiSrc
-email: hey.weiyang@gmail.com
+# Personal info is maintained in _data/profile.yml
+# Legacy values are kept below as reference.
+legacy_name: Wei Yang
+legacy_title: Full-Stack Software Engineer at PiSrc
+legacy_email: hey.weiyang@gmail.com
 # email_title: Email (Email title override)
-phone: +1 551 260 0541
+legacy_phone: +1 551 260 0541
 # phone_title: Phone (Phone title override)
-website: inscribedeeper.github.io/
+legacy_website: inscribedeeper.github.io/
 # website_title: Web (Website title override)
 
 # Dark Mode (true/false/never)
@@ -20,13 +21,13 @@ darkmode: false
 
 # Social links
 # twitter_username: jekyllrb
-github_username: inscribedeeper
+legacy_github_username: inscribedeeper
 # stackoverflow_username: "00000001"
 # dribbble_username: jekyll
 # facebook_username: jekyll
 # flickr_username: jekyll
 # instagram_username: jekyll
-linkedin_username: weiyangds
+legacy_linkedin_username: weiyangds
 # xing_username: jekyll
 # pinterest_username: jekyll
 # youtube_username: jekyll
@@ -51,8 +52,8 @@ linkedin_username: weiyangds
 
 # About Section
 # about_title: About Me (Use this to override about section title)
-about_profile_image: images/wyang_img.jpg # Directory of profile image (eg. images/profile.jpg)
-about_content: | # this will include new lines to allow paragraphs
+legacy_about_profile_image: images/wyang_img.jpg # Directory of profile image (eg. images/profile.jpg)
+legacy_about_content: | # this will include new lines to allow paragraphs
     My experience has instilled in me a strong desire to solve difficult challenges with innovative data-driven solutions. I'm enthusiastic about projects that benefit the community, and I'm eager to assist businesses in developing better products by using data to derive insights. 
 
     Stacks:
@@ -69,7 +70,8 @@ about_content: | # this will include new lines to allow paragraphs
 #   - <a href="google.com">Links</a>
 #   - Images ![alt text](/images/landscape-trees.jpg "Trees")
 
-content:
+# Legacy content is retained for reference only; active profile data lives in _data/profile.yml.
+legacy_content:
     - title: Work History
       layout: list
       content:

@@ -1,4 +1,5 @@
 ---
-# To change the default theme layout see: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: default
+# The root path is a lightweight landing page for the available profiles.
+layout: landing
+title: Welcome
 ---

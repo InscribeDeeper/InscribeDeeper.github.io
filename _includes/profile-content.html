@@ -1,0 +1,15 @@
+{% assign view = include.view %}
+
+{% if view.show_about %}
+  {%- include about.html -%}
+{% endif %}
+
+{% for section_id in view.sections %}
+  {% assign section = site.data.profile.sections[section_id] %}
+  {% if section %}
+    <div class="container {{ section.layout }}-container">
+      <h3>{{ section.title }}</h3>
+      {% include {{ section.layout | prepend: "section-" | append: ".html" }} content=section.content %}
+    </div>
+  {% endif %}
+{% endfor %}

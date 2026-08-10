@@ -1,0 +1,253 @@
+person:
+  name: Wei Yang
+  title: Full-Stack Software Engineer at PiSrc
+  email: hey.weiyang@gmail.com
+  phone: +1 551 260 0541
+  website: inscribedeeper.github.io/
+  github_username: inscribedeeper
+  linkedin_username: weiyangds
+
+about:
+  title: About Me
+  profile_image: images/wyang_img.jpg
+  content: |
+    My experience has instilled in me a strong desire to solve difficult challenges with innovative data-driven solutions. I'm enthusiastic about projects that benefit the community, and I'm eager to assist businesses in developing better products by using data to derive insights.
+
+    Stacks:
+    - Programming Languages: Python, Java, JavaScript, Shell Script, SQL
+    - Database Management Tools: ElasticSearch, Weaviate, MySQL, Microsoft SQL Server, MongoDB
+    - Technology: RAG, Microsoft Azure, Nginx, Adobe Experience Manager, MuleSoft, Docker, AWS, Git, Tableau
+    - Python Packages: Pandas, NumPy, Re, Pytorch, Transformers, Scikit-learn
+
+views:
+  niw:
+    title: EB-2 NIW Profile
+    show_about: true
+    sections:
+      - work_history
+      - education
+      - awards
+  resume:
+    title: Resume
+    show_about: true
+    sections:
+      - work_history
+      - education
+      - awards
+  cv:
+    title: Curriculum Vitae
+    show_about: true
+    sections:
+      - work_history
+      - education
+      - awards
+      - extracurricular
+      - academic_projects
+  all:
+    title: Complete Profile
+    show_about: true
+    sections:
+      - work_history
+      - education
+      - awards
+      - extracurricular
+      - academic_projects
+
+sections:
+  work_history:
+    title: Work History
+    layout: list
+    content:
+      - layout: left
+        title: PiSrc
+        sub_title: Full Stack Software Engineer
+        caption: February 2022 - Present
+        quote: >
+          Gain hands-on experience on software development and data pipeline implementation
+        description: |
+          - AI Chatbot & RAG Systems:
+            - Led full-cycle development of a production-grade RAG conversational [AI chatbot](https://www.rockwellautomation.com/en-us/search.html?keyword=what+is+rockwell+doing%3F&tab=all) using Azure OpenAI, Redis, and Weaviate vector database; architected sticky session routing and load balancing to support 1K+ DAUs
+            - Designed multi-turn conversational memory with Redis persistence and context window management; built agentic workflows with function calling to orchestrate custom tools and external APIs
+            - Implemented security guardrails including input sanitization, content filtering, and PII masking to ensure safe and compliant AI interactions
+            - Delivered real-time AI Overview and autosuggest powered by live user queries with caching layer for low-latency responses; built scheduled report pipelines and user feedback loops to continuously improve relevance and quality
+            - Engineered scheduled multilingual (I18N) indexing pipelines across 10+ heterogeneous data sources, combining keyword-based and semantic hybrid search with semantic reranking, multi-channel query routing, query expansion, and iterative retrieval
+          - Infrastructure & Platform Engineering:
+            - Architected scalable full-stack infrastructure: VM provisioning, runtime orchestration, and offline pipelines for knowledge base synchronization and cache optimization
+            - Maintained high reliability and low-latency performance through proactive monitoring and tuning
+            - Applied data-driven insights to evolve CMS architecture and scale web platforms
+          - Data Integration & Search Optimization:
+            - Designed 7+ MuleSoft API integration workflows for incremental delta updates of [partner accounts and locations](https://www.rockwellautomation.com/en-us/sales/partner-locator.html)
+            - Integrated multi-source data into a Solr and Elasticsearch–based search layer with cache optimization
+          - Personalization & Machine Learning Pipelines:
+            - Developed [User-to-Item and Item-to-Item recommendation](https://www.rockwellautomation.com/en-us/products/details.595-AB.html) pipelines with rolling cache and Akamai CDN integration
+            - Built offline ML pipelines to optimize sales funnel conversion and marketing campaign targeting
+          - Content Platform (AEM):
+            - Developed licensable software modules on Adobe Experience Manager to streamline content authoring and multi-channel publishing
+
+      - layout: left
+        title: Stevens Institute of Technology
+        sub_title: Research Assistant/Teaching Assistant, Deep Learning and Web Analytics
+        caption: June 2020 - December 2021
+        quote: >
+          Language features pattern detection with Deep Learning models, data parsing and statistics modeling
+        description: |
+          - Cleaned and structured 94,581 earnings call transcripts to explore 96 language factors influencing stock return
+          - Achieved 72% accuracy on text classification with domain-adapted BERT language model using Pytorch
+          - Conducted text analysis, sentiment analysis, and text mining utilizing NLP techniques with SpaCy and NLTK
+          - Set up and managed a remote GPU environment on Ubuntu for Machine Learning and Deep Learning tasks
+          - Developed tutorials on implementing deep learning models using related Python packages
+
+        # Historical experience retained for reference:
+        # - layout: left
+        #   title: 1lift
+        #   sub_title: Data Analyst Intern
+        #   caption: April 2019 - July 2019
+        #   quote: >
+        #       Gain hands-on experience on necessary tools and understanding of develop environment
+        #   description: |
+        #       - Built a cost analysis module for the application with Excel advanced functionalities
+        #       - Extracted structured data with MySQL, cleaned the unstructured textual data with Python
+        #       - Manipulated, visualized and presented the statistical results with Tableau Dashboard
+        #       - Explored regression models to provide a baseline of elevators' failure rate for the Operations Department
+
+  education:
+    title: Education
+    layout: list
+    content:
+      - layout: right
+        title: Monroe University
+        sub_title: Master of Business Administration (MBA), In Progress
+        caption: 2025 - Present
+        description: |
+          **Relevant Coursework**: Accounting Foundations, Economics Foundations, Finance Foundations, Research & Critical Analysis, Graduate Professional Experience I
+
+      - layout: right
+        title: Stevens Institute of Technology
+        sub_title: MSc in Data Science (GPA 3.8/4.0)
+        caption: September 2019 - December 2021
+        description: |
+          **Relevant Coursework**: Statistical Methods, Statistical Inference, Advanced Optimization Methods, Advanced Data Analytics & Machine Learning, Deep Learning, Natural Language Processing, Web Analytics, Database Management Systems, Web Programming, Data Structures & Algorithms
+
+          <!-- **Scholarship**: Provost's Scholarship, 2019 -->
+
+      - layout: right
+        title: Guangzhou University
+        sub_title: BSc in Mathematics and Applied Mathematics
+        caption: September 2014 - May 2018
+        description: |
+          **Relevant Coursework**: Probability and Mathematical Statistics, Operational Research, Numerical Analysis, Advanced Algebra, Mathematical Analysis, Real Function Theory, Functional analysis, Ordinary Differential Equations, Partial Differential Equations
+
+          <!-- **Awards**: Second prize (top 6.3% out of 25,558 teams) in National Mathematical Modeling Contest, 2015 -->
+
+  awards:
+    title: Awards & Honors
+    layout: list
+    content:
+      - layout: left
+        title: Provost's Scholarship
+        sub_title: Stevens Institute of Technology
+        caption: 2019
+        description: |
+          Awarded the Provost's Scholarship during the MSc in Data Science program.
+
+      - layout: left
+        title: National Mathematical Modeling Contest
+        sub_title: Second Prize
+        caption: 2015
+        description: |
+          Ranked in the top 6.3% out of 25,558 teams.
+
+  extracurricular:
+    title: Extracurricular Activities
+    layout: list
+    content:
+      - layout: left
+        title: UBS Quant Hackathon
+        caption: 2020
+
+      - layout: left
+        title: UBS Pitch Competition
+        caption: 2020
+
+      - layout: left
+        title: Stevens HealthTech Hackathon
+        caption: 2019
+
+  academic_projects:
+    title: Academic Projects
+    layout: list
+    content:
+      - layout: left
+        title: MyPlace Web Development
+        additional_links:
+          - title: InscribeDeeper/MyPlace
+            icon: fab fa-github
+            url: https://github.com/InscribeDeeper/MyPlace
+        quote: >
+          Develop a web application for furniture and rental information exchange
+        description: |
+          - Led team of four students to design and develop a web application with Node.js and Express
+          - Designed document schema on MongoDB and wrapped CRUD operations as RESTful APIs
+          - Implemented Login and user-specific functions such as account signup and authentication system
+          - Developed features for rental and furniture information exchange such as comments, search, dashboard
+
+      - layout: left
+        title: E-commerce Recommender System
+        additional_links:
+          - title: InscribeDeeper/Recommender_Sys
+            icon: fab fa-github
+            url: https://github.com/InscribeDeeper/Recommender_Sys
+        quote: >
+          Develop an e-commerce recommender system using user, item, and interaction data
+        description: |
+          - Created and implemented recommender engine with users, items, and interaction records from JD.com
+          - Integrated multiple memory-based and model-based collaborative filtering algorithms to make recommendations
+          - Simulated on 7,000 pre-defined user-item interaction samples and attained 77% Top-10 Accuracy
+
+      - layout: left
+        title: Fintech Pitch Competition - 6th Position
+        quote: >
+          Develop a mathematical model based on public data and metrics to measure and predict the vibrancy of the city in the U.S.
+        description: |
+          - Constructed a vibrancy index to interpret and predict the prosperity trend of cities in the U.S.
+          - Explored, collected, and blended data from Google POIs, Instagram, Zillow, Bureau of Labor Statistics with Pandas
+          - Performed feature engineering on panel data, and fine-tuned models for prediction with XGBoost and Keras
+
+      - layout: left
+        title: Quantify the AI impacts on Jobs skills
+        additional_links:
+          - title: InscribeDeeper/Job-Descrpition-Feature-extraction
+            icon: fab fa-github
+            url: https://github.com/InscribeDeeper/Job-Descrpition-Feature-extraction
+        quote: >
+          Data scraping, parsing and information extraction, topic modeling with clustering algorithms and neural networks
+        description: |
+          - Scraped, cleaned and structured Job Descriptions textual data from INDEED.com
+          - Filtered noisy data by selecting clusters from K-means algorithm and visualized skillsets distribution
+          - Categorized, analyzed skillsets trend after Topic Modeling and Aspect Extraction Deep Neural Network
+
+      - layout: left
+        title: Analysis on Factors Influencing Bitcoin
+        additional_links:
+          - title: InscribeDeeper/Tweets_sentiment_extraction
+            icon: fab fa-github
+            url: https://github.com/InscribeDeeper/Tweets_sentiment_extraction
+        quote: >
+          Feature engineering, data analysis and modeling
+        description: |
+          - Performed data cleaning and sentiment analysis for over 20 million related Tweets in second granularity
+          - Delivered feature engineering for financial indicators like MACD and RSI etc
+          - Analyzed, finetuned, and back-tested for over five types of deep learning model to increase the portfolio return
+
+      - layout: left
+        title: China Undergraduate Mathematical Contest in Modeling (CUMCM)
+        sub_title: Guangzhou, China
+        caption: September 2015
+        description: |
+          - Implemented dilation and erosion algorithms and the Moving Average Method to extract information from images
+          - Constructed a geolocation model based on shadow changes by modeling the solar altitude angle; solved the optimization problem with a Genetic Algorithm
+          - Won the national second prize in the 2015 CUMCM in China
+
+  # Familiar Python Packages retained as a reference and intentionally hidden.
+  # Modeling Knowledge Base retained as a reference and intentionally hidden.
+  # The sentences I love retained as a reference and intentionally hidden.

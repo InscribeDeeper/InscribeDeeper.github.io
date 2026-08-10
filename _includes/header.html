@@ -1,8 +1,9 @@
+{% assign person = site.data.profile.person %}
 <div class="container header-contianer">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 header-left">
-      <h1>{{ site.name | escape }}</h1>
-      <h2>{{ site.title | escape }}</h2>
+      <h1>{{ person.name | escape }}</h1>
+      <h2>{{ person.title | escape }}</h2>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 header-right">
       <ul class="icons no-print">
@@ -27,9 +28,9 @@
             </a>
           </li>
         {%- endif -%}
-        {%- if site.github_username -%}
+        {%- if person.github_username -%}
           <li>
-            <a target="_blank" href="https://github.com/{{ site.github_username| cgi_escape | escape }}" class="button button--sacnite button--round-l">
+            <a target="_blank" href="https://github.com/{{ person.github_username| cgi_escape | escape }}" class="button button--sacnite button--round-l">
               <i class="fab fa-github" title="Github link"></i>
             </a>
           </li>
@@ -48,9 +49,9 @@
             </a>
           </li>
         {%- endif -%}
-        {%- if site.linkedin_username -%}
+        {%- if person.linkedin_username -%}
           <li>
-            <a target="_blank" href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}" class="button button--sacnite button--round-l">
+            <a target="_blank" href="https://www.linkedin.com/in/{{ person.linkedin_username| cgi_escape | escape }}" class="button button--sacnite button--round-l">
               <i class="fab fa-linkedin" title="Linkedin link"></i>
             </a>
           </li>
@@ -106,19 +107,19 @@
         {% endfor %}
       </ul>
 
-      {%- if site.email -%}
+      {%- if person.email -%}
         <p>
-          {{ site.email_title | default: "Email" }}: <a href="mailto:{{ site.email }}" target="_blank">{{ site.email | escape }}</a>
+          Email: <a href="mailto:{{ person.email }}" target="_blank">{{ person.email | escape }}</a>
         </p>
       {%- endif -%}
-      {%- if site.phone -%}
+      {%- if person.phone -%}
         <p>
-          {{ site.phone_title | default: "Phone" }}: {{ site.phone | escape }}
+          Phone: {{ person.phone | escape }}
         </p>
       {%- endif -%}
-      {%- if site.website -%}
+      {%- if person.website -%}
         <p>
-          {{ site.website_title | default: "Web" }}: {% include a.html href=site.website %}{{ site.website | escape }}</a>
+          Web: {% include a.html href=person.website %}{{ person.website | escape }}</a>
         </p>
       {%- endif -%}
     </div>

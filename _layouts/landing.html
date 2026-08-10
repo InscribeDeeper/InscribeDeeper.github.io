@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+
+{%- include head.html -%}
+
+<body class="{% if site.darkmode == true and site.darkmode != 'never' %}dark{% endif %}">
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      {% assign person = site.data.profile.person %}
+      <div class="container intro-container">
+        <h1>{{ person.name | escape }}</h1>
+        <h2>{{ person.title | escape }}</h2>
+        <p>Welcome. Choose a profile to view:</p>
+        <p>
+          <a class="button" href="{{ '/niw/' | relative_url }}">EB-2 NIW Profile</a>
+          <a class="button" href="{{ '/resume/' | relative_url }}">Resume</a>
+          <a class="button" href="{{ '/cv/' | relative_url }}">CV</a>
+          <a class="button" href="{{ '/all/' | relative_url }}">All Content</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  {%- include footer.html -%}
+  {% if site.darkmode == false %}
+    <script src="{{ '/assets/js/index.js' | relative_url }}"></script>
+  {% endif %}
+</body>
+
+</html>
