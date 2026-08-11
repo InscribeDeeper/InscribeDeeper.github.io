@@ -1,0 +1,92 @@
+# =============================================================================
+# i18n PAIR — UI strings (en / zh in this same file)
+# Related content files:
+#   - _data/profile.yml  <->  _data/profile_zh.yml
+#   - _data/landing.yml   (career/projects en <-> zh)
+#
+# Keep en.* and zh.* keys identical. When you add or rename a UI string under
+# `en`, add/update the matching Chinese value under `zh` (and vice versa).
+# =============================================================================
+
+# Shared UI strings for en / zh. Applied via data-i18n wrappers + localStorage.
+en:
+  welcome: Welcome
+  welcome_sub: Choose a profile to continue.
+  available_profiles: Available profiles
+  profile_niw: EB-2 NIW Profile
+  profile_resume: Resume
+  profile_cv: Curriculum Vitae
+  career_label: CAREER + EDUCATION
+  career_title: Career & Education
+  career_context: Education, research, engineering, and ongoing professional development
+  projects_label: PROJECTS
+  projects_title: Industry Projects
+  projects_context: Production industry systems across AI, search, personalization, and content platforms
+  present: Present
+  period_sep: "—"
+  email_label: "Email:"
+  phone_label: "Phone:"
+  web_label: "Web:"
+  print: Print
+  live_demo: Live demo
+  references_on_request: References on request
+  back: Back
+  go_back: Go back
+  lang_toggle_to_zh: 切换到中文
+  lang_toggle_to_en: Switch to English
+  lang_short: EN
+  profile_hub: Profile hub
+  profile_versions: Profile versions
+  timelines: Career and project timelines
+  prev_slide: Previous slide
+  next_slide: Next slide
+  career_slide: Career and education
+  projects_slide: Industry projects
+  career_timeline: Career and education timeline
+  project_timeline: Industry project timeline
+  scroll_more_projects: Scroll down for more projects
+  show_career: Show career and education
+  show_projects: Show industry projects
+  timeline_slides: Timeline slides
+  content: Content
+
+zh:
+  welcome: 欢迎
+  welcome_sub: 请选择一个档案继续浏览。
+  available_profiles: 可选档案
+  profile_niw: EB-2 NIW 档案
+  profile_resume: 简历
+  profile_cv: 履历
+  career_label: 职业 + 教育
+  career_title: 职业与教育
+  career_context: 教育、研究、工程实践与持续专业发展
+  projects_label: 项目
+  projects_title: 行业项目
+  projects_context: 覆盖人工智能、搜索、个性化与内容平台的生产级行业系统
+  present: 至今
+  period_sep: "—"
+  email_label: "邮箱："
+  phone_label: "电话："
+  web_label: "网站："
+  print: 打印
+  live_demo: 在线演示
+  references_on_request: 推荐信可按需提供
+  back: 返回
+  go_back: 返回上一页
+  lang_toggle_to_zh: 切换到中文
+  lang_toggle_to_en: Switch to English
+  lang_short: 中文
+  profile_hub: 档案中心
+  profile_versions: 档案版本
+  timelines: 职业与项目时间线
+  prev_slide: 上一张
+  next_slide: 下一张
+  career_slide: 职业与教育
+  projects_slide: 行业项目
+  career_timeline: 职业与教育时间线
+  project_timeline: 行业项目时间线
+  scroll_more_projects: 向下滚动查看更多项目
+  show_career: 显示职业与教育
+  show_projects: 显示行业项目
+  timeline_slides: 时间线幻灯片
+  content: 内容

@@ -3,13 +3,14 @@
   class="local-back no-print"
   id="local-back"
   hidden
-  aria-label="Go back"
-  title="Go back (localhost only)"
+  aria-label="{{ site.data.ui.en.go_back | escape }}"
+  title="{{ site.data.ui.en.go_back | escape }}"
 >
   <svg class="local-back-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
     <path d="M15 5 L8 12 L15 19" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" />
   </svg>
-  <span class="local-back-label">Back</span>
+  <span class="local-back-label" data-i18n="en">{{ site.data.ui.en.back }}</span>
+  <span class="local-back-label" data-i18n="zh">{{ site.data.ui.zh.back }}</span>
 </button>
 <script>
   (function () {

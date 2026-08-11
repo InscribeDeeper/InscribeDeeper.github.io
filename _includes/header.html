@@ -1,18 +1,25 @@
-{% assign person = site.data.profile.person %}
+{% assign person_en = site.data.profile.person %}
+{% assign person_zh = site.data.profile_zh.person %}
+{% assign ui_en = site.data.ui.en %}
+{% assign ui_zh = site.data.ui.zh %}
 {% if page.profile %}
-  {% assign profile_view = site.data.profile.views[page.profile] %}
+  {% assign profile_view_en = site.data.profile.views[page.profile] %}
+  {% assign profile_view_zh = site.data.profile_zh.views[page.profile] %}
 {% endif %}
 <div class="container header-contianer">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 header-left">
-      <h1>{{ person.name | escape }}</h1>
-      {% if page.profile and profile_view.header_title %}
-        <h2>{{ profile_view.header_title | escape }}</h2>
-      {% elsif person.company and person.company_url and person.title contains person.company %}
-        {% assign title_prefix = person.title | split: person.company | first %}
-        <h2>{{ title_prefix | escape }}{% include a.html href=person.company_url class="header-company-link" %}{{ person.company | escape }}</a></h2>
+      <h1>{{ person_en.name | escape }}</h1>
+      {% if page.profile and profile_view_en.header_title %}
+        <h2 data-i18n="en">{{ profile_view_en.header_title | escape }}</h2>
+        <h2 data-i18n="zh">{{ profile_view_zh.header_title | escape }}</h2>
+      {% elsif person_en.company and person_en.company_url and person_en.title contains person_en.company %}
+        {% assign title_prefix_en = person_en.title | split: person_en.company | first %}
+        <h2 data-i18n="en">{{ title_prefix_en | escape }}{% include a.html href=person_en.company_url class="header-company-link" %}{{ person_en.company | escape }}</a></h2>
+        <h2 data-i18n="zh">{% include a.html href=person_zh.company_url class="header-company-link" %}{{ person_zh.company | escape }}</a> {{ person_zh.title | remove: person_zh.company | strip | escape }}</h2>
       {% else %}
-        <h2>{{ person.title | escape }}</h2>
+        <h2 data-i18n="en">{{ person_en.title | escape }}</h2>
+        <h2 data-i18n="zh">{{ person_zh.title | escape }}</h2>
       {% endif %}
 
       {% if page.profile %}
@@ -20,8 +27,11 @@
           <button
             type="button"
             class="doc-action"
-            aria-label="Print"
-            title="Print"
+            aria-label="{{ ui_en.print | escape }}"
+            title="{{ ui_en.print | escape }}"
+            data-label-en="{{ ui_en.print | escape }}"
+            data-label-zh="{{ ui_zh.print | escape }}"
+            data-print-action
             onclick="window.print(); this.blur();"
           >
             <svg class="doc-action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -31,14 +41,30 @@
             </svg>
           </button>
 
-          {% if profile_view.downloads and profile_view.downloads.size > 0 %}
-            {% assign download_item = profile_view.downloads | first %}
+          {% if profile_view_en.downloads and profile_view_en.downloads.size > 0 %}
+            {% assign download_item_en = profile_view_en.downloads | first %}
+            {% assign download_item_zh = profile_view_zh.downloads | first %}
             <a
               class="doc-action"
-              href="{{ download_item.path | relative_url }}"
+              href="{{ download_item_en.path | relative_url }}"
               download
-              aria-label="{{ download_item.label | default: 'Download' | escape }}"
-              title="{{ download_item.label | default: 'Download' | escape }}"
+              aria-label="{{ download_item_en.label | default: 'Download' | escape }}"
+              title="{{ download_item_en.label | default: 'Download' | escape }}"
+              data-i18n="en"
+            >
+              <svg class="doc-action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 3v12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M5 19h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <a
+              class="doc-action"
+              href="{{ download_item_zh.path | default: download_item_en.path | relative_url }}"
+              download
+              aria-label="{{ download_item_zh.label | default: download_item_en.label | escape }}"
+              title="{{ download_item_zh.label | default: download_item_en.label | escape }}"
+              data-i18n="zh"
             >
               <svg class="doc-action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path d="M12 3v12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
@@ -73,9 +99,9 @@
             </a>
           </li>
         {%- endif -%}
-        {%- if person.github_username -%}
+        {%- if person_en.github_username -%}
           <li>
-            <a target="_blank" href="https://github.com/{{ person.github_username| cgi_escape | escape }}" class="button button--sacnite button--round-l">
+            <a target="_blank" href="https://github.com/{{ person_en.github_username| cgi_escape | escape }}" class="button button--sacnite button--round-l">
               <i class="fab fa-github" title="Github link"></i>
             </a>
           </li>
@@ -94,9 +120,9 @@
             </a>
           </li>
         {%- endif -%}
-        {%- if person.linkedin_username -%}
+        {%- if person_en.linkedin_username -%}
           <li>
-            <a target="_blank" href="https://www.linkedin.com/in/{{ person.linkedin_username| cgi_escape | escape }}" class="button button--sacnite button--round-l">
+            <a target="_blank" href="https://www.linkedin.com/in/{{ person_en.linkedin_username| cgi_escape | escape }}" class="button button--sacnite button--round-l">
               <i class="fab fa-linkedin" title="Linkedin link"></i>
             </a>
           </li>
@@ -152,25 +178,28 @@
         {% endfor %}
       </ul>
 
-      {%- if person.email -%}
+      {%- if person_en.email -%}
         <p>
-          Email: <a href="mailto:{{ person.email }}" target="_blank">{{ person.email | escape }}</a>
+          <span data-i18n="en">{{ ui_en.email_label }}</span><span data-i18n="zh">{{ ui_zh.email_label }}</span>
+          <a href="mailto:{{ person_en.email }}" target="_blank">{{ person_en.email | escape }}</a>
         </p>
       {%- endif -%}
-      {%- if person.phone -%}
+      {%- if person_en.phone -%}
         <p>
-          Phone: {{ person.phone | escape }}
+          <span data-i18n="en">{{ ui_en.phone_label }}</span><span data-i18n="zh">{{ ui_zh.phone_label }}</span>
+          {{ person_en.phone | escape }}
         </p>
       {%- endif -%}
-      {%- if person.website -%}
+      {%- if person_en.website -%}
         <p>
-          {%- assign website_label = person.website -%}
+          {%- assign website_label = person_en.website -%}
           {%- assign website_last = website_label | slice: -1, 1 -%}
           {%- if website_last == "/" -%}
             {%- assign website_len = website_label | size | minus: 1 -%}
             {%- assign website_label = website_label | slice: 0, website_len -%}
           {%- endif -%}
-          Web: {% include a.html href=person.website %}{{ website_label | escape }}</a>
+          <span data-i18n="en">{{ ui_en.web_label }}</span><span data-i18n="zh">{{ ui_zh.web_label }}</span>
+          {% include a.html href=person_en.website %}{{ website_label | escape }}</a>
         </p>
       {%- endif -%}
     </div>

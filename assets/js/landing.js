@@ -249,4 +249,11 @@
 
   setSlide(0);
   startCarousel();
+
+  window.addEventListener("site-lang-change", function () {
+    updateProjectScrollHint();
+    if (projectsSlideActive()) {
+      startProjectAutoScroll();
+    }
+  });
 })();

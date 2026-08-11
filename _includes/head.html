@@ -10,6 +10,20 @@
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | default: '/assets/favicon.ico' | relative_url }}">
 
+  <script>
+    (function () {
+      try {
+        var lang = localStorage.getItem("site-lang");
+        if (lang !== "zh" && lang !== "en") {
+          lang = "en";
+        }
+        document.documentElement.setAttribute("lang", lang);
+        document.documentElement.setAttribute("data-site-lang", lang);
+      } catch (e) {
+        document.documentElement.setAttribute("data-site-lang", "en");
+      }
+    })();
+  </script>
   {%- if site.darkmode == false -%}
   <script>
     (function () {

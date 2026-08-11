@@ -1,3 +1,15 @@
+# =============================================================================
+# i18n PAIR — English profile (site.data.profile)
+# Companion file: _data/profile_zh.yml  (Chinese)
+#
+# These two files MUST stay in sync:
+#   - Same keys / section IDs / view keys / groups / tags / layouts / URLs
+#   - Same list item order within each section
+#   - When you add, remove, rename, or reorder content here, update
+#     profile_zh.yml with the matching Chinese copy (and vice versa)
+#   - Translate human-readable text only; do not diverge structure
+# =============================================================================
+
 person:
   name: Wei Yang
   title: Full-Stack Software Engineer at PiSrc

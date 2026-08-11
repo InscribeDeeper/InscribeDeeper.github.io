@@ -1,10 +1,14 @@
 {% assign person = site.data.profile.person %}
+{% assign ui_en = site.data.ui.en %}
+{% assign ui_zh = site.data.ui.zh %}
 <div class="container footer-container no-print">
   <p>
     {{ person.name | escape }} -
     <a href="mailto:{{ person.email }}" target="_blank">{{ person.email | escape }}</a>
     {%- if site.footer_show_references -%}
-      &nbsp;- {{ site.references_title | default: "References on request" }}
+      &nbsp;-
+      <span data-i18n="en">{{ site.references_title | default: ui_en.references_on_request }}</span>
+      <span data-i18n="zh">{{ ui_zh.references_on_request }}</span>
     {%- endif -%}
   </p>
 </div>

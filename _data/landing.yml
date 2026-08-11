@@ -1,0 +1,146 @@
+# =============================================================================
+# i18n PAIR — Landing timelines (en / zh in this same file)
+# Related profile content:
+#   - _data/profile.yml  <->  _data/profile_zh.yml
+#   - _data/ui.yml        (landing labels)
+#
+# Keep career.en / career.zh and projects.en / projects.zh aligned:
+#   - Same item count and order
+#   - Same URLs / product names
+#   - When you change one language list, update the other
+# =============================================================================
+
+# Landing preview timelines (en / zh). URLs stay shared.
+career:
+  en:
+    - period: "2022 — Present"
+      title: Full Stack Software Engineer
+      org: PiSrc
+      org_url: https://www.pisrc.com/
+      detail: AI, search, and data platforms
+    - period: "2025 — Present"
+      title: MBA Candidate · Part-time
+      org: Monroe University
+      org_url: https://www.monroeu.edu/
+    - period: "2020 — 2021"
+      title: Research Assistant
+      org: Stevens Institute of Technology
+      org_url: https://www.stevens.edu/
+      detail: Deep Learning and Web Analytics
+    - period: "2019 — 2021"
+      title: MSc in Data Science
+      org: Stevens Institute of Technology
+      org_url: https://www.stevens.edu/
+    - period: "2014 — 2018"
+      title: BSc in Mathematics and Applied Mathematics
+      org: Guangzhou University
+      org_url: https://english.gzhu.edu.cn/
+  zh:
+    - period: "2022 — 至今"
+      title: 全栈软件工程师
+      org: PiSrc
+      org_url: https://www.pisrc.com/
+      detail: 人工智能、搜索与数据平台
+    - period: "2025 — 至今"
+      title: MBA 在读 · 兼职
+      org: 门罗大学
+      org_url: https://www.monroeu.edu/
+    - period: "2020 — 2021"
+      title: 研究助理
+      org: 史蒂文斯理工学院
+      org_url: https://www.stevens.edu/
+      detail: 深度学习与网络分析
+    - period: "2019 — 2021"
+      title: 数据科学硕士
+      org: 史蒂文斯理工学院
+      org_url: https://www.stevens.edu/
+    - period: "2014 — 2018"
+      title: 数学与应用数学学士
+      org: 广州大学
+      org_url: https://english.gzhu.edu.cn/
+
+projects:
+  en:
+    - period: "2026"
+      title: Metaphora
+      url: https://www.pisrc.com/products/metaphora
+      detail: PDF → semantic HTML → AEM component · agentic LLM vision
+    - period: "2026 · POC"
+      title: Prism - PoC
+      url: https://www.pisrc.com/products/prism
+      detail: Agentic AI · playbooks & tools · marketing funnel
+    - period: "2025 · Active"
+      title: AI Overview
+      url: https://www.rockwellautomation.com/en-us/search.html?keyword=what+is+rockwell+doing%3F&tab=all
+      detail: Search overview · autosuggest · hybrid retrieval
+    - period: "2025 · Maintenance"
+      title: ABM Personalization
+      detail: Account-based marketing experiences
+    - period: "2024 · Active"
+      title: AI Navigator
+      url: https://www.rockwellautomation.com/en-us.html#rafb-chat-choice
+      detail: Agentic chatbot · internal company tools · production AI
+    - period: "2024 · Maintenance"
+      title: Personalization
+      url: https://www.rockwellautomation.com/en-us/products/hardware.html#:~:text=Based%20on%20your%20views
+      detail: Recommendations and offline ML
+    - period: "2023 · Maintenance"
+      title: Fault Code Navigator
+      url: https://www.rockwellautomation.com/en-us/support/documentation.html#button-6cfc1d95e7
+      detail: AI-assisted industrial fault lookup
+    - period: "2023 · Maintenance"
+      title: Content Score
+      detail: Marketing funnel analytics & ML
+    - period: "2022 · Active"
+      title: Partner Locator
+      url: https://www.rockwellautomation.com/en-us/sales/partner-locator.html
+      detail: MuleSoft · Solr search integration
+    - period: "2022 · Maintenance"
+      title: Futprint
+      url: https://www.pisrc.com/products/futprint
+      detail: Questionnaire, reporting, and dashboard
+    - period: "2022 · Maintenance"
+      title: Site Feedback
+      detail: Hotjar + AEM integration
+  zh:
+    - period: "2026"
+      title: Metaphora
+      url: https://www.pisrc.com/products/metaphora
+      detail: PDF → 语义 HTML → AEM 组件 · 智能体 LLM 视觉
+    - period: "2026 · POC"
+      title: Prism - PoC
+      url: https://www.pisrc.com/products/prism
+      detail: 智能体 AI · 剧本与工具 · 营销漏斗
+    - period: "2025 · 进行中"
+      title: AI Overview
+      url: https://www.rockwellautomation.com/en-us/search.html?keyword=what+is+rockwell+doing%3F&tab=all
+      detail: 搜索概览 · 自动建议 · 混合检索
+    - period: "2025 · 维护中"
+      title: ABM Personalization
+      detail: 基于账户的营销体验
+    - period: "2024 · 进行中"
+      title: AI Navigator
+      url: https://www.rockwellautomation.com/en-us.html#rafb-chat-choice
+      detail: 智能体聊天机器人 · 内部公司工具 · 生产级 AI
+    - period: "2024 · 维护中"
+      title: Personalization
+      url: https://www.rockwellautomation.com/en-us/products/hardware.html#:~:text=Based%20on%20your%20views
+      detail: 推荐与离线机器学习
+    - period: "2023 · 维护中"
+      title: Fault Code Navigator
+      url: https://www.rockwellautomation.com/en-us/support/documentation.html#button-6cfc1d95e7
+      detail: AI 辅助工业故障码查询
+    - period: "2023 · 维护中"
+      title: Content Score
+      detail: 营销漏斗分析与机器学习
+    - period: "2022 · 进行中"
+      title: Partner Locator
+      url: https://www.rockwellautomation.com/en-us/sales/partner-locator.html
+      detail: MuleSoft · Solr 搜索集成
+    - period: "2022 · 维护中"
+      title: Futprint
+      url: https://www.pisrc.com/products/futprint
+      detail: 问卷、报告与仪表盘
+    - period: "2022 · 维护中"
+      title: Site Feedback
+      detail: Hotjar + AEM 集成

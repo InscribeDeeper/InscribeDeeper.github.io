@@ -179,6 +179,82 @@ body.theme-light .local-back {
   }
 }
 
+/* Language toggle — top-right, mirrors local-back on the left */
+.lang-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  margin: 0;
+  padding: 8px 12px;
+  border: 1px solid rgba(200, 208, 214, 0.35);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--page-contact, #bbbbbb);
+  box-shadow: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  opacity: 0.85;
+  transition: opacity 0.18s ease, color 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.lang-toggle:hover,
+.lang-toggle:focus,
+.lang-toggle:focus-visible {
+  opacity: 1;
+  outline: none;
+  color: var(--page-contact-hover, #4c4c4c);
+  border-color: rgba(76, 76, 76, 0.45);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+body.dark .lang-toggle,
+body.landing-page:not(.theme-light) .lang-toggle {
+  color: #c8d0d6;
+  border-color: rgba(200, 208, 214, 0.35);
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+body.theme-light .lang-toggle {
+  color: #777777;
+  border-color: rgba(0, 0, 0, 0.18);
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    color: #222222;
+    border-color: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.04);
+  }
+}
+
+/* i18n visibility — default English until boot/script sets data-site-lang */
+html:not([data-site-lang="zh"]) [data-i18n="zh"],
+html[data-site-lang="zh"] [data-i18n="en"] {
+  display: none !important;
+}
+
+@media print {
+  .lang-toggle {
+    display: none !important;
+  }
+}
+
 /* Theme toggle — shared across landing and resume pages */
 .theme-toggle {
   position: fixed;

@@ -5,53 +5,61 @@
 
 <body class="landing-page{% if site.darkmode == true %} dark{% elsif site.darkmode == 'never' %} theme-light{% endif %}">
   {%- include theme-boot.html -%}
+  {%- include lang-toggle.html -%}
   {%- if site.darkmode == false -%}
     {%- include theme-toggle.html -%}
   {%- endif -%}
 
   {%- include header.html -%}
 
-  <main class="page-content landing-content" aria-label="Profile hub">
+  {% assign ui_en = site.data.ui.en %}
+  {% assign ui_zh = site.data.ui.zh %}
+  {% assign career_en = site.data.landing.career.en %}
+  {% assign career_zh = site.data.landing.career.zh %}
+  {% assign projects_en = site.data.landing.projects.en %}
+  {% assign projects_zh = site.data.landing.projects.zh %}
+
+  <main class="page-content landing-content" aria-label="{{ ui_en.profile_hub }}">
     <div class="container">
       <section class="landing-welcome">
-        <p class="landing-label">Welcome</p>
-        <p>Choose a profile to continue.</p>
+        <p class="landing-label"><span data-i18n="en">{{ ui_en.welcome }}</span><span data-i18n="zh">{{ ui_zh.welcome }}</span></p>
+        <p><span data-i18n="en">{{ ui_en.welcome_sub }}</span><span data-i18n="zh">{{ ui_zh.welcome_sub }}</span></p>
       </section>
 
       <div class="landing-section-head">
-        <p class="landing-label">Available profiles</p>
+        <p class="landing-label"><span data-i18n="en">{{ ui_en.available_profiles }}</span><span data-i18n="zh">{{ ui_zh.available_profiles }}</span></p>
       </div>
 
       <div class="landing-layout">
         <section class="landing-directory">
-          <nav class="profile-grid" aria-label="Profile versions">
+          <nav class="profile-grid" aria-label="{{ ui_en.profile_versions }}">
             <a class="profile-card profile-card--featured" href="{{ '/niw/' | relative_url }}">
               <span class="profile-card-body">
-                <span class="profile-name">EB-2 NIW Profile</span>
+                <span class="profile-name"><span data-i18n="en">{{ ui_en.profile_niw }}</span><span data-i18n="zh">{{ ui_zh.profile_niw }}</span></span>
               </span>
             </a>
 
             <a class="profile-card" href="{{ '/resume/' | relative_url }}">
               <span class="profile-card-body">
-                <span class="profile-name">Resume</span>
+                <span class="profile-name"><span data-i18n="en">{{ ui_en.profile_resume }}</span><span data-i18n="zh">{{ ui_zh.profile_resume }}</span></span>
               </span>
             </a>
 
             <a class="profile-card" href="{{ '/cv/' | relative_url }}">
               <span class="profile-card-body">
-                <span class="profile-name">Curriculum Vitae</span>
+                <span class="profile-name"><span data-i18n="en">{{ ui_en.profile_cv }}</span><span data-i18n="zh">{{ ui_zh.profile_cv }}</span></span>
               </span>
             </a>
           </nav>
         </section>
 
-        <aside class="profile-preview" aria-roledescription="carousel" aria-label="Career and project timelines">
-          <button type="button" class="preview-arrow preview-arrow--prev" data-preview-prev aria-label="Previous slide">
+        <aside class="profile-preview" aria-roledescription="carousel" aria-label="{{ ui_en.timelines }}">
+          <button type="button" class="preview-arrow preview-arrow--prev" data-preview-prev aria-label="{{ ui_en.prev_slide }}">
             <svg class="preview-arrow-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <path d="M15 5 L8 12 L15 19" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </button>
-          <button type="button" class="preview-arrow preview-arrow--next" data-preview-next aria-label="Next slide">
+          <button type="button" class="preview-arrow preview-arrow--next" data-preview-next aria-label="{{ ui_en.next_slide }}">
             <svg class="preview-arrow-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <path d="M9 5 L16 12 L9 19" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
@@ -59,159 +67,71 @@
 
           <div class="preview-glide" data-preview-glide>
             <div class="preview-glide-track" data-preview-track>
-              <article class="preview-slide" data-preview-slide aria-label="Career and education">
-                <p class="preview-label">CAREER + EDUCATION</p>
-                <h2>Career &amp; Education</h2>
+              <article class="preview-slide" data-preview-slide aria-label="{{ ui_en.career_slide }}">
+                <p class="preview-label"><span data-i18n="en">{{ ui_en.career_label }}</span><span data-i18n="zh">{{ ui_zh.career_label }}</span></p>
+                <h2><span data-i18n="en">{{ ui_en.career_title }}</span><span data-i18n="zh">{{ ui_zh.career_title }}</span></h2>
                 <p class="preview-context">
-                  Education, research, engineering, and ongoing professional development
+                  <span data-i18n="en">{{ ui_en.career_context }}</span><span data-i18n="zh">{{ ui_zh.career_context }}</span>
                 </p>
-                <div class="career-timeline" aria-label="Career and education timeline">
-                  <div class="timeline-item timeline-item--active">
+                <div class="career-timeline" aria-label="{{ ui_en.career_timeline }}">
+                  {% for item in career_en %}
+                  <div class="timeline-item timeline-item--active" data-i18n="en">
                     <span class="timeline-marker" aria-hidden="true"></span>
                     <div class="timeline-content">
-                      <span class="timeline-period">2022 — Present</span>
-                      <strong>Full Stack Software Engineer</strong>
-                      <span><a href="https://www.pisrc.com/" target="_blank" rel="noopener">PiSrc</a> · AI, search, and data platforms</span>
+                      <span class="timeline-period">{{ item.period }}</span>
+                      <strong>{{ item.title }}</strong>
+                      <span>{% if item.org_url %}<a href="{{ item.org_url }}" target="_blank" rel="noopener">{{ item.org }}</a>{% else %}{{ item.org }}{% endif %}{% if item.detail %} · {{ item.detail }}{% endif %}</span>
                     </div>
                   </div>
-                  <div class="timeline-item timeline-item--active">
+                  {% endfor %}
+                  {% for item in career_zh %}
+                  <div class="timeline-item timeline-item--active" data-i18n="zh">
                     <span class="timeline-marker" aria-hidden="true"></span>
                     <div class="timeline-content">
-                      <span class="timeline-period">2025 — Present</span>
-                      <strong>MBA Candidate · Part-time</strong>
-                      <span><a href="https://www.monroeu.edu/" target="_blank" rel="noopener">Monroe University</a></span>
+                      <span class="timeline-period">{{ item.period }}</span>
+                      <strong>{{ item.title }}</strong>
+                      <span>{% if item.org_url %}<a href="{{ item.org_url }}" target="_blank" rel="noopener">{{ item.org }}</a>{% else %}{{ item.org }}{% endif %}{% if item.detail %} · {{ item.detail }}{% endif %}</span>
                     </div>
                   </div>
-                  <div class="timeline-item timeline-item--active">
-                    <span class="timeline-marker" aria-hidden="true"></span>
-                    <div class="timeline-content">
-                      <span class="timeline-period">2020 — 2021</span>
-                      <strong>Research Assistant</strong>
-                      <span><a href="https://www.stevens.edu/" target="_blank" rel="noopener">Stevens Institute of Technology</a> · Deep Learning and Web Analytics</span>
-                    </div>
-                  </div>
-                  <div class="timeline-item timeline-item--active">
-                    <span class="timeline-marker" aria-hidden="true"></span>
-                    <div class="timeline-content">
-                      <span class="timeline-period">2019 — 2021</span>
-                      <strong>MSc in Data Science</strong>
-                      <span><a href="https://www.stevens.edu/" target="_blank" rel="noopener">Stevens Institute of Technology</a></span>
-                    </div>
-                  </div>
-                  <div class="timeline-item timeline-item--active">
-                    <span class="timeline-marker" aria-hidden="true"></span>
-                    <div class="timeline-content">
-                      <span class="timeline-period">2014 — 2018</span>
-                      <strong>BSc in Mathematics and Applied Mathematics</strong>
-                      <span><a href="https://english.gzhu.edu.cn/" target="_blank" rel="noopener">Guangzhou University</a></span>
-                    </div>
-                  </div>
+                  {% endfor %}
                 </div>
               </article>
 
-              <article class="preview-slide" data-preview-slide aria-label="Industry projects" aria-hidden="true">
-                <p class="preview-label">PROJECTS</p>
-                <h2>Industry Projects</h2>
+              <article class="preview-slide" data-preview-slide aria-label="{{ ui_en.projects_slide }}" aria-hidden="true">
+                <p class="preview-label"><span data-i18n="en">{{ ui_en.projects_label }}</span><span data-i18n="zh">{{ ui_zh.projects_label }}</span></p>
+                <h2><span data-i18n="en">{{ ui_en.projects_title }}</span><span data-i18n="zh">{{ ui_zh.projects_title }}</span></h2>
                 <p class="preview-context">
-                  Production industry systems across AI, search, personalization, and content platforms
+                  <span data-i18n="en">{{ ui_en.projects_context }}</span><span data-i18n="zh">{{ ui_zh.projects_context }}</span>
                 </p>
                 <div class="project-timeline-shell" data-project-timeline-shell>
-                  <div class="career-timeline project-timeline" data-project-timeline aria-label="Industry project timeline">
-                  <div class="timeline-item timeline-item--active">
+                  <div class="career-timeline project-timeline" data-project-timeline aria-label="{{ ui_en.project_timeline }}">
+                  {% for item in projects_en %}
+                  <div class="timeline-item timeline-item--active" data-i18n="en">
                     <span class="timeline-marker" aria-hidden="true"></span>
                     <div class="timeline-content">
-                      <span class="timeline-period">2026</span>
-                      <strong><a href="https://www.pisrc.com/products/metaphora" target="_blank" rel="noopener">Metaphora</a></strong>
-                      <span>PDF → semantic HTML → AEM component · agentic LLM vision</span>
+                      <span class="timeline-period">{{ item.period }}</span>
+                      <strong>{% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</strong>
+                      <span>{{ item.detail }}</span>
                     </div>
                   </div>
-                  <div class="timeline-item timeline-item--active">
+                  {% endfor %}
+                  {% for item in projects_zh %}
+                  <div class="timeline-item timeline-item--active" data-i18n="zh">
                     <span class="timeline-marker" aria-hidden="true"></span>
                     <div class="timeline-content">
-                      <span class="timeline-period">2026 · POC</span>
-                      <strong><a href="https://www.pisrc.com/products/prism" target="_blank" rel="noopener">Prism - PoC</a></strong>
-                      <span>Agentic AI · playbooks &amp; tools · marketing funnel</span>
+                      <span class="timeline-period">{{ item.period }}</span>
+                      <strong>{% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</strong>
+                      <span>{{ item.detail }}</span>
                     </div>
                   </div>
-                  <div class="timeline-item timeline-item--active">
-                    <span class="timeline-marker" aria-hidden="true"></span>
-                    <div class="timeline-content">
-                      <span class="timeline-period">2025 · Active</span>
-                      <strong><a href="https://www.rockwellautomation.com/en-us/search.html?keyword=what+is+rockwell+doing%3F&tab=all" target="_blank" rel="noopener">AI Overview</a></strong>
-                      <span>Search overview · autosuggest · hybrid retrieval</span>
-                    </div>
-                  </div>
-                  <div class="timeline-item timeline-item--active">
-                    <span class="timeline-marker" aria-hidden="true"></span>
-                    <div class="timeline-content">
-                      <span class="timeline-period">2025 · Maintenance</span>
-                      <strong>ABM Personalization</strong>
-                      <span>Account-based marketing experiences</span>
-                    </div>
-                  </div>
-                  <div class="timeline-item timeline-item--active">
-                    <span class="timeline-marker" aria-hidden="true"></span>
-                    <div class="timeline-content">
-                      <span class="timeline-period">2024 · Active</span>
-                      <strong><a href="https://www.rockwellautomation.com/en-us.html#rafb-chat-choice" target="_blank" rel="noopener">AI Navigator</a></strong>
-                      <span>Agentic chatbot · internal company tools · production AI</span>
-                    </div>
-                  </div>
-                  <div class="timeline-item timeline-item--active">
-                    <span class="timeline-marker" aria-hidden="true"></span>
-                    <div class="timeline-content">
-                      <span class="timeline-period">2024 · Maintenance</span>
-                      <strong><a href="https://www.rockwellautomation.com/en-us/products/hardware.html#:~:text=Based%20on%20your%20views" target="_blank" rel="noopener">Personalization</a></strong>
-                      <span>Recommendations and offline ML</span>
-                    </div>
-                  </div>
-                  <div class="timeline-item timeline-item--active">
-                    <span class="timeline-marker" aria-hidden="true"></span>
-                    <div class="timeline-content">
-                      <span class="timeline-period">2023 · Maintenance</span>
-                      <strong><a href="https://www.rockwellautomation.com/en-us/support/documentation.html#button-6cfc1d95e7" target="_blank" rel="noopener">Fault Code Navigator</a></strong>
-                      <span>AI-assisted industrial fault lookup</span>
-                    </div>
-                  </div>
-                  <div class="timeline-item timeline-item--active">
-                    <span class="timeline-marker" aria-hidden="true"></span>
-                    <div class="timeline-content">
-                      <span class="timeline-period">2023 · Maintenance</span>
-                      <strong>Content Score</strong>
-                      <span>Marketing funnel analytics &amp; ML</span>
-                    </div>
-                  </div>
-                  <div class="timeline-item timeline-item--active">
-                    <span class="timeline-marker" aria-hidden="true"></span>
-                    <div class="timeline-content">
-                      <span class="timeline-period">2022 · Active</span>
-                      <strong><a href="https://www.rockwellautomation.com/en-us/sales/partner-locator.html" target="_blank" rel="noopener">Partner Locator</a></strong>
-                      <span>MuleSoft · Solr search integration</span>
-                    </div>
-                  </div>
-                  <div class="timeline-item timeline-item--active">
-                    <span class="timeline-marker" aria-hidden="true"></span>
-                    <div class="timeline-content">
-                      <span class="timeline-period">2022 · Maintenance</span>
-                      <strong><a href="https://www.pisrc.com/products/futprint" target="_blank" rel="noopener">Futprint</a></strong>
-                      <span>Questionnaire, reporting, and dashboard</span>
-                    </div>
-                  </div>
-                  <div class="timeline-item timeline-item--active">
-                    <span class="timeline-marker" aria-hidden="true"></span>
-                    <div class="timeline-content">
-                      <span class="timeline-period">2022 · Maintenance</span>
-                      <strong>Site Feedback</strong>
-                      <span>Hotjar + AEM integration</span>
-                    </div>
-                  </div>
+                  {% endfor %}
                   </div>
                   <button
                     type="button"
                     class="project-scroll-hint"
                     data-project-scroll-hint
                     hidden
-                    aria-label="Scroll down for more projects"
+                    aria-label="{{ ui_en.scroll_more_projects }}"
                   >
                     <svg class="project-scroll-hint-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                       <path d="M6 9 L12 15 L18 9" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" />
@@ -222,9 +142,9 @@
             </div>
           </div>
 
-          <div class="preview-glide-dots" role="tablist" aria-label="Timeline slides">
-            <button type="button" class="preview-dot is-active" data-preview-dot="0" aria-label="Show career and education" aria-selected="true"></button>
-            <button type="button" class="preview-dot" data-preview-dot="1" aria-label="Show industry projects" aria-selected="false"></button>
+          <div class="preview-glide-dots" role="tablist" aria-label="{{ ui_en.timeline_slides }}">
+            <button type="button" class="preview-dot is-active" data-preview-dot="0" aria-label="{{ ui_en.show_career }}" aria-selected="true"></button>
+            <button type="button" class="preview-dot" data-preview-dot="1" aria-label="{{ ui_en.show_projects }}" aria-selected="false"></button>
           </div>
         </aside>
       </div>
@@ -235,6 +155,7 @@
   {%- if site.darkmode == false -%}
     <script src="{{ '/assets/js/index.js' | relative_url }}"></script>
   {%- endif -%}
+  <script src="{{ '/assets/js/lang.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/landing.js' | relative_url }}"></script>
 </body>
 

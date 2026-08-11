@@ -1,0 +1,933 @@
+# =============================================================================
+# i18n PAIR — 中文档案 (site.data.profile_zh)
+# 对应文件: _data/profile.yml  (English)
+#
+# 这两个文件必须保持同步：
+#   - 相同的 keys / section IDs / view keys / groups / tags / layouts / URLs
+#   - 每个 section 内列表项顺序一致
+#   - 在此增删、重命名或调整内容时，必须同步修改 profile.yml 的英文内容（反之亦然）
+#   - 只翻译可读文案，不要让两边结构分叉
+# =============================================================================
+
+person:
+  name: Wei Yang
+  title: PiSrc 全栈软件工程师
+  company: PiSrc
+  company_url: https://www.pisrc.com/
+  email: hey.weiyang@gmail.com
+  phone: +1 551 260 0541
+  website: inscribedeeper.github.io/
+  github_username: inscribedeeper
+  linkedin_username: weiyangds
+
+# All profile variants live in this file. Each relative path selects section IDs
+# from `views` (pick only; no exclusive content). Sections that share a `group`
+# are alternatives on normal pages (first selected wins). `/all/` shows every
+# section without group dedupe, and annotates titles with path + duplicate tags.
+selection:
+  strategy: first-section-per-group
+
+about:
+  title: 关于我
+  profile_image: images/wyang_img.jpg
+  content: |
+    过往经历让我渴望用创新的数据驱动方案去解决难题。我热衷于能惠及社区的项目，也乐于帮助企业借助数据洞察打磨更好的产品。
+
+    技术栈：
+    - 编程语言：Python、Java、JavaScript、Shell 脚本、SQL
+    - 数据库与检索：Elasticsearch、Weaviate、MySQL、Microsoft SQL Server、MongoDB
+    - 技术与平台：RAG、Microsoft Azure、Nginx、Adobe Experience Manager、MuleSoft、Docker、AWS、Git、Tableau
+    - Python 包：Pandas、NumPy、PyTorch、Transformers、scikit-learn
+
+views:
+  niw:
+    title: EB-2 NIW 档案
+    header_title: AI 与企业知识检索工程师
+    show_about: false
+    show_profile_image: false
+    sections:
+      - professional_summary_niw
+      - proposed_endeavor
+      - national_importance_niw
+      - future_work_plan_niw
+      - well_positioned_niw
+      - national_interest_waiver_niw
+      - core_expertise_niw
+      - selected_contributions_niw
+      - work_history_niw
+      - industry_projects
+      - education
+      - awards
+  resume:
+    title: 简历
+    show_about: false
+    show_profile_image: false
+    downloads:
+      - label: 下载简历（V7.3 Overview）
+        path: assets/resume/Wei-Yang-Resume-V7.3-Overview.pdf
+    sections:
+      - professional_summary_resume
+      - core_expertise_resume
+      - work_history_resume
+      - selected_contributions_cv
+      - education_awards_resume
+  cv:
+    title: 履历
+    show_about: false
+    show_profile_image: false
+    sections:
+      - professional_summary_cv
+      - core_expertise_cv
+      - work_history_overview
+      - industry_projects
+      - education
+      - awards
+      - extracurricular
+      - academic_projects
+  all:
+    title: 完整档案
+    show_about: false
+    show_profile_image: true
+    show_all_sections: true
+    show_section_meta: true
+    dedupe_groups: false
+    sections: []
+
+sections:
+  professional_summary_niw:
+    group: professional_summary
+    tags: [niw]
+    title: 专业摘要
+    layout: text
+    content: |
+      全栈软件工程师与数据科学实践者，专注于可靠的 AI 驱动知识检索、企业搜索与数据互操作。我的拟议事业是推进面向美国工业与企业平台的安全、可扩展、多语言检索增强生成（RAG）及相关数据集成系统。工作结合软件工程、应用机器学习与生产运维，使技术与业务知识更易发现、评估与使用。
+
+  professional_summary_resume:
+    group: professional_summary
+    tags: [resume]
+    title: 专业摘要
+    layout: text
+    content: |
+      全栈软件工程师，具备构建生产级 AI、企业搜索、数据集成与个性化系统的经验。使用 Azure OpenAI、Redis、Weaviate、Elasticsearch、MuleSoft、Java、Python 与 JavaScript 交付端到端方案，注重系统可靠性、安全性与可衡量的用户价值。
+
+  professional_summary_cv:
+    group: professional_summary
+    tags: [cv, all]
+    title: 专业摘要
+    layout: text
+    content: |
+      全栈软件工程师与数据科学实践者，具备生产级生成式 AI、企业搜索、自然语言处理、推荐系统与数据集成经验。工作覆盖安全 RAG 应用、多语言检索流水线、基于 API 的企业数据同步、云基础设施与应用 NLP 研究。善于将机器学习方法落地为面向工业与商业平台的可靠系统。
+
+  proposed_endeavor:
+    group: proposed_endeavor
+    tags: [niw, all]
+    title: 拟议事业
+    layout: text
+    content: |
+      我拟在美国推进可靠、安全、可扩展的 AI 驱动知识检索与企业数据互操作，重点面向工业与技术平台。该事业目标明确：设计、实现、评估并持续改进能够：
+
+      - 连接技术文档、产品信息、合作伙伴与地点记录、内容平台及其他异构数据源；
+      - 利用多语言索引、混合词汇/语义检索、重排序、查询路由、查询扩展与检索增强生成，返回更相关且可追溯的信息；
+      - 通过访问控制、输入净化、内容过滤、PII 保护、评估流程与运维监控，提供安全的对话与搜索体验；以及
+      - 将检索与行为信号转化为实用的产品支持、推荐、个性化、内容与数据质量能力
+
+      的生产系统。
+
+      该事业不止于为某一雇主开发某一特定应用，而是一项持续的工程与应用研究计划，使可信信息在工业与企业工作流中更易获取，同时保持可靠性、安全性、可维护性与可衡量的系统质量。
+
+  national_importance_niw:
+    group: national_importance
+    tags: [niw]
+    title: 实质价值与潜在国家重要性
+    layout: text
+    content: |
+      拟议事业具有实质价值，因为可靠获取技术与运营信息支撑产品支持、工业服务、数字商务、网络安全准备流程以及数据驱动的业务决策。在这些场景中，AI 的价值不仅在于生成文本，更在于连接权威来源、检索相关证据、管控不安全输出，并使信息可跨产品、语言与渠道使用。
+
+      其潜在更广重要性在于：美国工业与企业平台普遍存在同类问题——数据碎片化、大规模技术文档集合、多语言用户、元数据不一致，以及需要在响应质量与延迟、隐私、运维可靠性之间取得平衡。可复用的检索、集成、评估与安全方法因此可跨多个系统与组织应用，而不限于单一用户界面。
+
+      我过往工作在生产环境中提供了这一方向的具体例证，包括 AI 辅助工业文档查询、跨 10+ 数据源的多语言检索，以及通过 7+ API 工作流实现的 CRM 到搜索同步。2026 年 3 月的使用数据记录，在所追踪的搜索、检索助手与故障代码应用中约有 110K 独立会话。该数字衡量平台活动而非独立用户，申请材料中应以雇主或客户记录加以佐证。
+
+  future_work_plan_niw:
+    group: future_work_plan
+    tags: [niw]
+    title: 未来工作计划
+    layout: text
+    content: |
+      我计划通过四条相互关联的工作线继续推进这一事业：
+
+      - **可信检索与 RAG：** 构建结合结构化与非结构化数据的检索流水线，保留来源上下文，支持多语言查询，并通过 grounding 与评估减少无依据或无法验证的回答。
+      - **工业知识与数据互操作：** 通过可维护的 API 与同步工作流，连接技术文档、产品与故障代码信息、合作伙伴/地点数据、CRM 记录、内容管理系统及其他企业数据源。
+      - **安全可扩展的生产工程：** 改进访问控制、PII 保护、内容过滤、可观测性、缓存、负载均衡、延迟与运维韧性，使 AI 系统可用于真实业务与工业工作流。
+      - **方法的度量与迁移：** 评估相关性、检索覆盖、回答质量、延迟、安全性、新鲜度与用户反馈；用结果改进系统，并将经验证的模式迁移到更多美国平台与合作方。
+
+      近期产出可能包括生产级检索与数据集成服务、评估与监控流程、可复用软件组件、技术文档以及跨职能落地。具体雇主、产品或合作可能演变；可信信息系统的技术目标与面向公众的效用保持一致。
+
+  well_positioned_niw:
+    group: well_positioned
+    tags: [niw]
+    title: 准备与定位记录
+    layout: text
+    content: |
+      我的背景结合了与该事业相关的教育、研究训练、生产经验与可记录成果：
+
+      - **高等技术教育：** 史蒂文斯理工学院数据科学硕士（GPA 3.8/4.0），涵盖机器学习、深度学习、自然语言处理、统计学、优化、数据库与 Web 编程；广州大学数学与应用数学学士。
+      - **应用 NLP 与机器学习研究：** 在史蒂文斯处理并结构化 94,581 份财报电话会议记录以研究 96 个语言因子，领域自适应 BERT 分类器达到 72% 准确率，运用 NLP 技术进行文本与情感分析，并运维远程 Ubuntu GPU 环境进行模型开发。
+      - **生产级 AI 与检索系统：** 在 PiSrc 主导基于 Azure OpenAI、Redis 与 Weaviate 的智能体聊天机器人开发，集成内部公司工具与 API；构建跨 10+ 数据源的多语言索引与混合检索；实现记忆、函数调用、内容过滤与 PII 掩码。2026 年 3 月使用数据记录，在所追踪的 AI 知识辅助应用中约有 110K 独立会话。
+      - **企业互操作与应用 ML：** 设计 7+ 个 MuleSoft 工作流用于 CRM 增量更新，将记录集成到 Lucidworks Solr 与 Elasticsearch，并开发用于个性化、交互建模与漏斗优化的推荐与离线 ML 流水线。
+      - **工业部署场景：** 交付或维护 AI 辅助故障代码查询、搜索概览、个性化、合作伙伴定位、内容转换与内容平台能力，服务于工业数字体验，并有若干公开产品或案例页可供佐证。
+      - **认可与持续发展：** 获史蒂文斯教务长奖学金与全国大学生数学建模竞赛全国二等奖；通过 MBA 项目继续拓展商业、系统与数据专长。
+
+      上述定量结果、领导职责描述与个人贡献主张，应在申请材料中由雇佣核实、项目或客户函件、使用报告、技术文档、推荐信、学业记录与奖项材料等（视情况）予以支持。
+
+  national_interest_waiver_niw:
+    group: waiver_relevance
+    tags: [niw]
+    title: 国家利益豁免相关性
+    layout: text
+    content: |
+      该事业是持续的专业化工作体系，而非单一狭隘的岗位描述。其进展有赖于在不断变化的工业产品、企业数据环境与协作平台上应用检索、集成、安全与评估方法。灵活的雇佣结构有助于在相关技术问题、数据与实施机会出现之处开发并应用这些方法，同时仍为美国组织与用户创造可衡量价值。
+
+      豁免论证应基于证据构建，而非仅凭职业本身的重要性。相关考量包括拟议工作的前瞻覆盖面、表明我能够推进该事业的记录、跨平台协作与持续技术发展的需要，以及允许该事业超越某一固定岗位或雇主而继续的益处。本档案为事实性专业摘要，本身并不构成对 EB-2 分类或豁免要求是否满足的法律判定。
+
+  core_expertise_niw:
+    group: core_expertise
+    tags: [niw]
+    title: 核心专长
+    layout: text
+    content: |
+      **AI 与知识检索：** 检索增强生成、对话式 AI、智能体工作流、语义检索、混合搜索、重排序、知识库同步、评估与 AI 安全护栏
+
+      **工业信息与数据互操作：** 技术文档与故障代码检索、多语言索引、查询路由与扩展、企业搜索、Elasticsearch、Solr、Weaviate、MuleSoft 与异构数据源集成
+
+      **可扩展生产系统：** 全栈架构、分布式缓存、负载均衡、API 开发、离线数据流水线、云基础设施、监控、安全控制与性能优化
+
+      **应用机器学习：** 自然语言处理、推荐系统、文本分类、用户行为分析、实验与反馈驱动的质量改进
+
+  core_expertise_resume:
+    group: core_expertise
+    tags: [resume]
+    title: 核心专长
+    layout: text
+    content: |
+      **AI 与搜索：** Azure OpenAI、RAG、智能体工作流、Weaviate、Elasticsearch、Solr、混合搜索、语义重排序
+
+      **工程：** Python、Java、JavaScript、SQL、REST APIs、Redis、MuleSoft、Docker、Nginx、Azure、AWS
+
+      **数据与机器学习：** PyTorch、Hugging Face Transformers、scikit-learn、Pandas、NLP、推荐系统、离线流水线
+
+  core_expertise_cv:
+    group: core_expertise
+    tags: [cv, all]
+    title: 专长领域
+    layout: text
+    content: |
+      **生成式 AI 与信息检索：** 检索增强生成、对话式 AI、智能体工作流、语义搜索、混合检索、重排序与 AI 安全控制
+
+      **企业平台与数据：** 多语言索引、知识管理、API 集成、Elasticsearch、Solr、Weaviate、Redis、MuleSoft、Adobe Experience Manager、Azure 与 AWS
+
+      **软件工程：** Python、Java、JavaScript、SQL、REST APIs、分布式缓存、负载均衡、Docker、Nginx、监控与性能优化
+
+      **机器学习与分析：** PyTorch、Hugging Face Transformers、scikit-learn、Pandas、NLP、推荐系统、文本分类与统计建模
+
+  selected_contributions_niw:
+    group: featured_technical_work
+    tags: [niw]
+    title: 精选技术贡献
+    layout: list
+    content:
+      - layout: left
+        title: AI Overview
+        role: 负责人
+        caption: 2025 · 进行中
+        link: https://www.rockwellautomation.com/en-us/search.html?keyword=what+is+rockwell+doing%3F&tab=all
+        link_text: 公开产品页
+        link_title: AI Overview
+        quote: >
+          实时 AI 搜索概览——跨分布式企业知识源的多语言检索。
+        description: |
+          - 构建实时搜索概览与自动建议，含实时查询缓存、报表与反馈闭环
+          - 工程化跨 10+ 数据源的多语言索引，含混合检索、重排序、路由与迭代检索
+          - 将概览生成与聊天分离，以分别优化各界面的检索、延迟与用户体验
+
+      - layout: left
+        title: Prism - PoC
+        role: 核心贡献者
+        caption: 2026 · 进行中
+        link: https://www.pisrc.com/products/prism
+        link_text: 在线演示
+        link_title: PiSrc Prism - PoC
+        quote: >
+          智能体 AI 对话平台——知识 grounding 互动、集成 playbook 与工具，以及营销漏斗优化。
+        description: |
+          - 参与智能体 AI 平台的概念验证开发与架构讨论，支持基于统一知识源并附引用的问答
+          - 就知识摄入、检索、智能体 playbook、内部工具、对话流程与企业部署提供架构建议
+          - 开展研究与优化，改进检索质量、回答 grounding、智能体路由、playbook 与工具行为，以及营销漏斗表现
+
+      - layout: left
+        title: AI Navigator
+        role: 负责人
+        caption: 2024 · 进行中
+        link: https://www.rockwellautomation.com/en-us.html#rafb-chat-choice
+        link_text: 公开产品页
+        link_title: AI Navigator
+        quote: >
+          智能体对话式 AI——面向企业网站规模化支持的知识 grounding 检索。
+        description: |
+          - 使用 Azure OpenAI、Redis 与 Weaviate 构建智能体聊天机器人，通过函数调用集成内部公司工具与 API
+          - 2026 年 3 月使用量：在所追踪的搜索、检索助手与故障代码应用中约有 110K 独立会话
+          - 实现多轮记忆、函数调用、内容过滤与 PII 掩码，提升 AI 交互安全性
+          - 使用粘性会话与负载均衡，保障对话体验的可靠访问
+
+      - layout: left
+        title: Fault Code Navigator
+        role: 负责人
+        caption: 2023 · 维护中
+        link: https://www.rockwellautomation.com/en-us/support/documentation.html#button-6cfc1d95e7
+        link_text: 公开产品页
+        link_title: Fault Code Navigator
+        quote: >
+          AI 辅助工业支持——更易查找的技术故障代码信息。
+        description: |
+          - 构建跨工业产品系列的条件、事件与故障代码 AI 辅助查询
+          - 将产品系列选择与代码查询连接到技术文档中心（Technical Documentation Center）检索
+          - 为驱动器、控制器与运动系统交付生产级支持体验
+
+      - layout: left
+        title: Personalization
+        role: 负责人
+        caption: 2024 · 维护中
+        quote: >
+          推荐与离线 ML——将行为信号转化为个性化数字体验。
+        description: |
+          - 构建用户到物品与物品到物品推荐流水线，含滚动缓存与 Akamai CDN
+          - 构建用于交互分析、销售漏斗优化与营销定向的离线 ML 流水线
+
+      - layout: left
+        title: Partner Locator
+        caption: 2022 · 进行中
+        link: https://www.rockwellautomation.com/en-us/sales/partner-locator.html
+        link_text: 公开产品页
+        link_title: Partner Locator
+        quote: >
+          CRM 到搜索互操作——使合作伙伴与地点记录可靠可发现。
+        description: |
+          - 设计 7+ 个 MuleSoft 工作流，用于合作伙伴账户与地点的 CRM 增量更新
+          - 将多源记录集成到 Lucidworks Solr 与 Elasticsearch 搜索，并优化缓存
+          - 在源系统更新与可搜索企业体验之间建立可维护的数据通路
+
+  selected_contributions_cv:
+    group: featured_technical_work
+    tags: [resume, all]
+    title: 精选工程项目
+    layout: list
+    content:
+      - layout: left
+        title: Metaphora
+        role: 负责人
+        caption: 2026
+        title_link: https://www.pisrc.com/products/metaphora
+        references:
+          - title: Tech Met 案例研究——Metaphora 内容转换
+            url: https://plex.rockwellautomation.com/en-us/case-studies/tech-met-inc-c-s-v3.html
+          - title: ASK Power 案例研究——Metaphora 内容转换
+            url: https://plex.rockwellautomation.com/en-us/case-studies/a-s-k-power-c-s.html
+        quote: >
+          AI 内容转换——将 PDF 转为语义 HTML 与结构化 AEM 组件，用于企业发布。
+        description: |
+          - 交付 PDF 到语义 HTML 工作流，生成可编辑的 Adobe Experience Manager 组件
+          - 实现智能体 LLM-vision 流水线以解析版面并生成可复用 AEM 组件
+          - 增加受品牌语气与编辑规范约束的 I18N 翻译支持
+
+      - layout: left
+        title: Prism - PoC
+        role: 核心贡献者
+        caption: 2026 · 进行中
+        link: https://www.pisrc.com/products/prism
+        link_text: 在线演示
+        link_title: PiSrc Prism - PoC
+        quote: >
+          智能体 AI 对话平台——面向知识 grounding 营销漏斗优化的 playbook 与工具。
+        description: |
+          - 参与 POC 开发，并就知识摄入、检索、智能体 playbook、内部工具与对话流程提供架构建议
+          - 研究并优化回答 grounding、路由与面向漏斗的系统行为
+
+      - layout: left
+        title: AI Overview
+        role: 负责人
+        caption: 2025 · 进行中
+        link: https://www.rockwellautomation.com/en-us/search.html?keyword=what+is+rockwell+doing%3F&tab=all
+        link_text: 在线演示
+        link_title: AI Overview
+        quote: >
+          实时 AI 搜索概览——跨异构企业数据源的混合检索。
+        description: |
+          - 构建实时搜索概览与自动建议，含实时查询缓存以实现低延迟响应
+          - 工程化跨 10+ 数据源的多语言索引，含混合搜索、重排序、路由与迭代检索
+          - 增加报表流水线与反馈闭环，持续改进概览相关性与质量
+
+      - layout: left
+        title: AI Navigator
+        role: 负责人
+        caption: 2024 · 进行中
+        link: https://www.rockwellautomation.com/en-us.html#rafb-chat-choice
+        link_text: 在线演示
+        link_title: AI Navigator
+        quote: >
+          智能体对话式 AI——集成内部公司工具的企业网站支持聊天。
+        description: |
+          - 使用 Azure OpenAI、Redis 与 Weaviate 构建智能体聊天机器人，通过函数调用集成内部公司工具与 API
+          - 设计多轮 Redis 记忆与面向工具/API 的智能体函数调用工作流
+          - 实现安全护栏，包括输入净化、内容过滤与 PII 掩码
+
+      - layout: left
+        title: Personalization
+        role: 负责人
+        caption: 2024 · 维护中
+        link: https://www.rockwellautomation.com/en-us/products/hardware.html#:~:text=Based%20on%20your%20views
+        link_text: 在线演示
+        link_title: Personalization
+        references:
+          - title: 个性化产品详情页体验
+            url: https://www.rockwellautomation.com/en-us/products/details.595-AB.html
+          - title: 案例研究页相关内容推荐
+            url: https://www.rockwellautomation.com/en-us/company/news/case-studies/ot-asset-visibility.html#:~:text=You%20may%20also%20be%20interested%20in
+        quote: >
+          推荐与离线 ML——将行为数据转化为个性化产品体验。
+        description: |
+          - 构建用户到物品与物品到物品推荐流水线，含滚动缓存与 Akamai CDN
+          - 设计用于交互建模、个性化与用户分类的离线 ML 流水线
+          - 通过定制化产品体验提升销售漏斗转化与营销定向
+
+      - layout: left
+        title: Fault Code Navigator
+        role: 负责人
+        caption: 2023 · 维护中
+        link: https://www.rockwellautomation.com/en-us/support/documentation.html#button-6cfc1d95e7
+        link_text: 在线演示
+        link_title: Fault Code Navigator
+        quote: >
+          AI 辅助技术支持——跨工业产品文档的故障代码查询。
+        description: |
+          - 构建跨工业产品系列的条件、事件与故障代码 AI 辅助查询
+          - 将产品系列选择与代码查询连接到技术文档中心检索
+          - 为驱动器、控制器与运动系统交付生产级排障访问
+
+      - layout: left
+        title: Partner Locator
+        caption: 2022 · 进行中
+        link: https://www.rockwellautomation.com/en-us/sales/partner-locator.html
+        link_text: 在线演示
+        link_title: Partner Locator
+        quote: >
+          CRM 到搜索数据集成——使合作伙伴与地点记录可靠可发现。
+        description: |
+          - 设计 7+ 个 MuleSoft API 工作流，用于合作伙伴账户与地点的 CRM 增量更新
+          - 将多源记录集成到 Lucidworks Solr 与 Elasticsearch 搜索，并优化缓存
+          - 提升合作伙伴与地点数据在可搜索企业应用中的可靠性
+
+  work_history_resume:
+    group: professional_experience
+    tags: [resume]
+    title: 工作经历
+    layout: list
+    content:
+      - layout: left
+        title: PiSrc
+        sub_title: 全栈软件工程师
+        caption: 2022年2月 – 至今 · New York, NY
+        references:
+          - title: AI Overview
+            url: https://www.rockwellautomation.com/en-us/search.html?keyword=what+is+rockwell+doing%3F&tab=all
+          - title: AI Navigator
+            url: https://www.rockwellautomation.com/en-us.html#rafb-chat-choice
+          - title: Fault Code Navigator
+            url: https://www.rockwellautomation.com/en-us/support/documentation.html#button-6cfc1d95e7
+          - title: Personalization
+            url: https://www.rockwellautomation.com/en-us/products/hardware.html#:~:text=Based%20on%20your%20views
+          - title: Partner Locator
+            url: https://www.rockwellautomation.com/en-us/sales/partner-locator.html
+        quote: >
+          面向工业数字平台的生产级 AI、搜索、CMS 与个性化。
+        description: |
+          - 使用 Azure OpenAI、Redis 与 Weaviate 构建生产级 RAG 对话式 AI 与混合搜索体验
+          - 设计用于个性化、漏斗优化与定向的推荐与离线 ML 流水线
+          - 通过 MuleSoft 将合作伙伴/地点 CRM 更新集成到 Solr 与 Elasticsearch，并配合缓存
+          - 开发可授权的 AEM CMS 软件，用于内容创作与发布，并与搜索、PIM、营销与电商平台集成
+          - 将业务与 UX 需求转化为模块化、解耦组件；维护数据存储、文档与 QA，保障可靠运维
+          - 通过安全 AI 工作流、多语言检索与可维护的跨系统数据流强化交付
+
+      - layout: left
+        title: 史蒂文斯理工学院
+        sub_title: 研究助理
+        caption: 2020年6月 – 2021年12月 · Hoboken, NJ
+        quote: >
+          面向金融文本分析的深度学习与 NLP 工程。
+        description: |
+          - 构建并维护面向金融文本 NLP 实验的数据处理与训练工作流
+          - 将流水线与 PyTorch/ML 辅助工具模块化为可复用 utils，供研究共享使用
+          - 搭建并运维远程 Ubuntu GPU 环境，用于深度学习训练与评估
+          - 以领域自适应 BERT 模型支持语言特征与文本分类研究
+
+  education_awards_resume:
+    group: education
+    tags: [resume]
+    title: 教育与奖项
+    layout: text
+    content: |
+      - **门罗大学** — MBA，兼职 · 在读 · 2025 – 至今
+      - **史蒂文斯理工学院** — 数据科学硕士（MSc） · 2019 – 2021 · 教务长奖学金
+      - **广州大学** — 数学与应用数学学士（BSc） · 2014 – 2018 · 全国大学生数学建模竞赛全国二等奖；省级一等奖
+
+  work_history_niw:
+    group: professional_experience_niw
+    tags: [niw]
+    title: 工作经历
+    layout: list
+    content:
+      - layout: left
+        title: PiSrc
+        sub_title: 全栈软件工程师
+        caption: 2022年2月 – 至今 · New York, NY
+        quote: >
+          面向工业数字平台的生产级 AI、知识检索、数据互操作与个性化。
+        description: |
+          - 主导使用 Azure OpenAI、Redis 与 Weaviate 的生产级 RAG 对话式 AI 与混合搜索体验
+          - 构建面向工业数字体验的多语言检索、技术文档查询与搜索概览能力
+          - 2026 年 3 月使用量：在所追踪的搜索、检索助手与故障代码应用中约有 110K 独立会话
+          - 设计用于个性化、交互建模与漏斗优化的推荐与离线 ML 流水线
+          - 通过 MuleSoft 将合作伙伴/地点 CRM 更新集成到 Solr 与 Elasticsearch，并配合缓存
+          - 开发可授权的 AEM 软件，用于内容创作与发布，并与搜索、PIM、营销与电商平台集成
+          - 在生产中应用安全 AI 工作流、多语言检索、监控与可维护的跨系统数据流
+
+      - layout: left
+        title: 史蒂文斯理工学院
+        sub_title: 研究助理
+        caption: 2020年6月 – 2021年12月 · Hoboken, NJ
+        quote: >
+          面向金融文本分析的深度学习与 NLP 工程。
+        description: |
+          - 处理并结构化 94,581 份财报电话会议记录，研究与股票收益相关的 96 个语言因子
+          - 使用 PyTorch 的领域自适应 BERT 文本分类模型达到 72% 准确率
+          - 应用 NLP 方法进行文本分析、情感分析与文本挖掘
+          - 运维远程 Ubuntu GPU 环境，并开发可复用的深度学习工作流教程
+
+  work_history_overview:
+    group: professional_experience
+    tags: [niw, cv, all]
+    title: 工作经历
+    layout: list
+    content:
+      - layout: left
+        title: PiSrc
+        sub_title: 全栈软件工程师
+        caption: 2022年2月 – 至今 · New York, NY
+        quote: >
+          面向工业数字平台的生产级 AI、搜索、CMS 与个性化。
+        description: |
+          - 使用 Azure OpenAI、Redis 与 Weaviate 构建生产级 RAG 对话式 AI 与混合搜索体验
+          - 设计用于个性化、漏斗优化与定向的推荐与离线 ML 流水线
+          - 通过 MuleSoft 将合作伙伴/地点 CRM 更新集成到 Solr 与 Elasticsearch，并配合缓存
+          - 开发可授权的 AEM CMS 软件，用于内容创作与发布，并与搜索、PIM、营销与电商平台集成
+          - 将业务与 UX 需求转化为模块化、解耦组件；维护数据存储、文档与 QA，保障可靠运维
+          - 通过安全 AI 工作流、多语言检索与可维护的跨系统数据流强化交付
+
+      - layout: left
+        title: 史蒂文斯理工学院
+        sub_title: 研究助理
+        caption: 2020年6月 – 2021年12月 · Hoboken, NJ
+        quote: >
+          面向金融文本分析的深度学习与 NLP 工程。
+        description: |
+          - 构建并维护面向金融文本 NLP 实验的数据处理与训练工作流
+          - 将流水线与 PyTorch/ML 辅助工具模块化为可复用 utils，供研究共享使用
+          - 搭建并运维远程 Ubuntu GPU 环境，用于深度学习训练与评估
+          - 以领域自适应 BERT 模型支持语言特征与文本分类研究
+
+  # Retained detailed phase narrative for reference; overview is used when Industry Projects is shown.
+  work_history_detailed:
+    group: professional_experience
+    tags: [reference]
+    title: 工作经历（详细）
+    layout: list
+    content:
+      - layout: left
+        title: PiSrc
+        sub_title: 全栈软件工程师
+        caption: 2022年2月 - 至今 · New York, NY
+        quote: >
+          为全球工业自动化公司交付 AI 与企业搜索解决方案。
+        description: |
+          - **职责概览：** 主导面向工业数字平台的生产级 AI、企业搜索、数据集成、个性化与内容平台系统的设计与交付
+          - **2022年2月 – 2023年2月：** 构建企业数据集成与搜索基础，包括 7+ 个用于合作伙伴账户/地点增量更新的 MuleSoft API 工作流、基于 Lucidworks Solr 的搜索集成，以及可授权的 Adobe Experience Manager 内容创作与发布模块
+          - **2023年2月 – 2025年1月：** 主导生产级智能体聊天机器人（Azure OpenAI、Redis、Weaviate）全周期开发，通过函数调用集成内部公司工具与 API；交付跨 10+ 数据源的多语言混合搜索流水线、推荐系统，以及用于个性化与销售漏斗优化的离线 ML 工作流
+          - **2025年1月 – 至今：** 将数据驱动洞察应用于 CMS 架构与平台扩展；与工程、产品与业务干系人协作；将需求转化为可维护软件；评估系统性能、可用性与集成质量
+          - **横切职责：** 设计含内容过滤与 PII 掩码的安全 AI 交互；通过监控、缓存与基础设施编排保持高可靠性与低延迟；为生产服务编写文档并支持质量保障
+
+      - layout: left
+        title: 史蒂文斯理工学院
+        sub_title: 研究助理，深度学习与网络分析
+        caption: 2020年6月 - 2021年12月 · Hoboken, NJ
+        quote: >
+          面向金融文本分析的深度学习与 NLP 工程。
+        description: |
+          - 构建并维护面向金融文本 NLP 实验的数据处理与训练工作流
+          - 将流水线与 PyTorch/ML 辅助工具模块化为可复用 utils，供研究共享使用
+          - 应用 SpaCy 与 NLTK 进行文本分析、情感分析与文本挖掘
+          - 搭建并运维远程 Ubuntu GPU 环境，用于深度学习训练与评估
+          - 以领域自适应 BERT 模型支持语言特征与文本分类研究
+
+  industry_projects:
+    group: industry_projects
+    tags: [niw, cv, all]
+    title: 行业项目
+    layout: list
+    content:
+      - layout: left
+        title: Metaphora
+        role: 负责人
+        caption: 2026
+        title_link: https://www.pisrc.com/products/metaphora
+        references:
+          - title: Tech Met 案例研究——Metaphora 内容转换
+            url: https://plex.rockwellautomation.com/en-us/case-studies/tech-met-inc-c-s-v3.html
+          - title: ASK Power 案例研究——Metaphora 内容转换
+            url: https://plex.rockwellautomation.com/en-us/case-studies/a-s-k-power-c-s.html
+        quote: >
+          AI 内容转换——将 PDF 转为语义 HTML 与结构化 AEM 组件，用于企业发布。
+        description: |
+          - 交付 PDF 到语义 HTML 工作流，生成可编辑的 Adobe Experience Manager 组件
+          - 实现智能体 LLM-vision 流水线以解析版面并生成可复用 AEM 组件
+          - 增加受品牌语气与编辑规范约束的 I18N 翻译支持
+          - 设计工具在客户现有基础设施上运行，无需外部处理服务器
+
+      - layout: left
+        title: Prism - PoC
+        role: 核心贡献者
+        caption: 2026 · 进行中
+        link: https://www.pisrc.com/products/prism
+        link_text: 在线演示
+        link_title: PiSrc Prism - PoC
+        quote: >
+          智能体 AI 对话平台——知识 grounding 互动，配合 playbook 与工具优化营销漏斗。
+        description: |
+          - 参与概念验证开发与架构讨论，支持基于统一知识源并附引用的访客问答
+          - 就知识摄入、检索、智能体 playbook、内部工具、对话流程与企业部署提供架构建议
+          - 研究并优化检索质量、回答 grounding、智能体路由、playbook 与工具行为，以及营销漏斗表现
+
+      - layout: left
+        title: AI Overview
+        role: 负责人
+        caption: 2025 · 进行中
+        link: https://www.rockwellautomation.com/en-us/search.html?keyword=what+is+rockwell+doing%3F&tab=all
+        link_text: 在线演示
+        link_title: AI Overview
+        quote: >
+          实时 AI 搜索概览——跨异构企业数据源的混合检索。
+        description: |
+          - 构建实时搜索概览与自动建议，含实时查询缓存以实现低延迟响应
+          - 工程化跨 10+ 数据源的多语言索引，含混合搜索、重排序、路由与迭代检索
+          - 增加报表流水线与反馈闭环，持续改进概览相关性与质量
+          - 将概览生成与聊天分离，使各界面可独立优化延迟、排序与 UX
+
+      - layout: left
+        title: ABM Personalization
+        caption: 2025 · 维护中
+        quote: >
+          基于账户的营销（ABM）——按目标账户与购买情境定制网站体验。
+        description: |
+          - 将推荐工作流从产品级定向扩展到账户感知旅程
+          - 使页面内容与优惠与账户细分及既往交互信号对齐
+          - 将个性化输出连接到跨营销界面使用的账户细分
+
+      - layout: left
+        title: AI Navigator
+        role: 负责人
+        caption: 2024 · 进行中
+        link: https://www.rockwellautomation.com/en-us.html#rafb-chat-choice
+        link_text: 在线演示
+        link_title: AI Navigator
+        quote: >
+          智能体对话式 AI——具备可衡量生产使用量的企业知识检索。
+        description: |
+          - 使用 Azure OpenAI、Redis 与 Weaviate 构建智能体聊天机器人，通过函数调用集成内部公司工具与 API
+          - 设计多轮 Redis 记忆与面向工具/API 的智能体函数调用工作流
+          - 实现安全护栏，包括输入净化、内容过滤与 PII 掩码
+          - 2026 年 3 月使用量：在所追踪的搜索、检索助手与故障代码应用中约有 110K 独立会话
+          - 交付网站聊天入口，提供 AI 驱动支持与可信信息的快捷访问
+
+      - layout: left
+        title: Personalization
+        role: 负责人
+        caption: 2024 · 维护中
+        link: https://www.rockwellautomation.com/en-us/products/hardware.html#:~:text=Based%20on%20your%20views
+        link_text: 在线演示
+        link_title: Personalization
+        references:
+          - title: 个性化产品详情页体验
+            url: https://www.rockwellautomation.com/en-us/products/details.595-AB.html
+          - title: 案例研究页相关内容推荐
+            url: https://www.rockwellautomation.com/en-us/company/news/case-studies/ot-asset-visibility.html#:~:text=You%20may%20also%20be%20interested%20in
+        quote: >
+          推荐与离线 ML——将行为数据转化为个性化产品体验。
+        description: |
+          - 构建用户到物品与物品到物品推荐流水线，含滚动缓存与 Akamai CDN
+          - 设计用于交互建模、个性化与用户分类的离线 ML 流水线
+          - 通过定制化产品体验提升销售漏斗转化与营销定向
+          - 交付如“Based on your views”、偏好产品与相关内容等发现界面
+
+      - layout: left
+        title: Fault Code Navigator
+        role: 负责人
+        caption: 2023 · 维护中
+        link: https://www.rockwellautomation.com/en-us/support/documentation.html#button-6cfc1d95e7
+        link_text: 在线演示
+        link_title: Fault Code Navigator
+        quote: >
+          AI 辅助技术支持——跨工业产品文档的故障代码查询。
+        description: |
+          - 构建跨工业产品系列的条件、事件与故障代码 AI 辅助查询
+          - 将产品系列选择与代码查询连接到技术文档中心检索
+          - 为驱动器、控制器与运动系统交付生产级排障访问
+
+      - layout: left
+        title: Content Score
+        role: 负责人
+        caption: 2023 · 维护中
+        quote: >
+          内容质量评分——加速营销漏斗决策的 ML 信号。
+        description: |
+          - 构建用于漏斗优化的内容质量评分后端分析平台
+          - 开发 ML 工作流以评估内容效果并优先推进转化导向改动
+          - 将评分输出与营销及内容工作流连接，加快数据驱动决策
+
+      - layout: left
+        title: Partner Locator
+        caption: 2022 · 进行中
+        link: https://www.rockwellautomation.com/en-us/sales/partner-locator.html
+        link_text: 在线演示
+        link_title: Partner Locator
+        quote: >
+          CRM 到搜索数据集成——使合作伙伴与地点记录可靠可发现。
+        description: |
+          - 设计 7+ 个 MuleSoft API 工作流，用于合作伙伴账户与地点的 CRM 增量更新
+          - 将多源记录集成到 Lucidworks Solr 与 Elasticsearch 搜索，并优化缓存
+          - 提升合作伙伴与地点数据在可搜索企业应用中的可靠性
+          - 持续对生产级合作伙伴定位体验进行主动维护与增强
+
+      - layout: left
+        title: Futprint
+        caption: 2022 · 维护中
+        title_link: https://www.pisrc.com/products/futprint
+        references:
+          - title: 网络安全准备评估问卷
+            url: https://www.rockwellautomation.com/en-us/capabilities/industrial-cybersecurity/services/cybersecurity-preparedness-assessment.html#!0:0
+        quote: >
+          AEM 中的评估问卷——面向网络安全准备的第一方偏好采集。
+        description: |
+          - 定制带分类支持、报表与仪表盘展示的 AEM 问卷组件
+          - 支持生成基于 NIST 评分与定制报告的网络安全准备评估
+          - 改进评估驱动内容工作流的结构化创作与多渠道发布
+
+      - layout: left
+        title: Site Feedback
+        caption: 2022 · 维护中
+        quote: >
+          站内反馈闭环——将 Hotjar 信号接入 AEM 管理页面。
+        description: |
+          - 将 Hotjar 与 Adobe Experience Manager 集成，采集站内反馈与行为信号
+          - 将反馈采集连接到 AEM 页面，便于团队识别 UX 摩擦并优先修复
+          - 建立早期反馈闭环，为后续个性化与内容评分工作提供依据
+
+  education:
+    group: education
+    tags: [niw, cv, all]
+    title: 教育背景
+    layout: list
+    content:
+      - layout: right
+        title: 门罗大学
+        sub_title: 工商管理硕士（MBA），兼职 · 在读
+        caption: 2025 - 至今
+        description: |
+          **选修课程**：战略营销与数据挖掘、软件系统设计、计算机网络、管理决策研究与统计、21 世纪组织行为与领导力、全球环境中的管理
+
+      - layout: right
+        title: 史蒂文斯理工学院
+        sub_title: 数据科学硕士（MSc）
+        caption: 2019年9月 - 2021年12月
+        description: |
+          **相关课程**：统计方法、统计推断、高级优化方法、高级数据分析与机器学习、深度学习、自然语言处理、网络分析、数据库管理系统、Web 编程、数据结构与算法
+
+          <!-- **Scholarship**: Provost's Scholarship, 2019 -->
+
+      - layout: right
+        title: 广州大学
+        sub_title: 数学与应用数学学士（BSc）
+        caption: 2014年9月 - 2018年5月
+        description: |
+          **相关课程**：概率论与数理统计、运筹学、数值分析、高等代数、数学分析、实变函数、泛函分析、常微分方程、偏微分方程
+
+          <!-- **Awards**: Second prize (top 6.3% out of 25,558 teams) in National Mathematical Modeling Contest, 2015 -->
+
+  awards:
+    group: awards
+    tags: [niw, cv, all]
+    title: 奖项与荣誉
+    layout: list
+    content:
+      - layout: left
+        title: 教务长奖学金
+        sub_title: 史蒂文斯理工学院
+        caption: 2019
+        description: |
+          获颁教务长奖学金（Provost's Scholarship）。
+
+      - layout: left
+        title: CUMCM
+        sub_title: 广州大学
+        caption: 2015
+        description: |
+          [全国大学生数学建模竞赛](https://en.mcm.edu.cn/)全国二等奖；省级一等奖。
+
+  extracurricular:
+    group: extracurricular
+    tags: [cv, all]
+    title: 课外活动
+    layout: text
+    content: |
+      - **UBS Quant Hackathon** — 2020
+      - **UBS Pitch Competition** — 2020
+      - **Stevens HealthTech Hackathon** — 2019
+
+  academic_projects:
+    group: academic_projects
+    tags: [cv, all]
+    title: 精选课程项目
+    layout: list
+    content:
+      - layout: left
+        title: 比特币影响因素分析
+        sub_title: 史蒂文斯理工学院
+        caption: 2021 · Hoboken, NJ
+        additional_links:
+          - title: InscribeDeeper/Tweets_sentiment_extraction
+            icon: fab fa-github
+            url: https://github.com/InscribeDeeper/Tweets_sentiment_extraction
+        quote: >
+          面向推文情感与市场指标的 NLP 与深度学习。
+        description: |
+          - 清洗并分析 2000 万+ 相关推文，以秒级粒度提取情感特征
+          - 工程化 MACD/RSI 类指标，并对多种深度学习模型进行回测以评估组合收益
+
+      - layout: left
+        title: 量化 AI 对岗位技能的影响
+        sub_title: 史蒂文斯理工学院
+        caption: 2021 · Hoboken, NJ
+        additional_links:
+          - title: InscribeDeeper/Job-Descrpition-Feature-extraction
+            icon: fab fa-github
+            url: https://github.com/InscribeDeeper/Job-Descrpition-Feature-extraction
+        quote: >
+          结合聚类与主题建模的职位描述 NLP。
+        description: |
+          - 抓取并结构化 Indeed 职位描述文本；用 K-means 技能集聚类过滤噪声
+          - 用主题建模与方面抽取神经网络分析技能趋势
+
+      - layout: left
+        title: 电商推荐系统
+        sub_title: 史蒂文斯理工学院
+        caption: 2020 · Hoboken, NJ
+        additional_links:
+          - title: InscribeDeeper/Recommender_Sys
+            icon: fab fa-github
+            url: https://github.com/InscribeDeeper/Recommender_Sys
+        quote: >
+          基于用户、物品与交互数据的协同过滤。
+        description: |
+          - 基于京东交互数据，用基于记忆与基于模型的协同过滤构建推荐引擎
+          - 在 7,000 个用户-物品样本上评估，达到 77% Top-10 准确率
+
+      - layout: left
+        title: MyPlace Web 开发
+        sub_title: 史蒂文斯理工学院
+        caption: 2020 · Hoboken, NJ
+        additional_links:
+          - title: InscribeDeeper/MyPlace
+            icon: fab fa-github
+            url: https://github.com/InscribeDeeper/MyPlace
+        quote: >
+          面向家具与租房信息交换的全栈 Web 应用。
+        description: |
+          - 带领四人团队构建 Node.js/Express 应用，含 MongoDB schema 与 RESTful CRUD API
+          - 实现认证、搜索、评论与仪表盘功能，支持信息发布与交换
+
+      - layout: left
+        title: 金融科技路演竞赛
+        sub_title: 史蒂文斯理工学院
+        caption: 2020 · Hoboken, NJ
+        quote: >
+          基于多源公共数据的城市活力建模。
+        description: |
+          - 用 Google POIs、Instagram、Zillow 与 BLS 数据构建活力指数，并用 Pandas 做特征工程
+          - 微调 XGBoost 与 Keras 模型，预测美国城市繁荣趋势
+
+  familiar_python_packages:
+    group: technical_reference
+    tags: [all]
+    title: 常用 Python 包
+    layout: text
+    content: |
+      | 数据抓取 | 数据处理 | 文本数据处理 | 机器学习与深度学习 | 数据可视化 |
+      | ---- | ---- | ---- | ---- | ---- |
+      | Selenium, BeautifulSoup | Pandas, NumPy, Regular Expression | SpaCy, NLTK, Gensim | PyTorch, HuggingFace Transformers, Scikit-Learn, Keras | Matplotlib, Seaborn |
+
+  modeling_knowledge_base:
+    group: modeling_reference
+    tags: [all]
+    title: 建模知识库
+    layout: text
+    content: |
+      | 神经网络 | NLP | 回归 | 分类 | 降维 | 聚类 | 集成方法 |
+      | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+      | Transformer, Convolutional Neural Networks, Variational Autoencoder | Word2Vec, BERT, Transformer, Latent Dirichlet Allocation | Linear Regression, Hinge/Lasso Regression, Time Series Regression (ARIMA) | Support Vector Machine, Logistic Regression, Naive Bayes, Decision Tree, K-Nearest Neighbors (KNN) | Principal Component Analysis (PCA), Singular Value Decomposition (SVD) | K-means, Hierarchical Clustering, DBSCAN | Bagging, Boosting, Stacking |
+
+  more_about_me:
+    group: extended_skills
+    tags: [all]
+    title: 更多关于我
+    layout: text
+    content: |
+      **Python 相关包**
+
+      - 数据处理：Pandas、NumPy、Regular Expression
+      - 文本数据处理：SpaCy、NLTK、Gensim
+      - 机器学习与深度学习：PyTorch、HuggingFace Transformers、Scikit-Learn、Keras
+      - 数据可视化：Matplotlib、Seaborn、Tableau
+
+      **算法与模型**
+
+      - 神经网络：Recurrent Neural Networks (LSTM)、Convolutional Neural Networks、Variational Autoencoder
+      - NLP：Word2Vec、BERT、Transformer、Latent Dirichlet Allocation
+      - 回归：Linear Regression、Hinge/Lasso Regression、Time Series Regression (ARIMA)
+      - 分类：Support Vector Machine、Logistic Regression、Naive Bayes、Decision Tree、K-Nearest Neighbors (KNN)
+      - 降维：Principal Component Analysis (PCA)、Singular Value Decomposition (SVD)
+      - 聚类：K-means、Hierarchical Clustering、DBSCAN
+      - 集成方法：Bagging、Boosting、Stacking
+
+  sentences_i_love:
+    group: personal_quote
+    tags: [all]
+    title: 我喜爱的句子
+    layout: text
+    content: |
+      > 我无法创造的东西，我就不理解
+
+  interests_hobbies:
+    group: interests
+    tags: [all]
+    title: 兴趣与爱好
+    layout: text
+    content: |
+      - 英雄联盟
+      - DIY 电脑硬件与组装
+      - 股票市场研究与分析
