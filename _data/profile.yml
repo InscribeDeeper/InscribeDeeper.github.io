@@ -237,6 +237,20 @@ sections:
           - Separated overview generation from chat to optimize retrieval, latency, and user experience for each surface
 
       - layout: left
+        title: Prism - PoC
+        role: Core Contributor
+        caption: 2026 · Active
+        link: https://www.pisrc.com/products/prism
+        link_text: Live demo
+        link_title: PiSrc Prism - PoC
+        quote: >
+          Agentic AI conversation platform — knowledge-grounded engagement, integrated playbooks and tools, and marketing-funnel optimization.
+        description: |
+          - Contributed to proof-of-concept development and architecture discussions for an agentic AI platform that answers from unified knowledge sources with citations
+          - Provided architecture recommendations for knowledge ingestion, retrieval, agentic playbooks, internal tools, conversation flows, and enterprise deployment considerations
+          - Conducted research and optimization to improve retrieval quality, response grounding, agentic routing, playbook and tool behavior, and marketing-funnel performance
+
+      - layout: left
         title: AI Navigator
         role: Lead
         caption: 2024 · Active
@@ -304,11 +318,24 @@ sections:
           - title: ASK Power case study — Metaphora content transformation
             url: https://plex.rockwellautomation.com/en-us/case-studies/a-s-k-power-c-s.html
         quote: >
-          AI content transformation — PDFs become structured AEM components for enterprise publishing.
+          AI content transformation — PDFs become semantic HTML and structured AEM components for enterprise publishing.
         description: |
-          - Delivered PDF-to-HTML workflows that produce authored Adobe Experience Manager components
+          - Delivered PDF-to-semantic-HTML workflows that produce authored Adobe Experience Manager components
           - Implemented an agentic LLM-vision pipeline to parse layout and generate reusable AEM components
           - Added I18N translation support governed by brand voice and editorial guidelines
+
+      - layout: left
+        title: Prism - PoC
+        role: Core Contributor
+        caption: 2026 · Active
+        link: https://www.pisrc.com/products/prism
+        link_text: Live demo
+        link_title: PiSrc Prism - PoC
+        quote: >
+          Agentic AI conversation platform — playbooks and tools for knowledge-grounded marketing-funnel optimization.
+        description: |
+          - Contributed to POC development and architecture recommendations for knowledge ingestion, retrieval, agentic playbooks, internal tools, and conversation flows
+          - Researched and optimized response grounding, routing, and funnel-oriented system behavior
 
       - layout: left
         title: AI Overview
@@ -553,12 +580,26 @@ sections:
           - title: ASK Power case study — Metaphora content transformation
             url: https://plex.rockwellautomation.com/en-us/case-studies/a-s-k-power-c-s.html
         quote: >
-          AI content transformation — PDFs become structured AEM components for enterprise publishing.
+          AI content transformation — PDFs become semantic HTML and structured AEM components for enterprise publishing.
         description: |
-          - Delivered PDF-to-HTML workflows that produce authored Adobe Experience Manager components
+          - Delivered PDF-to-semantic-HTML workflows that produce authored Adobe Experience Manager components
           - Implemented an agentic LLM-vision pipeline to parse layout and generate reusable AEM components
           - Added I18N translation support governed by brand voice and editorial guidelines
           - Designed the tools to run on existing customer infrastructure without external processing servers
+
+      - layout: left
+        title: Prism - PoC
+        role: Core Contributor
+        caption: 2026 · Active
+        link: https://www.pisrc.com/products/prism
+        link_text: Live demo
+        link_title: PiSrc Prism - PoC
+        quote: >
+          Agentic AI conversation platform — knowledge-grounded engagement with playbooks and tools for marketing-funnel optimization.
+        description: |
+          - Contributed to proof-of-concept development and architecture discussions for a platform that answers visitor questions from unified knowledge sources with citations
+          - Provided architecture recommendations for knowledge ingestion, retrieval, agentic playbooks, internal tools, conversation flows, and enterprise deployment
+          - Researched and optimized retrieval quality, response grounding, agentic routing, playbook and tool behavior, and marketing-funnel performance
 
       - layout: left
         title: AI Overview

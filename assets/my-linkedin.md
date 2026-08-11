@@ -6,6 +6,10 @@ AI Chatbot:
 • Delivered real-time AI Overview and autosuggest with caching layer; built scheduled report pipelines and user feedback loops to improve relevance
 • Engineered scheduled multilingual indexing pipelines across 10+ heterogeneous data sources, combining keyword-based and semantic hybrid search with semantic reranking, multi-channel query routing, query expansion, and iterative retrieval
 
+Prism - PoC:
+• Contributed to POC development and architecture recommendations for an agentic AI conversation platform with unified knowledge retrieval, integrated playbooks, and internal tools
+• Researched and optimized response grounding, agentic routing, playbook and tool behavior, and marketing-funnel performance
+
 Infrastructure & Platform Engineering:
 • Took a central role in implementing scalable infrastructure: VM provisioning, runtime orchestration, offline pipelines for knowledge base synchronization and cache optimization
 • Maintained reliability and low-latency performance through monitoring and tuning
