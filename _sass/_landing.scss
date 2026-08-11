@@ -218,6 +218,10 @@ body.landing-page {
     transition: color 0.2s ease, opacity 0.2s ease;
   }
 
+  .preview-arrow[hidden] {
+    display: none !important;
+  }
+
   .preview-arrow:hover,
   .preview-arrow:focus,
   .preview-arrow:focus-visible {

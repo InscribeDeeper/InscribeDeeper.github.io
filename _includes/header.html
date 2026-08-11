@@ -6,7 +6,9 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 header-left">
       <h1>{{ person.name | escape }}</h1>
-      {% if person.company and person.company_url and person.title contains person.company %}
+      {% if page.profile and profile_view.header_title %}
+        <h2>{{ profile_view.header_title | escape }}</h2>
+      {% elsif person.company and person.company_url and person.title contains person.company %}
         {% assign title_prefix = person.title | split: person.company | first %}
         <h2>{{ title_prefix | escape }}{% include a.html href=person.company_url class="header-company-link" %}{{ person.company | escape }}</a></h2>
       {% else %}

@@ -22,7 +22,7 @@
   let timer = null;
   let projectRaf = null;
   let projectStartTimer = null;
-  let projectHovering = false;
+  let previewPaused = false;
   let projectHoldUntil = 0;
   const projectSpeed = 0.35;
   const projectHoldMs = 1600;
@@ -45,8 +45,7 @@
   function projectTick(now) {
     projectRaf = null;
 
-    // Always auto-scroll project list when visible; ignore prefers-reduced-motion.
-    if (projectHovering || !projectsSlideActive() || !projectTimeline) {
+    if (previewPaused || !projectsSlideActive() || !projectTimeline) {
       return;
     }
 
@@ -72,7 +71,7 @@
   }
 
   function startProjectAutoScroll() {
-    if (!projectTimeline || projectHovering || !projectsSlideActive()) {
+    if (!projectTimeline || previewPaused || !projectsSlideActive()) {
       return;
     }
 
@@ -80,7 +79,7 @@
 
     projectStartTimer = window.setTimeout(function () {
       projectStartTimer = null;
-      if (projectHovering || !projectsSlideActive() || projectRaf) {
+      if (previewPaused || !projectsSlideActive() || projectRaf) {
         return;
       }
       projectHoldUntil = 0;
@@ -88,8 +87,23 @@
     }, 400);
   }
 
+  function updateArrows() {
+    if (prev) {
+      const atStart = index <= 0;
+      prev.hidden = atStart;
+      prev.setAttribute("aria-hidden", atStart ? "true" : "false");
+      prev.tabIndex = atStart ? -1 : 0;
+    }
+    if (next) {
+      const atEnd = index >= slides.length - 1;
+      next.hidden = atEnd;
+      next.setAttribute("aria-hidden", atEnd ? "true" : "false");
+      next.tabIndex = atEnd ? -1 : 0;
+    }
+  }
+
   function setSlide(nextIndex) {
-    index = (nextIndex + slides.length) % slides.length;
+    index = Math.max(0, Math.min(nextIndex, slides.length - 1));
     track.style.transform = "translateX(-" + index * 100 + "%)";
 
     slides.forEach(function (slide, i) {
@@ -103,6 +117,8 @@
       dot.classList.toggle("is-active", active);
       dot.setAttribute("aria-selected", active ? "true" : "false");
     });
+
+    updateArrows();
 
     stopProjectAutoScroll();
     if (projectsSlideActive()) {
@@ -120,17 +136,37 @@
   }
 
   function startCarousel() {
-    if (reduceMotion || slides.length < 2) {
+    if (previewPaused || reduceMotion || slides.length < 2) {
       return;
     }
     stopCarousel();
     timer = window.setInterval(function () {
-      setSlide(index + 1);
+      if (previewPaused) {
+        stopCarousel();
+        return;
+      }
+      setSlide(index >= slides.length - 1 ? 0 : index + 1);
     }, intervalMs);
   }
 
+  function pausePreview() {
+    previewPaused = true;
+    stopCarousel();
+    stopProjectAutoScroll();
+  }
+
+  function resumePreview() {
+    previewPaused = false;
+    startCarousel();
+    startProjectAutoScroll();
+  }
+
   function go(delta) {
-    setSlide(index + delta);
+    const nextIndex = index + delta;
+    if (nextIndex < 0 || nextIndex >= slides.length) {
+      return;
+    }
+    setSlide(nextIndex);
     startCarousel();
   }
 
@@ -157,24 +193,12 @@
     });
   }
 
-  if (projectTimeline) {
-    projectTimeline.addEventListener("pointerenter", function () {
-      projectHovering = true;
-      stopProjectAutoScroll();
-    });
-
-    projectTimeline.addEventListener("pointerleave", function () {
-      projectHovering = false;
-      startProjectAutoScroll();
-    });
-  }
-
-  preview.addEventListener("pointerenter", stopCarousel);
-  preview.addEventListener("pointerleave", startCarousel);
-  preview.addEventListener("focusin", stopCarousel);
+  preview.addEventListener("pointerenter", pausePreview);
+  preview.addEventListener("pointerleave", resumePreview);
+  preview.addEventListener("focusin", pausePreview);
   preview.addEventListener("focusout", function (event) {
     if (!preview.contains(event.relatedTarget)) {
-      startCarousel();
+      resumePreview();
     }
   });
 
@@ -182,7 +206,7 @@
     if (document.hidden) {
       stopCarousel();
       stopProjectAutoScroll();
-    } else {
+    } else if (!previewPaused) {
       startCarousel();
       startProjectAutoScroll();
     }

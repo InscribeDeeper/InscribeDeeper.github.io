@@ -31,14 +31,19 @@ about:
 views:
   niw:
     title: EB-2 NIW Profile
+    header_title: AI & Enterprise Knowledge Retrieval Engineer
     show_about: false
     show_profile_image: false
     sections:
       - professional_summary_niw
       - proposed_endeavor
+      - national_importance_niw
+      - future_work_plan_niw
+      - well_positioned_niw
+      - national_interest_waiver_niw
       - core_expertise_niw
       - selected_contributions_niw
-      - work_history_overview
+      - work_history_niw
       - industry_projects
       - education
       - awards
@@ -84,7 +89,7 @@ sections:
     title: Professional Summary
     layout: text
     content: |
-      Full-stack software engineer specializing in reliable AI-powered search, retrieval-augmented generation (RAG), enterprise knowledge management, and data integration. Designs and delivers production systems spanning secure conversational AI, multilingual hybrid-search pipelines, recommendation engines, and scalable data infrastructure. Combines software engineering, data science, and applied machine learning to help organizations retrieve trusted information, connect fragmented data, and make complex knowledge more accessible and actionable.
+      Full-stack software engineer and data science practitioner focused on reliable AI-powered knowledge retrieval, enterprise search, and data interoperability. My proposed endeavor is to advance secure, scalable, and multilingual retrieval-augmented generation (RAG) and related data-integration systems for industrial and enterprise platforms in the United States. My work combines software engineering, applied machine learning, and production operations to make technical and business knowledge easier to find, evaluate, and use.
 
   professional_summary_resume:
     group: professional_summary
@@ -108,7 +113,68 @@ sections:
     title: Proposed Endeavor
     layout: text
     content: |
-      Advance reliable, secure, and scalable AI-powered knowledge retrieval and enterprise data integration systems in the United States. This work will focus on production-grade RAG applications, multilingual and hybrid search, recommendation systems, and intelligent automation that enable industrial and business platforms to connect fragmented data, improve access to trusted information, and support more efficient decision-making.
+      I propose to advance reliable, secure, and scalable AI-powered knowledge retrieval and enterprise data interoperability in the United States, with an emphasis on industrial and technology platforms. The endeavor is specific: design, implement, evaluate, and continuously improve production systems that:
+
+      - connect technical documentation, product information, partner and location records, content platforms, and other heterogeneous sources;
+      - use multilingual indexing, hybrid lexical/semantic retrieval, reranking, query routing, query expansion, and retrieval-augmented generation to return more relevant and traceable information;
+      - provide safe conversational and search experiences with access controls, input sanitization, content filtering, PII protection, evaluation workflows, and operational monitoring; and
+      - turn retrieval and behavioral signals into practical product support, recommendation, personalization, content, and data-quality capabilities.
+
+      The endeavor is broader than developing one particular application for one employer. It is a continuing engineering and applied-research program to make trusted information more accessible across industrial and enterprise workflows while preserving reliability, security, maintainability, and measurable system quality.
+
+  national_importance_niw:
+    group: national_importance
+    tags: [niw]
+    title: Substantial Merit & Potential National Importance
+    layout: text
+    content: |
+      The proposed endeavor has substantial merit because reliable access to technical and operational information supports product support, industrial services, digital commerce, cybersecurity-readiness workflows, and data-informed business decisions. In these settings, the value of AI is not only generating text; it is connecting authoritative sources, retrieving relevant evidence, controlling unsafe outputs, and making information usable across products, languages, and channels.
+
+      Its potential broader importance comes from the fact that the underlying problems recur across U.S. industrial and enterprise platforms: fragmented data, large technical-document collections, multilingual users, inconsistent metadata, and the need to balance response quality with latency, privacy, and operational reliability. Reusable retrieval, integration, evaluation, and safety methods can therefore be applied across multiple systems and organizations rather than remaining limited to a single user interface.
+
+      My prior work provides concrete examples of this direction in production contexts, including AI-assisted industrial documentation lookup, multilingual retrieval across 10+ sources, and CRM-to-search synchronization through 7+ API workflows. March 2026 usage data recorded approximately 110K unique sessions across the tracked search, retrieval-assistant, and fault-code applications. This figure measures platform activity rather than unique users and should be corroborated by employer or client records in the petition.
+
+  future_work_plan_niw:
+    group: future_work_plan
+    tags: [niw]
+    title: Future Work Plan
+    layout: text
+    content: |
+      I plan to continue advancing this endeavor through four connected workstreams:
+
+      - **Trustworthy retrieval and RAG:** Build retrieval pipelines that combine structured and unstructured data, preserve source context, support multilingual queries, and reduce unsupported or unverifiable responses through grounding and evaluation.
+      - **Industrial knowledge and data interoperability:** Connect technical documentation, product and fault-code information, partner/location data, CRM records, content-management systems, and other enterprise sources through maintainable APIs and synchronization workflows.
+      - **Safe and scalable production engineering:** Improve access controls, PII protection, content filtering, observability, caching, load balancing, latency, and operational resilience so AI systems can be used in real business and industrial workflows.
+      - **Measurement and transfer of methods:** Evaluate relevance, retrieval coverage, response quality, latency, safety, freshness, and user feedback; use the results to improve systems and transfer validated patterns to additional U.S. platforms and collaborators.
+
+      Near-term outputs may include production retrieval and data-integration services, evaluation and monitoring workflows, reusable software components, technical documentation, and cross-functional implementations. The exact employer, product, or collaboration may evolve; the technical objective and the public-facing utility of trustworthy information systems remain consistent.
+
+  well_positioned_niw:
+    group: well_positioned
+    tags: [niw]
+    title: Record of Preparation & Positioning
+    layout: text
+    content: |
+      My background combines the education, research training, production experience, and documented outcomes relevant to this endeavor:
+
+      - **Advanced technical education:** MSc in Data Science from Stevens Institute of Technology (GPA 3.8/4.0), including machine learning, deep learning, natural language processing, statistics, optimization, databases, and web programming; BSc in Mathematics and Applied Mathematics from Guangzhou University.
+      - **Applied NLP and machine-learning research:** At Stevens, processed and structured 94,581 earnings-call transcripts to study 96 language factors, achieved 72% accuracy with a domain-adapted BERT classifier, used NLP techniques for text and sentiment analysis, and operated a remote Ubuntu GPU environment for model development.
+      - **Production AI and retrieval systems:** At PiSrc, led development of an Azure OpenAI, Redis, and Weaviate agentic chatbot with internal company tools and API integration; built multilingual indexing and hybrid retrieval across 10+ sources; and implemented memory, function calling, content filtering, and PII masking. March 2026 usage data recorded approximately 110K unique sessions across the tracked AI knowledge-assistance applications.
+      - **Enterprise interoperability and applied ML:** Designed 7+ MuleSoft workflows for incremental CRM updates, integrated records into Lucidworks Solr and Elasticsearch, and developed recommendation and offline ML pipelines for personalization, interaction modeling, and funnel optimization.
+      - **Industrial deployment context:** Delivered or maintained AI-assisted fault-code lookup, search overview, personalization, partner-locator, content-transformation, and content-platform capabilities for industrial digital experiences, with several public product or case-study pages available for corroboration.
+      - **Recognition and continued development:** Received the Stevens Provost's Scholarship and the National Mathematical Modeling Contest national second prize; continue to develop business, systems, and data expertise through an MBA program.
+
+      The quantitative results, leadership descriptions, and individual contribution claims above should be supported in the petition record by employment verification, project or client letters, usage reports, technical documentation, recommendation letters, academic records, and award documentation as applicable.
+
+  national_interest_waiver_niw:
+    group: waiver_relevance
+    tags: [niw]
+    title: National-Interest Waiver Relevance
+    layout: text
+    content: |
+      The endeavor is a continuing body of specialized work rather than a single narrowly defined job description. Its progress depends on applying retrieval, integration, safety, and evaluation methods across changing industrial products, enterprise data environments, and collaborative platforms. A flexible employment structure can allow these methods to be developed and applied where the relevant technical problems, data, and implementation opportunities arise, while still producing measurable value for U.S. organizations and users.
+
+      The case for a waiver should be developed from evidence, not from the importance of the occupation alone. Relevant considerations include the prospective reach of the proposed work, the record showing that I can advance it, the need for cross-platform collaboration and continued technical development, and the benefits of allowing the endeavor to continue beyond one fixed position or employer. This profile is a factual professional summary and does not itself make the legal determination that the EB-2 classification or waiver requirements are satisfied.
 
   core_expertise_niw:
     group: core_expertise
@@ -116,11 +182,11 @@ sections:
     title: Core Expertise
     layout: text
     content: |
-      **AI & Knowledge Systems:** Retrieval-augmented generation, conversational AI, agentic workflows, semantic retrieval, reranking, knowledge-base synchronization, and AI safety guardrails
+      **AI & Knowledge Retrieval:** Retrieval-augmented generation, conversational AI, agentic workflows, semantic retrieval, hybrid search, reranking, knowledge-base synchronization, evaluation, and AI safety guardrails
 
-      **Enterprise Search & Data Integration:** Multilingual indexing, hybrid search, query routing and expansion, Elasticsearch, Solr, Weaviate, MuleSoft, and heterogeneous data-source integration
+      **Industrial Information & Data Interoperability:** Technical-document and fault-code retrieval, multilingual indexing, query routing and expansion, enterprise search, Elasticsearch, Solr, Weaviate, MuleSoft, and heterogeneous data-source integration
 
-      **Scalable Software Systems:** Full-stack architecture, distributed caching, load balancing, API development, offline data pipelines, cloud infrastructure, monitoring, and performance optimization
+      **Scalable Production Systems:** Full-stack architecture, distributed caching, load balancing, API development, offline data pipelines, cloud infrastructure, monitoring, security controls, and performance optimization
 
       **Applied Machine Learning:** Natural language processing, recommendation systems, text classification, user behavior analysis, experimentation, and feedback-driven quality improvement
 
@@ -160,21 +226,44 @@ sections:
         title: AI Overview
         role: Lead
         caption: 2025 · Active
+        link: https://www.rockwellautomation.com/en-us/search.html?keyword=what+is+rockwell+doing%3F&tab=all
+        link_text: Public product page
+        link_title: AI Overview
         quote: >
-          Real-time AI search overview — hybrid retrieval across distributed enterprise knowledge sources.
+          Real-time AI search overview — multilingual retrieval across distributed enterprise knowledge sources.
         description: |
-          - Built real-time search overview and autosuggest with caching, reporting, and feedback loops
+          - Built real-time search overview and autosuggest with live-query caching, reporting, and feedback loops
           - Engineered multilingual indexing across 10+ sources with hybrid retrieval, reranking, routing, and iterative retrieval
+          - Separated overview generation from chat to optimize retrieval, latency, and user experience for each surface
 
       - layout: left
         title: AI Navigator
         role: Lead
         caption: 2024 · Active
+        link: https://www.rockwellautomation.com/en-us.html#rafb-chat-choice
+        link_text: Public product page
+        link_title: AI Navigator
         quote: >
-          Production conversational AI — knowledge retrieval for enterprise website support at scale.
+          Agentic conversational AI — grounded knowledge retrieval for enterprise website support at scale.
         description: |
-          - Built a production chat experience with Azure OpenAI, Redis, and Weaviate supporting 1K+ DAUs
+          - Built an agentic chatbot with Azure OpenAI, Redis, and Weaviate, integrating internal company tools and APIs through function calling
+          - March 2026 usage: approximately 110K unique sessions across the tracked search, retrieval-assistant, and fault-code applications
           - Implemented multi-turn memory, function calling, content filtering, and PII masking for safer AI interactions
+          - Used sticky sessions and load balancing to support reliable access to the conversational experience
+
+      - layout: left
+        title: Fault Code Navigator
+        role: Lead
+        caption: 2023 · Maintenance
+        link: https://www.rockwellautomation.com/en-us/support/documentation.html#button-6cfc1d95e7
+        link_text: Public product page
+        link_title: Fault Code Navigator
+        quote: >
+          AI-assisted industrial support — technical fault-code information made easier to find.
+        description: |
+          - Built AI-assisted lookup for condition, event, and fault codes across industrial product families
+          - Connected product-family selection and code queries to Technical Documentation Center retrieval
+          - Delivered a production support experience for drives, controllers, and motion systems
 
       - layout: left
         title: Personalization
@@ -189,11 +278,15 @@ sections:
       - layout: left
         title: Partner Locator
         caption: 2022 · Active
+        link: https://www.rockwellautomation.com/en-us/sales/partner-locator.html
+        link_text: Public product page
+        link_title: Partner Locator
         quote: >
-          CRM-to-search interoperability — partner and location data made reliably discoverable.
+          CRM-to-search interoperability — partner and location records made reliably discoverable.
         description: |
           - Designed 7+ MuleSoft workflows for incremental CRM delta updates of partner accounts and locations
           - Integrated multi-source records into Lucidworks Solr and Elasticsearch search with cache optimization
+          - Created a maintainable data path between source-system updates and searchable enterprise experiences
 
   selected_contributions_cv:
     group: featured_technical_work
@@ -239,9 +332,9 @@ sections:
         link_text: Live demo
         link_title: AI Navigator
         quote: >
-          Production conversational AI — enterprise website support chat at 1K+ daily active users.
+          Agentic conversational AI — enterprise website support chat with internal company tools.
         description: |
-          - Built chat with Azure OpenAI, Redis, and Weaviate using sticky sessions and load balancing
+          - Built an agentic chatbot with Azure OpenAI, Redis, and Weaviate, integrating internal company tools and APIs through function calling
           - Designed multi-turn Redis memory and agentic function-calling workflows for tools and APIs
           - Implemented security guardrails including input sanitization, content filtering, and PII masking
 
@@ -346,6 +439,39 @@ sections:
       - **Stevens Institute of Technology** — MSc in Data Science · 2019 – 2021 · Provost's Scholarship
       - **Guangzhou University** — BSc in Mathematics and Applied Mathematics · 2014 – 2018 · CUMCM National Second Prize; Provincial First Prize
 
+  work_history_niw:
+    group: professional_experience_niw
+    tags: [niw]
+    title: Experience
+    layout: list
+    content:
+      - layout: left
+        title: PiSrc
+        sub_title: Full-Stack Software Engineer
+        caption: Feb 2022 – Present · New York, NY
+        quote: >
+          Production AI, knowledge retrieval, data interoperability, and personalization for industrial digital platforms.
+        description: |
+          - Led production RAG conversational AI and hybrid-search experiences with Azure OpenAI, Redis, and Weaviate
+          - Built multilingual retrieval, technical-document lookup, and search-overview capabilities for industrial digital experiences
+          - March 2026 usage: approximately 110K unique sessions across the tracked search, retrieval-assistant, and fault-code applications
+          - Designed recommendation and offline ML pipelines for personalization, interaction modeling, and funnel optimization
+          - Integrated partner/location CRM updates via MuleSoft into Solr and Elasticsearch with caching
+          - Developed licensed AEM software for content authoring and publishing, integrating with search, PIM, marketing, and ecommerce platforms
+          - Applied secure AI workflows, multilingual retrieval, monitoring, and maintainable cross-system data flows in production
+
+      - layout: left
+        title: Stevens Institute of Technology
+        sub_title: Research Assistant
+        caption: Jun 2020 – Dec 2021 · Hoboken, NJ
+        quote: >
+          Deep learning and NLP engineering for financial text analysis.
+        description: |
+          - Processed and structured 94,581 earnings-call transcripts to study 96 language factors related to stock returns
+          - Achieved 72% accuracy with a domain-adapted BERT text-classification model using PyTorch
+          - Applied NLP methods for text analysis, sentiment analysis, and text mining
+          - Operated a remote Ubuntu GPU environment and developed reusable tutorials for deep-learning workflows
+
   work_history_overview:
     group: professional_experience
     tags: [niw, cv, all]
@@ -394,7 +520,7 @@ sections:
         description: |
           - **Role overview:** Lead design and delivery of production AI, enterprise search, data integration, personalization, and content-platform systems for industrial digital platforms
           - **February 2022 – February 2023:** Built enterprise data-integration and search foundations, including 7+ MuleSoft API workflows for partner account/location delta updates, Lucidworks Solr–based search integration, and licensable Adobe Experience Manager modules for content authoring and publishing
-          - **February 2023 – January 2025:** Led full-cycle development of a production RAG conversational AI system (Azure OpenAI, Redis, Weaviate) supporting 1K+ daily active users; delivered multilingual hybrid-search pipelines across 10+ sources, recommendation systems, and offline ML workflows for personalization and sales-funnel optimization
+          - **February 2023 – January 2025:** Led full-cycle development of a production agentic chatbot (Azure OpenAI, Redis, Weaviate) with internal company tools and API integration through function calling; delivered multilingual hybrid-search pipelines across 10+ sources, recommendation systems, and offline ML workflows for personalization and sales-funnel optimization
           - **January 2025 – Present:** Apply data-driven insights to CMS architecture and platform scaling; collaborate across engineering, product, and business stakeholders; translate requirements into maintainable software; evaluate system performance, availability, and integration quality
           - **Cross-cutting responsibilities:** Design secure AI interactions with content filtering and PII masking; maintain high reliability and low latency through monitoring, caching, and infrastructure orchestration; document systems and support quality assurance for production services
 
@@ -467,11 +593,12 @@ sections:
         link_text: Live demo
         link_title: AI Navigator
         quote: >
-          Production conversational AI — enterprise website support chat at 1K+ daily active users.
+          Agentic conversational AI — enterprise knowledge retrieval with measurable production usage.
         description: |
-          - Built chat with Azure OpenAI, Redis, and Weaviate using sticky sessions and load balancing
+          - Built an agentic chatbot with Azure OpenAI, Redis, and Weaviate, integrating internal company tools and APIs through function calling
           - Designed multi-turn Redis memory and agentic function-calling workflows for tools and APIs
           - Implemented security guardrails including input sanitization, content filtering, and PII masking
+          - March 2026 usage: approximately 110K unique sessions across the tracked search, retrieval-assistant, and fault-code applications
           - Delivered the website chat entry point for AI-powered support and quick access to trusted information
 
       - layout: left

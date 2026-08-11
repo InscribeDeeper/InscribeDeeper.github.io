@@ -86,8 +86,8 @@ legacy_content:
                 Gain hands-on experience on software development and data pipeline implementation 
             description: | # this will include new lines to allow paragraphs
                 - AI Chatbot & RAG Systems:
-                  - Led full-cycle development of a production-grade RAG conversational [AI chatbot](https://www.rockwellautomation.com/en-us/search.html?keyword=what+is+rockwell+doing%3F&tab=all) using Azure OpenAI, Redis, and Weaviate vector database; architected sticky session routing and load balancing to support 1K+ DAUs
-                  - Designed multi-turn conversational memory with Redis persistence and context window management; built agentic workflows with function calling to orchestrate custom tools and external APIs
+                  - Led full-cycle development of a production-grade agentic [AI chatbot](https://www.rockwellautomation.com/en-us/search.html?keyword=what+is+rockwell+doing%3F&tab=all) using Azure OpenAI, Redis, and Weaviate vector database; integrated internal company tools and APIs through function calling
+                  - Designed multi-turn conversational memory with Redis persistence and context window management; implemented agentic workflows for internal tool orchestration
                   - Implemented security guardrails including input sanitization, content filtering, and PII masking to ensure safe and compliant AI interactions
                   - Delivered real-time AI Overview and autosuggest powered by live user queries with caching layer for low-latency responses; built scheduled report pipelines and user feedback loops to continuously improve relevance and quality
                   - Engineered scheduled multilingual (I18N) indexing pipelines across 10+ heterogeneous data sources, combining keyword-based and semantic hybrid search with semantic reranking, multi-channel query routing, query expansion, and iterative retrieval

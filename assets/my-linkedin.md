@@ -1,6 +1,7 @@
 AI Chatbot:
-• Played a major role in full-cycle development of a production RAG conversational chatbot using Azure OpenAI, Redis, and Weaviate vector database; architected sticky session routing and load balancing to support 1K+ DAUs
-• Developed multi-turn conversational memory with Redis persistence and context window management; built agentic workflows with function calling to orchestrate custom tools and external APIs
+• Played a major role in full-cycle development of a production agentic chatbot using Azure OpenAI, Redis, and Weaviate vector database; integrated internal company tools and APIs through function calling
+• Developed multi-turn conversational memory with Redis persistence and context window management; built agentic workflows for internal tool orchestration
+• March 2026 usage data recorded approximately 110K unique sessions across tracked search, retrieval-assistant, and fault-code applications
 • Implemented security guardrails: input sanitization, content filtering, and PII masking
 • Delivered real-time AI Overview and autosuggest with caching layer; built scheduled report pipelines and user feedback loops to improve relevance
 • Engineered scheduled multilingual indexing pipelines across 10+ heterogeneous data sources, combining keyword-based and semantic hybrid search with semantic reranking, multi-channel query routing, query expansion, and iterative retrieval
