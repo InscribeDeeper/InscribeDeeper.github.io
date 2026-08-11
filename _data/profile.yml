@@ -312,6 +312,7 @@ sections:
         title: Metaphora
         role: Lead
         caption: 2026
+        title_link: https://www.pisrc.com/products/metaphora
         references:
           - title: Tech Met case study — Metaphora content transformation
             url: https://plex.rockwellautomation.com/en-us/case-studies/tech-met-inc-c-s-v3.html
@@ -432,8 +433,6 @@ sections:
             url: https://www.rockwellautomation.com/en-us/products/hardware.html#:~:text=Based%20on%20your%20views
           - title: Partner Locator
             url: https://www.rockwellautomation.com/en-us/sales/partner-locator.html
-          - title: Metaphora
-            url: https://plex.rockwellautomation.com/en-us/case-studies/tech-met-inc-c-s-v3.html
         quote: >
           Production AI, search, CMS, and personalization for industrial digital platforms.
         description: |
@@ -574,6 +573,7 @@ sections:
         title: Metaphora
         role: Lead
         caption: 2026
+        title_link: https://www.pisrc.com/products/metaphora
         references:
           - title: Tech Met case study — Metaphora content transformation
             url: https://plex.rockwellautomation.com/en-us/case-studies/tech-met-inc-c-s-v3.html
@@ -704,6 +704,7 @@ sections:
       - layout: left
         title: Futprint
         caption: 2022 · Maintenance
+        title_link: https://www.pisrc.com/products/futprint
         references:
           - title: Cybersecurity preparedness assessment questionnaire
             url: https://www.rockwellautomation.com/en-us/capabilities/industrial-cybersecurity/services/cybersecurity-preparedness-assessment.html#!0:0
@@ -792,34 +793,6 @@ sections:
     layout: list
     content:
       - layout: left
-        title: E-commerce Recommender System
-        sub_title: Stevens Institute of Technology
-        caption: 2020 · Hoboken, NJ
-        additional_links:
-          - title: InscribeDeeper/Recommender_Sys
-            icon: fab fa-github
-            url: https://github.com/InscribeDeeper/Recommender_Sys
-        quote: >
-          Collaborative filtering on user, item, and interaction data.
-        description: |
-          - Built a recommender engine with memory-based and model-based collaborative filtering on JD.com interaction data
-          - Evaluated on 7,000 user-item samples and reached 77% Top-10 accuracy
-
-      - layout: left
-        title: MyPlace Web Development
-        sub_title: Stevens Institute of Technology
-        caption: 2020 · Hoboken, NJ
-        additional_links:
-          - title: InscribeDeeper/MyPlace
-            icon: fab fa-github
-            url: https://github.com/InscribeDeeper/MyPlace
-        quote: >
-          Full-stack web app for furniture and rental information exchange.
-        description: |
-          - Led a four-person team to build a Node.js/Express app with MongoDB schemas and RESTful CRUD APIs
-          - Implemented authentication, search, comments, and dashboard features for listing exchange
-
-      - layout: left
         title: Analysis on Factors Influencing Bitcoin
         sub_title: Stevens Institute of Technology
         caption: 2021 · Hoboken, NJ
@@ -846,6 +819,34 @@ sections:
         description: |
           - Scraped and structured Indeed job-description text; filtered noise with K-means skillset clusters
           - Analyzed skill trends with topic modeling and aspect-extraction neural networks
+
+      - layout: left
+        title: E-commerce Recommender System
+        sub_title: Stevens Institute of Technology
+        caption: 2020 · Hoboken, NJ
+        additional_links:
+          - title: InscribeDeeper/Recommender_Sys
+            icon: fab fa-github
+            url: https://github.com/InscribeDeeper/Recommender_Sys
+        quote: >
+          Collaborative filtering on user, item, and interaction data.
+        description: |
+          - Built a recommender engine with memory-based and model-based collaborative filtering on JD.com interaction data
+          - Evaluated on 7,000 user-item samples and reached 77% Top-10 accuracy
+
+      - layout: left
+        title: MyPlace Web Development
+        sub_title: Stevens Institute of Technology
+        caption: 2020 · Hoboken, NJ
+        additional_links:
+          - title: InscribeDeeper/MyPlace
+            icon: fab fa-github
+            url: https://github.com/InscribeDeeper/MyPlace
+        quote: >
+          Full-stack web app for furniture and rental information exchange.
+        description: |
+          - Led a four-person team to build a Node.js/Express app with MongoDB schemas and RESTful CRUD APIs
+          - Implemented authentication, search, comments, and dashboard features for listing exchange
 
       - layout: left
         title: Fintech Pitch Competition

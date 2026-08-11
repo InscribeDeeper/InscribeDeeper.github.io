@@ -1,7 +1,11 @@
 {% for item in include.content %}
   <div class="row clearfix layout layout-{{item.layout | default: 'left'}}">
     <div class="col-xs-12 col-sm-4 col-md-3 details">
-      <h4>{{ item.title }}</h4>
+      {%- if item.title_link -%}
+        <h4>{% include a.html href=item.title_link class="item-title-link" title=item.title %}{{ item.title }}</a></h4>
+      {%- else -%}
+        <h4>{{ item.title }}</h4>
+      {%- endif -%}
       {%- if item.sub_title -%}<p><b>{{ item.sub_title }}</b></p>{%- endif -%}
       {%- if item.caption or item.role -%}
         <p class="item-meta">{%- if item.caption -%}{{ item.caption }}{%- endif -%}{% if item.caption and item.role %} · {% endif %}{%- if item.role -%}<span class="item-role">{{ item.role }}</span>{%- endif -%}</p>
@@ -17,7 +21,7 @@
             {%- for ref in item.references -%}
               {%- assign protocol = ref.url | strip | slice: 0, 4 -%}
               {%- assign ref_tip = ref.title | default: ref.url -%}
-              <a href="{% if protocol != 'http' %}//{% endif %}{{ ref.url }}" target="_blank" class="link demo-index" title="{{ ref_tip | escape }}" data-tip="{{ ref_tip | escape }}">{{ forloop.index | plus: 1 }}</a>
+              <a href="{% if protocol != 'http' %}//{% endif %}{{ ref.url }}" target="_blank" rel="noopener" class="link demo-index" title="{{ ref_tip | escape }}" data-tip="{{ ref_tip | escape }}" onclick="this.blur()">{{ forloop.index | plus: 1 }}</a>
             {%- endfor -%}
           </span>
         </p>
@@ -36,7 +40,7 @@
             {%- for ref in item.references -%}
               {%- assign protocol = ref.url | strip | slice: 0, 4 -%}
               {%- assign ref_tip = ref.title | default: ref.url -%}
-              <a href="{% if protocol != 'http' %}//{% endif %}{{ ref.url }}" target="_blank" class="link demo-index" title="{{ ref_tip | escape }}" data-tip="{{ ref_tip | escape }}">{{ forloop.index }}</a>
+              <a href="{% if protocol != 'http' %}//{% endif %}{{ ref.url }}" target="_blank" rel="noopener" class="link demo-index" title="{{ ref_tip | escape }}" data-tip="{{ ref_tip | escape }}" onclick="this.blur()">{{ forloop.index }}</a>
             {%- endfor -%}
           </span>
         </p>

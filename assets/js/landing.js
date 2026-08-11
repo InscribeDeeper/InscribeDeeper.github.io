@@ -7,6 +7,8 @@
   const next = document.querySelector("[data-preview-next]");
   const preview = document.querySelector(".profile-preview");
   const projectTimeline = document.querySelector("[data-project-timeline]");
+  const projectShell = document.querySelector("[data-project-timeline-shell]");
+  const projectScrollHint = document.querySelector("[data-project-scroll-hint]");
 
   if (!root || !track || !slides.length || !preview) {
     return;
@@ -31,6 +33,19 @@
     return projectsSlideIndex >= 0 && index === projectsSlideIndex;
   }
 
+  function updateProjectScrollHint() {
+    if (!projectTimeline || !projectShell || !projectScrollHint) {
+      return;
+    }
+
+    const maxScroll = projectTimeline.scrollHeight - projectTimeline.clientHeight;
+    const canScrollMore = maxScroll > 8 && projectTimeline.scrollTop < maxScroll - 8;
+    const show = projectsSlideActive() && canScrollMore;
+
+    projectShell.classList.toggle("is-hoverable", show);
+    projectScrollHint.hidden = !show;
+  }
+
   function stopProjectAutoScroll() {
     if (projectStartTimer) {
       window.clearTimeout(projectStartTimer);
@@ -51,6 +66,7 @@
 
     const maxScroll = projectTimeline.scrollHeight - projectTimeline.clientHeight;
     if (maxScroll <= 2) {
+      updateProjectScrollHint();
       projectRaf = window.requestAnimationFrame(projectTick);
       return;
     }
@@ -61,10 +77,12 @@
     }
 
     projectTimeline.scrollTop += projectSpeed;
+    updateProjectScrollHint();
 
     if (projectTimeline.scrollTop >= maxScroll - 0.5) {
       projectHoldUntil = now + projectHoldMs;
       projectTimeline.scrollTop = 0;
+      updateProjectScrollHint();
     }
 
     projectRaf = window.requestAnimationFrame(projectTick);
@@ -76,6 +94,7 @@
     }
 
     stopProjectAutoScroll();
+    updateProjectScrollHint();
 
     projectStartTimer = window.setTimeout(function () {
       projectStartTimer = null;
@@ -119,12 +138,14 @@
     });
 
     updateArrows();
+    updateProjectScrollHint();
 
     stopProjectAutoScroll();
     if (projectsSlideActive()) {
       startProjectAutoScroll();
     } else if (projectTimeline) {
       projectTimeline.scrollTop = 0;
+      updateProjectScrollHint();
     }
   }
 
@@ -190,6 +211,20 @@
   if (next) {
     next.addEventListener("click", function () {
       go(1);
+    });
+  }
+
+  if (projectTimeline) {
+    projectTimeline.addEventListener("scroll", updateProjectScrollHint, { passive: true });
+    window.addEventListener("resize", updateProjectScrollHint);
+  }
+
+  if (projectScrollHint && projectTimeline) {
+    projectScrollHint.addEventListener("click", function () {
+      projectTimeline.scrollBy({
+        top: Math.max(120, Math.floor(projectTimeline.clientHeight * 0.45)),
+        behavior: reduceMotion ? "auto" : "smooth",
+      });
     });
   }
 

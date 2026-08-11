@@ -330,13 +330,22 @@ body.landing-page {
     padding-left: 0.2rem;
   }
 
+  .project-timeline-shell {
+    position: relative;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    margin-top: 1.6rem;
+  }
+
   .project-timeline {
     flex: 1 1 auto;
     align-content: start;
     gap: 1rem;
     min-height: 0;
     height: 100%;
-    margin-top: 1.6rem;
+    margin-top: 0;
     margin-bottom: 0.25rem;
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -349,6 +358,74 @@ body.landing-page {
     display: none;
     width: 0;
     height: 0;
+  }
+
+  .project-scroll-hint {
+    position: absolute;
+    left: 50%;
+    bottom: 6px;
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: var(--landing-muted);
+    box-shadow: none;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%);
+    transition: opacity 0.2s ease, color 0.2s ease;
+  }
+
+  .project-timeline-shell.is-hoverable:hover .project-scroll-hint:not([hidden]),
+  .project-timeline-shell.is-hoverable:focus-within .project-scroll-hint:not([hidden]) {
+    opacity: 1;
+    pointer-events: auto;
+    animation: project-scroll-hint-pulse 1.2s ease-in-out infinite;
+  }
+
+  .project-scroll-hint:hover,
+  .project-scroll-hint:focus,
+  .project-scroll-hint:focus-visible {
+    color: var(--landing-accent);
+    outline: none;
+  }
+
+  .project-scroll-hint[hidden] {
+    display: none !important;
+  }
+
+  .project-scroll-hint-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+
+  @keyframes project-scroll-hint-pulse {
+    0%,
+    100% {
+      opacity: 0.35;
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(3px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-timeline-shell.is-hoverable:hover .project-scroll-hint:not([hidden]),
+    .project-timeline-shell.is-hoverable:focus-within .project-scroll-hint:not([hidden]) {
+      animation: none;
+      opacity: 0.85;
+    }
   }
 
   .career-timeline::before {

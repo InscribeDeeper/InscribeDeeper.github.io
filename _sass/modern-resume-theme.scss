@@ -116,8 +116,22 @@
         margin-bottom: 0.2rem;
       }
 
-      a {
+      a,
+      .item-title-link {
+        color: inherit;
+        font-style: normal;
         font-weight: 500;
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus,
+      a:focus-visible,
+      .item-title-link:hover,
+      .item-title-link:focus,
+      .item-title-link:focus-visible {
+        text-decoration: underline;
+        outline: none;
       }
     }
   }
@@ -267,6 +281,11 @@
   position: relative;
   white-space: nowrap;
   font-style: italic;
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
 }
 
 .item-references .demo-indexes {
@@ -367,9 +386,7 @@ body.dark .layout .details .item-references .demo-index:focus-visible {
 }
 
 .item-references .link[data-tip]:hover::after,
-.item-references .link[data-tip]:focus-visible::after,
-.item-link .link[data-tip]:hover::after,
-.item-link .link[data-tip]:focus-visible::after {
+.item-link .link[data-tip]:hover::after {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
@@ -378,8 +395,7 @@ body.dark .layout .details .item-references .demo-index:focus-visible {
   transform: translateX(-50%) translateY(0.15rem) skewX(12deg);
 }
 
-.item-references a.demo-index[data-tip]:hover::after,
-.item-references a.demo-index[data-tip]:focus-visible::after {
+.item-references a.demo-index[data-tip]:hover::after {
   transform: translateX(-50%) translateY(0) skewX(12deg);
 }
 
