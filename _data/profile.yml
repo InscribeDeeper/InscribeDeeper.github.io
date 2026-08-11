@@ -214,7 +214,7 @@ sections:
           AI content transformation — PDFs become structured AEM components for enterprise publishing.
         description: |
           - Delivered PDF-to-HTML workflows that produce authored Adobe Experience Manager components
-          - Implemented an agentic LLM-vision pipeline to interpret layout, extract structure, and generate reusable AEM elements
+          - Implemented an agentic LLM-vision pipeline to parse layout and generate reusable AEM components
           - Added I18N translation support governed by brand voice and editorial guidelines
 
       - layout: left
@@ -241,7 +241,7 @@ sections:
         quote: >
           Production conversational AI — enterprise website support chat at 1K+ daily active users.
         description: |
-          - Built the chat experience with Azure OpenAI, Redis, and Weaviate, including sticky-session routing and load balancing
+          - Built chat with Azure OpenAI, Redis, and Weaviate using sticky sessions and load balancing
           - Designed multi-turn Redis memory and agentic function-calling workflows for tools and APIs
           - Implemented security guardrails including input sanitization, content filtering, and PII masking
 
@@ -315,24 +315,26 @@ sections:
           - title: Metaphora
             url: https://plex.rockwellautomation.com/en-us/case-studies/tech-met-inc-c-s-v3.html
         quote: >
-          Production AI, search, and personalization for industrial digital platforms.
+          Production AI, search, CMS, and personalization for industrial digital platforms.
         description: |
-          - Lead end-to-end delivery of AI, enterprise search, personalization, and content-platform systems for a global industrial automation company
-          - Shipped production surfaces across conversational AI, hybrid search, recommendations, CMS tooling, and partner-data integration
-          - Prioritized reliability, secure AI workflows, multilingual retrieval, and maintainable cross-system data flows
-          - Project-level contributions are detailed in **Selected Engineering Projects**
+          - Built production RAG conversational AI and hybrid-search experiences with Azure OpenAI, Redis, and Weaviate
+          - Designed recommendation and offline ML pipelines for personalization, funnel optimization, and targeting
+          - Integrated partner/location CRM updates via MuleSoft into Solr and Elasticsearch with caching
+          - Developed licensed AEM CMS software for content authoring and publishing, integrating with search, PIM, marketing, and ecommerce platforms
+          - Translated business and UX requirements into modular, decoupled components; maintained data stores, documentation, and QA for reliable operations
+          - Hardened delivery with secure AI workflows, multilingual retrieval, and maintainable cross-system data flows
 
       - layout: left
         title: Stevens Institute of Technology
         sub_title: Research Assistant
         caption: Jun 2020 – Dec 2021 · Hoboken, NJ
         quote: >
-          Deep learning and NLP for financial text analysis.
+          Deep learning and NLP engineering for financial text analysis.
         description: |
-          - Researched language-feature patterns in financial text using deep learning, NLP, and statistical modeling
-          - Structured 94,581 earnings call transcripts to study linguistic factors linked to stock returns
-          - Reached 72% accuracy on text classification with a domain-adapted BERT model in PyTorch
-          - Set up and maintained remote Ubuntu GPU environments for deep learning experiments and model training
+          - Built and maintained data-processing and training workflows for NLP experiments on financial text
+          - Modularized pipelines and PyTorch/ML helpers into reusable utils for shared research use
+          - Set up and operated remote Ubuntu GPU environments for deep learning training and evaluation
+          - Supported language-feature and text-classification studies with domain-adapted BERT models
 
   education_awards_resume:
     group: education
@@ -355,24 +357,26 @@ sections:
         sub_title: Full-Stack Software Engineer
         caption: Feb 2022 – Present · New York, NY
         quote: >
-          Production AI, search, and personalization for industrial digital platforms.
+          Production AI, search, CMS, and personalization for industrial digital platforms.
         description: |
-          - Lead end-to-end delivery of AI, enterprise search, personalization, and content-platform systems for a global industrial automation company
-          - Shipped production surfaces across conversational AI, hybrid search, recommendations, CMS tooling, and partner-data integration
-          - Prioritized reliability, secure AI workflows, multilingual retrieval, and maintainable cross-system data flows
-          - Project-level contributions are detailed in **Industry Projects**
+          - Built production RAG conversational AI and hybrid-search experiences with Azure OpenAI, Redis, and Weaviate
+          - Designed recommendation and offline ML pipelines for personalization, funnel optimization, and targeting
+          - Integrated partner/location CRM updates via MuleSoft into Solr and Elasticsearch with caching
+          - Developed licensed AEM CMS software for content authoring and publishing, integrating with search, PIM, marketing, and ecommerce platforms
+          - Translated business and UX requirements into modular, decoupled components; maintained data stores, documentation, and QA for reliable operations
+          - Hardened delivery with secure AI workflows, multilingual retrieval, and maintainable cross-system data flows
 
       - layout: left
         title: Stevens Institute of Technology
         sub_title: Research Assistant
         caption: Jun 2020 – Dec 2021 · Hoboken, NJ
         quote: >
-          Deep learning and NLP for financial text analysis.
+          Deep learning and NLP engineering for financial text analysis.
         description: |
-          - Researched language-feature patterns in financial text using deep learning, NLP, and statistical modeling
-          - Structured 94,581 earnings call transcripts to study linguistic factors linked to stock returns
-          - Reached 72% accuracy on text classification with a domain-adapted BERT model in PyTorch
-          - Set up and maintained remote Ubuntu GPU environments for deep learning experiments and model training
+          - Built and maintained data-processing and training workflows for NLP experiments on financial text
+          - Modularized pipelines and PyTorch/ML helpers into reusable utils for shared research use
+          - Set up and operated remote Ubuntu GPU environments for deep learning training and evaluation
+          - Supported language-feature and text-classification studies with domain-adapted BERT models
 
   # Retained detailed phase narrative for reference; overview is used when Industry Projects is shown.
   work_history_detailed:
@@ -399,13 +403,13 @@ sections:
         sub_title: Research Assistant, Deep Learning and Web Analytics
         caption: June 2020 - December 2021 · Hoboken, NJ
         quote: >
-          Deep learning and NLP for financial text analysis.
+          Deep learning and NLP engineering for financial text analysis.
         description: |
-          - Researched language-feature patterns in financial text using deep learning, NLP, and statistical modeling
-          - Structured 94,581 earnings call transcripts to study 96 linguistic factors linked to stock returns
-          - Reached 72% accuracy on text classification with a domain-adapted BERT model in PyTorch
+          - Built and maintained data-processing and training workflows for NLP experiments on financial text
+          - Modularized pipelines and PyTorch/ML helpers into reusable utils for shared research use
           - Applied SpaCy and NLTK for text analysis, sentiment analysis, and text mining
-          - Set up and maintained remote Ubuntu GPU environments for deep learning experiments and training
+          - Set up and operated remote Ubuntu GPU environments for deep learning training and evaluation
+          - Supported language-feature and text-classification studies with domain-adapted BERT models
 
   industry_projects:
     group: industry_projects
@@ -426,7 +430,7 @@ sections:
           AI content transformation — PDFs become structured AEM components for enterprise publishing.
         description: |
           - Delivered PDF-to-HTML workflows that produce authored Adobe Experience Manager components
-          - Implemented an agentic LLM-vision pipeline to interpret layout, extract structure, and generate reusable AEM elements
+          - Implemented an agentic LLM-vision pipeline to parse layout and generate reusable AEM components
           - Added I18N translation support governed by brand voice and editorial guidelines
           - Designed the tools to run on existing customer infrastructure without external processing servers
 
@@ -465,7 +469,7 @@ sections:
         quote: >
           Production conversational AI — enterprise website support chat at 1K+ daily active users.
         description: |
-          - Built the chat experience with Azure OpenAI, Redis, and Weaviate, including sticky-session routing and load balancing
+          - Built chat with Azure OpenAI, Redis, and Weaviate using sticky sessions and load balancing
           - Designed multi-turn Redis memory and agentic function-calling workflows for tools and APIs
           - Implemented security guardrails including input sanitization, content filtering, and PII masking
           - Delivered the website chat entry point for AI-powered support and quick access to trusted information
@@ -616,91 +620,74 @@ sections:
   academic_projects:
     group: academic_projects
     tags: [cv, all]
-    title: Academic Projects
+    title: Selected Course Projects
     layout: list
     content:
       - layout: left
-        title: MyPlace Web Development
-        sub_title: Stevens Institute of Technology
-        caption: 2019 – 2021 · Hoboken, NJ
-        additional_links:
-          - title: InscribeDeeper/MyPlace
-            icon: fab fa-github
-            url: https://github.com/InscribeDeeper/MyPlace
-        quote: >
-          Develop a web application for furniture and rental information exchange
-        description: |
-          - Led team of four students to design and develop a web application with Node.js and Express
-          - Designed document schema on MongoDB and wrapped CRUD operations as RESTful APIs
-          - Implemented Login and user-specific functions such as account signup and authentication system
-          - Developed features for rental and furniture information exchange such as comments, search, dashboard
-
-      - layout: left
         title: E-commerce Recommender System
         sub_title: Stevens Institute of Technology
-        caption: 2019 – 2021 · Hoboken, NJ
+        caption: 2020 · Hoboken, NJ
         additional_links:
           - title: InscribeDeeper/Recommender_Sys
             icon: fab fa-github
             url: https://github.com/InscribeDeeper/Recommender_Sys
         quote: >
-          Develop an e-commerce recommender system using user, item, and interaction data
+          Collaborative filtering on user, item, and interaction data.
         description: |
-          - Created and implemented recommender engine with users, items, and interaction records from JD.com
-          - Integrated multiple memory-based and model-based collaborative filtering algorithms to make recommendations
-          - Simulated on 7,000 pre-defined user-item interaction samples and attained 77% Top-10 Accuracy
+          - Built a recommender engine with memory-based and model-based collaborative filtering on JD.com interaction data
+          - Evaluated on 7,000 user-item samples and reached 77% Top-10 accuracy
+
+      - layout: left
+        title: MyPlace Web Development
+        sub_title: Stevens Institute of Technology
+        caption: 2020 · Hoboken, NJ
+        additional_links:
+          - title: InscribeDeeper/MyPlace
+            icon: fab fa-github
+            url: https://github.com/InscribeDeeper/MyPlace
+        quote: >
+          Full-stack web app for furniture and rental information exchange.
+        description: |
+          - Led a four-person team to build a Node.js/Express app with MongoDB schemas and RESTful CRUD APIs
+          - Implemented authentication, search, comments, and dashboard features for listing exchange
+
+      - layout: left
+        title: Analysis on Factors Influencing Bitcoin
+        sub_title: Stevens Institute of Technology
+        caption: 2021 · Hoboken, NJ
+        additional_links:
+          - title: InscribeDeeper/Tweets_sentiment_extraction
+            icon: fab fa-github
+            url: https://github.com/InscribeDeeper/Tweets_sentiment_extraction
+        quote: >
+          NLP and deep learning for tweet sentiment and market indicators.
+        description: |
+          - Cleaned and analyzed 20M+ related tweets with sentiment features at second-level granularity
+          - Engineered MACD/RSI-style indicators and back-tested multiple deep learning models for portfolio return
+
+      - layout: left
+        title: Quantify the AI impacts on Jobs skills
+        sub_title: Stevens Institute of Technology
+        caption: 2021 · Hoboken, NJ
+        additional_links:
+          - title: InscribeDeeper/Job-Descrpition-Feature-extraction
+            icon: fab fa-github
+            url: https://github.com/InscribeDeeper/Job-Descrpition-Feature-extraction
+        quote: >
+          Job-description NLP with clustering and topic modeling.
+        description: |
+          - Scraped and structured Indeed job-description text; filtered noise with K-means skillset clusters
+          - Analyzed skill trends with topic modeling and aspect-extraction neural networks
 
       - layout: left
         title: Fintech Pitch Competition
         sub_title: Stevens Institute of Technology
         caption: 2020 · Hoboken, NJ
         quote: >
-          Develop a mathematical model based on public data and metrics to measure and predict the vibrancy of the city in the U.S.
+          City vibrancy modeling from multi-source public data.
         description: |
-          - Constructed a vibrancy index to interpret and predict the prosperity trend of cities in the U.S.
-          - Explored, collected, and blended data from Google POIs, Instagram, Zillow, Bureau of Labor Statistics with Pandas
-          - Performed feature engineering on panel data, and fine-tuned models for prediction with XGBoost and Keras
-
-      - layout: left
-        title: Quantify the AI impacts on Jobs skills
-        sub_title: Stevens Institute of Technology
-        caption: 2019 – 2021 · Hoboken, NJ
-        additional_links:
-          - title: InscribeDeeper/Job-Descrpition-Feature-extraction
-            icon: fab fa-github
-            url: https://github.com/InscribeDeeper/Job-Descrpition-Feature-extraction
-        quote: >
-          Data scraping, parsing and information extraction, topic modeling with clustering algorithms and neural networks
-        description: |
-          - Scraped, cleaned and structured Job Descriptions textual data from INDEED.com
-          - Filtered noisy data by selecting clusters from K-means algorithm and visualized skillsets distribution
-          - Categorized, analyzed skillsets trend after Topic Modeling and Aspect Extraction Deep Neural Network
-
-      - layout: left
-        title: Analysis on Factors Influencing Bitcoin
-        sub_title: Stevens Institute of Technology
-        caption: 2019 – 2021 · Hoboken, NJ
-        additional_links:
-          - title: InscribeDeeper/Tweets_sentiment_extraction
-            icon: fab fa-github
-            url: https://github.com/InscribeDeeper/Tweets_sentiment_extraction
-        quote: >
-          Feature engineering, data analysis and modeling
-        description: |
-          - Performed data cleaning and sentiment analysis for over 20 million related Tweets in second granularity
-          - Delivered feature engineering for financial indicators like MACD and RSI etc
-          - Analyzed, finetuned, and back-tested for over five types of deep learning model to increase the portfolio return
-
-      - layout: left
-        title: China Undergraduate Mathematical Contest in Modeling (CUMCM)
-        sub_title: Guangzhou University
-        caption: September 2015 · Guangzhou, China
-        link: https://en.mcm.edu.cn/
-        link_text: CUMCM
-        description: |
-          - Implemented dilation and erosion algorithms and the Moving Average Method to extract information from images
-          - Constructed a geolocation model based on shadow changes by modeling the solar altitude angle; solved the optimization problem with a Genetic Algorithm
-          - Won National Second Prize and Provincial First Prize in the 2015 CUMCM in China
+          - Built a vibrancy index from Google POIs, Instagram, Zillow, and BLS data with Pandas feature engineering
+          - Fine-tuned XGBoost and Keras models to predict U.S. city prosperity trends
 
   familiar_python_packages:
     group: technical_reference

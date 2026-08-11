@@ -251,6 +251,17 @@
   overflow-wrap: anywhere;
 }
 
+.item-references--demos {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 6px;
+  align-items: start;
+}
+
+.item-references--demos .demo-label-wrap {
+  white-space: nowrap;
+}
+
 .item-references .link,
 .item-link .link {
   position: relative;
@@ -259,19 +270,11 @@
 }
 
 .item-references .demo-indexes {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 24px);
   gap: 4px;
-  margin-left: 6px;
-  max-width: 100%;
-  vertical-align: baseline;
-}
-
-.item-references .demo-indexes--multiline {
-  display: flex;
   margin-left: 0;
-  margin-top: 0.4rem;
+  max-width: 100%;
 }
 
 .item-references a.demo-index,
