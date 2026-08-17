@@ -10,6 +10,9 @@ body {
   --page-link-hover: #355e98;
   --page-contact: #bbbbbb;
   --page-contact-hover: #4c4c4c;
+  --section-nav-accent: #173f6b;
+  --section-nav-accent-soft: #e9f0f7;
+  --section-nav-muted: #8793a0;
   --page-table-border: #ddd;
   --page-table-header: #a6a6a6;
   --theme-toggle-color: #333333;
@@ -33,6 +36,9 @@ body.dark {
   --page-link-hover: #9bc2f0;
   --page-contact: #bbbbbb;
   --page-contact-hover: #e6e6e6;
+  --section-nav-accent: #e7b86b;
+  --section-nav-accent-soft: #3a3021;
+  --section-nav-muted: #aeb8c0;
   --page-table-border: #444444;
   --page-table-header: #777777;
   --theme-toggle-color: #e6e6e6;
@@ -240,6 +246,30 @@ body.theme-light .lang-toggle {
     color: #222222;
     border-color: rgba(0, 0, 0, 0.35);
     background: rgba(0, 0, 0, 0.04);
+  }
+}
+
+/* Corner chrome tweaks on small screens (landing / before section-nav parks controls) */
+@media screen and (max-width: 768px) {
+  body:not(.has-section-nav) .local-back {
+    top: 14px;
+    left: 12px;
+    gap: 6px;
+    padding: 10px 8px;
+    font-size: 17px;
+  }
+
+  body:not(.has-section-nav) .local-back-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  body:not(.has-section-nav) .lang-toggle {
+    top: 14px;
+    right: 12px;
+    min-width: 48px;
+    padding: 10px 12px;
+    font-size: 13px;
   }
 }
 

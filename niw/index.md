@@ -1,6 +1,5 @@
 ---
-layout: default
-title: EB-2 NIW Profile
-profile: niw
+layout: lang-redirect
+profile_slug: niw
 permalink: /niw/
 ---

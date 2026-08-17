@@ -16,6 +16,11 @@
 </button>
 <script>
   (function () {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get("public") === "true") {
+      return;
+    }
+
     var host = window.location.hostname;
     var isLocal =
       host === "localhost" ||

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}" data-site-base="{{ '/' | relative_url }}">
 
 {%- include head.html -%}
 
@@ -10,6 +10,7 @@
     {%- include theme-toggle.html -%}
   {%- endif -%}
 
+  <div class="page-layer">
   {%- include header.html -%}
 
   {% assign ui_en = site.data.ui.en %}
@@ -34,24 +35,24 @@
         <section class="landing-directory">
           <nav class="profile-grid" aria-label="{{ ui_en.profile_versions }}">
             {% comment %}
-              Temporarily hidden from the landing directory. Page still builds at /niw/.
+              Temporarily hidden from the landing directory. Page still builds at /en/niw/ and /zh/niw/.
               Restore the card below when ready to show EB-2 NIW publicly again.
             {% endcomment %}
             {% if false %}
-            <a class="profile-card profile-card--featured" href="{{ '/niw/' | relative_url }}">
+            <a class="profile-card profile-card--featured" href="{{ '/en/niw/' | relative_url }}" data-profile-slug="niw">
               <span class="profile-card-body">
                 <span class="profile-name"><span data-i18n="en">{{ ui_en.profile_niw }}</span><span data-i18n="zh">{{ ui_zh.profile_niw }}</span></span>
               </span>
             </a>
             {% endif %}
 
-            <a class="profile-card profile-card--featured" href="{{ '/resume/' | relative_url }}">
+            <a class="profile-card profile-card--featured" href="{{ '/en/resume/' | relative_url }}" data-profile-slug="resume">
               <span class="profile-card-body">
                 <span class="profile-name"><span data-i18n="en">{{ ui_en.profile_resume }}</span><span data-i18n="zh">{{ ui_zh.profile_resume }}</span></span>
               </span>
             </a>
 
-            <a class="profile-card" href="{{ '/cv/' | relative_url }}">
+            <a class="profile-card" href="{{ '/en/cv/' | relative_url }}" data-profile-slug="cv">
               <span class="profile-card-body">
                 <span class="profile-name"><span data-i18n="en">{{ ui_en.profile_cv }}</span><span data-i18n="zh">{{ ui_zh.profile_cv }}</span></span>
               </span>
@@ -158,10 +159,12 @@
   </main>
 
   {%- include footer.html -%}
+  </div>
   {%- if site.darkmode == false -%}
     <script src="{{ '/assets/js/index.js' | relative_url }}"></script>
   {%- endif -%}
   <script src="{{ '/assets/js/lang.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/easter-egg.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/landing.js' | relative_url }}"></script>
 </body>
 

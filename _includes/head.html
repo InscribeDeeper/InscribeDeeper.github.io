@@ -13,7 +13,19 @@
   <script>
     (function () {
       try {
-        var lang = localStorage.getItem("site-lang");
+        var lang = null;
+        var base = document.documentElement.getAttribute("data-site-base") || "";
+        var root = String(base).replace(/\/+$/, "");
+        var path = window.location.pathname || "/";
+        if (root && path.indexOf(root) === 0) {
+          path = path.slice(root.length) || "/";
+        }
+        var match = path.match(/^\/(en|zh)(?:\/|$)/);
+        if (match) {
+          lang = match[1];
+        } else {
+          lang = localStorage.getItem("site-lang");
+        }
         if (lang !== "zh" && lang !== "en") {
           lang = "en";
         }

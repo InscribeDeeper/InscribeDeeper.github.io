@@ -3,6 +3,18 @@
   var EN = "en";
   var ZH = "zh";
 
+  function normalizeLang(lang) {
+    return lang === ZH ? ZH : EN;
+  }
+
+  function siteRoot() {
+    var base = document.documentElement.getAttribute("data-site-base");
+    if (base == null || base === "") {
+      return "";
+    }
+    return String(base).replace(/\/+$/, "") || "";
+  }
+
   function getStoredLang() {
     try {
       var stored = localStorage.getItem(STORAGE_KEY);
@@ -15,12 +27,41 @@
     return null;
   }
 
-  function getPreferredLang() {
-    return getStoredLang() || EN;
+  function getPathLang() {
+    var root = siteRoot();
+    var path = window.location.pathname || "/";
+    if (root && path.indexOf(root) === 0) {
+      path = path.slice(root.length) || "/";
+    }
+    var match = path.match(/^\/(en|zh)(?:\/|$)/);
+    return match ? match[1] : null;
+  }
+
+  function isRootPath() {
+    var root = siteRoot();
+    var path = (window.location.pathname || "/").replace(/\/+$/, "") || "/";
+    var rootPath = (root || "/").replace(/\/+$/, "") || "/";
+    return path === rootPath;
+  }
+
+  function profileUrl(lang, slug) {
+    var root = siteRoot();
+    return (root || "") + "/" + normalizeLang(lang) + "/" + slug + "/";
+  }
+
+  function updateProfileLinks(lang) {
+    var next = normalizeLang(lang);
+    document.querySelectorAll("[data-profile-slug]").forEach(function (link) {
+      var slug = link.getAttribute("data-profile-slug");
+      if (!slug) {
+        return;
+      }
+      link.setAttribute("href", profileUrl(next, slug));
+    });
   }
 
   function applyLang(lang) {
-    var next = lang === ZH ? ZH : EN;
+    var next = normalizeLang(lang);
     document.documentElement.setAttribute("lang", next);
     document.documentElement.setAttribute("data-site-lang", next);
 
@@ -44,6 +85,10 @@
       }
     });
 
+    if (isRootPath()) {
+      updateProfileLinks(next);
+    }
+
     try {
       window.dispatchEvent(
         new CustomEvent("site-lang-change", { detail: { lang: next } })
@@ -54,7 +99,7 @@
   }
 
   function setLang(lang) {
-    var next = lang === ZH ? ZH : EN;
+    var next = normalizeLang(lang);
     try {
       localStorage.setItem(STORAGE_KEY, next);
     } catch (e) {
@@ -64,16 +109,29 @@
   }
 
   function init() {
-    applyLang(getPreferredLang());
+    var pathLang = getPathLang();
+    var initial = pathLang || getStoredLang() || EN;
+
+    if (pathLang) {
+      try {
+        localStorage.setItem(STORAGE_KEY, pathLang);
+      } catch (e) {
+        /* ignore */
+      }
+    }
+
+    applyLang(initial);
 
     var toggle = document.getElementById("lang-toggle");
-    if (toggle) {
+    if (toggle && isRootPath()) {
       toggle.addEventListener("click", function () {
         var current =
           document.documentElement.getAttribute("data-site-lang") || EN;
         setLang(current === ZH ? EN : ZH);
         toggle.blur();
       });
+    } else if (toggle) {
+      toggle.hidden = true;
     }
   }
 

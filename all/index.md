@@ -1,6 +1,5 @@
 ---
-layout: default
-title: Complete Profile
-profile: all
+layout: lang-redirect
+profile_slug: all
 permalink: /all/
 ---

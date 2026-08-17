@@ -50,6 +50,8 @@ en:
   timeline_slides: Timeline slides
   content: Content
   section_nav: Navigation
+  section_nav_collapse: Collapse navigation
+  section_nav_expand: Expand navigation
 
 zh:
   welcome: 欢迎
@@ -92,3 +94,5 @@ zh:
   timeline_slides: 时间线幻灯片
   content: 内容
   section_nav: 导航
+  section_nav_collapse: 收起导航
+  section_nav_expand: 展开导航

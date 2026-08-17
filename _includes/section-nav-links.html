@@ -18,10 +18,15 @@
 {% endif %}
 
 {% assign selected_groups = "|" %}
+{% assign nav_index = 0 %}
 <ul class="section-nav-list">
   {% if view.show_about %}
+    {% assign nav_index = nav_index | plus: 1 %}
     <li>
-      <a class="section-nav-link" href="#{{ lang }}-about" data-nav-section="about">{{ about.title | default: "About Me" }}</a>
+      <a class="section-nav-link" href="#{{ lang }}-about" data-nav-section="about" data-nav-label="{{ about.title | default: "About Me" | escape }}">
+        <span class="section-nav-link-index" aria-hidden="true">{{ nav_index | prepend: "0" | slice: -2, 2 }}</span>
+        <span class="section-nav-link-label">{{ about.title | default: "About Me" }}</span>
+      </a>
     </li>
   {% endif %}
 
@@ -46,8 +51,12 @@
         {% if dedupe_groups %}
           {% assign selected_groups = selected_groups | append: section_group | append: "|" %}
         {% endif %}
+        {% assign nav_index = nav_index | plus: 1 %}
         <li>
-          <a class="section-nav-link" href="#{{ lang }}-{{ section_id }}" data-nav-section="{{ section_id }}">{{ section.title }}</a>
+          <a class="section-nav-link" href="#{{ lang }}-{{ section_id }}" data-nav-section="{{ section_id }}" data-nav-label="{{ section.title | escape }}">
+            <span class="section-nav-link-index" aria-hidden="true">{{ nav_index | prepend: "0" | slice: -2, 2 }}</span>
+            <span class="section-nav-link-label">{{ section.title }}</span>
+          </a>
         </li>
       {% endif %}
     {% endif %}

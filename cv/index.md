@@ -1,6 +1,5 @@
 ---
-layout: default
-title: Curriculum Vitae
-profile: cv
+layout: lang-redirect
+profile_slug: cv
 permalink: /cv/
 ---
