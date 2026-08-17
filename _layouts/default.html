@@ -3,7 +3,7 @@
 
 {%- include head.html -%}
 
-<body class="{% if site.darkmode == true and site.darkmode != 'never' %}dark{% elsif site.darkmode == 'never' %}theme-light{% endif %}">
+<body class="{% if site.darkmode == true and site.darkmode != 'never' %}dark{% elsif site.darkmode == 'never' %}theme-light{% endif %}{% if page.profile %} has-section-nav{% endif %}">
   {%- include theme-boot.html -%}
   {%- include local-back.html -%}
   {%- include lang-toggle.html -%}
@@ -14,6 +14,9 @@
   {%- include header.html -%}
 
   <main class="page-content" aria-label="{{ site.data.ui.en.content }}">
+    {%- if page.profile -%}
+      {%- include section-nav.html -%}
+    {%- endif -%}
     <div class="wrapper">
 
       {%- if jekyll.environment == 'production' and site.gtm -%}
@@ -30,6 +33,9 @@
     <script src="{{ '/assets/js/index.js' | relative_url }}"></script>
   {%- endif -%}
   <script src="{{ '/assets/js/lang.js' | relative_url }}"></script>
+  {%- if page.profile -%}
+    <script src="{{ '/assets/js/section-nav.js' | relative_url }}"></script>
+  {%- endif -%}
 </body>
 
 </html>

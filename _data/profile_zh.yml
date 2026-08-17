@@ -318,7 +318,7 @@ sections:
   selected_contributions_cv:
     group: featured_technical_work
     tags: [resume, all]
-    title: 精选工程项目
+    title: 精选项目
     layout: list
     content:
       - layout: left

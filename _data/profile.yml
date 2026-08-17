@@ -317,7 +317,7 @@ sections:
   selected_contributions_cv:
     group: featured_technical_work
     tags: [resume, all]
-    title: Selected Engineering Projects
+    title: Selected Projects
     layout: list
     content:
       - layout: left

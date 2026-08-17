@@ -1,0 +1,18 @@
+{% comment %}
+  Per-path section navigation. Built from the same view/section selection as
+  profile-sections.html (including group dedupe / show_all_sections).
+{% endcomment %}
+{% assign view_en = site.data.profile.views[page.profile] %}
+{% assign view_zh = site.data.profile_zh.views[page.profile] %}
+{% if view_en %}
+<nav class="section-nav no-print" aria-label="{{ site.data.ui.en.section_nav | escape }}">
+  <div class="section-nav-panel" data-i18n="en">
+    <p class="section-nav-label">{{ site.data.ui.en.section_nav }}</p>
+    {% include section-nav-links.html profile=site.data.profile view=view_en lang="en" %}
+  </div>
+  <div class="section-nav-panel" data-i18n="zh">
+    <p class="section-nav-label">{{ site.data.ui.zh.section_nav }}</p>
+    {% include section-nav-links.html profile=site.data.profile_zh view=view_zh lang="zh" %}
+  </div>
+</nav>
+{% endif %}

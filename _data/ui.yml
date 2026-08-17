@@ -49,6 +49,7 @@ en:
   show_projects: Show industry projects
   timeline_slides: Timeline slides
   content: Content
+  section_nav: Navigation
 
 zh:
   welcome: 欢迎
@@ -90,3 +91,4 @@ zh:
   show_projects: 显示行业项目
   timeline_slides: 时间线幻灯片
   content: 内容
+  section_nav: 导航
