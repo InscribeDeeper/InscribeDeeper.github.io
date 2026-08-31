@@ -1,0 +1,10 @@
+services:
+  site:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    image: inscribedeeper-site:latest
+    container_name: inscribedeeper-resume-app
+    ports:
+      - "127.0.0.1:${INSCRIBEDEEPER_PORT:-8510}:80"
+    restart: unless-stopped
