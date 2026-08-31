@@ -174,32 +174,20 @@
     var half = g / 2;
     var mid = (modCount - 1) / 2;
     var GROUND_R = 0.72;
-    var H = g * 0.78; /* total tree height */
-    var Rmax = g * 0.3; /* crown max radius, reached at 40–65% height */
-    var r, c, i, k;
+    var H = g * 0.8; /* total sculpture height */
+    var r, c, i, j, k;
 
-    /* crown radius profile: bare below 25%, widest in the 40–65% band,
-       tapering to an irregular top */
-    function shape(hbar) {
-      return hbar < 0.2 ? 0.55 + 2.25 * hbar
-        : hbar < 0.55 ? 1
-        : Math.max(0.12, 1 - 0.85 * (hbar - 0.55) / 0.45);
-    }
+    /* ================= ONE static 3D pixel sculpture =================
+       Every block's world position is decided here, once, and never
+       touched again. Straight overhead the blocks project onto their QR
+       cells (that IS the code); from the side the same blocks are a tree.
+       The camera is the only thing that ever moves. */
+
     function asym(a) {
-      /* natural left/right imbalance of the branches */
-      return 1 + 0.22 * Math.sin(a * 3 + 1.7) + 0.14 * Math.sin(a * 5 + 0.6);
+      return 1 + 0.2 * Math.sin(a * 3 + 1.7) + 0.13 * Math.sin(a * 5 + 0.6);
     }
 
-    /* branch anchor directions for the visible forks */
-    var clusters = [];
-    for (k = 0; k < 3; k++) {
-      var angK = k * 2.09 + 0.6;
-      clusters.push([Math.cos(angK) * Rmax * 0.55, Math.sin(angK) * Rmax * 0.55, H * (0.45 + k * 0.1)]);
-    }
-
-    /* ---- every dark module gets TWO homes: its QR grid cell (as turf)
-       and a spot on the tree (crown leaf, or the same turf for the outer
-       ring and all corner patterns, which stay lawn forever) ---- */
+    var darkMap = {}; /* "c,r" -> crown floor of that module (branch routing) */
     for (r = 0; r < modCount; r++) {
       for (c = 0; c < modCount; c++) {
         if (!qr.isDark(r, c)) {
@@ -224,13 +212,12 @@
           delay: Math.min(430, Math.sqrt((r - mid) * (r - mid) + (c - mid) * (c - mid)) * 13)
         };
         cells.push(cell);
-        var dF = 10 + rN * 240; /* to the tree: centre lifts first */
-        var dR = 10 + Math.max(0, 1 - rN / GROUND_R) * 240; /* back: rim first */
-        var turfH = 0.3 + hashUnit(r, c, 15) * 0.15;
 
         if (grounded) {
+          /* rim + all corner patterns: dense turf, fixed at the ground */
+          var turfH = 0.3 + hashUnit(r, c, 15) * 0.15;
           nodes.push({
-            kind: "turf",
+            kind: "leaf",
             wx: cx,
             wy: cy,
             z: 0,
@@ -238,6 +225,7 @@
             size: 1,
             col: col0,
             tcol: finder || solid ? mix(theme.finder, theme.tree[1], 0.45) : theme.tree[cellHash(r, c) % 3],
+            light: 0.95,
             delay: cell.delay
           });
           if (!solid && hashUnit(r, c, 16) < 0.35) {
@@ -254,88 +242,101 @@
           continue;
         }
 
-        /* crown home: sample the crown volume directly — mid-band biased
-           height (widest at 40–65% of the tree), angular asymmetry, and a
-           sqrt radial fill give one continuous, lumpy mass of foliage */
-        var hbar = Math.max(0.04, Math.min(0.96, (hashUnit(r, c, 41) + hashUnit(r, c, 44)) / 2 * 0.92 + 0.04));
-        var angM = hashUnit(r, c, 45) * 6.28318;
-        var rrM = Rmax * shape(hbar) * asym(angM) * Math.sqrt(hashUnit(r, c, 46));
-        var tx = Math.cos(angM) * rrM;
-        var ty = Math.sin(angM) * rrM;
-        var tz = Math.max(H * 0.25 + 0.4, H * (0.25 + 0.72 * hbar));
-        /* two blocks per module: cover + accent, both teleporting */
-        nodes.push({
-          kind: "leafm",
-          sx: cx, sy: cy, sz: 0, ssize: 1, sh: turfH,
-          tx: tx, ty: ty, tz: tz, tsize: 0.95, th: 0.95,
-          dF: dF, dR: dR,
-          col: col0,
-          tcol: theme.tree[cellHash(r, c) % theme.tree.length],
-          light: 0.8 + 0.28 * (tz / H),
-          delay: cell.delay
-        });
-        var s2 = 0.45 + hashUnit(r, c, 31) * 0.2;
-        nodes.push({
-          kind: "leafm",
-          sx: cx + (hashUnit(r, c, 32) * 2 - 1) * (1 - s2) / 2,
-          sy: cy + (hashUnit(r, c, 33) * 2 - 1) * (1 - s2) / 2,
-          sz: turfH, ssize: s2, sh: 0.26,
-          tx: tx + (hashUnit(r, c, 34) * 2 - 1) * 1.3,
-          ty: ty + (hashUnit(r, c, 35) * 2 - 1) * 1.3,
-          tz: Math.max(H * 0.25 + 0.4, tz - 0.5 - hashUnit(r, c, 36) * 0.9),
-          tsize: 0.6 + hashUnit(r, c, 37) * 0.25, th: 0.7,
-          dF: dF + 40, dR: dR + 40,
-          col: theme.qr[(cellHash(r, c) + 1) % theme.qr.length],
-          tcol: theme.tree[(cellHash(r, c) + 1) % theme.tree.length],
-          light: 0.76 + 0.26 * (tz / H),
-          delay: cell.delay
-        });
+        /* crown module: a small stack of blocks at different FIXED heights.
+           Their overhead footprints stay inside this cell, so the code is
+           intact from above; from the side they give the crown its body.
+           Bottom quarter of the tree stays leaf-free. */
+        var angC = Math.atan2(cy, cx);
+        var zTopM = Math.min(H, H * (0.34 + 0.62 * Math.pow(1 - rN, 0.8) * asym(angC)) +
+          (hashUnit(r, c, 7) - 0.5) * 1.6);
+        var zBotM = H * (0.27 + 0.05 * hashUnit(r, c, 8));
+        zTopM = Math.max(zTopM, zBotM + 1.2);
+        darkMap[c + "," + r] = zBotM;
+        var count = rN > 0.55 ? 2 : 3;
+        for (j = 0; j < count; j++) {
+          var frac = j === 0 ? 0.85 + hashUnit(r, c, 21) * 0.15
+            : j === 1 ? 0.15 + hashUnit(r, c, 22) * 0.3
+            : 0.45 + hashUnit(r, c, 23) * 0.3;
+          var size = j === 0 ? 0.95 : 0.55 + hashUnit(r, c, 24 + j) * 0.3;
+          var maxOff = (0.98 - size) / 2;
+          var bz = lerp(zBotM, zTopM, frac);
+          nodes.push({
+            kind: "leaf",
+            wx: cx + (hashUnit(r, c, 26 + j) * 2 - 1) * maxOff,
+            wy: cy + (hashUnit(r, c, 27 + j) * 2 - 1) * maxOff,
+            z: bz,
+            h: size,
+            size: size,
+            col: theme.qr[(cellHash(r, c) + j) % theme.qr.length],
+            tcol: theme.tree[(cellHash(r, c) + j) % theme.tree.length],
+            light: 0.78 + 0.28 * (bz / H),
+            delay: cell.delay
+          });
+        }
       }
     }
 
-    /* ---- decorative trunk, roots and forks: the bottom quarter of the
-       tree is bare wood. Fades with the morph so the overhead scan never
-       sees it. ---- */
-    var trunkTop = H * 0.62;
-    for (var lv = 0; lv < trunkTop; lv++) {
-      var wide = lv < H * 0.45;
-      var n2 = wide ? 4 : 1;
-      for (k = 0; k < n2; k++) {
+    /* ---- static crooked trunk + branches, tucked underneath dark cells:
+       from overhead they are hidden by the foliage above them, from the
+       side they are the visible wood of the bare lower quarter ---- */
+    function crownFloor(cc, rr) {
+      return darkMap[cc + "," + rr];
+    }
+    var tc = null, tr = null, best = 1e9;
+    for (r = Math.floor(mid) - 3; r <= Math.floor(mid) + 3; r++) {
+      for (c = Math.floor(mid) - 3; c <= Math.floor(mid) + 3; c++) {
+        if (crownFloor(c, r) !== undefined) {
+          var d0 = (c - mid) * (c - mid) + (r - mid) * (r - mid);
+          if (d0 < best) {
+            best = d0;
+            tc = c;
+            tr = r;
+          }
+        }
+      }
+    }
+    if (tc !== null) {
+      var topZ = crownFloor(tc, tr) + 1.5; /* reach just into the foliage */
+      for (var lv = 0; lv < topZ; lv++) {
         nodes.push({
           kind: "wood",
-          wx: wide ? (k % 2) - 0.5 : 0,
-          wy: wide ? Math.floor(k / 2) - 0.5 : 0,
+          wx: tc + QUIET + 0.5 - half,
+          wy: tr + QUIET + 0.5 - half,
           z: lv,
           h: 1,
-          size: wide ? (lv < H * 0.12 ? 1.08 : 0.95) : 0.85,
-          col: TRUNK_BROWNS[(lv + k) % TRUNK_BROWNS.length]
+          size: lv < topZ * 0.3 ? 0.95 : 0.82,
+          col: TRUNK_BROWNS[lv % TRUNK_BROWNS.length]
         });
       }
     }
-    for (k = 0; k < 4; k++) {
-      var ra = k * 1.5708 + 0.4;
-      nodes.push({
-        kind: "wood",
-        wx: Math.cos(ra) * 1.6,
-        wy: Math.sin(ra) * 1.6,
-        z: 0,
-        h: 0.6,
-        size: 0.75,
-        col: TRUNK_BROWNS[k % TRUNK_BROWNS.length]
-      });
-    }
-    for (k = 0; k < 3; k++) {
-      var cl2 = clusters[k * 3 % clusters.length];
-      var len = Math.sqrt(cl2[0] * cl2[0] + cl2[1] * cl2[1]) || 1;
-      for (var bs = 1; bs <= 3; bs++) {
+    for (i = 0; i < 5; i++) {
+      var ang = (i / 5) * 6.28318 + 0.5;
+      var ux = Math.cos(ang);
+      var uy = Math.sin(ang);
+      for (var rad = 2; rad < mid * GROUND_R; rad += 1.4) {
+        var gc = Math.round(mid + ux * rad);
+        var gr = Math.round(mid + uy * rad);
+        var hit = null;
+        for (var probe = 0; probe <= 1 && hit === null; probe++) {
+          if (crownFloor(gc + probe, gr) !== undefined) {
+            hit = [gc + probe, gr];
+          } else if (crownFloor(gc, gr + probe) !== undefined) {
+            hit = [gc, gr + probe];
+          } else if (crownFloor(gc - probe, gr) !== undefined) {
+            hit = [gc - probe, gr];
+          }
+        }
+        if (hit === null) {
+          continue;
+        }
         nodes.push({
           kind: "wood",
-          wx: (cl2[0] / len) * bs * 1.3,
-          wy: (cl2[1] / len) * bs * 1.3,
-          z: H * 0.32 + k * H * 0.09 + bs * 0.9,
-          h: 0.7,
+          wx: hit[0] + QUIET + 0.5 - half,
+          wy: hit[1] + QUIET + 0.5 - half,
+          z: crownFloor(hit[0], hit[1]) - 0.85,
+          h: 0.6,
           size: 0.6,
-          col: TRUNK_BROWNS[(k + bs) % TRUNK_BROWNS.length]
+          col: TRUNK_BROWNS[(i + Math.round(rad)) % TRUNK_BROWNS.length]
         });
       }
     }
@@ -368,30 +369,8 @@
       });
     }
 
-    flatFit = {
-      minX: -(half + 1.5),
-      maxX: half + 1.5,
-      minY: -(half + 1.5),
-      maxY: half + 1.5
-    };
-    var minX = 1e9, maxX = -1e9, minY = 1e9, maxY = -1e9;
-    var baseRad = treePos.baseHalf * 1.4143;
-    minX = -baseRad;
-    maxX = baseRad;
-    maxY = baseRad * SIDE_SIN + 0.6;
-    minY = -baseRad * SIDE_SIN;
-    for (i = 0; i < nodes.length; i++) {
-      var q = nodes[i];
-      var qx = q.tx !== undefined ? q.tx : q.wx;
-      var qy = q.ty !== undefined ? q.ty : q.wy;
-      var qz = q.tz !== undefined ? q.tz : q.z;
-      var rad2 = Math.sqrt(qx * qx + qy * qy) + 1;
-      minX = Math.min(minX, -rad2);
-      maxX = Math.max(maxX, rad2);
-      minY = Math.min(minY, -rad2 * SIDE_SIN - (qz + (q.h || 1) + 0.6) * SIDE_COS);
-      maxY = Math.max(maxY, rad2 * SIDE_SIN - qz * SIDE_COS);
-    }
-    treeFit = { minX: minX, maxX: maxX, minY: minY, maxY: maxY };
+    flatFit = { minX: 0, maxX: 0, minY: 0, maxY: 0 }; /* framing is constant now */
+    treeFit = flatFit;
 
     order = [];
     for (i = 0; i < nodes.length; i++) {
@@ -562,42 +541,27 @@
     ctx.fill();
     ctx.globalAlpha = 1;
 
-    /* ---- the modules ride the very same easing as the camera: the rim
-       settles into lawn while the centre climbs into the crown, and the
-       eye can follow every block both ways ---- */
-    var q = e;
+    /* ---- the sculpture is frozen: world positions were fixed at build
+       time and never change. Only the painter's order follows the camera
+       (that is ordering, not motion). Colour drifts deep→lush with the
+       tilt, like light changing on a fixed object. ---- */
     for (i = 0; i < nodes.length; i++) {
       node = nodes[i];
-      if (node.kind === "leafm") {
-        node._q = q;
-        node._x = lerp(node.sx, node.tx, q);
-        node._y = lerp(node.sy, node.ty, q);
-        node._z = lerp(node.sz, node.tz, q);
-        node._size = lerp(node.ssize, node.tsize, q);
-        node._h = lerp(node.sh, node.th, q);
-      } else {
-        node._q = node.kind === "wood" ? e : easeInOut(t);
-        node._x = node.wx;
-        node._y = node.wy;
-        node._z = node.z;
-        node._size = node.size || 1;
-        node._h = node.h || 1;
-      }
+      node._q = e;
+      node._x = node.wx;
+      node._y = node.wy;
+      node._z = node.z;
+      node._size = node.size || 1;
+      node._h = node.h || 1;
       node.depth = node._x * sinT + node._y * cosT + node._z * 0.01;
     }
     order.sort(function (a, b) {
       return nodes[a].depth - nodes[b].depth;
     });
 
-    var wob = reduceMotion ? 0 : 0.1 * e;
     for (var oi = 0; oi < order.length; oi++) {
       node = nodes[order[oi]];
       var alpha = introAlpha(node, now);
-      if (node.kind === "wood") {
-        /* the trunk fades in as the camera comes down; at rest overhead it
-           is fully gone so the scan stays clean */
-        alpha *= Math.max(0, Math.min(1, t * 1.8));
-      }
       if (alpha <= 0.01) {
         continue;
       }
@@ -629,10 +593,6 @@
       var hf = node._size / 2;
       var z0 = node._z;
       var z1 = node._z + node._h;
-      if (node.kind === "leafm" && node._q > 0.99 && node._z > 2 && wob) {
-        z0 += Math.sin(now * 0.002 + (node._x + node._y) * 0.6) * wob;
-        z1 += Math.sin(now * 0.002 + (node._x + node._y) * 0.6) * wob;
-      }
       var light = node.light || 1;
       var bcol = node.tcol ? mix(node.col, node.tcol, node._q) : node.col;
 
