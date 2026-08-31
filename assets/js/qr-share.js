@@ -50,14 +50,14 @@
     month >= 9 && month <= 11 ? "autumn" : "winter";
   var THEMES = {
     spring: {
-      tree: [[168, 210, 109], [139, 195, 74], [124, 179, 66], [174, 213, 129], [244, 143, 177]],
+      tree: [[205, 230, 173], [188, 221, 152], [174, 213, 129], [214, 235, 189], [244, 178, 199]],
       qr: [[35, 87, 44], [46, 100, 51], [27, 77, 42], [56, 106, 47]],
       finder: [24, 61, 33],
       petals: ["#f8bbd0", "#f48fb1", "#ffe082"],
       snow: false
     },
     summer: {
-      tree: [[168, 210, 109], [139, 195, 74], [124, 179, 66], [156, 204, 101], [85, 139, 47]],
+      tree: [[197, 225, 165], [209, 232, 176], [174, 213, 129], [188, 221, 152], [156, 204, 121]],
       qr: [[27, 77, 42], [40, 90, 45], [51, 105, 30], [33, 84, 36]],
       finder: [21, 61, 31],
       petals: ["#f8bbd0", "#ffe082", "#f48fb1"],
@@ -262,6 +262,9 @@
           var bz = lerp(zBotM, zTopM, frac);
           nodes.push({
             kind: "leaf",
+            soft: true, /* rendered as a soft leaf blob, swaying in the wind */
+            tilt: (hashUnit(r, c, 51 + j) - 0.5) * 0.6,
+            phase: hashUnit(r, c, 52 + j) * 6.28,
             wx: cx + (hashUnit(r, c, 26 + j) * 2 - 1) * maxOff,
             wy: cy + (hashUnit(r, c, 27 + j) * 2 - 1) * maxOff,
             z: bz,
@@ -269,7 +272,7 @@
             size: size,
             col: theme.qr[(cellHash(r, c) + j) % theme.qr.length],
             tcol: theme.tree[(cellHash(r, c) + j) % theme.tree.length],
-            light: 0.78 + 0.28 * (bz / H),
+            light: 0.85 + 0.22 * (bz / H),
             delay: cell.delay
           });
         }
@@ -559,6 +562,12 @@
       return nodes[a].depth - nodes[b].depth;
     });
 
+    /* gentle breeze: fades out entirely in the overhead scan view, so the
+       code face never wavers; positions in the model stay fixed — the sway
+       is a pure render-time offset */
+    var windT = now * 0.0012;
+    var windAmp = reduceMotion ? 0 : 0.17 * e;
+
     for (var oi = 0; oi < order.length; oi++) {
       node = nodes[order[oi]];
       var alpha = introAlpha(node, now);
@@ -566,6 +575,26 @@
         continue;
       }
       ctx.globalAlpha = alpha;
+
+      if (node.soft) {
+        /* soft two-layer leaf blob */
+        var swx = node._x + windAmp * Math.sin(windT + node.phase);
+        var swy = node._y + windAmp * 0.7 * Math.cos(windT * 0.9 + node.phase * 1.3);
+        var scol = node.tcol ? mix(node.col, node.tcol, node._q) : node.col;
+        var bx = px_(swx, swy);
+        var by = py_(swx, swy, node._z + node._h * 0.55);
+        var rx = node._size * s * 0.68;
+        var ry2 = rx * 0.82;
+        ctx.fillStyle = rgb(scol, 0.78 * (node.light || 1));
+        ctx.beginPath();
+        ctx.ellipse(bx + rx * 0.12, by + ry2 * 0.3, rx, ry2, node.tilt, 0, 6.29);
+        ctx.fill();
+        ctx.fillStyle = rgb(scol, Math.min(1.12, (node.light || 1) * 1.05));
+        ctx.beginPath();
+        ctx.ellipse(bx - rx * 0.06, by - ry2 * 0.14, rx * 0.94, ry2 * 0.9, node.tilt, 0, 6.29);
+        ctx.fill();
+        continue;
+      }
 
       if (node.kind === "grass" || node.kind === "blade") {
         ctx.globalAlpha = alpha * (node.kind === "blade" ? Math.max(0.25, e) : 1);
@@ -576,7 +605,7 @@
           ctx.beginPath();
           ctx.moveTo(px_(bx2 - 0.22, node._y), py_(bx2 - 0.22, node._y, node._z));
           ctx.lineTo(px_(bx2 + 0.22, node._y), py_(bx2 + 0.22, node._y, node._z));
-          ctx.lineTo(px_(bx2 + b2 * 0.14, node._y), py_(bx2 + b2 * 0.14, node._y, node._z + bhh));
+          ctx.lineTo(px_(bx2 + b2 * 0.14 + windAmp * 0.8 * Math.sin(windT + bx2), node._y), py_(bx2 + b2 * 0.14 + windAmp * 0.8 * Math.sin(windT + bx2), node._y, node._z + bhh));
           ctx.closePath();
           ctx.fill();
         }
