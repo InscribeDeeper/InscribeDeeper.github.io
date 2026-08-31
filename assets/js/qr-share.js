@@ -13,8 +13,13 @@
 
   var SIZE = 300; /* css px — keep in sync with .qr-dialog-code */
   var QUIET = 4; /* quiet-zone modules scanners expect around the symbol */
-  var MORPH_MS = 800;
-  var TRAVEL_MS = 450; /* per-module teleport flight time */
+  /* "quick head-turn" blink: grey-in 0–150ms, camera cut at 170ms, fast
+     150ms camera sweep, refocus done by 460ms. The scene itself is rigid —
+     the two layouts swap behind the blink, never on screen. */
+  var FX_GREY_MS = 150;
+  var FX_CUT_MS = 170;
+  var FX_TOTAL_MS = 460;
+  var CAM_MS = 150;
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ONE centred object: the tree's CANOPY is the QR code. The code lives
@@ -85,7 +90,12 @@
   var currentUrl = null;
 
   var mode = 0;
-  var t = 0;
+  var t = 0; /* camera tilt parameter */
+  var layoutMode = 0; /* which of the two layouts is on stage (0 scan · 1 tree) */
+  var fxActive = false;
+  var fxStart = 0;
+  var fxCut = false;
+  var fxAlpha = 0;
   var theta = 0;
   var spinSettled = false;
   var flattenTheta = 0;
@@ -467,8 +477,23 @@
     var maxY = lerp(flatFit.maxY, treeFit.maxY, e);
     var pad = lerp(1, 0.95, e);
     var s = (SIZE * pad) / Math.max(maxX - minX, maxY - minY);
+    s *= 1 + 0.025 * fxAlpha; /* whisper of an FOV pulse during the blink */
     var ox = (SIZE - s * (maxX + minX)) / 2;
     var oy = (SIZE - s * (maxY + minY)) / 2;
+
+    function drawFx() {
+      /* tunnel-vision vignette closing toward the centre, scene-area only */
+      if (fxAlpha <= 0.01) {
+        return;
+      }
+      var inner = lerp(0.55, 0.12, fxAlpha) * SIZE;
+      var gradFx = ctx.createRadialGradient(SIZE / 2, SIZE / 2, inner, SIZE / 2, SIZE / 2, SIZE * 0.78);
+      gradFx.addColorStop(0, "rgba(126, 120, 108, 0)");
+      gradFx.addColorStop(0.55, "rgba(126, 120, 108, " + (0.35 * fxAlpha).toFixed(3) + ")");
+      gradFx.addColorStop(1, "rgba(126, 120, 108, " + (0.88 * fxAlpha).toFixed(3) + ")");
+      ctx.fillStyle = gradFx;
+      ctx.fillRect(0, 0, SIZE, SIZE);
+    }
 
     function px_(wx, wy) {
       var ry = wx * sinT + wy * cosT;
@@ -532,6 +557,7 @@
       }
       ctx.globalAlpha = 1;
       drawPetals(e);
+      drawFx();
       return;
     }
 
@@ -542,25 +568,17 @@
     ctx.fill();
     ctx.globalAlpha = 1;
 
-    /* ---- kinematics: every module block flies between its two homes with
-       its own stagger, a 1 → 0.7 → 1 pulse while in flight, and an exact
-       snap at both ends ---- */
-    var clock = t * MORPH_MS;
-    var backClock = (1 - t) * MORPH_MS;
+    /* ---- rigid staging: whichever layout is on stage stands perfectly
+       still; the camera (and the blink) do all the moving ---- */
     for (i = 0; i < nodes.length; i++) {
       node = nodes[i];
       if (node.kind === "leafm") {
-        var praw = mode === 1
-          ? Math.max(0, Math.min(1, (clock - node.dF) / TRAVEL_MS))
-          : 1 - Math.max(0, Math.min(1, (backClock - node.dR) / TRAVEL_MS));
-        var q = easeInOut(praw);
-        var pulse = praw > 0 && praw < 1 ? 1 - 0.3 * Math.sin(3.14159 * praw) : 1;
-        node._q = q;
-        node._x = lerp(node.sx, node.tx, q);
-        node._y = lerp(node.sy, node.ty, q);
-        node._z = lerp(node.sz, node.tz, q);
-        node._size = lerp(node.ssize, node.tsize, q) * pulse;
-        node._h = lerp(node.sh, node.th, q) * pulse;
+        node._q = layoutMode;
+        node._x = layoutMode ? node.tx : node.sx;
+        node._y = layoutMode ? node.ty : node.sy;
+        node._z = layoutMode ? node.tz : node.sz;
+        node._size = layoutMode ? node.tsize : node.ssize;
+        node._h = layoutMode ? node.th : node.sh;
       } else {
         node._q = node.kind === "wood" ? e : easeInOut(t);
         node._x = node.wx;
@@ -656,6 +674,7 @@
     ctx.globalAlpha = 1;
 
     drawPetals(e);
+    drawFx();
   }
 
   function setHints() {
@@ -669,7 +688,7 @@
   }
 
   function needsFrames() {
-    return !introDone || t !== mode || mode === 1;
+    return fxActive || !introDone || t !== mode || mode === 1;
   }
 
   function tick(now) {
@@ -678,8 +697,29 @@
     if (!introDone && now - introAt > 430 + 300) {
       introDone = true;
     }
-    if (t !== mode) {
-      var step = dt / MORPH_MS;
+    if (fxActive) {
+      var fa = now - fxStart;
+      if (!fxCut && fa >= FX_CUT_MS) {
+        fxCut = true;
+        layoutMode = mode; /* the swap happens at peak grey — never visible */
+        if (mode === 1) {
+          spinSettled = false;
+        } else {
+          flattenTheta = normAngle(theta);
+          flattenT0 = 1;
+        }
+      }
+      fxAlpha = fa < FX_GREY_MS ? fa / FX_GREY_MS : fa < 250 ? 1 : Math.max(0, 1 - (fa - 250) / (FX_TOTAL_MS - 250));
+      if (fa >= FX_TOTAL_MS) {
+        fxActive = false;
+        fxAlpha = 0;
+      }
+      canvas.style.filter = fxAlpha > 0.01
+        ? "saturate(" + (1 - 0.55 * fxAlpha).toFixed(3) + ") blur(" + (1.6 * fxAlpha).toFixed(2) + "px)"
+        : "";
+    }
+    if (t !== mode && layoutMode === mode) {
+      var step = dt / CAM_MS; /* brisk camera sweep once the cut has landed */
       t = mode === 1 ? Math.min(1, t + step) : Math.max(0, t - step);
     }
 
@@ -738,6 +778,10 @@
     }
     mode = 0;
     t = 0;
+    layoutMode = 0;
+    fxActive = false;
+    fxAlpha = 0;
+    canvas.style.filter = "";
     theta = 0;
     petals.length = 0;
     introAt = performance.now();
@@ -784,19 +828,22 @@
       dragMoved = false;
       return;
     }
-    mode = mode === 1 ? 0 : 1;
-    if (mode === 0) {
-      flattenTheta = normAngle(theta);
-      flattenT0 = Math.max(t, 0.001);
-    } else {
-      spinSettled = false;
+    if (fxActive) {
+      return; /* mid-blink */
     }
+    mode = mode === 1 ? 0 : 1;
+    setHints();
     if (reduceMotion) {
+      layoutMode = mode;
       t = mode;
       theta = mode === 1 ? THETA_HOME : 0;
       spinSettled = true;
+      kick();
+      return;
     }
-    setHints();
+    fxActive = true;
+    fxStart = performance.now();
+    fxCut = false;
     kick();
   });
 
