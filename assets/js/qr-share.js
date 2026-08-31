@@ -13,7 +13,8 @@
 
   var SIZE = 300; /* css px — keep in sync with .qr-dialog-code */
   var QUIET = 4; /* quiet-zone modules scanners expect around the symbol */
-  var MORPH_MS = 700;
+  var MORPH_MS = 800;
+  var TRAVEL_MS = 450; /* per-module teleport flight time */
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ONE centred object: the tree's CANOPY is the QR code. The code lives
@@ -165,16 +166,33 @@
     sceneSeed = 7;
     var half = g / 2;
     var mid = (modCount - 1) / 2;
-    var maxH = g * 0.72; /* crown apex */
-    var GROUND_R = 0.72; /* beyond this ring every module lies on the soil */
-    var r, c, i, j;
+    var GROUND_R = 0.72;
+    var H = g * 0.78; /* total tree height */
+    var Rmax = g * 0.3; /* crown max radius, reached at 40–65% height */
+    var r, c, i, k;
 
-    /* ---- radial cone mapping: the QR lies flat on the ground grid, every
-       module keeps its x/y cell forever, ONLY its height changes.
-       r = max(|u|,|v|) so the four edges and all four corner regions drop
-       to the ground as turf, while the middle rises into the crown.
-       Straight from above the heights vanish and the code reassembles. */
-    var darkMap = {};
+    /* crown radius profile: bare below 25%, widest in the 40–65% band,
+       tapering to an irregular top */
+    function shape(hbar) {
+      return hbar < 0.2 ? 0.55 + 2.25 * hbar
+        : hbar < 0.55 ? 1
+        : Math.max(0.12, 1 - 0.85 * (hbar - 0.55) / 0.45);
+    }
+    function asym(a) {
+      /* natural left/right imbalance of the branches */
+      return 1 + 0.22 * Math.sin(a * 3 + 1.7) + 0.14 * Math.sin(a * 5 + 0.6);
+    }
+
+    /* branch anchor directions for the visible forks */
+    var clusters = [];
+    for (k = 0; k < 3; k++) {
+      var angK = k * 2.09 + 0.6;
+      clusters.push([Math.cos(angK) * Rmax * 0.55, Math.sin(angK) * Rmax * 0.55, H * (0.45 + k * 0.1)]);
+    }
+
+    /* ---- every dark module gets TWO homes: its QR grid cell (as turf)
+       and a spot on the tree (crown leaf, or the same turf for the outer
+       ring and all corner patterns, which stay lawn forever) ---- */
     for (r = 0; r < modCount; r++) {
       for (c = 0; c < modCount; c++) {
         if (!qr.isDark(r, c)) {
@@ -188,21 +206,8 @@
         var u = (c - mid) / mid;
         var v = (r - mid) / mid;
         var rN = Math.max(Math.abs(u), Math.abs(v));
-        /* finder + alignment patches always land on the soil, whatever
-           their radius — the corners of the code are lawn, not crown */
-        var grounded = rN >= GROUND_R || finder ||
-          (r >= modCount - 9 && r <= modCount - 5 && c >= modCount - 9 && c <= modCount - 5);
-        var zc = 0;
-        if (!grounded) {
-          zc = maxH * Math.pow(Math.max(0, 1 - rN / GROUND_R), 0.7) +
-            (hashUnit(r, c, 7) - 0.5) * 0.4; /* ≤20% of a module */
-          zc = Math.max(0.6, zc);
-        }
-        darkMap[c + "," + r] = zc;
+        var grounded = rN >= GROUND_R || finder || solid;
         var col0 = finder || solid ? theme.finder : theme.qr[cellHash(r, c) % theme.qr.length];
-        var tcol0 = grounded
-          ? (finder || solid ? mix(theme.finder, theme.tree[1], 0.45) : theme.tree[cellHash(r, c) % 3])
-          : theme.tree[cellHash(r, c) % theme.tree.length];
         var cell = {
           cx: cx,
           cy: cy,
@@ -212,20 +217,20 @@
           delay: Math.min(430, Math.sqrt((r - mid) * (r - mid) + (c - mid) * (c - mid)) * 13)
         };
         cells.push(cell);
+        var dF = 10 + rN * 240; /* to the tree: centre lifts first */
+        var dR = 10 + Math.max(0, 1 - rN / GROUND_R) * 240; /* back: rim first */
+        var turfH = 0.3 + hashUnit(r, c, 15) * 0.15;
 
         if (grounded) {
-          /* turf/moss block: fills its whole cell so the code never breaks,
-             with a couple of grass blades sprouting on some */
           nodes.push({
-            kind: "leaf",
+            kind: "turf",
             wx: cx,
             wy: cy,
             z: 0,
-            h: 0.3 + hashUnit(r, c, 15) * 0.18,
+            h: turfH,
             size: 1,
             col: col0,
-            tcol: tcol0,
-            light: 0.95,
+            tcol: finder || solid ? mix(theme.finder, theme.tree[1], 0.45) : theme.tree[cellHash(r, c) % 3],
             delay: cell.delay
           });
           if (!solid && hashUnit(r, c, 16) < 0.35) {
@@ -233,114 +238,102 @@
               kind: "blade",
               wx: cx,
               wy: cy,
-              z: 0.35,
+              z: turfH,
               h: 0.9 + hashUnit(r, c, 17) * 0.8,
-              col: tcol0,
+              col: theme.tree[cellHash(r, c) % 3],
               delay: cell.delay
             });
           }
           continue;
         }
 
-        /* crown cluster: a full-footprint cover at the cone height plus
-           dense accents tucked underneath (outer band gets a hanging tuft) */
+        /* crown home: sample the crown volume directly — mid-band biased
+           height (widest at 40–65% of the tree), angular asymmetry, and a
+           sqrt radial fill give one continuous, lumpy mass of foliage */
+        var hbar = Math.max(0.04, Math.min(0.96, (hashUnit(r, c, 41) + hashUnit(r, c, 44)) / 2 * 0.92 + 0.04));
+        var angM = hashUnit(r, c, 45) * 6.28318;
+        var rrM = Rmax * shape(hbar) * asym(angM) * Math.sqrt(hashUnit(r, c, 46));
+        var tx = Math.cos(angM) * rrM;
+        var ty = Math.sin(angM) * rrM;
+        var tz = Math.max(H * 0.25 + 0.4, H * (0.25 + 0.72 * hbar));
+        /* two blocks per module: cover + accent, both teleporting */
         nodes.push({
-          kind: "leaf",
-          wx: cx,
-          wy: cy,
-          z: zc,
-          h: 0.9,
-          size: 0.98,
+          kind: "leafm",
+          sx: cx, sy: cy, sz: 0, ssize: 1, sh: turfH,
+          tx: tx, ty: ty, tz: tz, tsize: 0.95, th: 0.95,
+          dF: dF, dR: dR,
           col: col0,
-          tcol: tcol0,
-          light: 0.82 + 0.28 * (zc / maxH),
+          tcol: theme.tree[cellHash(r, c) % theme.tree.length],
+          light: 0.8 + 0.28 * (tz / H),
           delay: cell.delay
         });
-        var extras = rN > 0.42 ? 2 : 1 + (cellHash(r, c) % 2);
-        for (j = 0; j < extras; j++) {
-          var size = 0.5 + hashUnit(r, c, 31 + j * 3) * 0.35;
-          var maxOff = (0.98 - size) / 2;
-          nodes.push({
-            kind: "leaf",
-            wx: cx + (hashUnit(r, c, 32 + j * 3) * 2 - 1) * maxOff,
-            wy: cy + (hashUnit(r, c, 33 + j * 3) * 2 - 1) * maxOff,
-            z: zc - 0.7 - hashUnit(r, c, 34 + j * 3) * (rN > 0.42 ? 1.9 : 1.1),
-            h: size,
-            size: size,
-            col: theme.qr[(cellHash(r, c) + j) % theme.qr.length],
-            tcol: theme.tree[(cellHash(r, c) + j) % theme.tree.length],
-            light: 0.78 + 0.24 * (zc / maxH),
-            delay: cell.delay
-          });
-        }
+        var s2 = 0.45 + hashUnit(r, c, 31) * 0.2;
+        nodes.push({
+          kind: "leafm",
+          sx: cx + (hashUnit(r, c, 32) * 2 - 1) * (1 - s2) / 2,
+          sy: cy + (hashUnit(r, c, 33) * 2 - 1) * (1 - s2) / 2,
+          sz: turfH, ssize: s2, sh: 0.26,
+          tx: tx + (hashUnit(r, c, 34) * 2 - 1) * 1.3,
+          ty: ty + (hashUnit(r, c, 35) * 2 - 1) * 1.3,
+          tz: Math.max(H * 0.25 + 0.4, tz - 0.5 - hashUnit(r, c, 36) * 0.9),
+          tsize: 0.6 + hashUnit(r, c, 37) * 0.25, th: 0.7,
+          dF: dF + 40, dR: dR + 40,
+          col: theme.qr[(cellHash(r, c) + 1) % theme.qr.length],
+          tcol: theme.tree[(cellHash(r, c) + 1) % theme.tree.length],
+          light: 0.76 + 0.26 * (tz / H),
+          delay: cell.delay
+        });
       }
     }
 
-    /* ---- crooked trunk + radial branches, always hidden underneath dark
-       cells so the top-down code stays pristine ---- */
-    function cellZ(cc, rr) {
-      return darkMap[cc + "," + rr];
-    }
-    var tc = null, tr = null, best = 1e9;
-    for (r = Math.floor(mid) - 3; r <= Math.floor(mid) + 3; r++) {
-      for (c = Math.floor(mid) - 3; c <= Math.floor(mid) + 3; c++) {
-        if (cellZ(c, r) !== undefined && cellZ(c, r) > 3) {
-          var d0 = (c - mid) * (c - mid) + (r - mid) * (r - mid);
-          if (d0 < best) {
-            best = d0;
-            tc = c;
-            tr = r;
-          }
-        }
-      }
-    }
-    if (tc !== null) {
-      var topZ = cellZ(tc, tr) - 0.9;
-      for (var lv = 0; lv < topZ; lv++) {
+    /* ---- decorative trunk, roots and forks: the bottom quarter of the
+       tree is bare wood. Fades with the morph so the overhead scan never
+       sees it. ---- */
+    var trunkTop = H * 0.62;
+    for (var lv = 0; lv < trunkTop; lv++) {
+      var wide = lv < H * 0.45;
+      var n2 = wide ? 4 : 1;
+      for (k = 0; k < n2; k++) {
         nodes.push({
           kind: "wood",
-          wx: tc + QUIET + 0.5 - half,
-          wy: tr + QUIET + 0.5 - half,
+          wx: wide ? (k % 2) - 0.5 : 0,
+          wy: wide ? Math.floor(k / 2) - 0.5 : 0,
           z: lv,
           h: 1,
-          size: 0.82,
-          col: TRUNK_BROWNS[lv % TRUNK_BROWNS.length]
+          size: wide ? (lv < H * 0.12 ? 1.08 : 0.95) : 0.85,
+          col: TRUNK_BROWNS[(lv + k) % TRUNK_BROWNS.length]
         });
       }
     }
-    for (i = 0; i < 5; i++) {
-      var ang = (i / 5) * 6.28318 + 0.5;
-      var ux = Math.cos(ang);
-      var uy = Math.sin(ang);
-      for (var rad = 2; rad < mid * GROUND_R; rad += 1.4) {
-        var gc = Math.round(mid + ux * rad);
-        var gr = Math.round(mid + uy * rad);
-        var hit = null;
-        for (var probe = 0; probe <= 1 && hit === null; probe++) {
-          if (cellZ(gc + probe, gr) !== undefined && cellZ(gc + probe, gr) > 2) {
-            hit = [gc + probe, gr];
-          } else if (cellZ(gc, gr + probe) !== undefined && cellZ(gc, gr + probe) > 2) {
-            hit = [gc, gr + probe];
-          } else if (cellZ(gc - probe, gr) !== undefined && cellZ(gc - probe, gr) > 2) {
-            hit = [gc - probe, gr];
-          }
-        }
-        if (hit === null) {
-          continue;
-        }
+    for (k = 0; k < 4; k++) {
+      var ra = k * 1.5708 + 0.4;
+      nodes.push({
+        kind: "wood",
+        wx: Math.cos(ra) * 1.6,
+        wy: Math.sin(ra) * 1.6,
+        z: 0,
+        h: 0.6,
+        size: 0.75,
+        col: TRUNK_BROWNS[k % TRUNK_BROWNS.length]
+      });
+    }
+    for (k = 0; k < 3; k++) {
+      var cl2 = clusters[k * 3 % clusters.length];
+      var len = Math.sqrt(cl2[0] * cl2[0] + cl2[1] * cl2[1]) || 1;
+      for (var bs = 1; bs <= 3; bs++) {
         nodes.push({
           kind: "wood",
-          wx: hit[0] + QUIET + 0.5 - half,
-          wy: hit[1] + QUIET + 0.5 - half,
-          z: Math.max(0.4, cellZ(hit[0], hit[1]) - 1.25),
-          h: 0.6,
+          wx: (cl2[0] / len) * bs * 1.3,
+          wy: (cl2[1] / len) * bs * 1.3,
+          z: H * 0.32 + k * H * 0.09 + bs * 0.9,
+          h: 0.7,
           size: 0.6,
-          col: TRUNK_BROWNS[(i + Math.round(rad)) % TRUNK_BROWNS.length]
+          col: TRUNK_BROWNS[(k + bs) % TRUNK_BROWNS.length]
         });
       }
     }
 
-    /* ---- soil base + sparse life just outside the code square ---- */
+    /* sparse life just outside the code square */
     treePos = { baseHalf: half + 2 };
     for (i = 0; i < 8; i++) {
       var side = Math.floor(srand() * 4);
@@ -368,7 +361,6 @@
       });
     }
 
-    /* frames: scan = straight down onto the square; showcase fits the tree */
     flatFit = {
       minX: -(half + 1.5),
       maxX: half + 1.5,
@@ -383,11 +375,14 @@
     minY = -baseRad * SIDE_SIN;
     for (i = 0; i < nodes.length; i++) {
       var q = nodes[i];
-      var rad2 = Math.sqrt(q.wx * q.wx + q.wy * q.wy) + 1;
+      var qx = q.tx !== undefined ? q.tx : q.wx;
+      var qy = q.ty !== undefined ? q.ty : q.wy;
+      var qz = q.tz !== undefined ? q.tz : q.z;
+      var rad2 = Math.sqrt(qx * qx + qy * qy) + 1;
       minX = Math.min(minX, -rad2);
       maxX = Math.max(maxX, rad2);
-      minY = Math.min(minY, -rad2 * SIDE_SIN - (q.z + (q.h || 1) + 0.6) * SIDE_COS);
-      maxY = Math.max(maxY, rad2 * SIDE_SIN - q.z * SIDE_COS);
+      minY = Math.min(minY, -rad2 * SIDE_SIN - (qz + (q.h || 1) + 0.6) * SIDE_COS);
+      maxY = Math.max(maxY, rad2 * SIDE_SIN - qz * SIDE_COS);
     }
     treeFit = { minX: minX, maxX: maxX, minY: minY, maxY: maxY };
 
@@ -460,8 +455,6 @@
     var e = easeInOut(t);
     var half = g / 2;
 
-    /* camera: straight overhead + orthographic while scanning, ~45° iso
-       with a whisper of perspective for the showcase */
     var cosT = Math.cos(theta);
     var sinT = Math.sin(theta);
     var sa = lerp(1, SIDE_SIN, e);
@@ -486,12 +479,10 @@
       return oy + s * (ry * sa - z * ca) * (1 + ry * PK);
     }
 
-    var voxel = e >= 0.02;
     var i, node;
     var bh = treePos.baseHalf;
 
-    /* soil base under everything (light beige: reads as background to a
-       scanner, ground to the eye) */
+    /* soil base */
     ctx.fillStyle = rgb(PLATE_A, 1);
     ctx.beginPath();
     ctx.moveTo(px_(-bh, -bh), py_(-bh, -bh, 0));
@@ -501,8 +492,8 @@
     ctx.closePath();
     ctx.fill();
 
-    if (!voxel) {
-      /* straight-down view: every module back on its grid cell */
+    if (t <= 0.0001) {
+      /* fully settled scan state: exact overhead grid, pixel-snapped */
       var fcorners = [[0, 0], [0, modCount - 7], [modCount - 7, 0]];
       var u = Math.round(s * dpr) / dpr;
       for (i = 0; i < fcorners.length; i++) {
@@ -544,17 +535,41 @@
       return;
     }
 
-    /* soft shadow pooling under the crown */
     ctx.globalAlpha = e * 0.6;
     ctx.fillStyle = "rgba(94, 84, 60, 0.16)";
     ctx.beginPath();
-    ctx.ellipse(px_(0, 0), py_(0, 0, 0) + 1, half * 0.62 * s, half * 0.62 * s * sa, 0, 0, 6.29);
+    ctx.ellipse(px_(0, 0), py_(0, 0, 0) + 1, half * 0.55 * s, half * 0.55 * s * sa, 0, 0, 6.29);
     ctx.fill();
     ctx.globalAlpha = 1;
 
+    /* ---- kinematics: every module block flies between its two homes with
+       its own stagger, a 1 → 0.7 → 1 pulse while in flight, and an exact
+       snap at both ends ---- */
+    var clock = t * MORPH_MS;
+    var backClock = (1 - t) * MORPH_MS;
     for (i = 0; i < nodes.length; i++) {
       node = nodes[i];
-      node.depth = node.wx * sinT + node.wy * cosT + node.z * 0.01;
+      if (node.kind === "leafm") {
+        var praw = mode === 1
+          ? Math.max(0, Math.min(1, (clock - node.dF) / TRAVEL_MS))
+          : 1 - Math.max(0, Math.min(1, (backClock - node.dR) / TRAVEL_MS));
+        var q = easeInOut(praw);
+        var pulse = praw > 0 && praw < 1 ? 1 - 0.3 * Math.sin(3.14159 * praw) : 1;
+        node._q = q;
+        node._x = lerp(node.sx, node.tx, q);
+        node._y = lerp(node.sy, node.ty, q);
+        node._z = lerp(node.sz, node.tz, q);
+        node._size = lerp(node.ssize, node.tsize, q) * pulse;
+        node._h = lerp(node.sh, node.th, q) * pulse;
+      } else {
+        node._q = node.kind === "wood" ? e : easeInOut(t);
+        node._x = node.wx;
+        node._y = node.wy;
+        node._z = node.z;
+        node._size = node.size || 1;
+        node._h = node.h || 1;
+      }
+      node.depth = node._x * sinT + node._y * cosT + node._z * 0.01;
     }
     order.sort(function (a, b) {
       return nodes[a].depth - nodes[b].depth;
@@ -564,21 +579,25 @@
     for (var oi = 0; oi < order.length; oi++) {
       node = nodes[order[oi]];
       var alpha = introAlpha(node, now);
+      if (node.kind === "wood") {
+        /* the trunk leads the reassembly and is gone from overhead scans */
+        alpha *= Math.max(0, Math.min(1, t * 2.2));
+      }
       if (alpha <= 0.01) {
         continue;
       }
       ctx.globalAlpha = alpha;
 
       if (node.kind === "grass" || node.kind === "blade") {
-        ctx.globalAlpha = alpha * (node.kind === "blade" ? e : 1);
+        ctx.globalAlpha = alpha * (node.kind === "blade" ? Math.max(0.25, e) : 1);
         ctx.fillStyle = rgb(node.col, 1);
         for (var b2 = -1; b2 <= 1; b2++) {
-          var bx2 = node.wx + b2 * (node.kind === "blade" ? 0.24 : 0.55);
-          var bhh = node.h * (b2 === 0 ? 1 : 0.72);
+          var bx2 = node._x + b2 * (node.kind === "blade" ? 0.24 : 0.55);
+          var bhh = node._h * (b2 === 0 ? 1 : 0.72);
           ctx.beginPath();
-          ctx.moveTo(px_(bx2 - 0.22, node.wy), py_(bx2 - 0.22, node.wy, node.z));
-          ctx.lineTo(px_(bx2 + 0.22, node.wy), py_(bx2 + 0.22, node.wy, node.z));
-          ctx.lineTo(px_(bx2 + b2 * 0.14, node.wy), py_(bx2 + b2 * 0.14, node.wy, node.z + bhh));
+          ctx.moveTo(px_(bx2 - 0.22, node._y), py_(bx2 - 0.22, node._y, node._z));
+          ctx.lineTo(px_(bx2 + 0.22, node._y), py_(bx2 + 0.22, node._y, node._z));
+          ctx.lineTo(px_(bx2 + b2 * 0.14, node._y), py_(bx2 + b2 * 0.14, node._y, node._z + bhh));
           ctx.closePath();
           ctx.fill();
         }
@@ -587,20 +606,20 @@
       if (node.kind === "flower") {
         ctx.fillStyle = rgb(node.col, 1);
         ctx.beginPath();
-        ctx.arc(px_(node.wx, node.wy), py_(node.wx, node.wy, node.z), Math.max(1.6, 0.2 * s), 0, 6.29);
+        ctx.arc(px_(node._x, node._y), py_(node._x, node._y, node._z), Math.max(1.6, 0.2 * s), 0, 6.29);
         ctx.fill();
         continue;
       }
 
-      var hf = node.size / 2;
-      var z0 = node.z;
-      var z1 = node.z + node.h;
-      if (node.kind === "leaf" && node.z > 2 && wob) {
-        z0 += Math.sin(now * 0.002 + (node.wx + node.wy) * 0.6) * wob;
-        z1 += Math.sin(now * 0.002 + (node.wx + node.wy) * 0.6) * wob;
+      var hf = node._size / 2;
+      var z0 = node._z;
+      var z1 = node._z + node._h;
+      if (node.kind === "leafm" && node._q > 0.99 && node._z > 2 && wob) {
+        z0 += Math.sin(now * 0.002 + (node._x + node._y) * 0.6) * wob;
+        z1 += Math.sin(now * 0.002 + (node._x + node._y) * 0.6) * wob;
       }
       var light = node.light || 1;
-      var bcol = node.tcol ? mix(node.col, node.tcol, e) : node.col;
+      var bcol = node.tcol ? mix(node.col, node.tcol, node._q) : node.col;
 
       for (var side = 0; side < 4; side++) {
         var dxs = side === 0 ? 1 : side === 1 ? -1 : 0;
@@ -611,10 +630,10 @@
         }
         var nx = dxs * cosT - dys * sinT;
         var mul = Math.min(1, 0.55 + 0.3 * ny + 0.15 * Math.max(nx, 0));
-        var pax = node.wx + (dxs !== 0 ? dxs * hf : -hf);
-        var pay = node.wy + (dys !== 0 ? dys * hf : -hf);
-        var pbx = node.wx + (dxs !== 0 ? dxs * hf : hf);
-        var pby = node.wy + (dys !== 0 ? dys * hf : hf);
+        var pax = node._x + (dxs !== 0 ? dxs * hf : -hf);
+        var pay = node._y + (dys !== 0 ? dys * hf : -hf);
+        var pbx = node._x + (dxs !== 0 ? dxs * hf : hf);
+        var pby = node._y + (dys !== 0 ? dys * hf : hf);
         ctx.fillStyle = rgb(bcol, mul * light);
         ctx.beginPath();
         ctx.moveTo(px_(pax, pay), py_(pax, pay, z1));
@@ -627,10 +646,10 @@
 
       ctx.fillStyle = rgb(bcol, Math.min(1.08, light * 1.05));
       ctx.beginPath();
-      ctx.moveTo(px_(node.wx - hf, node.wy - hf), py_(node.wx - hf, node.wy - hf, z1));
-      ctx.lineTo(px_(node.wx + hf, node.wy - hf), py_(node.wx + hf, node.wy - hf, z1));
-      ctx.lineTo(px_(node.wx + hf, node.wy + hf), py_(node.wx + hf, node.wy + hf, z1));
-      ctx.lineTo(px_(node.wx - hf, node.wy + hf), py_(node.wx - hf, node.wy + hf, z1));
+      ctx.moveTo(px_(node._x - hf, node._y - hf), py_(node._x - hf, node._y - hf, z1));
+      ctx.lineTo(px_(node._x + hf, node._y - hf), py_(node._x + hf, node._y - hf, z1));
+      ctx.lineTo(px_(node._x + hf, node._y + hf), py_(node._x + hf, node._y + hf, z1));
+      ctx.lineTo(px_(node._x - hf, node._y + hf), py_(node._x - hf, node._y + hf, z1));
       ctx.closePath();
       ctx.fill();
     }
