@@ -22,6 +22,9 @@ legacy_website: inscribedeeper.github.io/
 # never = always light (white), no toggle
 darkmode: false
 
+# QR share button + dialog in the header (true/false; unset = true)
+qr_share: true
+
 # Social links
 # twitter_username: jekyllrb
 legacy_github_username: inscribedeeper
