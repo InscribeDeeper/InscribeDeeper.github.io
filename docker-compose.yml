@@ -14,3 +14,12 @@ services:
 
 volumes:
   bundle_cache:
+
+networks:
+  default:
+    # 钉死网段（2026-11-21）：从 ~/src/kris-docs/network/docker-subnets.md 领号，
+    # 避开 Binghamton VPN / ZeroTier / 家里 LAN 的网段。
+    ipam:
+      config:
+        - subnet: 10.200.15.0/24
+          gateway: 10.200.15.1
